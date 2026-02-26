@@ -70,7 +70,7 @@
     }
     .anchor p {
       font-family:'Playfair Display',serif;
-      font-size:13.5px; color:var(--ink); font-style:italic; line-height:1.5;
+      font-size:13.5px; color:var(--ink); line-height:1.5;
     }
 
     /* ── PREREQ BAND ───────────────────────────── */
@@ -83,7 +83,7 @@
     .prereq-band strong { color:var(--coral); font-weight:500; }
 
     /* ── BODY GRID ─────────────────────────────── */
-    .body { display:grid; grid-template-columns:1fr 1.4fr; }
+    .body { display:grid; grid-template-columns:1fr 1fr; }
     .col-left { padding:32px 28px 32px 48px; border-right:1px solid var(--divider); }
     .col-right { padding:32px 48px 32px 28px; }
 
@@ -157,6 +157,13 @@
       color:var(--amber); font-weight:500; margin-bottom:10px;
     }
     .lessons-hint { font-size:10.5px; color:var(--muted); margin-bottom:12px; font-style:italic; }
+    .lessons-section {
+      padding:28px 48px 32px;
+      border-top:1px solid var(--divider);
+    }
+    .lessons-grid {
+      display:grid; grid-template-columns:repeat(2,1fr); gap:8px;
+    }
 
     .lesson {
       border:1px solid var(--divider);
@@ -241,7 +248,8 @@
     @media print { body{background:white} .page{max-width:100%} .back-btn{display:none} }
     @media (max-width:640px) {
       .body,.pricing-section { grid-template-columns:1fr; }
-      header,.course-band,.anchor,.prereq-band,.col-left,.col-right,.pricing-section,footer { padding-left:24px; padding-right:24px; }
+      header,.course-band,.anchor,.prereq-band,.col-left,.col-right,.pricing-section,.lessons-section,footer { padding-left:24px; padding-right:24px; }
+      .lessons-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -328,25 +336,42 @@
         </ul>
       </div>
 
-      <div class="section">
-        <div class="section-label">Every Course Includes</div>
-        <ul>
-          <li>Articulate Rise 360 Interactions per lesson</li>
-          <li>Interactive HTML worksheets with auto-feedback</li>
-          <li>Authentic audio content in Mexican Spanish</li>
-          <li>Digital flashcard sets &amp; grammar references</li>
-          <li>Grades pass back automatically to Canvas gradebook</li>
-          <li>Curriculum map with grammar scope &amp; sequence</li>
-        </ul>
-      </div>
-
     </div>
 
     <!-- RIGHT -->
     <div class="col-right">
 
-      <div class="lessons-header">Course Sequence</div>
-      <p class="lessons-hint">Click any lesson to see vocabulary, grammar, and can-do goals.</p>
+      <div class="section">
+        <div class="section-label">Every Course Includes</div>
+        <ul>
+          <li>No uploads · no IT tickets · no setup required</li>
+          <li>Articulate Rise 360 interactive lessons</li>
+          <li>Interactive HTML worksheets with auto-feedback</li>
+          <li>Authentic Mexican Spanish audio with professional narration</li>
+          <li>Digital flashcard sets &amp; grammar references</li>
+          <li>Built-in auto-grading — no manual grading required</li>
+          <li>Curriculum map with grammar scope &amp; sequence</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Delivery</div>
+        <ul>
+          <li>Hosted by Spanish Learning Edge</li>
+          <li>Students access via link inside Canvas</li>
+          <li>LTI integration available on request</li>
+          <li>FERPA-compliant · U.S.-based hosting</li>
+        </ul>
+      </div>
+
+    </div>
+  </div><!-- /body -->
+
+  <!-- COURSE SEQUENCE -->
+  <div class="lessons-section">
+    <div class="lessons-header">Course Sequence</div>
+    <p class="lessons-hint">Click any lesson to see vocabulary, grammar, and can-do goals.</p>
+    <div class="lessons-grid">
 
       <!-- LESSON 11 -->
       <div class="lesson">
@@ -519,7 +544,7 @@
       </div>
 
     </div>
-  </div><!-- /body -->
+  </div><!-- /lessons-section -->
 
   <!-- PRICING — 2 cards -->
   <div class="pricing-section">

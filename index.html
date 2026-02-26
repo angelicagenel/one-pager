@@ -1,42 +1,319 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Pager</title>
+  <title>Spanish Learning Edge — Course Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      background: #f5f5f5;
+    :root {
+      --coral:   #ef7c8e;
+      --blush:   #ffe8e3;
+      --teal:    #7ba1a5;
+      --teal-lt: #e0ecee;
+      --teal-md: #6b8d94;
+      --deep:    #3d6870;
+      --ink:     #373f45;
+      --muted:   #7d7f7c;
+      --white:   #ffffff;
+      --divider: rgba(55,63,69,0.08);
     }
-    h1 { margin-bottom: 2rem; color: #333; }
-    .links { display: flex; flex-direction: column; gap: 1rem; }
-    a {
-      padding: 1rem 2rem;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #333;
-      font-size: 1.1rem;
-      text-align: center;
-      transition: box-shadow 0.2s;
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'DM Sans',sans-serif; background:var(--white); color:var(--ink); }
+    .page { max-width:860px; margin:0 auto; }
+
+    /* ── HEADER ─────────────────────────────── */
+    header {
+      background:var(--ink);
+      padding:28px 48px 24px;
+      display:flex; align-items:center; gap:22px;
     }
-    a:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .logo-slot {
+      width:64px; height:64px; border-radius:50%;
+      border:2px solid var(--coral);
+      background:rgba(255,255,255,0.05);
+      display:flex; align-items:center; justify-content:center;
+      flex-shrink:0; overflow:hidden;
+    }
+    .brand { font-family:'Playfair Display',serif; font-size:21px; font-weight:700; color:var(--white); line-height:1.2; }
+    .brand em { font-style:normal; color:var(--coral); }
+    .tagline { font-size:10.5px; color:var(--blush); letter-spacing:0.09em; text-transform:uppercase; margin-top:5px; font-weight:300; }
+
+    /* ── HERO BAND ───────────────────────────── */
+    .hero-band {
+      background:var(--coral);
+      padding:18px 48px;
+      display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;
+    }
+    .hero-title {
+      font-family:'Playfair Display',serif;
+      font-size:20px; font-weight:700; color:var(--white);
+    }
+    .hero-sub {
+      font-size:11.5px; color:rgba(255,255,255,0.85);
+      letter-spacing:0.06em;
+    }
+    .hero-badge {
+      margin-left:auto;
+      background:rgba(255,255,255,0.2);
+      border:1px solid rgba(255,255,255,0.4);
+      color:var(--white);
+      font-size:9px; letter-spacing:0.1em; text-transform:uppercase;
+      padding:3px 10px; border-radius:20px; font-weight:500;
+    }
+
+    /* ── ANCHOR ──────────────────────────────── */
+    .anchor {
+      background:var(--blush);
+      padding:16px 48px;
+      border-bottom:1px solid rgba(239,124,142,0.2);
+    }
+    .anchor p {
+      font-family:'Playfair Display',serif;
+      font-size:13px; color:var(--ink); font-style:italic; line-height:1.6;
+    }
+
+    /* ── COURSES GRID ────────────────────────── */
+    .courses-section { padding:32px 48px; }
+    .section-label {
+      font-size:9px; letter-spacing:0.15em; text-transform:uppercase;
+      color:var(--teal); font-weight:500; margin-bottom:18px;
+    }
+    .courses-grid {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+    }
+
+    .course-card {
+      border:1px solid var(--divider);
+      border-radius:8px; overflow:hidden;
+      display:flex; flex-direction:column;
+      transition:box-shadow 0.2s, transform 0.2s;
+    }
+    .course-card:hover {
+      box-shadow:0 4px 20px rgba(0,0,0,0.1);
+      transform:translateY(-2px);
+    }
+
+    .card-top {
+      padding:18px 18px 14px;
+      flex:1;
+    }
+    .card-top.coral  { border-top:4px solid var(--coral); }
+    .card-top.teal   { border-top:4px solid var(--teal); }
+    .card-top.deep   { border-top:4px solid var(--deep); }
+
+    .card-badge {
+      display:inline-block;
+      font-size:9px; letter-spacing:0.12em; text-transform:uppercase;
+      font-weight:600; padding:3px 9px; border-radius:20px;
+      margin-bottom:10px;
+    }
+    .card-badge.coral  { background:var(--blush); color:var(--coral); }
+    .card-badge.teal   { background:var(--teal-lt); color:var(--teal-md); }
+    .card-badge.deep   { background:#dde9ea; color:var(--deep); }
+
+    .card-title {
+      font-family:'Playfair Display',serif;
+      font-size:16px; font-weight:700; color:var(--ink);
+      line-height:1.25; margin-bottom:6px;
+    }
+    .card-meta {
+      font-size:10.5px; color:var(--muted); margin-bottom:12px;
+      letter-spacing:0.04em;
+    }
+    .card-desc {
+      font-size:11.5px; color:var(--ink); line-height:1.6;
+    }
+
+    .card-footer {
+      padding:12px 18px;
+      border-top:1px solid var(--divider);
+      background:rgba(0,0,0,0.015);
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .card-lessons {
+      font-size:10.5px; color:var(--muted);
+    }
+    .card-cta {
+      display:inline-block;
+      font-size:11px; font-weight:500; letter-spacing:0.04em;
+      padding:6px 14px; border-radius:20px;
+      text-decoration:none;
+      transition:opacity 0.15s;
+    }
+    .card-cta:hover { opacity:0.85; }
+    .card-cta.coral { background:var(--coral); color:var(--white); }
+    .card-cta.teal  { background:var(--teal); color:var(--white); }
+    .card-cta.deep  { background:var(--deep); color:var(--white); }
+
+    /* ── FEATURES STRIP ──────────────────────── */
+    .features-strip {
+      background:var(--ink);
+      padding:22px 48px;
+      display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
+    }
+    .feature {
+      text-align:center;
+    }
+    .feature-icon { font-size:20px; margin-bottom:6px; }
+    .feature-label {
+      font-size:10px; color:var(--blush);
+      letter-spacing:0.08em; text-transform:uppercase; line-height:1.5;
+    }
+
+    /* ── ZTC CALLOUT ─────────────────────────── */
+    .ztc-strip {
+      background:var(--teal-lt);
+      border-top:3px solid var(--teal);
+      padding:16px 48px;
+      display:flex; align-items:center; gap:20px;
+    }
+    .ztc-badge {
+      font-size:9px; letter-spacing:0.12em; text-transform:uppercase;
+      font-weight:600; color:var(--teal-md);
+      background:var(--white);
+      padding:4px 10px; border-radius:20px;
+      white-space:nowrap; flex-shrink:0;
+    }
+    .ztc-text {
+      font-size:11.5px; color:var(--ink); line-height:1.55;
+    }
+
+    /* ── FOOTER ──────────────────────────────── */
+    footer {
+      background:var(--ink); padding:16px 48px;
+      display:flex; justify-content:space-between; align-items:center;
+      flex-wrap:wrap; gap:8px;
+    }
+    .footer-creds { font-size:11px; color:rgba(255,255,255,0.55); line-height:1.7; }
+    .footer-creds strong { color:var(--blush); font-weight:500; }
+    .footer-contact { font-size:11px; color:rgba(255,255,255,0.7); text-align:right; line-height:1.9; }
+    .footer-contact a { color:var(--coral); text-decoration:none; }
+    .footer-contact a:hover { text-decoration:underline; }
+
+    @media print { body{background:white} .page{max-width:100%} }
+    @media (max-width:640px) {
+      .courses-grid { grid-template-columns:1fr; }
+      .features-strip { grid-template-columns:repeat(2,1fr); }
+      header,.hero-band,.anchor,.courses-section,.features-strip,.ztc-strip,footer { padding-left:24px; padding-right:24px; }
+    }
   </style>
 </head>
 <body>
-  <h1>One Pager</h1>
-  <div class="links">
-    <a href="sle-sp101.html">SLE SP101</a>
-    <a href="sle-sp102.html">SLE SP102</a>
-    <a href="sle-sp201.html">SLE SP201</a>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-slot">
+      <img src="logo.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+    </div>
+    <div>
+      <div class="brand">Spanish <em>Learning Edge</em></div>
+      <div class="tagline">Authentic Input · Instructionally Designed · ACTFL-Aligned</div>
+    </div>
+  </header>
+
+  <!-- HERO BAND -->
+  <div class="hero-band">
+    <div class="hero-title">Course One-Pagers</div>
+    <div class="hero-sub">Select a course below to view details, lessons &amp; pricing</div>
+    <div class="hero-badge">Available Summer 2026</div>
   </div>
+
+  <!-- ANCHOR QUOTE -->
+  <div class="anchor">
+    <p>"Authentic Mexican input, instructionally designed by a Spanish PhD with 15 years in the university classroom — zero textbook cost to students."</p>
+  </div>
+
+  <!-- COURSES -->
+  <div class="courses-section">
+    <div class="section-label">Available Courses</div>
+    <div class="courses-grid">
+
+      <!-- SP101 -->
+      <div class="course-card">
+        <div class="card-top coral">
+          <div class="card-badge coral">SP101 · Novice Low–Mid</div>
+          <div class="card-title">Elementary Spanish I</div>
+          <div class="card-meta">5 Lessons · ACTFL Novice</div>
+          <div class="card-desc">Introductions, places, family, plans &amp; travel — built on authentic Mexican input with zero textbook cost.</div>
+        </div>
+        <div class="card-footer">
+          <span class="card-lessons">5 lessons · from $970</span>
+          <a href="sle-sp101.html" class="card-cta coral">View One-Pager →</a>
+        </div>
+      </div>
+
+      <!-- SP102 -->
+      <div class="course-card">
+        <div class="card-top teal">
+          <div class="card-badge teal">SP102 · Novice Mid–High</div>
+          <div class="card-title">Elementary Spanish II</div>
+          <div class="card-meta">5 Lessons · ACTFL Novice</div>
+          <div class="card-desc">Routines, food, health, the past &amp; community — expanding communication skills with authentic cultural context.</div>
+        </div>
+        <div class="card-footer">
+          <span class="card-lessons">5 lessons · see pricing</span>
+          <a href="sle-sp102.html" class="card-cta teal">View One-Pager →</a>
+        </div>
+      </div>
+
+      <!-- SP201 -->
+      <div class="course-card">
+        <div class="card-top deep">
+          <div class="card-badge deep">SP201 · Intermediate Low</div>
+          <div class="card-title">Intermediate Spanish I</div>
+          <div class="card-meta">5 Lessons · ACTFL Intermediate</div>
+          <div class="card-desc">Past narratives, opinions, hypotheticals &amp; cultural comparison — bridging novice fluency to confident expression.</div>
+        </div>
+        <div class="card-footer">
+          <span class="card-lessons">5 lessons · see pricing</span>
+          <a href="sle-sp201.html" class="card-cta deep">View One-Pager →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ZTC CALLOUT -->
+  <div class="ztc-strip">
+    <span class="ztc-badge">ZTC · NoLo · OER-Compatible</span>
+    <p class="ztc-text">All courses replace or supplement commercial textbooks — supporting your institution's affordability initiatives from day one. Canvas-ready, SCORM-compatible, FERPA-compliant.</p>
+  </div>
+
+  <!-- FEATURES STRIP -->
+  <div class="features-strip">
+    <div class="feature">
+      <div class="feature-icon">🎧</div>
+      <div class="feature-label">Authentic Mexican Audio</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📋</div>
+      <div class="feature-label">Rise 360 SCORM Modules</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-label">Auto-grading to Canvas</div>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🇺🇸</div>
+      <div class="feature-label">U.S.-Based Hosting</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-creds">
+      <strong>Angélica García Genel, PhD</strong> · Spanish Instructor · Instructional Designer<br>
+      Spanish Learning Edge, Founder · 15+ years university teaching
+    </div>
+    <div class="footer-contact">
+      <a href="https://www.spanish-learning-edge.com/">spanish-learning-edge.com</a><br>
+      Questions or comments? <a href="mailto:success@spanish-learning-edge.com">success@spanish-learning-edge.com</a>
+    </div>
+  </footer>
+
+</div>
 </body>
 </html>

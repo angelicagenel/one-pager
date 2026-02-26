@@ -69,11 +69,11 @@
     }
     .anchor p {
       font-family:'Playfair Display',serif;
-      font-size:13.5px; color:var(--ink); font-style:italic; line-height:1.5;
+      font-size:13.5px; color:var(--ink); line-height:1.5;
     }
 
     /* ── BODY GRID ─────────────────────────────── */
-    .body { display:grid; grid-template-columns:1fr 1.4fr; }
+    .body { display:grid; grid-template-columns:1fr 1fr; }
 
     .col-left {
       padding:32px 28px 32px 48px;
@@ -113,6 +113,13 @@
     }
     .lessons-hint {
       font-size:10.5px; color:var(--muted); margin-bottom:12px; font-style:italic;
+    }
+    .lessons-section {
+      padding:28px 48px 32px;
+      border-top:1px solid var(--divider);
+    }
+    .lessons-grid {
+      display:grid; grid-template-columns:repeat(2,1fr); gap:8px;
     }
 
     .lesson {
@@ -232,7 +239,8 @@
     @media (max-width:640px) {
       .body { grid-template-columns:1fr; }
       .pricing-section { grid-template-columns:1fr; }
-      header,.course-band,.anchor,.col-left,.col-right,.pricing-section,footer { padding-left:24px; padding-right:24px; }
+      header,.course-band,.anchor,.col-left,.col-right,.pricing-section,.lessons-section,footer { padding-left:24px; padding-right:24px; }
+      .lessons-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -283,6 +291,11 @@
         </ul>
       </div>
 
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col-right">
+
       <div class="section">
         <div class="section-label">Every Course Includes</div>
         <ul>
@@ -307,12 +320,13 @@
       </div>
 
     </div>
+  </div><!-- /body -->
 
-    <!-- RIGHT -->
-    <div class="col-right">
-
-      <div class="lessons-header">Course Sequence</div>
-      <p class="lessons-hint">Click any lesson to see vocabulary, grammar, and can-do goals.</p>
+  <!-- COURSE SEQUENCE -->
+  <div class="lessons-section">
+    <div class="lessons-header">Course Sequence</div>
+    <p class="lessons-hint">Click any lesson to see vocabulary, grammar, and can-do goals.</p>
+    <div class="lessons-grid">
 
       <!-- LESSON 1 -->
       <div class="lesson">
@@ -497,7 +511,7 @@
       </div>
 
     </div>
-  </div><!-- /body -->
+  </div><!-- /lessons-section -->
 
   <!-- PRICING -->
   <div class="pricing-section">

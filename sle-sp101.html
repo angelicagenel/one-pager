@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spanish Learning Edge — Elementary Spanish I</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral:  #ef7c8e;
+      --blush:  #ffe8e3;
+      --salmon: #e89a8a;
+      --teal:   #7ba1a5;
+      --teal-lt:#e0ecee;
+      --ink:    #373f45;
+      --muted:  #7d7f7c;
+      --white:  #ffffff;
+      --divider: rgba(55,63,69,0.08);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'DM Sans',sans-serif; background:var(--white); color:var(--ink); }
+    .page { max-width:860px; margin:0 auto; }
+
+    /* ── HEADER ────────────────────────────────── */
+    header {
+      background:var(--ink);
+      padding:28px 48px 24px;
+      display:flex; align-items:center; gap:22px;
+    }
+    /*
+      LOGO — INSTRUCCIONES GITHUB:
+      Sube tu imagen (logo.png) al repo y reemplaza <span>tu<br>logo</span> con:
+      <img src="logo.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+    */
+    .logo-slot {
+      width:64px; height:64px; border-radius:50%;
+      border:2px dashed var(--coral);
+      background:rgba(255,255,255,0.05);
+      display:flex; align-items:center; justify-content:center;
+      flex-shrink:0; overflow:hidden;
+    }
+    .logo-slot span { font-size:9px; color:var(--coral); text-align:center; line-height:1.4; }
+    .brand { font-family:'Playfair Display',serif; font-size:21px; font-weight:700; color:var(--white); line-height:1.2; }
+    .brand em { font-style:normal; color:var(--coral); }
+    .tagline { font-size:10.5px; color:var(--blush); letter-spacing:0.09em; text-transform:uppercase; margin-top:5px; font-weight:300; }
+
+    /* ── COURSE TITLE BAND ─────────────────────── */
+    .course-band {
+      background:var(--coral);
+      padding:14px 48px;
+      display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+    }
+    .course-name {
+      font-family:'Playfair Display',serif;
+      font-size:18px; font-weight:700; color:var(--white);
+    }
+    .course-meta {
+      font-size:11px; color:rgba(255,255,255,0.82);
+      letter-spacing:0.07em; text-transform:uppercase;
+    }
+    .course-badge {
+      margin-left:auto;
+      background:rgba(255,255,255,0.2);
+      border:1px solid rgba(255,255,255,0.4);
+      color:var(--white);
+      font-size:9px; letter-spacing:0.1em; text-transform:uppercase;
+      padding:3px 10px; border-radius:20px; font-weight:500;
+    }
+
+    /* ── ANCHOR ────────────────────────────────── */
+    .anchor {
+      background:var(--blush);
+      padding:14px 48px;
+      border-bottom:1px solid rgba(239,124,142,0.2);
+    }
+    .anchor p {
+      font-family:'Playfair Display',serif;
+      font-size:13.5px; color:var(--ink); font-style:italic; line-height:1.5;
+    }
+
+    /* ── BODY GRID ─────────────────────────────── */
+    .body { display:grid; grid-template-columns:1fr 1.4fr; }
+
+    .col-left {
+      padding:32px 28px 32px 48px;
+      border-right:1px solid var(--divider);
+    }
+    .col-right { padding:32px 48px 32px 28px; }
+
+    .section-label {
+      font-size:9px; letter-spacing:0.15em; text-transform:uppercase;
+      color:var(--teal); font-weight:500; margin-bottom:9px;
+    }
+    .section { margin-bottom:24px; }
+
+    p, li { font-size:12.5px; line-height:1.65; color:var(--ink); }
+    ul { list-style:none; padding:0; }
+    ul li { padding-left:14px; position:relative; margin-bottom:5px; }
+    ul li::before { content:"—"; position:absolute; left:0; color:var(--coral); font-size:11px; }
+
+    /* ── ZTC CALLOUT ───────────────────────────── */
+    .ztc-box {
+      background:var(--teal-lt);
+      border-left:3px solid var(--teal);
+      border-radius:3px;
+      padding:10px 14px;
+      margin-bottom:20px;
+    }
+    .ztc-box .ztc-label {
+      font-size:9px; letter-spacing:0.12em; text-transform:uppercase;
+      color:var(--teal); font-weight:600; margin-bottom:4px;
+    }
+    .ztc-box p { font-size:11.5px; color:var(--ink); line-height:1.5; }
+
+    /* ── LESSONS ACCORDION ─────────────────────── */
+    .lessons-header {
+      font-size:9px; letter-spacing:0.15em; text-transform:uppercase;
+      color:var(--teal); font-weight:500; margin-bottom:10px;
+    }
+    .lessons-hint {
+      font-size:10.5px; color:var(--muted); margin-bottom:12px; font-style:italic;
+    }
+
+    .lesson {
+      border:1px solid var(--divider);
+      border-radius:5px;
+      margin-bottom:7px;
+      overflow:hidden;
+      transition:box-shadow 0.2s;
+    }
+    .lesson:hover { box-shadow:0 2px 10px rgba(0,0,0,0.07); }
+
+    .lesson-trigger {
+      width:100%; text-align:left;
+      background:var(--white);
+      border:none; cursor:pointer;
+      padding:11px 14px;
+      display:flex; align-items:center; gap:10px;
+      transition:background 0.15s;
+    }
+    .lesson-trigger:hover { background:var(--blush); }
+    .lesson-trigger.open { background:var(--blush); }
+
+    .lesson-emoji { font-size:15px; flex-shrink:0; }
+
+    .lesson-title-wrap { flex:1; text-align:left; }
+    .lesson-num {
+      font-size:9px; letter-spacing:0.1em; text-transform:uppercase;
+      color:var(--muted); font-weight:500;
+    }
+    .lesson-title {
+      font-family:'Playfair Display',serif;
+      font-size:13px; font-weight:600; color:var(--ink);
+      line-height:1.2; margin-top:1px;
+    }
+
+    .lesson-arrow {
+      font-size:12px; color:var(--coral);
+      transition:transform 0.25s; flex-shrink:0;
+    }
+    .lesson-trigger.open .lesson-arrow { transform:rotate(180deg); }
+
+    /* PANEL */
+    .lesson-panel {
+      display:none;
+      padding:14px 16px 16px;
+      border-top:1px solid var(--divider);
+      background:var(--white);
+      animation:fadeIn 0.2s ease;
+    }
+    .lesson-panel.open { display:block; }
+
+    @keyframes fadeIn { from{opacity:0;transform:translateY(-4px)} to{opacity:1;transform:translateY(0)} }
+
+    .panel-section { margin-bottom:13px; }
+    .panel-label {
+      font-size:8.5px; letter-spacing:0.14em; text-transform:uppercase;
+      color:var(--teal); font-weight:600; margin-bottom:6px;
+    }
+
+    .can-do {
+      font-size:11.5px; color:var(--ink); line-height:1.6;
+      font-style:italic; margin-bottom:8px;
+      padding-left:10px; border-left:2px solid var(--coral);
+    }
+
+    .tag-list { display:flex; flex-wrap:wrap; gap:5px; }
+    .tag {
+      font-size:10.5px; color:var(--ink);
+      background:var(--blush);
+      padding:3px 9px; border-radius:20px;
+      line-height:1.3;
+    }
+    .tag.grammar {
+      background:var(--teal-lt);
+      color:var(--teal);
+    }
+
+    /* ── PRICING ───────────────────────────────── */
+    .pricing-section {
+      background:var(--blush);
+      padding:22px 48px;
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .price-card {
+      background:var(--white); border-radius:6px;
+      padding:16px 16px; border-top:4px solid var(--coral);
+    }
+    .price-card.featured { border-top-color:var(--teal); box-shadow:0 4px 16px rgba(0,0,0,0.08); }
+    .price-tier { font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:5px; }
+    .price-amount { font-family:'Playfair Display',serif; font-size:28px; font-weight:700; color:var(--ink); line-height:1; margin-bottom:6px; }
+    .price-amount sup { font-size:13px; vertical-align:super; }
+    .price-detail { font-size:11px; color:var(--muted); line-height:1.5; }
+    .price-includes { font-size:11px; color:var(--teal); font-weight:500; margin-top:7px; }
+
+    /* ── FOOTER ────────────────────────────────── */
+    footer {
+      background:var(--ink); padding:14px 48px;
+      display:flex; justify-content:space-between; align-items:center;
+      flex-wrap:wrap; gap:8px;
+    }
+    .footer-creds { font-size:11px; color:rgba(255,255,255,0.55); line-height:1.6; }
+    .footer-creds strong { color:var(--blush); font-weight:500; }
+    .footer-contact { font-size:11px; color:var(--coral); text-align:right; line-height:1.8; }
+
+    @media print { body{background:white} .page{max-width:100%} }
+    @media (max-width:640px) {
+      .body { grid-template-columns:1fr; }
+      .pricing-section { grid-template-columns:1fr; }
+      header,.course-band,.anchor,.col-left,.col-right,.pricing-section,footer { padding-left:24px; padding-right:24px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-slot"><span>tu<br>logo</span></div>
+    <div>
+      <div class="brand">Spanish <em>Learning Edge</em></div>
+      <div class="tagline">Authentic Input · Instructionally Designed · ACTFL-Aligned</div>
+    </div>
+  </header>
+
+  <!-- COURSE BAND -->
+  <div class="course-band">
+    <div class="course-name">Elementary Spanish I</div>
+    <div class="course-meta">SP101 · 5 Lessons · Novice Low–Mid</div>
+    <div class="course-badge">Available Summer 2026</div>
+  </div>
+
+  <!-- ANCHOR -->
+  <div class="anchor">
+    <p>"Authentic Mexican input, instructionally designed by a Spanish PhD with 15 years in the university classroom."</p>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- LEFT -->
+    <div class="col-left">
+
+      <div class="ztc-box">
+        <div class="ztc-label">ZTC · NoLo · OER-Compatible</div>
+        <p>Zero textbook cost to students. Replaces or supplements commercial textbooks with ACTFL-aligned, Canvas-ready content — supporting your institution's affordability initiatives from day one.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Who It's For</div>
+        <ul>
+          <li>Community colleges with NoLo / ZTC goals</li>
+          <li>Programs relying on adjuncts across sections</li>
+          <li>Departments that need consistent outcomes across instructors</li>
+          <li>Online &amp; hybrid SPAN 101 sections using Canvas</li>
+          <li>Small World Languages teams with limited dev bandwidth</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Every Course Includes</div>
+        <ul>
+          <li>Rise 360 interactive modules (SCORM) per lesson</li>
+          <li>Interactive HTML worksheets with auto-feedback</li>
+          <li>Authentic audio in Mexican Spanish</li>
+          <li>Digital flashcard sets &amp; grammar references</li>
+          <li>Grades pass back automatically to Canvas gradebook</li>
+          <li>Curriculum map with grammar scope &amp; sequence</li>
+          <li>No uploads · no IT tickets · no setup required</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-label">Delivery</div>
+        <ul>
+          <li>Hosted by Spanish Learning Edge</li>
+          <li>Students access via link inside Canvas</li>
+          <li>SCORM export &amp; LTI integration available</li>
+          <li>FERPA-compliant · U.S.-based hosting</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col-right">
+
+      <div class="lessons-header">Course Sequence</div>
+      <p class="lessons-hint">Click any lesson to see vocabulary, grammar, and can-do goals.</p>
+
+      <!-- LESSON 1 -->
+      <div class="lesson">
+        <button class="lesson-trigger" onclick="toggle(this)">
+          <span class="lesson-emoji">🇲🇽</span>
+          <div class="lesson-title-wrap">
+            <div class="lesson-num">Lesson 1</div>
+            <div class="lesson-title">Introductions &amp; Identity</div>
+          </div>
+          <span class="lesson-arrow">▼</span>
+        </button>
+        <div class="lesson-panel">
+          <div class="panel-section">
+            <div class="panel-label">Can-Do Goal</div>
+            <p class="can-do">I can introduce myself, say where I'm from, tell time, and share basic personal information.</p>
+          </div>
+          <div class="panel-section">
+            <div class="panel-label">Vocabulary</div>
+            <div class="tag-list">
+              <span class="tag">Greetings &amp; farewells</span>
+              <span class="tag">Names &amp; nationalities</span>
+              <span class="tag">Numbers 0–30</span>
+              <span class="tag">Identity words</span>
+              <span class="tag">Telling time</span>
+            </div>
+          </div>
+          <div class="panel-section">
+            <div class="panel-label">Grammar Structures</div>
+            <div class="tag-list">
+              <span class="tag grammar">Nouns &amp; articles</span>
+              <span class="tag grammar">Present tense of ser</span>
+              <span class="tag grammar">Expressing time</span>
+              <span class="tag grammar">Forming basic questions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LESSON 2 -->
+      <div class="lesson">
+        <button class="lesson-trigger" onclick="toggle(this)">
+          <span class="lesson-emoji">🏙️</span>
+          <div class="lesson-title-wrap">
+            <div class="lesson-num">Lesson 2</div>
+            <div class="lesson-title">Places &amp; People</div>
+          </div>
+          <span class="lesson-arrow">▼</span>
+        </button>
+        <div class="lesson-panel">
+          <div class="panel-section">
+            <div class="panel-label">Can-Do Goal</div>
+            <p class="can-do">I can describe places in my city and neighborhood and ask where things are or what people do there.</p>
+          </div>
+          <div class="panel-section">
+            <div class="panel-label">Vocabulary</div>
+            <div class="tag-list">
+              <span class="tag">City &amp; neighborhood</span>
+              <span class="tag">Buildings &amp; places</span>
+              <span class="tag">Numbers 31–100</span>
+              <span class="tag">Streets &amp; transit</span>
+            </div>
+          </div>
+          <div class="panel-section">
+            <div class="panel-label">Grammar Structures</div>
+            <div class="tag-list">
+              <span class="tag grammar">Regular –ar verbs</span>
+              <span class="tag grammar">Present tense of estar</span>
+              <span class="tag grammar">Question formation</span>
+              <span class="tag grammar">Interrogative words</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LESSON 3 -->
+      <div class="lesson">
+        <button class="lesson-trigger" onclick="toggle(this)">
+          <span class="lesson-emoji">👨‍👩‍👧</span>
+          <div class="lesson-title-wrap">
+            <div class="lesson-num">Lesson 3</div>
+            <div class="lesson-title">Family &amp; Roles</div>
+          </div>
+          <span class="lesson-arrow">▼</span>
+        </button>
+        <div class="lesson-panel">
+          <div class="panel-section">
+            <div class="panel-label">Can-Do Goal</div>
+            <p class="can-do">I can talk about my family, describe where I live, and explain what roles people have at home and at work.</p>
+          </div>
+          <div class="panel-section">
+            <div class="panel-label">Vocabulary</div>
+            <div class="tag-list">
+              <span class="tag">Family members</span>
+              <span class="tag">Rooms of the house</span>
+              <span class="tag">Household roles</span>
+              <span class="tag">Work &amp; occupations</span>
+            </div>
+          </div>
+          <div class="panel-section">
+            <div class="panel-label">Grammar Structures</div>
+            <div class="tag-list">
+              <span class="tag grammar">Descriptive adjectives</span>
+              <span class="tag grammar">Possessive adjectives</span>
+              <span class="tag grammar">Regular –er / –ir verbs</span>
+              <span class="tag grammar">Tener &amp; venir</span>
+              <span class="tag grammar">Tener que + infinitive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LESSON 4 -->
+      <div class="lesson">
+        <button class="lesson-trigger" onclick="toggle(this)">
+          <span class="lesson-emoji">📅</span>
+          <div class="lesson-title-wrap">
+            <div class="lesson-num">Lesson 4</div>
+            <div class="lesson-title">Plans &amp; Habits</div>
+          </div>
+          <span class="lesson-arrow">▼</span>
+        </button>
+        <div class="lesson-panel">
+          <div class="panel-section">
+            <div class="panel-label">Can-Do Goal</div>
+            <p class="can-do">I can say what I do on weekends, talk about obligations, and express future plans and habitual actions.</p>
+          </div>
+          <div class="panel-section">
+            <div class="panel-label">Vocabulary</div>
+            <div class="tag-list">
+              <span class="tag">Leisure &amp; weekend activities</span>
+              <span class="tag">Obligations &amp; schedules</span>
+              <span class="tag">Places &amp; transport</span>
+            </div>
+          </div>
+          <div class="panel-section">
+            <div class="panel-label">Grammar Structures</div>
+            <div class="tag-list">
+              <span class="tag grammar">Present tense of ir</span>
+              <span class="tag grammar">Ir + a + infinitive</span>
+              <span class="tag grammar">Stem-changing verbs (e→ie, o→ue, e→i)</span>
+              <span class="tag grammar">Irregular yo forms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LESSON 5 -->
+      <div class="lesson">
+        <button class="lesson-trigger" onclick="toggle(this)">
+          <span class="lesson-emoji">✈️</span>
+          <div class="lesson-title-wrap">
+            <div class="lesson-num">Lesson 5</div>
+            <div class="lesson-title">Travel &amp; Emotions</div>
+          </div>
+          <span class="lesson-arrow">▼</span>
+        </button>
+        <div class="lesson-panel">
+          <div class="panel-section">
+            <div class="panel-label">Can-Do Goal</div>
+            <p class="can-do">I can talk about a trip, describe how I feel, compare places and experiences, and use saber and conocer correctly.</p>
+          </div>
+          <div class="panel-section">
+            <div class="panel-label">Vocabulary</div>
+            <div class="tag-list">
+              <span class="tag">Travel &amp; vacation</span>
+              <span class="tag">Feelings &amp; emotions</span>
+              <span class="tag">Destinations</span>
+              <span class="tag">Cultural comparisons</span>
+            </div>
+          </div>
+          <div class="panel-section">
+            <div class="panel-label">Grammar Structures</div>
+            <div class="tag-list">
+              <span class="tag grammar">Estar + emotions &amp; conditions</span>
+              <span class="tag grammar">Present progressive</span>
+              <span class="tag grammar">Ser vs. estar (full contrast)</span>
+              <span class="tag grammar">Saber vs. conocer</span>
+              <span class="tag grammar">Direct object pronouns</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /body -->
+
+  <!-- PRICING -->
+  <div class="pricing-section">
+    <div class="price-card">
+      <div class="price-tier">Elementary Spanish I Only</div>
+      <div class="price-amount"><sup>$</sup>970</div>
+      <div class="price-detail">One course · one section · up to 25 students<br>All assets included · Summer 2026</div>
+      <div class="price-includes">5 lessons · Rise modules · HTML worksheets · audio · flashcards</div>
+    </div>
+    <div class="price-card featured">
+      <div class="price-tier">Elementary I + II — Full Year</div>
+      <div class="price-amount"><sup>$</sup>1,600</div>
+      <div class="price-detail">Both courses · one section · up to 25 students each<br>Locked rate · priority updates</div>
+      <div class="price-includes">Best value · 10 lessons · complete asset package for both levels</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-creds">
+      <strong>Angélica García Genel, PhD</strong> · Spanish Instructor · Instructional Designer<br>
+      Spanish Learning Edge, Founder · 15+ years university teaching
+    </div>
+    <div class="footer-contact">
+      spanish-learning-edge.com<br>
+      success@spanish-learning-edge.com
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  function toggle(btn) {
+    const panel = btn.nextElementSibling;
+    const isOpen = panel.classList.contains('open');
+
+    // Close all open panels
+    document.querySelectorAll('.lesson-panel.open').forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.lesson-trigger.open').forEach(b => b.classList.remove('open'));
+
+    // Open clicked one (if it wasn't already open)
+    if (!isOpen) {
+      panel.classList.add('open');
+      btn.classList.add('open');
+    }
+  }
+</script>
+</body>
+</html>

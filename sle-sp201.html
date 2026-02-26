@@ -236,7 +236,17 @@
     .footer-creds strong { color:var(--blush); font-weight:500; }
     .footer-contact { font-size:11px; color:var(--coral); text-align:right; line-height:1.8; }
 
-    @media print { body{background:white} .page{max-width:100%} }
+    .back-btn {
+      margin-left:auto; display:inline-block;
+      font-size:11px; font-weight:500; letter-spacing:0.05em;
+      color:var(--white); background:rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.35);
+      padding:6px 14px; border-radius:20px;
+      text-decoration:none; white-space:nowrap; flex-shrink:0;
+      transition:background 0.15s;
+    }
+    .back-btn:hover { background:rgba(255,255,255,0.2); }
+    @media print { body{background:white} .page{max-width:100%} .back-btn{display:none} }
     @media (max-width:640px) {
       .body,.pricing-section { grid-template-columns:1fr; }
       header,.course-band,.anchor,.prereq-band,.col-left,.col-right,.pricing-section,footer { padding-left:24px; padding-right:24px; }
@@ -253,6 +263,7 @@
       <div class="brand">Spanish <em>Learning Edge</em></div>
       <div class="tagline">Authentic Input · Instructionally Designed · ACTFL-Aligned</div>
     </div>
+    <a href="index.html" class="back-btn">← All Courses</a>
   </header>
 
   <!-- COURSE BAND -->

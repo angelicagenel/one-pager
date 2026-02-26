@@ -30,19 +30,12 @@
       padding:28px 48px 24px;
       display:flex; align-items:center; gap:22px;
     }
-    /*
-      LOGO — INSTRUCCIONES GITHUB:
-      Sube tu imagen (logo.png) al repo y reemplaza <span>tu<br>logo</span> con:
-      <img src="logo.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
-    */
     .logo-slot {
-      width:64px; height:64px; border-radius:50%;
-      border:2px dashed var(--coral);
-      background:rgba(255,255,255,0.05);
+      width:76px; height:76px;
+      background:transparent;
       display:flex; align-items:center; justify-content:center;
       flex-shrink:0; overflow:hidden;
     }
-    .logo-slot span { font-size:9px; color:var(--coral); text-align:center; line-height:1.4; }
     .brand { font-family:'Playfair Display',serif; font-size:21px; font-weight:700; color:var(--white); line-height:1.2; }
     .brand em { font-style:normal; color:var(--coral); }
     .tagline { font-size:10.5px; color:var(--blush); letter-spacing:0.09em; text-transform:uppercase; margin-top:5px; font-weight:300; }
@@ -213,7 +206,7 @@
     .pricing-section {
       background:var(--amber-lt);
       padding:22px 48px;
-      display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;
+      display:grid; grid-template-columns:1fr 1fr; gap:16px;
     }
     .price-card { background:var(--white); border-radius:6px; padding:16px 14px; border-top:4px solid var(--amber); }
     .price-card.mid { border-top-color:var(--teal); }
@@ -236,7 +229,17 @@
     .footer-creds strong { color:var(--blush); font-weight:500; }
     .footer-contact { font-size:11px; color:var(--coral); text-align:right; line-height:1.8; }
 
-    @media print { body{background:white} .page{max-width:100%} }
+    .back-btn {
+      display:inline-block;
+      font-size:11px; font-weight:500; letter-spacing:0.05em;
+      color:var(--white); background:rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.35);
+      padding:6px 14px; border-radius:20px;
+      text-decoration:none; white-space:nowrap; flex-shrink:0;
+      transition:background 0.15s;
+    }
+    .back-btn:hover { background:rgba(255,255,255,0.2); }
+    @media print { body{background:white} .page{max-width:100%} .back-btn{display:none} }
     @media (max-width:640px) {
       .body,.pricing-section { grid-template-columns:1fr; }
       header,.course-band,.anchor,.prereq-band,.col-left,.col-right,.pricing-section,footer { padding-left:24px; padding-right:24px; }
@@ -248,11 +251,12 @@
 
   <!-- HEADER -->
   <header>
-    <div class="logo-slot"><span>tu<br>logo</span></div>
-    <div>
+    <div style="flex:1">
       <div class="brand">Spanish <em>Learning Edge</em></div>
       <div class="tagline">Authentic Input · Instructionally Designed · ACTFL-Aligned</div>
     </div>
+    <a href="index.html" class="back-btn">← Course Catalog</a>
+    <div class="logo-slot"><img src="logo.png" style="width:100%;height:100%;object-fit:contain;"></div>
   </header>
 
   <!-- COURSE BAND -->
@@ -328,11 +332,12 @@
       <div class="section">
         <div class="section-label">Every Course Includes</div>
         <ul>
-          <li>Rise 360 interactive modules (SCORM) per lesson</li>
+          <li>No uploads · no IT tickets · no setup required</li>
+          <li>Articulate Rise 360 interactive lessons</li>
           <li>Interactive HTML worksheets with auto-feedback</li>
-          <li>Authentic audio content in Mexican Spanish</li>
+          <li>Authentic Mexican Spanish audio with professional narration</li>
           <li>Digital flashcard sets &amp; grammar references</li>
-          <li>Grades pass back automatically to Canvas gradebook</li>
+          <li>Built-in auto-grading — no manual grading required</li>
           <li>Curriculum map with grammar scope &amp; sequence</li>
         </ul>
       </div>
@@ -518,25 +523,19 @@
     </div>
   </div><!-- /body -->
 
-  <!-- PRICING — 3 cards for full sequence upsell -->
+  <!-- PRICING -->
   <div class="pricing-section">
     <div class="price-card">
-      <div class="price-tier">Intermediate Spanish I Only</div>
-      <div class="price-amount"><sup>$</sup>970</div>
-      <div class="price-detail">One course · one section · up to 25 students<br>All assets included · 2026–2027</div>
-      <div class="price-includes">5 lessons · Rise modules · HTML worksheets · audio · flashcards</div>
-    </div>
-    <div class="price-card mid">
-      <div class="price-tier">Elementary II + Intermediate I</div>
-      <div class="price-amount"><sup>$</sup>1,600</div>
-      <div class="price-detail">Both courses · one section · up to 25 students each<br>Locked rate · priority updates</div>
-      <div class="price-includes">10 lessons · full second-year asset package</div>
+      <div class="price-tier">One Semester</div>
+      <div class="price-amount"><sup>$</sup>1,200</div>
+      <div class="price-detail">One section · up to 25 students<br>All assets included · 2026–2027</div>
+      <div class="price-includes">5 lessons · Rise 360 · HTML worksheets · audio · flashcards</div>
     </div>
     <div class="price-card featured">
-      <div class="price-tier">Complete 3-Course Sequence</div>
-      <div class="price-amount"><sup>$</sup>2,400</div>
-      <div class="price-detail">SP101 + SP102 + SP201<br>Full year + intro to advanced · locked rate</div>
-      <div class="price-includes">Best value · 15 lessons · complete sequence</div>
+      <div class="price-tier">One Year · 2 Semesters</div>
+      <div class="price-amount"><sup>$</sup>2,040</div>
+      <div class="price-detail">Two semesters of the same course · one section · up to 25 students<br>Locked rate · priority updates · saves $360</div>
+      <div class="price-includes">Best value · full year of use · complete asset package</div>
     </div>
   </div>
 

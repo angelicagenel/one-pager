@@ -163,15 +163,15 @@
       border-top:1px solid var(--divider);
     }
     .lessons-grid {
-      border:1px solid var(--divider);
-      border-radius:5px;
-      overflow:hidden;
+      display:grid; grid-template-columns:repeat(2,1fr); gap:8px;
     }
 
     .lesson {
-      border-bottom:1px solid var(--divider);
+      border:1px solid var(--divider);
+      border-radius:5px; margin-bottom:7px; overflow:hidden;
+      transition:box-shadow 0.2s;
     }
-    .lesson:last-child { border-bottom:none; }
+    .lesson:hover { box-shadow:0 2px 10px rgba(0,0,0,0.07); }
 
     .lesson-trigger {
       width:100%; text-align:left;

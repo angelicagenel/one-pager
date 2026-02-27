@@ -17,6 +17,7 @@
       --muted:  #7d7f7c;
       --white:  #ffffff;
       --divider: rgba(55,63,69,0.08);
+      --amber:  #d4956a;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'DM Sans',sans-serif; background:var(--white); color:var(--ink); }
@@ -183,6 +184,23 @@
       padding-left:10px; border-left:2px solid var(--coral);
     }
 
+    .skills-box {
+      background: #fff8f0;
+      border-left: 4px solid var(--amber);
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+    .skills-box .skills-label {
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 8px;
+    }
+    .skills-box ul li::before { color: var(--amber); }
+    .skills-box ul li { font-size: 11.5px; margin-bottom: 4px; }
+
     .tag-list { display:flex; flex-wrap:wrap; gap:5px; }
     .tag {
       font-size:10.5px; color:var(--ink);
@@ -293,6 +311,18 @@
 
     <!-- RIGHT -->
     <div class="col-right">
+
+      <div class="skills-box">
+        <div class="skills-label">What Students Can Do at Exit</div>
+        <ul>
+          <li>Greet, introduce themselves, and share basic personal information</li>
+          <li>Tell time and describe their daily schedule</li>
+          <li>Talk about family, hobbies, and free-time activities</li>
+          <li>Say what is happening right now using the present progressive</li>
+          <li>Express simple plans and intentions using ir a + infinitive</li>
+          <li>Connect ideas using basic connectors and question words</li>
+        </ul>
+      </div>
 
       <div class="section">
         <div class="section-label">Every Course Includes</div>

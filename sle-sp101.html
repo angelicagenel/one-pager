@@ -119,17 +119,15 @@
       border-top:1px solid var(--divider);
     }
     .lessons-grid {
-      display:grid; grid-template-columns:1fr; gap:8px;
+      border:1px solid var(--divider);
+      border-radius:5px;
+      overflow:hidden;
     }
 
     .lesson {
-      border:1px solid var(--divider);
-      border-radius:5px;
-      margin-bottom:7px;
-      overflow:hidden;
-      transition:box-shadow 0.2s;
+      border-bottom:1px solid var(--divider);
     }
-    .lesson:hover { box-shadow:0 2px 10px rgba(0,0,0,0.07); }
+    .lesson:last-child { border-bottom:none; }
 
     .lesson-trigger {
       width:100%; text-align:left;

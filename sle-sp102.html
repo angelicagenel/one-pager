@@ -18,6 +18,7 @@
       --muted:  #7d7f7c;
       --white:  #ffffff;
       --divider:rgba(55,63,69,0.08);
+      --amber:  #d4956a;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'DM Sans',sans-serif; background:var(--white); color:var(--ink); }
@@ -190,6 +191,23 @@
       font-size:11.5px; color:var(--ink); line-height:1.6; font-style:italic;
       margin-bottom:8px; padding-left:10px; border-left:2px solid var(--teal);
     }
+
+    .skills-box {
+      background: #fff8f0;
+      border-left: 4px solid var(--amber);
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+    .skills-box .skills-label {
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 8px;
+    }
+    .skills-box ul li::before { color: var(--amber); }
+    .skills-box ul li { font-size: 11.5px; margin-bottom: 4px; }
     .tag-list { display:flex; flex-wrap:wrap; gap:5px; }
     .tag { font-size:10.5px; color:var(--ink); background:var(--teal-lt); padding:3px 9px; border-radius:20px; line-height:1.3; }
     .tag.vocab { background:var(--blush); color:var(--ink); }
@@ -315,6 +333,18 @@
 
     <!-- RIGHT -->
     <div class="col-right">
+
+      <div class="skills-box">
+        <div class="skills-label">What Students Can Do at Exit</div>
+        <ul>
+          <li>Narrate past events and shopping experiences in logical sequence</li>
+          <li>Describe daily routines and personal habits in detail</li>
+          <li>Compare people, objects, and experiences using comparatives</li>
+          <li>Express obligations using tener que + infinitive</li>
+          <li>Describe habitual past situations using the imperfect</li>
+          <li>Explain symptoms, medical situations, and health habits</li>
+        </ul>
+      </div>
 
       <div class="section">
         <div class="section-label">Every Course Includes</div>

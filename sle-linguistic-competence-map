@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spanish Learning Edge — Linguistic Competence Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --charcoal:#2D2D2D;
+  --dark:#3A3A3A;
+  --coral:#D4726A;
+  --coral-light:#E8837C;
+  --blush:#FAE5DF;
+  --blush-light:#FDF3F0;
+  --sage:#7DA08E;
+  --sage-light:#E4EDE8;
+  --cream:#FBF9F6;
+  --warm-white:#FFFFFF;
+  --text:#3A3A3A;
+  --muted:#7A7A7A;
+  --border:#E8E4E0;
+  --sp101:#D4726A;
+  --sp102:#7DA08E;
+  --sp201:#C4973B;
+  --heading:'Playfair Display',Georgia,serif;
+  --body:'DM Sans',-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body);background:var(--cream);color:var(--text);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:var(--charcoal);padding:0 32px;display:flex;align-items:center;height:48px;gap:8px;box-shadow:0 2px 12px rgba(0,0,0,.12);}
+.nav-logo{width:32px;height:32px;border-radius:6px;background:linear-gradient(135deg,var(--coral),#B85A54);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--heading);font-weight:700;font-size:16px;margin-right:12px;flex-shrink:0;}
+.nav-brand{color:#fff;font-family:var(--heading);font-size:14px;font-weight:600;margin-right:auto;white-space:nowrap;}
+.nav-brand em{font-style:italic;color:var(--coral-light);}
+.nav-links{display:flex;gap:4px;}
+.nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:12px;font-weight:500;padding:6px 14px;border-radius:4px;transition:all .2s;letter-spacing:.02em;}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+
+/* HERO */
+.hero{background:var(--charcoal);color:#fff;padding:64px 32px 52px;text-align:center;}
+.hero-logo{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,var(--coral),#B85A54,#D4726A);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-family:var(--heading);font-weight:700;font-size:28px;color:#fff;box-shadow:0 4px 20px rgba(212,114,106,.3);}
+.hero h1{font-family:var(--heading);font-size:38px;font-weight:700;letter-spacing:-.01em;}
+.hero h1 em{font-style:italic;color:var(--coral-light);}
+.hero .tagline{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.5);margin-top:6px;}
+.hero .subtitle{font-size:16px;color:rgba(255,255,255,.7);margin-top:20px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.6;}
+.hero .courses{display:flex;justify-content:center;gap:12px;margin-top:28px;flex-wrap:wrap;}
+.hero .course-pill{font-size:11px;font-weight:600;padding:5px 16px;border-radius:20px;letter-spacing:.04em;text-transform:uppercase;}
+.pill-101{background:var(--sp101);color:#fff;}
+.pill-102{background:var(--sp102);color:#fff;}
+.pill-201{background:var(--sp201);color:#fff;}
+
+/* CONTAINER */
+.container{max-width:1400px;margin:0 auto;padding:0 28px;}
+
+/* SECTIONS */
+section{padding:48px 0;border-bottom:1px solid var(--border);}
+section:last-of-type{border-bottom:none;}
+h2{font-family:var(--heading);font-size:28px;color:var(--charcoal);margin-bottom:6px;}
+h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px;}
+.section-intro{font-size:15px;color:var(--muted);max-width:760px;line-height:1.65;margin-bottom:28px;}
+
+/* COMPONENT CARDS */
+.comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:32px;}
+.comp-card{padding:16px 18px;border-radius:8px;border-left:4px solid var(--charcoal);}
+.comp-card .num{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;}
+.comp-card h4{font-size:15px;font-weight:600;color:var(--charcoal);margin-bottom:6px;font-family:var(--heading);}
+.comp-card p{font-size:13px;color:#555;line-height:1.55;}
+.c-vocab{background:var(--blush-light);border-color:var(--coral);}
+.c-grammar{background:#F0F4E8;border-color:#6B8F5B;}
+.c-connectors{background:#FFF8EE;border-color:var(--sp201);}
+.c-pronunciation{background:#F3EEFA;border-color:#7B61A8;}
+.c-context{background:var(--sage-light);border-color:var(--sage);}
+.c-strategies{background:#FEF0F0;border-color:var(--coral);}
+
+/* LEVEL HEADER */
+.level-header{padding:24px 28px;border-radius:8px;margin-bottom:24px;color:#fff;}
+.level-header.sp101{background:linear-gradient(135deg,var(--sp101),#B85A54);}
+.level-header.sp102{background:linear-gradient(135deg,var(--sp102),#5B8570);}
+.level-header.sp201{background:linear-gradient(135deg,var(--sp201),#A07D2E);}
+.level-header h2{color:#fff;font-size:24px;margin-bottom:2px;}
+.level-header .target{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.7);margin-bottom:8px;}
+.level-header .desc{font-size:14px;color:rgba(255,255,255,.9);max-width:680px;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin-bottom:28px;border-radius:8px;box-shadow:0 1px 8px rgba(0,0,0,.06);background:var(--warm-white);}
+.align-table{width:100%;min-width:1080px;border-collapse:collapse;font-size:12.5px;line-height:1.55;}
+.align-table thead th{background:var(--charcoal);color:#fff;padding:10px 12px;text-align:left;font-weight:600;font-size:11px;letter-spacing:.03em;text-transform:uppercase;position:sticky;top:48px;z-index:10;}
+.align-table thead th:first-child{min-width:130px;border-radius:8px 0 0 0;}
+.align-table thead th:last-child{border-radius:0 8px 0 0;}
+.align-table tbody td{padding:10px 12px;border:1px solid #EDEBE8;vertical-align:top;}
+.align-table tbody td:first-child{font-weight:600;color:var(--charcoal);background:#F9F8F6;font-size:12px;min-width:125px;}
+.align-table tbody td:nth-child(2){background:var(--blush-light);}
+.align-table tbody td:nth-child(3){background:#F5F8F0;}
+.align-table tbody td:nth-child(4){background:#FFFBF2;}
+.align-table tbody td:nth-child(5){background:#F8F3FC;}
+.align-table tbody td:nth-child(6){background:var(--sage-light);}
+.align-table tbody td:nth-child(7){background:#FEF5F5;}
+.cultural{font-style:italic;color:#6B5D50;margin-top:6px;display:block;font-size:12px;}
+.se-note{background:#FFF8EE;border:1px solid #E8C97A;border-radius:6px;padding:10px 16px;font-size:12px;font-weight:500;color:#7A6320;margin-bottom:16px;}
+
+/* CAN-DO TABLE */
+.cando-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px;}
+.cando-table thead th{background:var(--charcoal);color:#fff;padding:8px 12px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
+.cando-table tbody td{padding:9px 12px;border-bottom:1px solid var(--border);}
+.cando-table tbody tr:nth-child(even) td{background:#FAFAF8;}
+.cando-table tbody td:first-child{width:36px;text-align:center;font-weight:600;color:var(--muted);}
+.cando-table tbody td:last-child{width:160px;font-size:11px;color:var(--muted);font-style:italic;}
+.exit-profile{font-style:italic;color:var(--muted);font-size:13px;padding:14px 0;border-top:2px solid var(--border);}
+
+/* PROGRESSION TABLE */
+.prog-table{width:100%;border-collapse:collapse;font-size:12.5px;}
+.prog-table thead th{background:var(--charcoal);color:#fff;padding:10px 12px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
+.prog-table tbody td{padding:10px 12px;border:1px solid #EDEBE8;vertical-align:top;}
+.prog-table tbody td:first-child{font-weight:600;width:125px;}
+
+/* FOOTER */
+.footer{background:var(--charcoal);color:rgba(255,255,255,.45);padding:28px;text-align:center;font-size:12px;}
+.footer strong{color:rgba(255,255,255,.7);}
+
+@media(max-width:900px){
+  .comp-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:28px;}
+  .nav-links{display:none;}
+}
+@media print{
+  .nav{display:none;}
+  .hero{padding:32px 20px 24px;}
+  section{padding:20px 0;page-break-inside:avoid;}
+  .align-table{min-width:auto;font-size:9px;}
+  .align-table thead th{position:static;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">S</div>
+  <div class="nav-brand">Spanish <em>Learning Edge</em></div>
+  <div class="nav-links">
+    <a href="#framework">Framework</a>
+    <a href="#sp101">SP101</a>
+    <a href="#sp102">SP102</a>
+    <a href="#sp201">SP201</a>
+    <a href="#progression">Progression</a>
+    <a href="#strategies">Strategies</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-logo">S</div>
+  <h1>Spanish <em>Learning Edge</em></h1>
+  <div class="tagline">Authentic Input · Instructionally Designed · ACTFL-Aligned</div>
+  <div class="subtitle">A complete linguistic competence map for three courses, six skill areas, and a clear path from first greetings to confident self-expression — all built on authentic Mexican cultural context with zero textbook cost.</div>
+  <div class="courses">
+    <span class="course-pill pill-101">SP101 · Novice Mid/High</span>
+    <span class="course-pill pill-102">SP102 · Intermediate Low</span>
+    <span class="course-pill pill-201">SP201 · Intermediate High</span>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ═══ FRAMEWORK ═══ -->
+<section id="framework">
+  <h2>What Students Learn — Six Skill Areas</h2>
+  <p class="section-intro">Every SLE lesson develops six interconnected skill areas that together build real communicative ability. The first five are the classic dimensions of language competence. The sixth — Communication Strategies — is what keeps learners talking when their language isn't enough yet.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card c-vocab"><div class="num">Skill 1</div><h4>Vocabulary</h4><p>The words and phrases learners need, organized by real-life situations — not random lists. Each level builds a new set of high-frequency terms anchored in Mexican cultural contexts.</p></div>
+    <div class="comp-card c-grammar"><div class="num">Skill 2</div><h4>Grammar & Verb Patterns</h4><p>How sentences work — from basic present tense to subjunctive and conditional. Includes verb combinations like <em>ir a + infinitive</em> and <em>tener que + infinitive</em> that express intention, obligation, and possibility.</p></div>
+    <div class="comp-card c-connectors"><div class="num">Skill 3</div><h4>Connectors & Text Organization</h4><p>The words that hold ideas together — from simple sequencing (<em>primero, después</em>) to argumentative structure (<em>sin embargo, por lo tanto</em>). Without connectors, sentences are islands.</p></div>
+    <div class="comp-card c-pronunciation"><div class="num">Skill 4</div><h4>Pronunciation & Writing</h4><p>How Spanish sounds and how it's written. Covers the vowel system, accent marks as grammar markers, spelling changes in verb forms, and intonation patterns that carry meaning.</p></div>
+    <div class="comp-card c-context"><div class="num">Skill 5</div><h4>Context, Culture & Appropriateness</h4><p>Knowing <em>what</em> to say is grammar. Knowing <em>how</em> to say it is this. Covers register (tú/usted), courtesy, cultural norms, and the Mexican indirectness that shapes real conversations.</p></div>
+    <div class="comp-card c-strategies"><div class="num">Skill 6</div><h4>Communication Strategies</h4><p>What to do when you don't have the right word — repair, circumlocution, hedging, self-correction, and text editing. The skill that keeps communication alive while the others catch up.</p></div>
+  </div>
+</section>
+
+<!-- ═══ SP101 ═══ -->
+<section id="sp101">
+  <div class="level-header sp101">
+    <h2>SP101 — Elementary Spanish I</h2>
+    <div class="target">ACTFL Target: Novice Mid/High</div>
+    <div class="desc">Building the self and the immediate present. Learners manage everyday interactions, describe their world, and express simple intentions — all in present tense, with formulaic language and high-frequency vocabulary.</div>
+  </div>
+
+  <h3>SP101 — Full Alignment Table</h3>
+  <p class="section-intro" style="margin-bottom:12px;">Read across each row to see how all six skill areas work together within the same unit.</p>
+  <div class="table-wrap">
+  <table class="align-table">
+    <thead><tr><th>Unit</th><th>Vocabulary</th><th>Grammar & Verb Patterns</th><th>Connectors</th><th>Pronunciation & Writing</th><th>Context & Culture</th><th>Communication Strategies</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>U1: Hello, I'm Me</strong><br><em>Identity & First Contact</em></td>
+      <td>Greetings & farewells. Basic social interaction. Personal space vocabulary. Basic professions (estudiante, profesor/a, doctor/a, mesero/a) for <em>¿A qué te dedicas?</em></td>
+      <td>SER (soy/es/eres — multiple forms, one verb system). Tú/usted as a social choice, not a grammar topic. <em>Hay</em> as a fixed expression (there is/are — one form, no conjugation). Question formation: ¿Qué? ¿De dónde? ¿Cómo?</td>
+      <td>Greeting/farewell formulas as conversation openers. Basic question words as conversation thread: qué, cuál, cómo, de dónde, quién.</td>
+      <td>Spanish vowel system (5 pure vowels vs. ~15 in English). The ñ. Inverted punctuation (¿ ¡). Cognate pronunciation: stress on correct syllable.</td>
+      <td>Formal vs. informal: tú/usted selection by social context (professor = usted, classmate = tú). Fixed courtesy: Mucho gusto, Con permiso, Gracias.<span class="cultural">Cultural anchor: Mexican greeting practices — beso, abrazo, handshake. The diminutive as warmth (cafecito, ahorita). A first meeting at the feria.</span></td>
+      <td>Repair phrases: ¿Cómo? ¿Puede repetir? Más despacio, por favor. ¿Qué significa ___? — memorized chunks that keep conversation going.</td>
+    </tr>
+    <tr>
+      <td><strong>U2: The World Around You</strong><br><em>People, Things, Spaces</em></td>
+      <td>Family (mamá, papá, hermano/a, esposo/a, hijo/a). Descriptive adjectives. Basic objects & food at the feria. Basic clothing as description vocabulary: camisa, pantalones, zapatos, vestido.</td>
+      <td>Articles (el/la/los/las): gender & number. Descriptive adjectives (agreement). Possessives (mi, tu, su, nuestro). Numbers 0–30. SER + adjective. <em>A personal</em>: learners encounter it naturally in input (Conozco <strong>a</strong> Sofía) before any rule is given.</td>
+      <td>Enumeration: y, también, hay. Basic contrast: pero. Interrogatives: ¿Cuántos? ¿Cómo es?</td>
+      <td>Spanish alphabet. Writing numbers 0–100. Syllabic rhythm of Spanish vs. stress-timed English (awareness, not mastery).</td>
+      <td>Diminutives as affection markers, not size. Physical contact norms in Mexico vs. US.<span class="cultural">Cultural anchor: Don Marcos's puesto at the feria — Hay café de olla, hay tamales, hay agua de jamaica.</span></td>
+      <td>Cognate strategy: recognizing English-Spanish cognates as a bridge (universidad, información, hospital).</td>
+    </tr>
+    <tr>
+      <td><strong>U3: Life in Motion</strong><br><em>Actions & Daily Routine</em></td>
+      <td>Daily routines: desayunar, caminar, estudiar, trabajar, comer, dormir. School subjects & areas of study.</td>
+      <td>Present tense: regular -AR, -ER, -IR verbs (full paradigms). ESTAR (location, conditions, emotions). <em>Querer + infinitive</em> (intention).</td>
+      <td>Sequencing: primero, después, luego, entonces, finalmente. Time-of-day markers: por la mañana/tarde/noche. Simple frequency: siempre, a veces, nunca (receptive).</td>
+      <td>Stress distinction preview: habló vs. hablo — accent as grammar marker (groundwork for SP102).</td>
+      <td>Turn-taking: greet → respond → ask → farewell. How routines differ culturally.<span class="cultural">Cultural anchor: Sofía's daily routine in Puebla — café con don Marcos, class, mercado with Tomás.</span></td>
+      <td>Relying on rehearsed formulas: Novice learners depend on practiced complete phrases. The strategy is recognizing which one fits the moment.</td>
+    </tr>
+    <tr>
+      <td><strong>U4: Time, Numbers & Schedule</strong><br><em>Organizing Life</em></td>
+      <td>Time expressions (la hora). Numbers 31–100. Schedules & calendar. Weather as everyday chunks: hace calor/frío, llueve, está nublado, hace sol.</td>
+      <td>TENER (possession & age) and VENIR. Telling time: Es la una, Son las tres y media. IR (present). Stem-changing verbs (e>ie, o>ue). Irregular yo forms (hago, salgo, pongo).</td>
+      <td>Time markers: ahora, en este momento, hoy, esta semana. Questions: ¿A qué hora? ¿Cuándo? ¿Qué día?</td>
+      <td>Clock time conventions (12h vs. 24h in Mexico). Stress patterns in number words.</td>
+      <td>Time as social structure: Mexican time flexibility. Schedule differences (la comida at 2–3 PM).<span class="cultural">Cultural anchor: Elena organizing the family's week — work, school, feria, church.</span></td>
+      <td>Managing not-knowing: accepting that not understanding everything is normal. "Listen for what I DO understand" instead of freezing.</td>
+    </tr>
+    <tr>
+      <td><strong>U5: Here & Now</strong><br><em>Location, Movement, Plans</em></td>
+      <td>Hobbies, sports, entertainment. Emotional/physical states (contento, cansado, nervioso). Places & movement. Food & everyday objects.</td>
+      <td>ESTAR (location + emotions). Present progressive (estar + gerundio). Contrast SER vs. ESTAR. Direct objects. <em>Ir a + infinitivo</em> (immediate plans). <em>Estar + gerundio</em> (action in progress).</td>
+      <td>Contrast: pero, y. Sequence review: primero → después → luego → finalmente. Frequency: siempre, a veces, nunca.</td>
+      <td>Rhythmic phrasing in longer sentences. Cognate pronunciation control. Basic accentuation: recognizing stressed syllable in frequent words (café, está, dónde).</td>
+      <td>The invitation as social gesture in Mexico. Silence, distance, and tone carry different cultural meaning than in English.<span class="cultural">Cultural anchor: Sofía and Tomás at Xochimilco — describing what's happening right now.</span></td>
+      <td>Listening comprehension: global understanding before detail. "What do I understand?" before "What don't I understand?"</td>
+    </tr>
+    <tr>
+      <td><strong>CB: Coverage Boost</strong><br><em>Full SP101 Grammar</em></td>
+      <td>Recycled contexts from U1–U5 with expanded linguistic tools.</td>
+      <td>Stem-changing verbs (full). Irregular yo forms (expanded). SER vs. ESTAR contrast (formal). Direct object pronouns.</td>
+      <td>All SP101 connectors in more complex combinations.</td>
+      <td>All SP101 pronunciation & writing content recycled in new contexts.</td>
+      <td>Register recycling: tú/usted in new, less predictable situations.</td>
+      <td>All SP101 strategies recycled with increasing independence.</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>SP101 — Can-Do Statements</h3>
+  <table class="cando-table">
+    <thead><tr><th>#</th><th>Can-Do Statement</th><th>ACTFL Mode</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>I can greet and say goodbye appropriately depending on the social context.</td><td>Interpersonal</td></tr>
+      <tr><td>2</td><td>I can introduce myself and provide basic personal information (name, origin, age, occupation).</td><td>Presentational Speaking</td></tr>
+      <tr><td>3</td><td>I can tell the time and talk about my daily schedule using simple expressions.</td><td>Presentational Speaking</td></tr>
+      <tr><td>4</td><td>I can describe my day using simple present-tense sentences and basic sequence words.</td><td>Presentational Speaking</td></tr>
+      <tr><td>5</td><td>I can ask and answer simple questions about familiar topics (identity, schedule, family, hobbies).</td><td>Interpersonal</td></tr>
+      <tr><td>6</td><td>I can describe my family members and close relationships using basic adjectives and possessives.</td><td>Presentational Speaking</td></tr>
+      <tr><td>7</td><td>I can express possession, age, and basic physical or emotional states.</td><td>Presentational Speaking</td></tr>
+      <tr><td>8</td><td>I can talk about hobbies, sports, and leisure activities I enjoy.</td><td>Presentational Speaking</td></tr>
+      <tr><td>9</td><td>I can understand short spoken or written texts about familiar topics when supported by context.</td><td>Interpretive Listening / Reading</td></tr>
+      <tr><td>10</td><td>I can say what is happening right now using the present progressive.</td><td>Presentational Speaking</td></tr>
+      <tr><td>11</td><td>I can express simple plans and immediate intentions using <em>ir a + infinitivo</em>.</td><td>Presentational Speaking</td></tr>
+      <tr><td>12</td><td>I can link ideas using basic connectors (y, pero, primero, después, luego).</td><td>Presentational Speaking</td></tr>
+      <tr><td>13</td><td>I can comment on the weather using simple everyday expressions.</td><td>Presentational Speaking</td></tr>
+      <tr><td>14</td><td>I can use basic repair strategies to keep a conversation going (¿Cómo? ¿Puede repetir?).</td><td>Interpersonal</td></tr>
+      <tr><td>15</td><td>I can identify cultural practices related to greetings, family, and daily life in Mexico.</td><td>Cultures (Practices)</td></tr>
+    </tbody>
+  </table>
+  <p class="exit-profile"><strong>Exit profile:</strong> The learner manages everyday interactions, describes their immediate world, and expresses simple intentions orally.</p>
+</section>
+
+<!-- ═══ SP102 ═══ -->
+<section id="sp102">
+  <div class="level-header sp102">
+    <h2>SP102 — Elementary Spanish II</h2>
+    <div class="target">ACTFL Target: Intermediate Low</div>
+    <div class="desc">Narration, obligation, and experience. Learners tell stories about the past, explain habits, describe people in detail, and sustain longer conversations — creating with the language for the first time.</div>
+  </div>
+
+  <div class="se-note">📌 <strong>The word "se" in Spanish</strong> has four distinct uses, and this course introduces them gradually: reflexive & lexical <em>se</em> (Cluster 2), impersonal & passive <em>se</em> (Cluster 3), and reciprocal <em>se</em> (previewed in Cluster 6, formalized in SP201).</div>
+
+  <h3>SP102 — Full Alignment Table</h3>
+  <div class="table-wrap">
+  <table class="align-table">
+    <thead><tr><th>Cluster</th><th>Vocabulary</th><th>Grammar & Verb Patterns</th><th>Connectors</th><th>Pronunciation & Writing</th><th>Context & Culture</th><th>Communication Strategies</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>Cluster 1: Shopping & Transactions</strong><br><em>Markets & Money</em></td>
+      <td>Shopping: products, prices, markets, bargaining. Numbers 101+. Clothing expanded: llevar, ponerse, quitarse + wardrobe vocabulary.</td>
+      <td>Regular preterite (-é, -aste, -ó, -amos, -aron). Indirect object pronouns (me, te, le, nos, les). Demonstrative adjectives (este, ese, aquel).</td>
+      <td>Past narrative sequence: primero, luego, después, al final, ese día, la semana pasada.</td>
+      <td>Accent rules: agudas, graves, esdrújulas. Preterite pronunciation: habló (past) vs. hablo (present) — the accent mark as grammar signal.</td>
+      <td>Price negotiation: ¿Cuánto cuesta?, ¿Me da un descuento?, Es muy caro. Bargaining culture in Mexican markets.<span class="cultural">Cultural anchor: Don Marcos selling at the feria — haggling, rapport, trust.</span></td>
+      <td>Circumlocution: <em>Es una cosa que sirve para... / Es un lugar donde... / Es como un/una...</em> — the key survival strategy for this level.</td>
+    </tr>
+    <tr>
+      <td><strong>Cluster 2: Daily Routines & Habits</strong><br><em>Personal Care & Culture</em></td>
+      <td>Personal care (despertarse, bañarse, vestirse). Cultural habits. Professions expanded: ¿A qué se dedica? + traits for different jobs.</td>
+      <td>Reflexive verbs (levantarse, acostarse, vestirse). Indefinite & negative words (alguien/nadie, algo/nada).<br><strong>Uses of "se" — Part 1:</strong> Reflexive <em>se</em> (La madre se baña) and lexical <em>se</em> — verbs that simply include <em>se</em> in their dictionary form (olvidarse, darse cuenta, morirse).</td>
+      <td>Frequency & negation: siempre, a veces, nunca, nadie, nada, tampoco, ni...ni. Sequence: antes de, después de, al + infinitive.</td>
+      <td>Diacritic accent: el/él, tu/tú, si/sí, se/sé. b/v in Mexican Spanish (same sound); c/s/z seseo.</td>
+      <td>Expanded register: adjusting tone by relationship. Indirect preference: me gusta más..., prefiero..., no me gusta tanto.<span class="cultural">Cultural anchor: Morning routines across Mexican families — la comida as social ritual, sobremesa.</span></td>
+      <td>Lexical approximation: using a close word when the exact one is unknown (lavar for limpiar). Staying in Spanish instead of switching to English.</td>
+    </tr>
+    <tr>
+      <td><strong>Cluster 3: Food, Celebrations & Experiences</strong><br><em>Social Life</em></td>
+      <td>Food, meals, gastronomy. Social meals. Celebrations (cumpleaños, quinceañera, fiestas patrias, Día de Muertos).</td>
+      <td>Gustar + faltar, quedar (me falta tiempo, nos quedan dos días). Preterite of SER and IR (fui, fuiste, fue...).<br><strong>Uses of "se" — Part 2:</strong> Impersonal <em>se</em> — no specific subject (se puede, se dice, se habla español). Passive <em>se</em> — the thing receives the action (se venden tamales).</td>
+      <td>Comparison: más que, menos que, tan...como, mejor, peor. Expansion: que, lo que — building longer sentences.</td>
+      <td>Narrative intonation: continuation vs. closure. Spelling changes in irregular preterites (busqué, llegué, empecé).</td>
+      <td>Food as social act (sobremesa). Celebrations as family cohesion. Mexican indirectness: diminutives to soften (un momentito, cerquita, ahorita). Courtesy expressions <em>quisiera, me gustaría</em> used as fixed phrases (the full conditional verb system comes in SP201).<span class="cultural">Cultural anchor: Quinceañera planning — doña Rosa organizing the celebration.</span></td>
+      <td>Paraphrasing: restating ideas to confirm understanding (Entonces, ¿tú dices que...?). Narration management: connectors as crutches (y entonces..., y luego...).</td>
+    </tr>
+    <tr>
+      <td><strong>Cluster 4: Health & Wellbeing</strong><br><em>Body, Symptoms, Services</em></td>
+      <td>Health, symptoms, medical services (me duele, tengo fiebre, la farmacia). Basic body parts.</td>
+      <td>Preterite of stem-changing verbs. Double object pronouns (se lo dije). Saber vs. conocer. <em>Tener que + infinitive</em> (obligation); <em>soler + infinitive</em> (habits).</td>
+      <td>Contextual framing: antes, mientras, generalmente, de niño/a, en esa época. Spatial reference: este/ese/aquel.</td>
+      <td>Speech rhythm: natural phrasing in longer sentences. Discursive pauses in oral narration.</td>
+      <td>Medical visit in Mexican context (pharmacy first, cultural self-medication). Register: formal with doctor, informal with friend.<span class="cultural">Cultural anchor: Tomás at the farmacia — navigating health advice without a doctor visit.</span></td>
+      <td>Emerging self-correction: noticing and correcting own errors in real time (dijo... no, dije).</td>
+    </tr>
+    <tr>
+      <td><strong>Cluster 5: Past Narration</strong><br><em>Telling Stories</em></td>
+      <td>Biographical vocabulary. Historical events (basic). Narrated experiences & milestones.</td>
+      <td>Irregular preterites (tuve, hice, puse, dije, traje). Verbs that change meaning in preterite (saber = find out, conocer = meet).<br><strong>Preterite vs. Imperfect contrast</strong> — the most important grammar structure at this level. Completed actions vs. habitual or background description. Treated as a dedicated structure, like SER/ESTAR was in SP101.</td>
+      <td>Narrative frame: mientras + imperfect background, preterite for main events. Temporal anchoring: en esa época, de niño, antes.</td>
+      <td>Preterite vs. present stress (habló/hablo) — now productive, not just receptive.</td>
+      <td>Narration as social act: telling a personal experience, sharing an anecdote — why storytelling matters in interaction.<span class="cultural">Cultural anchor: Don Felipe narrating his journey to the feria — imperfect for background, preterite for events.</span></td>
+      <td>Sustaining a brief story without collapsing. Requesting time: A ver..., Es que..., Bueno, lo que pasó fue que...</td>
+    </tr>
+    <tr>
+      <td><strong>Cluster 6: Describing & Comparing</strong><br><em>People, Objects, Experiences</em></td>
+      <td>People description (physical + personality). Clothing in narrative context. Comparison vocabulary.</td>
+      <td>Comparatives & superlatives. Relative pronouns (que, quien, lo que). Contrast qué/cuál. <em>A personal</em> — now actively produced: Busco <strong>a</strong> mi hermano vs. Busco un libro. Imperfect (hablaba, comía, vivía). Adverbs. Reciprocal <em>se</em> (preview): se saludan, se abrazan.</td>
+      <td>Expansion: que, lo que, el/la cual — longer sentences with basic subordination. Descriptive sequencing.</td>
+      <td>Full accentuation rules applied. Orthographic preterite changes consolidated.</td>
+      <td>Describing people including clothing — ser for identity, estar for state, llevar for clothing.<span class="cultural">Cultural anchor: The feria's vendors and visitors — a descriptive scene using all SP102 tools.</span></td>
+      <td>All SP102 strategies with increasing independence. Circumlocution + approximation as default survival tools.</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>SP102 — Can-Do Statements</h3>
+  <table class="cando-table">
+    <thead><tr><th>#</th><th>Can-Do Statement</th><th>ACTFL Mode</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>I can narrate completed actions in the past using the preterite with logical sequence.</td><td>Presentational Speaking</td></tr>
+      <tr><td>2</td><td>I can describe habitual actions and background situations in the past using the imperfect.</td><td>Presentational Speaking</td></tr>
+      <tr><td>3</td><td>I can narrate a past experience distinguishing between main events and background context.</td><td>Presentational Speaking</td></tr>
+      <tr><td>4</td><td>I can talk about purchases, prices, and shopping experiences in markets and stores.</td><td>Interpersonal</td></tr>
+      <tr><td>5</td><td>I can describe my daily routine in detail, including reflexive actions and personal care.</td><td>Presentational Speaking</td></tr>
+      <tr><td>6</td><td>I can explain habits, personal rules, and obligations using <em>tener que</em> and <em>deber</em>.</td><td>Presentational Speaking</td></tr>
+      <tr><td>7</td><td>I can express frequency and negation with precision (siempre, nunca, nadie, nada).</td><td>Presentational Speaking</td></tr>
+      <tr><td>8</td><td>I can compare people, objects, and experiences using comparatives and superlatives.</td><td>Presentational Speaking</td></tr>
+      <tr><td>9</td><td>I can refer to people and objects without repeating nouns, using object pronouns.</td><td>Presentational Speaking</td></tr>
+      <tr><td>10</td><td>I can understand narrated stories and descriptions of past events in spoken and written Spanish.</td><td>Interpretive Listening / Reading</td></tr>
+      <tr><td>11</td><td>I can read a short narrative text and identify the main events and their sequence.</td><td>Interpretive Reading</td></tr>
+      <tr><td>12</td><td>I can describe past situations, celebrations, and personal milestones.</td><td>Presentational Speaking</td></tr>
+      <tr><td>13</td><td>I can express preferences and make value judgments using <em>gustar, faltar, quedar</em>, and similar verbs.</td><td>Interpersonal</td></tr>
+      <tr><td>14</td><td>I can explain symptoms, health situations, and basic medical needs.</td><td>Interpersonal</td></tr>
+      <tr><td>15</td><td>I can distinguish between <em>saber</em> and <em>conocer</em> in context.</td><td>Interpersonal</td></tr>
+      <tr><td>16</td><td>I can describe what I see, including people and clothing, using <em>ser, estar</em>, and <em>llevar</em>.</td><td>Presentational Speaking</td></tr>
+      <tr><td>17</td><td>I can describe something when I don't know the word (<em>es una cosa que sirve para...</em>).</td><td>Interpersonal</td></tr>
+      <tr><td>18</td><td>I can write a short paragraph narrating a past experience in logical sequence.</td><td>Presentational Writing</td></tr>
+      <tr><td>19</td><td>I can identify cultural practices related to food, celebrations, and health in the Spanish-speaking world.</td><td>Cultures (Practices / Products)</td></tr>
+    </tbody>
+  </table>
+  <p class="exit-profile"><strong>Exit profile:</strong> The learner narrates experiences, explains habits and obligations, contextualizes past actions, and sustains extended oral discourse.</p>
+</section>
+
+<!-- ═══ SP201 ═══ -->
+<section id="sp201">
+  <div class="level-header sp201">
+    <h2>SP201 — Elementary Spanish III</h2>
+    <div class="target">ACTFL Target: Intermediate Mid/High</div>
+    <div class="desc">Subjectivity, future, and hypothesis. Learners express opinions, give commands, react emotionally, debate social issues, and begin exploring hypothetical thinking — using the subjunctive to say what they feel, not just what they know.</div>
+  </div>
+
+  <h3>SP201 — Full Alignment Table</h3>
+  <div class="table-wrap">
+  <table class="align-table">
+    <thead><tr><th>Cluster</th><th>Vocabulary</th><th>Grammar & Verb Patterns</th><th>Connectors</th><th>Pronunciation & Writing</th><th>Context & Culture</th><th>Communication Strategies</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>Cluster 1: Instructions & Regulation</strong><br><em>Commands & Norms</em></td>
+      <td>Technology & digital media. Urban life, services & procedures (bank, mail, transport). Household responsibilities.</td>
+      <td>Affirmative & negative tú commands (habla / no hables). Formal commands (usted/ustedes). Por vs. para.<br><strong>Uses of "se" — Part 3:</strong> Reciprocal <em>se</em> — doing something to each other (nos vemos, se escriben, se abrazan). Now explicitly taught.</td>
+      <td>Cause & purpose: porque, para que, ya que, dado que. Logical sequence: es decir, en otras palabras.</td>
+      <td>Pragmatic intonation: patterns for commands (firm vs. polite), suggestions (rising), opinions (assertive vs. tentative).</td>
+      <td>Social regulation: commands vary by relationship (boss, friend, parent, stranger). Register: tú/usted + formal/informal commands together.<span class="cultural">Cultural anchor: Doña Rosa giving instructions for the quinceañera — firm with vendors, warm with family. A narrative that shows how register shifts in real Mexican social contexts.</span></td>
+      <td>Strategic discourse planning: mentally organizing before speaking. Crutch markers: pues, a ver, lo que quiero decir es...</td>
+    </tr>
+    <tr>
+      <td><strong>Cluster 2: Feelings & Reactions</strong><br><em>Subjectivity & Emotion</em></td>
+      <td>Wellbeing, exercise & nutrition. Values, cultural identity & social thought. Opinion vocabulary: creer, opinar, considerar, proponer, sugerir, recomendar — verbs that trigger the subjunctive, learned as functional vocabulary.</td>
+      <td>Present subjunctive with verbs of emotion (me alegra que...), doubt (dudo que...) and negation (no creo que...). Subjunctive in adjective clauses (busco un lugar que tenga...). Subjunctive vs. indicative contrast in noun clauses.</td>
+      <td>Cause-emotion-result: me alegra que..., es triste que..., me preocupa que... Concession: aunque + indicative/subjunctive; a pesar de que; si bien — acknowledging the opposing view before responding.</td>
+      <td>Subjunctive spelling: systematic changes (busque, llegue, empiece; conozca, produzca). Discourse connector pronunciation as fluid phonetic blocks.</td>
+      <td>Nuanced opinion: creo que + indicative vs. no creo que + subjunctive — grammar as a tool for expressing stance. Complex courtesy: me gustaría que..., ¿sería posible que...?, ¿te importaría...?<span class="cultural">Cultural anchor: A community discussion about a local issue — formal register, emotional reactions, respectful disagreement. Historical context: the tradition of collective decision-making in Mexican communities.</span></td>
+      <td>Advanced paraphrasing: es decir, o sea, en otras palabras — for clarifying both your own and your interlocutor's meaning.</td>
+    </tr>
+    <tr>
+      <td><strong>Cluster 3: Future Plans & Possibilities</strong><br><em>Projection & Hypothesis</em></td>
+      <td>Environment, nature & conservation. Social issues (recycling, pollution, protected areas, natural resources).</td>
+      <td>Future simple (hablaré, comeré, viviré). Conditional simple (hablaría, comería, viviría). Introduction to imperfect subjunctive in fixed conditional structures: <em>Si tuviera tiempo, viajaría... Si pudiera, lo haría.</em> <em>Debería / sugerir que</em> (recommendation); <em>podría / me gustaría</em> (possibility & courtesy).</td>
+      <td>Temporal projection: más adelante, en el futuro, a largo plazo, para entonces. Condition & consequence: si + present → future; si + imperfect subjunctive → conditional (introduction).</td>
+      <td>Future & conditional accentuation: agudas (hablaré) and graves (hablaría) — accent as morphological anchor.</td>
+      <td>Group plan coordination: ¿nos vemos?, te aviso — social commitment vs. literal commitment in Mexican culture. Indirect style: diminutives + conditional to soften requests.<span class="cultural">Cultural anchor: Planning a community project — negotiating, proposing, projecting consequences.</span></td>
+      <td>Written text management: plan → write → review. Editing questions: Is it cohesive? Coherent? Is the register appropriate?</td>
+    </tr>
+    <tr>
+      <td><strong>Cluster 4: Experience & Reflection</strong><br><em>Looking Back, Looking Forward</em></td>
+      <td>Values, identity, cultural thought. Cross-cultural comparison vocabulary.</td>
+      <td>Present perfect (he hablado, has comido, hemos vivido). Nosotros commands (hablemos, comamos). <em>He visto, hemos decidido</em> (accumulated experience); <em>deber + infinitive / haber que</em> (formal regulation).</td>
+      <td>Transition markers: sin embargo, por lo tanto, además, a pesar de, no obstante, por un lado... por otro. Argumentative text organization: en primer lugar / en segundo lugar / finalmente; en conclusión / en resumen.</td>
+      <td>Formal writing: capitalization, complex punctuation (commas in subordinate clauses, semicolons). Extended oral production: rhythm control, strategic pauses, emphasis.</td>
+      <td>Argumentation: evidence + concession (aunque...) + conclusion. Partial disagreement & hedging: Sí, pero... / No sé, pero yo creo que... / Tal vez tengas razón, pero... / Puede ser que... / Lo dudo mucho.<span class="cultural">Cultural anchor: Debating a social issue — balancing directness with Mexican indirectness norms.</span></td>
+      <td>Hedging as strategy: memorized formulas for maintaining discussion without confrontation. Active self-correction: conscious monitoring of your own speech.</td>
+    </tr>
+    <tr>
+      <td><strong>Cluster 5: Opinion & Argument</strong><br><em>Taking a Stance</em></td>
+      <td>Abstract social vocabulary: migration, diversity, social justice, education, technology's role.</td>
+      <td>Advanced relative pronouns (que, quien, cuyo, el/la cual). Full subjunctive vs. indicative contrast in noun clauses — consolidated.</td>
+      <td>Full argumentative structure: thesis → argument → concession → conclusion. All SP201 connectors consolidated.</td>
+      <td>All SP201 pronunciation & writing content consolidated. Fluent production of discourse markers as phonetic blocks.</td>
+      <td>Channel adaptation: text message vs. formal email vs. oral presentation vs. spontaneous conversation — choosing the right linguistic tools for the medium.<span class="cultural">Cultural anchor: Writing an opinion piece for a community audience — connecting personal cultural experience to broader social argument.</span></td>
+      <td>All SP201 strategies consolidated with independence. Writing process management as habitual practice.</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>SP201 — Can-Do Statements</h3>
+  <table class="cando-table">
+    <thead><tr><th>#</th><th>Can-Do Statement</th><th>ACTFL Mode</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>I can give clear instructions, advice, and recommendations using formal and informal commands.</td><td>Presentational Speaking</td></tr>
+      <tr><td>2</td><td>I can express rules, warnings, and norms of behavior in different social contexts.</td><td>Presentational Speaking</td></tr>
+      <tr><td>3</td><td>I can justify my decisions using connectors of cause and purpose (porque, para que).</td><td>Presentational Speaking</td></tr>
+      <tr><td>4</td><td>I can adapt my register (tú/usted, formal/informal commands) to the social situation.</td><td>Interpersonal</td></tr>
+      <tr><td>5</td><td>I can express emotions, doubts, and personal reactions using the subjunctive.</td><td>Presentational Speaking</td></tr>
+      <tr><td>6</td><td>I can react to uncertain or hypothetical situations with appropriate subjunctive forms.</td><td>Interpersonal</td></tr>
+      <tr><td>7</td><td>I can talk about future plans and projects using the simple future tense.</td><td>Presentational Speaking</td></tr>
+      <tr><td>8</td><td>I can coordinate group plans and negotiate options.</td><td>Interpersonal</td></tr>
+      <tr><td>9</td><td>I can express possibilities and hypothetical conditions using the conditional (and introductory imperfect subjunctive in fixed structures).</td><td>Presentational Speaking</td></tr>
+      <tr><td>10</td><td>I can reflect on past experiences and accumulated learning using the present perfect.</td><td>Presentational Speaking</td></tr>
+      <tr><td>11</td><td>I can express well-supported opinions on social, environmental, and cultural topics.</td><td>Presentational Speaking</td></tr>
+      <tr><td>12</td><td>I can show partial disagreement using softening formulas (Sí, pero... Puede ser que... Tal vez tengas razón, pero...).</td><td>Interpersonal</td></tr>
+      <tr><td>13</td><td>I can write a short argumentative text with thesis, evidence, and conclusion.</td><td>Presentational Writing</td></tr>
+      <tr><td>14</td><td>I can understand extended spoken texts that include subjunctive mood and abstract ideas.</td><td>Interpretive Listening</td></tr>
+      <tr><td>15</td><td>I can read and evaluate an argumentative text, identifying thesis, evidence, and conclusion.</td><td>Interpretive Reading</td></tr>
+      <tr><td>16</td><td>I can use advanced discourse markers to argue, qualify, and organize extended speech.</td><td>Presentational Speaking</td></tr>
+      <tr><td>17</td><td>I can describe and compare cultural values and practices across communities.</td><td>Cultures (Practices / Perspectives)</td></tr>
+    </tbody>
+  </table>
+  <p class="exit-profile"><strong>Exit profile:</strong> The learner communicates with confidence on personal and social topics, uses the subjunctive to nuance discourse, and begins exploring abstract and hypothetical thought.</p>
+</section>
+
+<!-- ═══ PROGRESSION ═══ -->
+<section id="progression">
+  <h2>How Each Skill Area Grows Across the Three Levels</h2>
+  <p class="section-intro">Read down each column to see how a single skill area develops from first contact to confident self-expression.</p>
+  <div class="table-wrap">
+  <table class="prog-table">
+    <thead><tr><th>Skill Area</th><th>SP101 · Novice Mid/High</th><th>SP102 · Intermediate Low</th><th>SP201 · Intermediate Mid/High</th></tr></thead>
+    <tbody>
+      <tr><td style="background:var(--blush-light)"><strong>Vocabulary</strong></td><td>Identity, routine, family, space, leisure + weather, basic clothing, basic professions</td><td>Transactions, narration, habits, health, celebrations, gastronomy + clothing & professions expanded</td><td>Technology, environment, urban life, values, wellbeing, cultural identity + argumentation vocabulary</td></tr>
+      <tr><td style="background:#F0F4E8"><strong>Grammar & Verb Patterns</strong></td><td>Present tense (regular + irregular). SER/ESTAR. Progressive. <em>Ir a</em> + inf. Direct objects. <em>Hay</em> (chunk). <em>A personal</em> (receptive)</td><td>Preterite + imperfect + contrast. Reflexives. Comparatives. Gustar + faltar/quedar. Four uses of <em>se</em>. <em>A personal</em> (active). <em>Soler / tener que</em></td><td>Subjunctive (present + imperfect introduction). Commands. Future. Conditional. Present perfect. Por/para. Advanced relatives. Reciprocal <em>se</em></td></tr>
+      <tr><td style="background:#FFF8EE"><strong>Connectors & Text Organization</strong></td><td>Greeting formulas. Basic sequence (primero, después). Interrogatives. Contrast (pero, y)</td><td>Past narrative sequence. Comparison. Frequency/negation. Contextual framing (mientras, antes)</td><td>Cause/purpose. Condition. Advanced markers (sin embargo, por lo tanto). Concession (aunque). Argumentative text structure</td></tr>
+      <tr><td style="background:#F3EEFA"><strong>Pronunciation & Writing</strong></td><td>Vowel system. ñ. Cognates. Syllabic rhythm. Inverted signs. Alphabet</td><td>Accentuation rules. Diacritic accent. Preterite vs. present stress. Narrative intonation. Preterite spelling changes</td><td>Pragmatic intonation. Subjunctive spelling. Complex punctuation. Extended oral production. Discourse marker fluency</td></tr>
+      <tr><td style="background:var(--sage-light)"><strong>Context & Culture</strong></td><td>Tú/usted. Fixed courtesy. Basic turn-taking. Mexican cultural practices (greeting, diminutive, invitation)</td><td>Negotiation. Narration as social act. Expanded register. Indirect courtesy. Diminutives. Courtesy chunks (<em>quisiera</em>)</td><td>Social regulation. Complex courtesy (subjunctive + conditional). Nuanced opinion. Hedging. Argumentation. Channel adaptation</td></tr>
+      <tr><td style="background:#FEF0F0"><strong>Communication Strategies</strong></td><td>Repair (¿Cómo? Más despacio). Rehearsed formulas. Cognate bridge. Managing not-knowing</td><td>Circumlocution. Lexical approximation. Paraphrasing. Narration management. Emerging self-correction</td><td>Hedging formulas. Discourse planning. Reformulation. Written text management. Active self-correction</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ═══ STRATEGIES ═══ -->
+<section id="strategies">
+  <h2>Academic Literacy — Reading, Writing & Speaking Across Levels</h2>
+  <p class="section-intro">How the three core academic skills progress. In SLE: reading strategies live in Cuéntame lessons, writing strategies in micro-performances and unit projects, and oral communication strategies in every lesson's Strategy Coaching.</p>
+  <div class="table-wrap">
+  <table class="prog-table">
+    <thead><tr><th>Skill</th><th>SP101 · Novice Mid/High</th><th>SP102 · Intermediate Low</th><th>SP201 · Intermediate Mid/High</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Reading</strong></td><td>Global comprehension with visual support and glosses. Identifying who, what, where in short texts. Recognizing cognates.</td><td>Scanning for specific information. Skimming for central theme. Following narrative sequence in past-tense texts. Inferring meaning from context.</td><td>Argumentative texts: identifying thesis, evidence, and conclusion. Evaluating argument effectiveness. Recognizing how connectors organize a text.</td></tr>
+      <tr><td><strong>Writing</strong></td><td>Simple present-tense sentences. Organized lists. Filling in templates with personal information. Using y, pero to connect.</td><td>Narrative paragraphs with temporal sequence. Organization: beginning → development → closure. Sequence and contrast connectors. Basic subordination.</td><td>Short argumentative texts: thesis + argument + concession + conclusion. Cause/effect connectors. Editing for cohesion, coherence, and register.</td></tr>
+      <tr><td><strong>Oral Communication</strong></td><td>Basic turns: greet, respond, ask, farewell. Repair strategies. Relying on rehearsed formulas.</td><td>Sustaining a brief narration. Approximation and circumlocution. Expressing basic agreement and disagreement.</td><td>Partial disagreement with hedging. Organizing oral arguments. Maintaining fluency in extended discourse. Reformulation in real time.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <strong>Spanish <em>Learning Edge</em></strong> · Authentic Input · Instructionally Designed · ACTFL-Aligned<br>
+  SP101 & SP102 — Summer 2026 · SP201 — Coming 2026–2027<br>
+  All courses replace or supplement commercial textbooks — zero textbook cost to students. Canvas-ready. FERPA-compliant.
+</footer>
+
+</body>
+</html>

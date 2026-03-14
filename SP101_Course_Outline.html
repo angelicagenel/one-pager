@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SLE — SP101 Course Outline</title>
+<title>SLE — SP101 Course Outline v4</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -15,7 +15,7 @@
 html{scroll-behavior:smooth;}
 body{font-family:var(--body);background:var(--cream);color:var(--text);font-size:13px;line-height:1.55;}
 
-.nav{position:sticky;top:0;z-index:100;background:var(--charcoal);padding:0 24px;display:flex;align-items:center;height:44px;gap:6px;}
+.nav{position:sticky;top:0;z-index:100;background:var(--charcoal);padding:0 24px;display:flex;align-items:center;height:44px;gap:6px;flex-wrap:wrap;}
 .nav-logo{width:28px;height:28px;border-radius:5px;background:linear-gradient(135deg,var(--coral),#B85A54);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--heading);font-weight:700;font-size:14px;margin-right:8px;}
 .nav-brand{color:#fff;font-family:var(--heading);font-size:13px;font-weight:600;margin-right:auto;}
 .nav-brand em{font-style:italic;color:var(--coral-light);}
@@ -28,68 +28,75 @@ body{font-family:var(--body);background:var(--cream);color:var(--text);font-size
 .hero .sub{font-size:13px;color:rgba(255,255,255,.6);margin-top:6px;}
 .hero .desc{font-size:14px;color:rgba(255,255,255,.75);margin-top:16px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.6;}
 
+.reconcile{background:#1a1a2e;border-left:4px solid var(--coral);padding:12px 20px;margin:0;font-size:12px;color:rgba(255,255,255,.7);}
+.reconcile strong{color:var(--coral-light);}
+
 .container{max-width:1200px;margin:0 auto;padding:0 24px;}
 section{padding:36px 0;border-bottom:1px solid var(--border);}
 h2{font-family:var(--heading);font-size:24px;color:var(--charcoal);margin-bottom:6px;}
 h3{font-family:var(--heading);font-size:18px;color:var(--charcoal);margin-bottom:4px;}
 .section-intro{font-size:14px;color:var(--muted);max-width:700px;line-height:1.6;margin-bottom:24px;}
 
-/* UNIT HEADER */
 .unit-header{padding:20px 24px;border-radius:8px;margin-bottom:20px;color:#fff;}
 .u1{background:linear-gradient(135deg,var(--coral),#B85A54);}
 .u2{background:linear-gradient(135deg,#8B6DAF,#6B4D8F);}
 .u3{background:linear-gradient(135deg,var(--sage),#5B8570);}
 .u4{background:linear-gradient(135deg,#C4973B,#A07D2E);}
 .u5{background:linear-gradient(135deg,#4A8DB7,#2E6A8A);}
-.ucb{background:linear-gradient(135deg,#666,#444);}
-.unit-header h2{color:#fff;font-size:22px;margin-bottom:2px;}
-.unit-header .arc{font-size:12px;color:rgba(255,255,255,.75);margin-bottom:6px;}
-.unit-header .cando{font-size:13px;color:rgba(255,255,255,.9);}
+.uac{background:linear-gradient(135deg,#666,#444);}
+.unit-header h2{color:#fff;font-size:22px;margin-bottom:4px;}
+.unit-header .arc{font-size:12px;color:rgba(255,255,255,.75);margin-bottom:8px;}
+.unit-header .legend-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:4px;padding:3px 10px;font-size:11px;color:rgba(255,255,255,.9);margin-bottom:8px;}
+.unit-header .cando-list{font-size:12px;color:rgba(255,255,255,.85);line-height:1.7;}
 
-/* LESSON CARD */
-.lesson{background:#fff;border:1px solid var(--border);border-radius:8px;margin-bottom:16px;overflow:hidden;}
+.lesson{background:#fff;border:1px solid var(--border);border-radius:8px;margin-bottom:12px;overflow:hidden;}
 .lesson-head{padding:14px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);cursor:pointer;}
 .lesson-head:hover{background:#FAFAF8;}
-.lesson-num{background:var(--coral);color:#fff;font-weight:700;font-size:12px;padding:3px 10px;border-radius:4px;white-space:nowrap;}
-.lesson-num.nm{background:#A0C4A8;}
-.lesson-num.nh{background:#6B9FBF;}
-.lesson-num.cb{background:#888;}
-.lesson-title{font-family:var(--heading);font-size:16px;font-weight:600;color:var(--charcoal);flex:1;}
+.lesson-num{color:#fff;font-weight:700;font-size:11px;padding:3px 10px;border-radius:4px;white-space:nowrap;font-family:var(--body);}
+.lnum-core{background:var(--coral);}
+.lnum-ct{background:#9B6B9B;}
+.lnum-ac{background:#888;}
+.lesson-title{font-family:var(--heading);font-size:15px;font-weight:600;color:var(--charcoal);flex:1;}
 .lesson-struct{font-size:11px;color:var(--muted);background:#F5F4F2;padding:3px 8px;border-radius:3px;white-space:nowrap;}
-.lesson-toggle{font-size:18px;color:var(--muted);transition:transform .2s;}
+.status{font-size:10px;padding:2px 8px;border-radius:3px;white-space:nowrap;font-weight:600;}
+.status-done{background:#D1FAE5;color:#065F46;}
+.status-pending{background:#F3F4F6;color:#6B7280;}
+.lesson-toggle{font-size:18px;color:var(--muted);transition:transform .2s;flex-shrink:0;}
 .lesson.open .lesson-toggle{transform:rotate(180deg);}
-.lesson-body{padding:16px 20px;display:none;}
+.lesson-body{padding:16px 20px;display:none;border-top:1px solid var(--border);}
 .lesson.open .lesson-body{display:block;}
 
-/* LESSON FIELDS */
-.field{margin-bottom:12px;}
-.field-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:3px;}
-.field-content{font-size:13px;line-height:1.55;}
+.field{margin-bottom:14px;}
+.field-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;}
+.field-content{font-size:13px;line-height:1.6;}
 .field-content em{color:#6B5D50;}
 
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
 
 .tag{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;margin:2px 2px;letter-spacing:.02em;}
 .tag-core{background:var(--blush);color:#8B4A44;}
 .tag-support{background:#E8F0E4;color:#3D6B3D;}
 .tag-chunk{background:#FFF3E0;color:#8B6B2E;}
-.tag-new{background:var(--coral);color:#fff;font-size:9px;vertical-align:middle;margin-left:4px;}
-.tag-strategy{background:#F0E8FA;color:#6B4D8F;}
 
 .cultural-anchor{background:var(--blush-light);border-left:3px solid var(--coral);padding:8px 12px;border-radius:0 6px 6px 0;font-style:italic;font-size:12px;color:#6B5D50;margin-top:6px;}
+.legend-note{background:#F0E8FA;border-left:3px solid #8B6DAF;padding:8px 12px;border-radius:0 6px 6px 0;font-size:12px;color:#4A3070;margin-top:6px;}
+.register-note{background:#FFF8E7;border-left:3px solid #C4973B;padding:8px 12px;border-radius:0 6px 6px 0;font-size:12px;color:#6B4E1A;margin-top:6px;}
+.skill-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;}
+.skill-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;background:#F0F4F8;color:#374151;border:1px solid #D1D5DB;}
 
-.change-note{background:#FEF3C7;border:1px solid #F59E0B;border-radius:4px;padding:6px 12px;font-size:11px;font-weight:500;color:#92400E;margin-bottom:12px;}
-
-/* OVERVIEW TABLE */
-.overview-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:24px;}
+.overview-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:8px;}
 .overview-table th{background:var(--charcoal);color:#fff;padding:8px 12px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.04em;}
-.overview-table td{padding:8px 12px;border-bottom:1px solid var(--border);}
+.overview-table td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
 .overview-table tr:nth-child(even) td{background:#FAFAF8;}
+
+.ct-block{background:#F8F3FD;border:1px solid #C9A8E0;border-radius:8px;padding:16px 20px;margin-bottom:12px;}
+.ct-block h4{font-family:var(--heading);font-size:15px;color:#5A3080;margin-bottom:8px;}
+.ct-badge{display:inline-block;background:#8B6DAF;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;margin-right:8px;}
 
 .footer{background:var(--charcoal);color:rgba(255,255,255,.4);padding:20px;text-align:center;font-size:11px;margin-top:32px;}
 
-@media(max-width:768px){.grid-2,.grid-3{grid-template-columns:1fr;}}
+@media(max-width:768px){.grid-2,.grid-3{grid-template-columns:1fr;}.lesson-struct,.status{display:none;}}
 </style>
 </head>
 <body>
@@ -98,197 +105,229 @@ h3{font-family:var(--heading);font-size:18px;color:var(--charcoal);margin-bottom
   <div class="nav-logo">S</div>
   <div class="nav-brand">Spanish <em>Learning Edge</em></div>
   <a href="#overview">Overview</a>
-  <a href="#u1">U1</a><a href="#u2">U2</a><a href="#u3">U3</a><a href="#u4">U4</a><a href="#u5">U5</a><a href="#cb">CB</a>
+  <a href="#u1">U1</a><a href="#u2">U2</a><a href="#u3">U3</a><a href="#u4">U4</a><a href="#u5">U5</a><a href="#uac">AC</a>
 </nav>
 
 <header class="hero">
-  <h1>SP101 Course Outline <em>v3</em></h1>
-  <div class="sub">Elementary Spanish I · Novice Mid → High · 5 Units · 28 Lessons (24 Core + 4 CB)</div>
+  <h1>SP101 Course Outline <em>v4 REVISED</em></h1>
+  <div class="sub">Elementary Spanish I · Novice Mid → High · 6 Units · 28 Lessons (24 Core + 5 Cuéntame + 4 Alcance Completo) · Marzo 2026</div>
+  <div class="desc">Reemplaza Course Outline v3 en su totalidad. Todas las lecciones construidas desde marzo 2026 siguen este documento y el SOP v3.2 REVISED.</div>
 </header>
+
+<div class="reconcile" style="padding:16px 32px;">
+  <strong>Cambios v3 → v4:</strong> &nbsp;
+  SKILL 4 connectors practiced IN writing · SKILL 6 pronunciation + strategies combined · Desglosada forms + Quick Tips in every lesson · No fill-in-the-blank · Cultural Framework required per unit · Student-facing voice = direct address · Legend Map CT1–CT5 locked · Coverage Boost → <strong>Alcance Completo (AC1–AC4)</strong>
+</div>
 
 <div class="container">
 
 <!-- OVERVIEW -->
 <section id="overview">
-  <h2>Course Structure</h2>
-  <table class="overview-table">
-    <thead><tr><th>Unit</th><th>Lessons</th><th>Name</th><th>Arc</th><th>ACTFL Level</th></tr></thead>
-    <tbody>
-      <tr><td>U1</td><td>L01–L04</td><td>Hola, soy yo</td><td>SER · tú/usted · Hay · Preguntas — Identity & First Contact</td><td>Novice Mid</td></tr>
-      <tr><td>U2</td><td>L05–L09</td><td>El mundo que te rodea</td><td>Artículos · Adjetivos · SER+adj · Posesivos · Familia · Descripción</td><td>Novice Mid → High</td></tr>
-      <tr><td>U3</td><td>L10–L14</td><td>La vida en movimiento</td><td>Verbos -AR/-ER/-IR · Conectores de secuencia</td><td>Novice High</td></tr>
-      <tr><td>U4</td><td>L15–L19</td><td>Tiempo, números y agenda</td><td>La hora · Tener · Números 0–100 · Horarios + Weather</td><td>Novice High</td></tr>
-      <tr><td>U5</td><td>L20–L24</td><td>Aquí y ahora</td><td>ESTAR loc. · IR+a · Venir · ESTAR emoc. · Progresivo</td><td>Novice High</td></tr>
-      <tr><td>CB</td><td>L25–L28</td><td>Más profundo</td><td>Stem-changers · Yo irreg. · SER/ESTAR contrast · DOP</td><td>Novice High → Int. Low</td></tr>
-    </tbody>
-  </table>
+<h2>Course Structure</h2>
+<table class="overview-table">
+  <thead><tr><th>Unit</th><th>Lessons</th><th>Name</th><th>Arc</th><th>ACTFL Level</th></tr></thead>
+  <tbody>
+    <tr><td>U1</td><td>L01–L04 + CT1</td><td>Hola, soy yo</td><td>SER · tú/usted · Hay · Preguntas — Identity &amp; First Contact</td><td>Novice Mid</td></tr>
+    <tr><td>U2</td><td>L05–L09 + CT2</td><td>El mundo que te rodea</td><td>Artículos · Adjetivos · SER+adj · Posesivos · Familia · Descripción</td><td>Novice Mid → High</td></tr>
+    <tr><td>U3</td><td>L10–L14 + CT3</td><td>La vida en movimiento</td><td>Verbos -AR/-ER/-IR · Conectores de secuencia</td><td>Novice High</td></tr>
+    <tr><td>U4</td><td>L15–L19 + CT4</td><td>Tiempo, números y agenda</td><td>La hora · Tener · Números 0–100 · Horarios + Weather</td><td>Novice High</td></tr>
+    <tr><td>U5</td><td>L20–L24 + CT5</td><td>Aquí y ahora</td><td>ESTAR loc. · IR+a · Venir · ESTAR emoc. · Progresivo</td><td>Novice High</td></tr>
+    <tr><td>AC</td><td>AC1–AC4</td><td>Alcance Completo</td><td>Stem-changers · Yo irreg. · SER/ESTAR contrast · DOP</td><td>Novice High → Int. Low</td></tr>
+  </tbody>
+</table>
 </section>
 
 <!-- ═══ UNIT 1 ═══ -->
 <section id="u1">
 <div class="unit-header u1">
   <h2>Unit 1 — Hola, soy yo</h2>
-  <div class="arc">SER · tú/usted · Hay · Preguntas integradas · Reparación — First contact & identity</div>
-  <div class="cando">I can greet people, introduce myself, describe what's at a place, and ask basic questions — in Mexican cultural contexts.</div>
+  <div class="arc">SER · tú/usted · Hay · Preguntas integradas · Identity &amp; First Contact</div>
+  <div class="legend-tag">📖 Cuéntame: La Mulata de Córdoba (Veracruz colonial, s.XVII)</div>
+  <div class="legend-tag">🎨 Cultural Theme: Confianza — the greeting as relational act</div>
+  <div class="cando-list">
+    I can introduce myself and ask others about their name, origin, and occupation. (Interpersonal) ·
+    I can understand a short introduction in Spanish. (Interpretive Listening) ·
+    I can describe what exists in a space. (Presentational Speaking) ·
+    I can recognize Mexican greeting practices. (Cultures — Practices)
+  </div>
 </div>
 
 <!-- L01 -->
 <div class="lesson open" id="L01">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nm">L01</span>
-    <span class="lesson-title">Mucho gusto, soy yo — SER (identity & origin)</span>
-    <span class="lesson-struct">Focal: SER (soy/es/eres)</span>
+    <span class="lesson-num lnum-core">L01</span>
+    <span class="lesson-title">Mucho gusto, soy yo</span>
+    <span class="lesson-struct">Focal: SER (soy/eres/es/somos/son)</span>
+    <span class="status status-done">✅ Build Complete</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice Mid</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">First meeting at the feria — introducing yourself, saying your name, where you're from, and what you do. Two movements: declaring (soy, me llamo) and asking (¿Cómo te llamas? ¿De dónde eres?).</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">First meeting at the feria in Oaxaca — introducing yourself, saying your name, where you're from, and what you do. Two scenes: singular forms (soy/eres/es) → plural forms (somos/son) when don Marcos introduces his friends.</div></div>
     <div class="grid-2">
       <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can understand a short introduction in Spanish with visual/audio support. <em>(Interpretive Listening)</em><br>
-        2. I can introduce myself saying my name, origin, and occupation. <em>(Presentational Speaking)</em><br>
-        3. I can recognize greeting practices in Mexican culture. <em>(Cultures — Practices)</em>
+        1. I can understand a short introduction in Spanish. <em>(Interpretive Listening)</em><br>
+        2. I can introduce myself and describe a group using SER. <em>(Presentational Speaking)</em><br>
+        3. I can ask someone their name, where they're from, and who others are. <em>(Interpersonal)</em>
       </div></div>
       <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        SER: soy / es / eres — multiple forms, one paradigm. Complete paradigm presented in one lesson with two communicative scenes (singulars first, then dialogue with eres).<br>
-        tú/usted as pragmatic register marker (NOT a grammar paradigm — see SOP Nota Operativa).<br>
-        Hay as fixed formulaic chunk (there is/are — invariable, no Grammar Block).
+        SER — complete paradigm: soy / eres / es / somos / son<br>
+        <em>tú/usted</em> as pragmatic register marker (NOT a separate grammar paradigm — enters Paso a Paso as functional vocabulary)<br>
+        Connectors: <em>y, también</em> modeled in input, practiced in writing
       </div></div>
     </div>
-    <div class="field"><div class="field-label">Vocabulary Box</div><div class="field-content">
-      <strong>CORE (8):</strong>
-      <span class="tag tag-core">soy</span><span class="tag tag-core">es</span><span class="tag tag-core">eres</span>
-      <span class="tag tag-core">me llamo</span><span class="tag tag-core">de dónde</span><span class="tag tag-core">soy de ___</span>
-      <span class="tag tag-core">mucho gusto</span><span class="tag tag-core">buenos días</span><br>
-      <strong>SUPPORT (4):</strong>
-      <span class="tag tag-support">estudiante</span><span class="tag tag-support">profesor/a</span><span class="tag tag-support">doctor/a</span><span class="tag tag-support">mesero/a</span><span class="tag-new">NEW — professions</span><br>
-      <strong>CHUNKS (3):</strong>
-      <span class="tag tag-chunk">Soy de ___. Me llamo ___.</span>
-      <span class="tag tag-chunk">¿Cómo? ¿Puede repetir?</span><span class="tag-new">NEW — repair</span>
-      <span class="tag tag-chunk">Mucho gusto, soy ___.</span>
+    <div class="field"><div class="field-label">Vocabulary Box (Flashcards — 6 items)</div><div class="field-content">
+      <span class="tag tag-chunk">me llamo</span><span class="tag tag-chunk">mucho gusto</span><span class="tag tag-chunk">¿De dónde eres?</span><span class="tag tag-chunk">buenos días</span><span class="tag tag-core">vendedor/a</span><span class="tag tag-core">café de olla</span>
+      <br><em style="font-size:11px;">SER forms enter exclusively through Guided Noticing + Paso a Paso, not Vocabulary Preview.</em>
     </div></div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Cómo te llamas? / ¿Cómo se llama usted? / ¿De dónde eres? / ¿De dónde es usted? / ¿A qué te dedicas?</div></div>
-    <div class="field"><div class="field-label">Strategy Focus</div><div class="field-content"><span class="tag tag-strategy">Repair</span> — ¿Cómo? ¿Puede repetir? Más despacio, por favor. First survival tools for when communication breaks down.</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Don Marcos · <strong>Secondary:</strong> Doña Rosa</div></div>
-    <div class="cultural-anchor">Cultural anchor: First meeting at the feria — Don Marcos introduces himself to a new vendor. Mexican greeting practices: beso, abrazo, handshake. The warmth of "Mucho gusto" as relational, not formulaic.</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">First lesson — no prior structures to recycle. SER is 🎯 FOCAL and will recycle in all subsequent lessons.</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">✅ L01 Build Script v2 COMPLETE — confirmed as template for all future lessons.</div></div>
+    <div class="grid-3">
+      <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">
+        <strong>Desglosada:</strong> ¿Cómo te llamas? (informal) vs. ¿Cómo se llama usted? (formal) — TE vs. SE signals register.<br>
+        <strong>Quick Tip:</strong> ¿A qué se dedica? = "What do you dedicate yourself to?" — more respectful than ¿Qué haces?<br>
+        <strong>Practice:</strong> Match question to situation · Build question from word bank
+      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Writing</div><div class="field-content">Connectors: <strong>y, también</strong><br>Modeled in input. Writing task: "Write 2 sentences about yourself. Use 'y' to connect."</div></div>
+      <div class="field"><div class="field-label">SKILL 6 — Listening &amp; Speaking</div><div class="field-content">Repair: ¿Cómo? ¿Puede repetir? Más despacio, por favor.<br>Pronunciation: Spanish 5-vowel system vs. English ~15 vowels.</div></div>
+    </div>
+    <div class="cultural-anchor">First meeting at the feria. Mexican greeting practices: beso, abrazo, handshake. "Mucho gusto" as relational, not formulaic. Connects to Unit Cultural Theme: <em>confianza</em>.</div>
+    <div class="legend-note">Legend connection: Warm-up references Mesoamerican naming tradition. Full legend appears in CT1.</div>
   </div>
 </div>
 
 <!-- L02 -->
 <div class="lesson" id="L02">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nm">L02</span>
-    <span class="lesson-title">¿Qué hay aquí? — HAY (there is / there are)</span>
-    <span class="lesson-struct">Focal: hay (chunk formulaico)</span>
+    <span class="lesson-num lnum-core">L02</span>
+    <span class="lesson-title">¿Qué hay aquí?</span>
+    <span class="lesson-struct">Focal: hay (there is/are) — invariable chunk</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice Mid</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing what's at a place — Don Marcos describes his puesto at the feria. "Hay café de olla, hay tamales, hay agua de jamaica." The conversation advances with questions about what exists in a space.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing what's at a place — Don Marcos describes his puesto at the feria to doña Rosa and the students.</div></div>
     <div class="grid-2">
       <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
         1. I can understand a description of what's available at a place. <em>(Interpretive Listening)</em><br>
-        2. I can describe what exists in a space using <em>hay</em>. <em>(Presentational Speaking)</em>
+        2. I can describe what exists in a space using hay. <em>(Presentational Speaking)</em>
       </div></div>
       <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        <em>Hay</em> as invariable formulaic chunk — one form, no conjugation, no Grammar Block needed (SOP Nota Operativa).<br>
-        <em>No hay</em> for negation. <em>¿Qué hay en ___?</em> for questions.<br>
-        tú/usted recycles actively from L01.
+        <em>hay</em> — formulaic chunk, invariable (there is / there are). No Grammar Block — enters Vocabulary Box as chunk.<br>
+        Recycling: SER (L01) ♻️ · tú/usted ♻️
       </div></div>
     </div>
-    <div class="field"><div class="field-label">Vocabulary Box</div><div class="field-content">
-      <strong>CORE (8):</strong>
-      <span class="tag tag-core">hay</span><span class="tag tag-core">no hay</span><span class="tag tag-core">café de olla</span>
-      <span class="tag tag-core">tamales</span><span class="tag tag-core">agua de jamaica</span><span class="tag tag-core">pan</span>
-      <span class="tag tag-core">mercado</span><span class="tag tag-core">puesto</span><br>
-      <strong>SUPPORT (3):</strong>
-      <span class="tag tag-support">feria</span><span class="tag tag-support">personas</span><span class="tag tag-support">mucho/poco</span><br>
-      <strong>CHUNKS (3):</strong>
-      <span class="tag tag-chunk">Hay café de olla.</span>
-      <span class="tag tag-chunk">¿Qué hay en ___?</span>
-      <span class="tag tag-chunk">No hay ___, pero hay ___.</span>
+    <div class="field"><div class="field-label">Vocabulary Box (14 items)</div><div class="field-content">
+      <strong>CORE:</strong> <span class="tag tag-core">hay</span><span class="tag tag-core">no hay</span><span class="tag tag-core">café de olla</span><span class="tag tag-core">tamales</span><span class="tag tag-core">agua de jamaica</span><span class="tag tag-core">pan</span><span class="tag tag-core">mercado</span><span class="tag tag-core">puesto</span>
+      <strong>SUPPORT:</strong> <span class="tag tag-support">feria</span><span class="tag tag-support">personas</span><span class="tag tag-support">mucho/poco</span>
+      <strong>CHUNKS:</strong> <span class="tag tag-chunk">Hay café de olla.</span><span class="tag tag-chunk">¿Qué hay en ___?</span><span class="tag tag-chunk">No hay ___, pero hay ___.</span>
     </div></div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Qué hay en ___? / ¿Hay ___? / ¿Cuántos hay?</div></div>
-    <div class="field"><div class="field-label">Strategy Focus</div><div class="field-content"><span class="tag tag-strategy">Rehearsed formulas</span> — "Hay ___" as a single-chunk answer to any "what's there?" question. Building confidence through repetition of one form.</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Don Marcos · Doña Rosa · <strong>Secondary:</strong> Don Felipe</div></div>
-    <div class="cultural-anchor">Cultural anchor: Don Marcos's puesto at the feria — what's available, what's not, what makes each vendor unique. The feria as community space.</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">SER: soy/es/eres ♻️ — "Es el puesto de don Marcos." · tú/usted ♻️ — in puesto interactions.</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Scope defined. Build script pending.</div></div>
+    <div class="grid-3">
+      <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">
+        <strong>Desglosada:</strong> Questions with "hay" use intonation only: "¿Hay café?" vs. "Hay café." Rising intonation = question.<br>
+        <strong>Quick Tip:</strong> ¿Qué hay? is a common greeting in Mexico (like "What's up?").<br>
+        <strong>Practice:</strong> Match question to context · True/False (hay vs. no hay)
+      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Writing</div><div class="field-content">Connector: <strong>pero</strong><br>Modeled: "No hay pan, pero hay tamales." Writing task: "Write 2 sentences about your school. Use 'pero.'</div></div>
+      <div class="field"><div class="field-label">SKILL 6 — Listening &amp; Speaking</div><div class="field-content">Rehearsed formulas — "Hay ___" as a single-chunk answer to any "what's there?" question. Building confidence through repetition.</div></div>
+    </div>
+    <div class="cultural-anchor">Don Marcos's puesto at the feria — what's available, what's not, what makes each vendor unique. The feria as community space.</div>
   </div>
 </div>
 
 <!-- L03 -->
 <div class="lesson" id="L03">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nm">L03</span>
-    <span class="lesson-title">El café, la feria — Artículos y género</span>
-    <span class="lesson-struct">Focal: el/la/un/una</span>
+    <span class="lesson-num lnum-core">L03</span>
+    <span class="lesson-title">El café, la feria</span>
+    <span class="lesson-struct">Focal: Artículos (el/la/un/una) — singular</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice Mid</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Naming things at the feria and in the neighborhood — "el café, la señora, un tamal, una mesa." Gender as a property of nouns, not a grammar exercise.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Naming things at the feria and in the neighborhood. Sofía gives Tomás a tour — naming everything they see.</div></div>
     <div class="grid-2">
       <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can identify nouns with their correct article (el/la/un/una). <em>(Interpretive Reading)</em><br>
+        1. I can identify nouns with their correct article. <em>(Interpretive Reading)</em><br>
         2. I can name objects and people using the correct article. <em>(Presentational Speaking)</em>
       </div></div>
       <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        Definite articles: el / la. Indefinite articles: un / una.<br>
-        Gender as grammatical property (masculine/feminine).<br>
-        Singular only — plurals come in L04.
+        Artículos: el / la / un / una — singular only. Gender as grammatical category.<br>
+        Recycling: SER (L01) ♻️ · hay (L02) ♻️ · tú/usted ♻️
       </div></div>
     </div>
-    <div class="field"><div class="field-label">Vocabulary Box</div><div class="field-content">
-      <strong>CORE (10):</strong>
-      <span class="tag tag-core">el café</span><span class="tag tag-core">la feria</span><span class="tag tag-core">el mercado</span>
-      <span class="tag tag-core">la mesa</span><span class="tag tag-core">un tamal</span><span class="tag tag-core">una señora</span>
-      <span class="tag tag-core">el libro</span><span class="tag tag-core">la clase</span><span class="tag tag-core">el puesto</span><span class="tag tag-core">una persona</span><br>
-      <strong>CHUNKS (3):</strong>
-      <span class="tag tag-chunk">Es un ___.</span>
-      <span class="tag tag-chunk">Es una ___.</span>
-      <span class="tag tag-chunk">¿Qué es?</span>
+    <div class="field"><div class="field-label">Vocabulary Box (13 items)</div><div class="field-content">
+      <strong>CORE:</strong> <span class="tag tag-core">el café</span><span class="tag tag-core">la feria</span><span class="tag tag-core">el mercado</span><span class="tag tag-core">la mesa</span><span class="tag tag-core">un tamal</span><span class="tag tag-core">una señora</span><span class="tag tag-core">el libro</span><span class="tag tag-core">la clase</span><span class="tag tag-core">el puesto</span><span class="tag tag-core">una persona</span>
+      <strong>CHUNKS:</strong> <span class="tag tag-chunk">Es un ___.</span><span class="tag tag-chunk">Es una ___.</span><span class="tag tag-chunk">¿Qué es?</span>
     </div></div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Qué es ___? / ¿Es un ___ o una ___?</div></div>
-    <div class="field"><div class="field-label">Strategy Focus</div><div class="field-content"><span class="tag tag-strategy">Cognate strategy</span> — Recognizing English-Spanish cognates in article+noun combinations: el hospital, la universidad, el restaurante. Cognates as confidence builders.</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · Tomás · <strong>Secondary:</strong> Don Marcos</div></div>
-    <div class="cultural-anchor">Cultural anchor: Sofía gives Tomás a tour of the feria — naming everything they see. The objects of the feria as vocabulary anchors.</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">SER (L01): "El café es de Veracruz." · hay (L02): "Hay un mercado." · tú/usted ♻️</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
+    <div class="grid-3">
+      <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">
+        <strong>Desglosada:</strong> ¿Qué es? (identification) vs. ¿Qué es esto? (with demonstrative).<br>
+        <strong>Quick Tip:</strong> All Spanish nouns have gender. The article (el/la) tells you — not the meaning.<br>
+        <strong>Practice:</strong> Match article to noun · Sort nouns by gender
+      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Writing</div><div class="field-content">Connectors: <strong>y, también</strong><br>Writing task: "Name 3 things at the feria. Use 'y' and 'también.'</div></div>
+      <div class="field"><div class="field-label">SKILL 6 — Listening &amp; Speaking</div><div class="field-content">Cognate strategy — recognizing English-Spanish cognates: el hospital, la universidad, el restaurante. Cognates as confidence builders.</div></div>
+    </div>
+    <div class="cultural-anchor">The objects of the feria as vocabulary anchors. Sofía tours Tomás through the market.</div>
   </div>
 </div>
 
 <!-- L04 -->
 <div class="lesson" id="L04">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nm">L04</span>
-    <span class="lesson-title">Los tamales, las personas — Plural y cantidad</span>
-    <span class="lesson-struct">Focal: los/las/unos/unas + pluralización</span>
+    <span class="lesson-num lnum-core">L04</span>
+    <span class="lesson-title">Los tamales, las personas</span>
+    <span class="lesson-struct">Focal: Plural articles (los/las) + noun pluralization</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice Mid</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing quantity at the feria — "Hay muchos tamales. Hay pocas mesas. Los puestos son grandes." Moving from naming one thing to naming many.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Talking about multiple things and people at the feria. Plurality as community.</div></div>
     <div class="grid-2">
       <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can pluralize nouns and select the correct plural article. <em>(Presentational Speaking)</em><br>
-        2. I can describe quantity using hay + mucho/poco. <em>(Presentational Speaking)</em>
+        1. I can use plural articles and pluralize nouns. <em>(Presentational Speaking)</em><br>
+        2. I can ask and answer questions about quantity. <em>(Interpersonal)</em>
       </div></div>
       <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        Plural articles: los / las / unos / unas.<br>
-        Pluralization rules: -s / -es.<br>
-        hay + mucho/a, poco/a (quantity, not adjective concordance yet).
+        Plural articles: los / las / unos / unas + noun pluralization (-s / -es).<br>
+        Recycling: Artículos singular (L03) ♻️ · SER (L01): "Son de Oaxaca." ♻️ · hay (L02) ♻️
       </div></div>
     </div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Cuántos/cuántas hay? / ¿Hay muchos o pocos?</div></div>
-    <div class="field"><div class="field-label">Strategy Focus</div><div class="field-content"><span class="tag tag-strategy">Rehearsed formulas</span> — "Hay muchos ___" / "Hay pocas ___" as go-to quantity expressions.</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Don Felipe · <strong>Secondary:</strong> Sofía</div></div>
-    <div class="cultural-anchor">Cultural anchor: Don Felipe's bread stall — counting varieties, describing what's abundant and what's scarce. "Hay muchos panes de fiesta. No hay galletas hoy."</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">Artículos singular (L03): contraste con plural. · SER (L01): "Los tacos son de México." · hay (L02): "Hay muchos puestos."</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
+    <div class="field"><div class="field-label">Vocabulary Box (12 items)</div><div class="field-content">
+      <strong>CORE:</strong> <span class="tag tag-core">los</span><span class="tag tag-core">las</span><span class="tag tag-core">unos</span><span class="tag tag-core">unas</span><span class="tag tag-core">personas</span><span class="tag tag-core">vendedores</span><span class="tag tag-core">mercados</span><span class="tag tag-core">tamales</span><span class="tag tag-core">cafés</span>
+      <strong>CHUNKS:</strong> <span class="tag tag-chunk">Son los ___.</span><span class="tag tag-chunk">Hay muchos ___.</span><span class="tag tag-chunk">¿Cuántos hay?</span>
+    </div></div>
+    <div class="grid-3">
+      <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">
+        <strong>Desglosada:</strong> ¿Cuántos? (m) vs. ¿Cuántas? (f) — question word agrees with the noun.<br>
+        <strong>Quick Tip:</strong> Add -s if noun ends in vowel (mesa → mesas), -es if consonant (señor → señores).<br>
+        <strong>Practice:</strong> Match singular to plural · Choose ¿Cuántos/Cuántas?
+      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Writing</div><div class="field-content">Connector: <strong>y</strong><br>Writing task: "Write 2 sentences about people at the feria. Use plural forms and 'y.'</div></div>
+      <div class="field"><div class="field-label">SKILL 6 — Listening &amp; Speaking</div><div class="field-content">Pattern recognition — listening for -s and -es endings to identify plural forms. Pronunciation: plural -es adds a syllable.</div></div>
+    </div>
+    <div class="cultural-anchor">The feria as collective space — vendors (vendedores), people (personas), stalls (puestos). Plurality as community.</div>
   </div>
+</div>
+
+<!-- CT1 -->
+<div class="ct-block" id="CT1">
+  <h4><span class="ct-badge">CT1</span> Cuéntame — La Mulata de Córdoba &nbsp;<span class="status status-pending" style="font-size:10px;">⬜ Pending</span></h4>
+  <div class="grid-2">
+    <div class="field"><div class="field-label">Legend</div><div class="field-content">A woman accused of witchcraft in colonial Veracruz draws a ship on the wall and escapes. About identity, mystery, and freedom. <em>Narrated by Angélica García Genel. Adapted from podcast EP01.</em></div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
+      I can understand an adapted legend in Spanish. <em>(Interpretive Listening + Reading)</em><br>
+      I can write a short reflection about identity. <em>(Presentational Writing)</em>
+    </div></div>
+  </div>
+  <div class="grid-3">
+    <div class="field"><div class="field-label">Vocabulario Reciclado</div><div class="field-content">SER (soy/eres/es) · hay · artículos (el/la/los/las) · adjetivos (U2 preview if needed)</div></div>
+    <div class="field"><div class="field-label">Estrategia de Lectura (3 pasos)</div><div class="field-content">
+      <strong>Paso 1:</strong> Escucha global — "Who is the main character? Where is she?"<br>
+      <strong>Paso 2:</strong> Lee y escucha (SER forms highlighted)<br>
+      <strong>Paso 3 (opcional):</strong> Detalle — "What does she draw? What happens?"
+    </div></div>
+    <div class="field"><div class="field-label">Yo Escribo Task</div><div class="field-content">"Imagine you are the Mulata de Córdoba. Write 4-6 sentences introducing yourself. Who are you? Where are you from? What do people say about you? Use SER and articles."</div></div>
+  </div>
+  <div class="register-note">📌 Register note: The governor addresses the Mulata with a command — she responds with "Yo soy libre." This is the first literary moment where register and power collide. Students are not assessed on this, but it anchors the tú/usted discussion introduced in L01.</div>
 </div>
 
 </section>
@@ -297,124 +336,131 @@ h3{font-family:var(--heading);font-size:18px;color:var(--charcoal);margin-bottom
 <section id="u2">
 <div class="unit-header u2">
   <h2>Unit 2 — El mundo que te rodea</h2>
-  <div class="arc">Adjetivos · SER+adj · Posesivos · Familia · Descripción de espacios — People, things, and spaces</div>
-  <div class="cando">I can identify and describe people, objects, family members, and spaces using articles, adjectives, and possessives — in Mexican cultural contexts.</div>
+  <div class="arc">Artículos · Adjetivos · SER+adj · Posesivos · Familia · Descripción</div>
+  <div class="legend-tag">📖 Cuéntame: Los Alebrijes de Pedro Linares (CDMX, 1936)</div>
+  <div class="legend-tag">🎨 Cultural Theme: Description as creative act — from folk art to personal identity</div>
+  <div class="cando-list">
+    I can describe objects, places, and people using adjectives. (Presentational Speaking) ·
+    I can talk about things that belong to me or others. (Interpersonal) ·
+    I can introduce and describe my family. (Presentational Speaking) ·
+    I can understand descriptions in Spanish. (Interpretive Listening)
+  </div>
 </div>
 
 <!-- L05 -->
 <div class="lesson" id="L05">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num">L05</span>
-    <span class="lesson-title">Grande, pequeño, rojo — Adjetivos descriptivos</span>
-    <span class="lesson-struct">Focal: adj. concordancia género/número</span>
+    <span class="lesson-num lnum-core">L05</span>
+    <span class="lesson-title">Es grande y bonito</span>
+    <span class="lesson-struct">Focal: Adjectives + gender/number agreement</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice Mid → High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing what you see at the feria — people, objects, stalls. "El mercado antiguo. La camisa roja. Los puestos grandes." Physical descriptions, not personality yet.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing the feria vendors and their stalls — colors, sizes, textures. "El puesto de don Marcos es pequeño pero muy bonito."</div></div>
     <div class="grid-2">
       <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can describe objects and places using adjectives with correct agreement. <em>(Presentational Speaking)</em><br>
-        2. I can understand a short description of a person or place. <em>(Interpretive Listening)</em>
+        1. I can describe objects and places using adjectives. <em>(Presentational Speaking)</em><br>
+        2. I can ask what something is like. <em>(Interpersonal)</em>
       </div></div>
       <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        Descriptive adjectives: alto, bonito, antiguo, moderno, grande, pequeño, rojo, blanco.<br>
-        Gender and number concordance with noun.<br>
-        No personality adjectives yet (L06).
+        Descriptive adjectives + gender/number agreement. Adjectives follow the noun.<br>
+        Recycling: Artículos (L03-04) ♻️ · SER (L01) ♻️
       </div></div>
     </div>
-    <div class="field"><div class="field-label">Vocabulary Box</div><div class="field-content">
-      <strong>CORE (10):</strong>
-      <span class="tag tag-core">grande</span><span class="tag tag-core">pequeño/a</span><span class="tag tag-core">bonito/a</span>
-      <span class="tag tag-core">antiguo/a</span><span class="tag tag-core">moderno/a</span><span class="tag tag-core">alto/a</span>
-      <span class="tag tag-core">nuevo/a</span><span class="tag tag-core">rojo/a</span><span class="tag tag-core">blanco/a</span><span class="tag tag-core">verde</span><br>
-      <strong>SUPPORT (4):</strong>
-      <span class="tag tag-support">camisa</span><span class="tag tag-support">pantalones</span><span class="tag tag-support">zapatos</span><span class="tag tag-support">vestido</span><span class="tag-new">NEW — basic clothing</span><br>
-      <strong>CHUNKS (3):</strong>
-      <span class="tag tag-chunk">Es un mercado grande.</span>
-      <span class="tag tag-chunk">La camisa es roja.</span>
-      <span class="tag tag-chunk">¿Cómo es ___?</span>
+    <div class="field"><div class="field-label">Vocabulary Box (17 items)</div><div class="field-content">
+      <strong>CORE:</strong> <span class="tag tag-core">grande</span><span class="tag tag-core">pequeño/a</span><span class="tag tag-core">bonito/a</span><span class="tag tag-core">antiguo/a</span><span class="tag tag-core">moderno/a</span><span class="tag tag-core">alto/a</span><span class="tag tag-core">nuevo/a</span><span class="tag tag-core">rojo/a</span><span class="tag tag-core">blanco/a</span><span class="tag tag-core">verde</span>
+      <strong>SUPPORT:</strong> <span class="tag tag-support">camisa</span><span class="tag tag-support">pantalones</span><span class="tag tag-support">zapatos</span><span class="tag tag-support">vestido</span>
+      <strong>CHUNKS:</strong> <span class="tag tag-chunk">Es un mercado grande.</span><span class="tag tag-chunk">La camisa es roja.</span><span class="tag tag-chunk">¿Cómo es ___?</span>
     </div></div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Cómo es ___? / ¿Es grande o pequeño? / ¿De qué color es?</div></div>
-    <div class="field"><div class="field-label">Strategy Focus</div><div class="field-content"><span class="tag tag-strategy">Cognate strategy (continued)</span> — Many adjectives are cognates: moderno, importante, elegante. Using this pattern to guess meaning.</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · Tomás</div></div>
-    <div class="cultural-anchor">Cultural anchor: Sofía and Tomás describing the feria vendors and their stalls — colors, sizes, textures. "El puesto de don Marcos es pequeño pero muy bonito."</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">Artículos (L03): "el mercado antiguo" · Plural (L04): "los mercados modernos" · SER (L01): "Es un lugar bonito."</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">
+        <strong>Desglosada:</strong> ¿Cómo es? (description) vs. ¿De qué color es? (color specifically).<br>
+        <strong>Quick Tip:</strong> Adjectives match the noun: rojo (m) → roja (f) → rojos/rojas (pl).<br>
+        <strong>Practice:</strong> Match adjective to correct form · Build: noun + adjective with agreement
+      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 + SKILL 6</div><div class="field-content">
+        <strong>Connectors:</strong> pero, y — "Describe 2 things at the feria. Use 'pero' to contrast."<br>
+        <strong>Strategy:</strong> Cognate strategy (continued) — moderno, importante, elegante. Stress patterns in cognates.
+      </div></div>
+    </div>
+    <div class="cultural-anchor">Sofía and Tomás describing the feria vendors and their stalls.</div>
+    <div class="legend-note">Pedro Linares as creative defiance. Unit 2 theme: description as creative act. Full legend in CT2.</div>
   </div>
 </div>
 
 <!-- L06 -->
 <div class="lesson" id="L06">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num">L06</span>
-    <span class="lesson-title">Es simpático y trabajador — SER + personalidad</span>
-    <span class="lesson-struct">Focal: SER + adj. de personalidad</span>
+    <span class="lesson-num lnum-core">L06</span>
+    <span class="lesson-title">Es simpático y trabajador</span>
+    <span class="lesson-struct">Focal: SER + personality adjectives</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice Mid → High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing people's personality — "Don Marcos es simpático. Doña Rosa es muy responsable. ¿Es serio o paciente?"</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing people's personality. Elena describes the people in her life.</div></div>
     <div class="grid-2">
       <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
         1. I can describe someone's personality using SER + adjectives. <em>(Presentational Speaking)</em><br>
         2. I can ask about someone's personality. <em>(Interpersonal)</em>
       </div></div>
       <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        SER + personality adjectives (simpático, serio, trabajador, creativo, amable, generoso).<br>
-        Él/Ella es ___. Not physical adjectives from L05 in assessment.
+        SER + personality adjectives. Preview: ¿Cómo es? (SER) vs. ¿Cómo está? (ESTAR — U5).<br>
+        Recycling: Adjetivos físicos (L05) ♻️ · Artículos (L03-04) ♻️ · SER (L01) ♻️
       </div></div>
     </div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Cómo es ___? / ¿Es ___ o ___? / ¿Cómo eres tú?</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Elena · Sofía</div></div>
-    <div class="cultural-anchor">Cultural anchor: Elena describes the people in her life — colleagues, neighbors, family. Mexican warmth in describing others: "Es muy amable" as default positive framing.</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">Adjetivos físicos (L05): concordancia de género · Artículos (L03–04): "una persona amable" · SER soy/es (L01)</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
+    <div class="field"><div class="field-label">Vocabulary Box (15 items)</div><div class="field-content">
+      <strong>CORE:</strong> <span class="tag tag-core">simpático/a</span><span class="tag tag-core">serio/a</span><span class="tag tag-core">trabajador/a</span><span class="tag tag-core">creativo/a</span><span class="tag tag-core">amable</span><span class="tag tag-core">generoso/a</span><span class="tag tag-core">paciente</span><span class="tag tag-core">responsable</span><span class="tag tag-core">divertido/a</span><span class="tag tag-core">inteligente</span>
+      <strong>CHUNKS:</strong> <span class="tag tag-chunk">Es muy simpático.</span><span class="tag tag-chunk">¿Cómo es ___?</span><span class="tag tag-chunk">Es serio pero generoso.</span><span class="tag tag-chunk">¿Cómo eres tú?</span><span class="tag tag-chunk">Soy trabajador/a.</span>
+    </div></div>
+    <div class="cultural-anchor">Mexican warmth in describing others: "Es muy amable" as default positive framing.</div>
+    <div class="legend-note">Pedro Linares como creativo, trabajador. Description as act of creation.</div>
   </div>
 </div>
 
 <!-- L07 -->
 <div class="lesson" id="L07">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num">L07</span>
-    <span class="lesson-title">Lo mío y lo tuyo — Adjetivos posesivos</span>
-    <span class="lesson-struct">Focal: mi/tu/su/nuestro</span>
+    <span class="lesson-num lnum-core">L07</span>
+    <span class="lesson-title">Lo mío y lo tuyo</span>
+    <span class="lesson-struct">Focal: Possessive adjectives (mi/tu/su/nuestro)</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Talking about what belongs to whom — "mi familia, tu clase, su trabajo, nuestro curso." Possessives in familiar contexts.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Sofía and Elena organizing family photos — "nuestra familia", "tu abuela", "mis amigas de la UNAM." Possessives and affection.</div></div>
     <div class="grid-2">
       <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
         1. I can talk about things that belong to me or others using possessives. <em>(Presentational Speaking)</em><br>
         2. I can ask and answer questions about ownership. <em>(Interpersonal)</em>
       </div></div>
       <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        Possessives: mi / tu / su / nuestro/a.<br>
-        As determiners — not with SER as predicate.<br>
-        Only mi/tu/su/nuestro — not vuestro/sus (plural).
+        mi / tu / su / nuestro/a — possessives come BEFORE the noun.<br>
+        Recycling: SER+adj (L06) ♻️ · Artículos (L03): contraste artículo vs. posesivo ♻️
       </div></div>
     </div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿De quién es ___? / ¿Es tu ___? / ¿Cuál es tu correo electrónico?</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · <strong>Secondary:</strong> Elena</div></div>
-    <div class="cultural-anchor">Cultural anchor: Sofía and Elena organizing family photos — "nuestra familia", "tu abuela", "mis amigas de la UNAM." Possessives and affection.</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">SER+adj (L06): "Mi amiga es simpática." · Artículos (L03): contraste artículo vs. posesivo · Adjetivos (L05)</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
+    <div class="field"><div class="field-label">Vocabulary Box (14 items)</div><div class="field-content">
+      <strong>CORE:</strong> <span class="tag tag-core">mi</span><span class="tag tag-core">tu</span><span class="tag tag-core">su</span><span class="tag tag-core">nuestro/a</span><span class="tag tag-core">familia</span><span class="tag tag-core">clase</span><span class="tag tag-core">trabajo</span><span class="tag tag-core">curso</span>
+      <strong>SUPPORT:</strong> <span class="tag tag-support">amigo/a</span><span class="tag tag-support">casa</span><span class="tag tag-support">escuela</span>
+      <strong>CHUNKS:</strong> <span class="tag tag-chunk">¿De quién es ___?</span><span class="tag tag-chunk">Es mi ___.</span><span class="tag tag-chunk">Es nuestro ___.</span>
+    </div></div>
+    <div class="cultural-anchor">Possessives and affection in Mexican family life.</div>
+    <div class="legend-note">Pedro Linares y "mis alebrijes" — ownership as creative act.</div>
   </div>
 </div>
 
 <!-- L08 -->
 <div class="lesson" id="L08">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num">L08</span>
-    <span class="lesson-title">Mi familia — Presentar y describir a la familia ✦ NEW</span>
-    <span class="lesson-struct">Focal: SER + posesivos + adj (contexto familiar)</span>
+    <span class="lesson-num lnum-core">L08</span>
+    <span class="lesson-title">Mi familia</span>
+    <span class="lesson-struct">Focal: SER + possessives + family vocabulary</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="change-note">NEW LESSON in v2 — Did not exist in v1. Synthesizes SER + possessives + adjectives in the most personal context of SP101.</div>
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice Mid → High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Introducing and describing family members — "Esta es mi mamá Elena — es maestra. Este es mi papá — es serio pero muy generoso." The family as identity.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Introducing and describing family members. Elena introduces her family to Sofía and Tomás.</div></div>
     <div class="grid-2">
       <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
         1. I can introduce and describe family members using SER and possessives. <em>(Presentational Speaking)</em><br>
@@ -422,67 +468,63 @@ h3{font-family:var(--heading);font-size:18px;color:var(--charcoal);margin-bottom
         3. I can ask about someone's family. <em>(Interpersonal)</em>
       </div></div>
       <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        Family vocabulary + SER for relationships (es mi mamá / son mis hermanos) + possessives + adjectives — in the most personal context of SP101.<br>
-        <strong>A personal (receptive):</strong> Encountered naturally in input — "Conozco <strong>a</strong> mi abuela." "Llamo <strong>a</strong> mi mamá." No explicit rule; exposure as chunk.<span class="tag-new">NEW</span>
+        SER + possessives + adjectives in family context. Synthesis of U2 structures.<br>
+        Recycling: Posesivos (L07) ♻️ · SER+adj (L06) ♻️ · Artículos (L03-04) ♻️
       </div></div>
     </div>
-    <div class="field"><div class="field-label">Vocabulary Box</div><div class="field-content">
-      <strong>CORE (10):</strong>
-      <span class="tag tag-core">la mamá / el papá</span><span class="tag tag-core">el hermano / la hermana</span>
-      <span class="tag tag-core">el hijo / la hija</span><span class="tag tag-core">el abuelo / la abuela</span>
-      <span class="tag tag-core">la familia</span><span class="tag tag-core">somos (SER plural)</span><br>
-      <strong>CHUNKS (3):</strong>
-      <span class="tag tag-chunk">Es mi mamá. Se llama ___.</span>
-      <span class="tag tag-chunk">Somos cuatro en mi familia.</span>
-      <span class="tag tag-chunk">¿Tienes hermanos?</span>
+    <div class="field"><div class="field-label">Vocabulary Box (18 items)</div><div class="field-content">
+      <strong>CORE:</strong> <span class="tag tag-core">mamá</span><span class="tag tag-core">papá</span><span class="tag tag-core">hermano/a</span><span class="tag tag-core">abuela/o</span><span class="tag tag-core">tío/a</span><span class="tag tag-core">primo/a</span><span class="tag tag-core">hijo/a</span><span class="tag tag-core">familia</span><span class="tag tag-core">esposo/a</span><span class="tag tag-core">nieto/a</span><span class="tag tag-core">sobrino/a</span><span class="tag tag-core">padres</span>
+      <strong>SUPPORT:</strong> <span class="tag tag-support">mayor</span><span class="tag tag-support">menor</span><span class="tag tag-support">favorito/a</span>
+      <strong>CHUNKS:</strong> <span class="tag tag-chunk">Esta es mi mamá.</span><span class="tag tag-chunk">¿Tienes hermanos?</span><span class="tag tag-chunk">Sí, tengo ___.</span>
     </div></div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Tienes hermanos? / ¿Cómo es tu mamá/papá? / ¿Cuántos son en tu familia?</div></div>
-    <div class="field"><div class="field-label">Strategy Focus</div><div class="field-content"><span class="tag tag-strategy">Rehearsed formulas</span> — "Es mi ___. Se llama ___. Es ___." as a three-move formula for introducing anyone.</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · <strong>Secondary:</strong> Elena · Tomás</div></div>
-    <div class="cultural-anchor">Cultural anchor: Sofía shows Tomás photos on her phone. "Esta es mi mamá Elena — es maestra." Mexican family as extended, warm, ever-present. Somos cuatro vs. "nuclear family" assumptions.</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">Posesivos (L07) · SER+adj (L06) · Adjetivos (L05) · Artículos (L03–04)</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
+    <div class="cultural-anchor">The Mexican family as social unit — extended family norms, terms of respect for elders.</div>
+    <div class="register-note">📌 Register note: Students practice usted when addressing grandparents and older relatives — recycling the tú/usted distinction from L01 in a family context.</div>
   </div>
 </div>
 
 <!-- L09 -->
 <div class="lesson" id="L09">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num">L09</span>
-    <span class="lesson-title">Mi espacio, mi mundo — Describir el entorno ✦ NEW</span>
-    <span class="lesson-struct">Focal: Síntesis U2 (art + pl + adj + pos + hay)</span>
+    <span class="lesson-num lnum-core">L09</span>
+    <span class="lesson-title">Mi espacio, mi mundo</span>
+    <span class="lesson-struct">Focal: Synthesis — description + possession + identity</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="change-note">NEW LESSON in v2 — U2 synthesis. All U2 structures used together to describe a living space.</div>
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing your room, neighborhood, or a familiar space — "En mi cuarto hay una cama grande. Mi cocina es pequeña pero bonita." Synthesis of everything in U2.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing your own space — room, home, neighborhood. Synthesis lesson closing Unit 2.</div></div>
     <div class="grid-2">
       <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can describe a room, neighborhood, or space using articles, adjectives, possessives, and <em>hay</em>. <em>(Presentational Speaking)</em><br>
-        2. I can understand a description of someone's living space. <em>(Interpretive Listening)</em>
+        1. I can describe a place using adjectives and articles. <em>(Presentational Speaking)</em><br>
+        2. I can describe what belongs to me and what exists in a space. <em>(Interpersonal)</em>
       </div></div>
       <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        No new grammar — synthesis of artículos + plural + adjetivos + posesivos + hay in spatial description.<br>
-        Numbers 0–30 may appear incidentally ("Hay 5 sillas").
+        Synthesis: artículos + adjetivos + posesivos + hay + SER. No new grammar.<br>
+        Recycling: All U2 structures ♻️ + hay (L02) ♻️
       </div></div>
     </div>
-    <div class="field"><div class="field-label">Vocabulary Box</div><div class="field-content">
-      <strong>CORE (10):</strong>
-      <span class="tag tag-core">el cuarto / la habitación</span><span class="tag tag-core">la cocina</span><span class="tag tag-core">la cama</span>
-      <span class="tag tag-core">la silla / la mesa</span><span class="tag tag-core">la ventana</span><span class="tag tag-core">la puerta</span>
-      <span class="tag tag-core">la colonia / el vecindario</span><span class="tag tag-core">cerca / lejos</span><br>
-      <strong>CHUNKS (3):</strong>
-      <span class="tag tag-chunk">En mi cuarto hay ___.</span>
-      <span class="tag tag-chunk">Mi cocina es pequeña pero bonita.</span>
-      <span class="tag tag-chunk">¿Cómo es tu ___?</span>
+    <div class="cultural-anchor">Tomás describes his room at the UNAM dormitory. Sofía describes her room at home in CDMX.</div>
+  </div>
+</div>
+
+<!-- CT2 -->
+<div class="ct-block" id="CT2">
+  <h4><span class="ct-badge">CT2</span> Cuéntame — Los Alebrijes de Pedro Linares &nbsp;<span class="status status-pending" style="font-size:10px;">⬜ Pending</span></h4>
+  <div class="grid-2">
+    <div class="field"><div class="field-label">Legend</div><div class="field-content">Pedro creates impossible creatures from fever dreams. Creativity as defiance and perseverance. <em>Adapted from podcast EP10.</em></div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
+      I can understand an adapted legend in Spanish. <em>(Interpretive Listening + Reading)</em><br>
+      I can write a short description of an imaginary creature. <em>(Presentational Writing)</em>
     </div></div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Cómo es tu cuarto? / ¿Qué hay en tu cocina? / ¿Dónde vives?</div></div>
-    <div class="field"><div class="field-label">Strategy Focus</div><div class="field-content"><span class="tag tag-strategy">Combining formulas</span> — Using multiple practiced chunks together for the first time: "Hay + noun + adjective" = first creative recombination.</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Tomás · <strong>Secondary:</strong> Sofía</div></div>
-    <div class="cultural-anchor">Cultural anchor: Tomás describes his vecindad in Colonia Doctores by WhatsApp to his mamá in Oaxaca. "En mi cuarto hay una cama y un escritorio. Mi cocina es muy pequeña." The Mexican vecindad as lived space.</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">All U2 structures: artículos (L03–04) + adjetivos (L05–06) + posesivos (L07) + familia (L08) + hay (L02) + SER (L01)</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
+  </div>
+  <div class="grid-3">
+    <div class="field"><div class="field-label">Vocabulario Reciclado</div><div class="field-content">Adjectives (grande, pequeño, rojo, verde...) · possessives (mi, su) · hay · SER</div></div>
+    <div class="field"><div class="field-label">Estrategia de Lectura</div><div class="field-content">
+      <strong>Paso 1:</strong> "Who is Pedro Linares? What does he create?"<br>
+      <strong>Paso 2:</strong> Lee y escucha (adjectives highlighted)<br>
+      <strong>Paso 3:</strong> "Describe one alebrije from the story."
+    </div></div>
+    <div class="field"><div class="field-label">Yo Escribo Task</div><div class="field-content">"Create your own alebrije. Write 4-6 sentences describing it. What does it look like? What colors? Use adjectives and connectors (y, pero, también)."</div></div>
   </div>
 </div>
 
@@ -492,362 +534,488 @@ h3{font-family:var(--heading);font-size:18px;color:var(--charcoal);margin-bottom
 <section id="u3">
 <div class="unit-header u3">
   <h2>Unit 3 — La vida en movimiento</h2>
-  <div class="arc">Verbos -AR/-ER/-IR · Conectores de secuencia — What we do every day</div>
-  <div class="cando">I can describe daily routines, talk about what people do, and narrate a sequence of actions using present-tense verbs and basic connectors.</div>
+  <div class="arc">Verbos -AR/-ER/-IR · Conectores de secuencia</div>
+  <div class="legend-tag">📖 Cuéntame: El Ajolote Curioso / Xólotl (Prehispanic mythology)</div>
+  <div class="legend-tag">🎨 Cultural Theme: Action as ritual and routine</div>
+  <div class="cando-list">
+    I can describe my daily routine and activities. (Presentational Speaking) ·
+    I can ask and answer questions about actions. (Interpersonal) ·
+    I can organize a sequence of events using connectors. (Presentational Writing) ·
+    I can understand a narrative about actions. (Interpretive Listening)
+  </div>
 </div>
 
-<!-- L10 -->
+<!-- L10–L14 compact -->
+
 <div class="lesson" id="L10">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nh">L10</span>
-    <span class="lesson-title">Las personas del mercado — Verbos -AR (ellos/ellas)</span>
-    <span class="lesson-struct">Focal: -AR verbs, -an ending (3rd person plural)</span>
+    <span class="lesson-num lnum-core">L10</span>
+    <span class="lesson-title">Yo trabajo, tú estudias</span>
+    <span class="lesson-struct">Focal: -AR verbs (complete paradigm: yo/tú/él/nosotros/ellos)</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing what people do at the feria — "Las personas bailan. Los vendedores trabajan. Los niños cantan." Third person plural as entry point to verbs.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing daily activities. Don Marcos describes his day at the feria.</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can describe what I and others do using -AR verbs.<br>2. I can ask what someone does.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">trabajar</span><span class="tag tag-core">estudiar</span><span class="tag tag-core">cocinar</span><span class="tag tag-core">caminar</span><span class="tag tag-core">hablar</span><span class="tag tag-core">comprar</span><span class="tag tag-core">desayunar</span><span class="tag tag-core">preparar</span><span class="tag tag-core">ayudar</span><span class="tag tag-core">visitar</span><span class="tag tag-core">necesitar</span><span class="tag tag-core">tomar</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">Yo trabajo</span><span class="tag tag-chunk">Tú estudias</span><span class="tag tag-chunk">Él cocina</span><span class="tag tag-chunk">Nosotros caminamos</span><span class="tag tag-chunk">Ellos hablan</span><span class="tag tag-chunk">¿Qué haces?</span></div></div>
     <div class="grid-2">
-      <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can describe what groups of people do using -AR verbs. <em>(Presentational Speaking)</em><br>
-        2. I can understand a description of people's actions. <em>(Interpretive Listening)</em>
-      </div></div>
-      <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        -AR regular verbs: ellos/ellas/las personas → -an ending.<br>
-        bailar, cantar, trabajar, caminar, llegar, comprar.<br>
-        Only -an ending. No yo/tú/él yet.
-      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">primero, después, luego — "Describe your morning routine. Use primero, después, luego."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">Xólotl transforms (se transforma) — action as change.</div></div>
     </div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Qué hacen las personas? / ¿Quiénes trabajan aquí?</div></div>
-    <div class="field"><div class="field-label">Strategy Focus</div><div class="field-content"><span class="tag tag-strategy">Rehearsed → creative transition</span> — Recognizing which practiced phrase fits which moment. Moving from memorized chunks to pattern-based production for the first time.</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Tomás · <strong>Secondary:</strong> Sofía</div></div>
-    <div class="cultural-anchor">Cultural anchor: Tomás sketching the feria scene for a design class — describing what everyone is doing. "Las personas caminan. Los músicos tocan. Los niños bailan."</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">Artículos plural (L04): "Las personas..." · Adjetivos (L05): "Las personas amables bailan." · SER (L01) in context</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
   </div>
 </div>
-
-<!-- L11 -->
 <div class="lesson" id="L11">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nh">L11</span>
-    <span class="lesson-title">Yo desayuno, tú estudias — Verbos -AR (yo/tú)</span>
-    <span class="lesson-struct">Focal: -AR verbs, -o/-as endings</span>
+    <span class="lesson-num lnum-core">L11</span>
+    <span class="lesson-title">Ellos comen, nosotros bebemos</span>
+    <span class="lesson-struct">Focal: -ER verbs (complete paradigm)</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Talking about what you and others do daily — "Yo desayuno a las 8. ¿Tú estudias en la mañana?" Routines and daily life.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Describing eating, drinking, and related actions. Doña Rosa describes what people eat/drink at the feria.</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can describe what I and others eat, drink, and do using -ER verbs.<br>2. I can ask about eating and drinking habits.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">comer</span><span class="tag tag-core">beber</span><span class="tag tag-core">leer</span><span class="tag tag-core">vender</span><span class="tag tag-core">aprender</span><span class="tag tag-core">correr</span><span class="tag tag-core">comprender</span><span class="tag tag-core">creer</span><span class="tag tag-core">deber</span><span class="tag tag-core">responder</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">Yo como</span><span class="tag tag-chunk">Ellos beben café</span><span class="tag tag-chunk">¿Qué comes?</span></div></div>
     <div class="grid-2">
-      <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can describe my daily actions using -AR verbs in yo and tú forms. <em>(Presentational Speaking)</em><br>
-        2. I can ask someone about their routine. <em>(Interpersonal)</em>
-      </div></div>
-      <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        -AR verbs: yo → -o / tú → -as.<br>
-        desayunar, estudiar, trabajar, escuchar, hablar, llegar.<br>
-        Includes -an (L10) because already assessed.
-      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">y, también, pero — "Write 3 sentences about what you eat and drink. Use connectors."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">Xólotl flees (huye), transforms — actions in sequence.</div></div>
     </div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Qué haces por la mañana? / ¿Estudias o trabajas? / ¿A qué hora desayunas?</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · Don Marcos</div></div>
-    <div class="cultural-anchor">Cultural anchor: Sofía's morning routine — café con don Marcos before class. "Desayuno a las 7. Estudio en la UNAM. Don Marcos trabaja en la feria."</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">-AR -an (L10): "¿Trabajas? — Sí, las personas trabajan." · SER (L01) · Artículos (L03) · Posesivos (L07)</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
   </div>
 </div>
-
-<!-- L12 -->
 <div class="lesson" id="L12">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nh">L12</span>
-    <span class="lesson-title">Comer, beber, leer — Verbos -ER regulares</span>
-    <span class="lesson-struct">Focal: -ER verbs (all basic persons)</span>
+    <span class="lesson-num lnum-core">L12</span>
+    <span class="lesson-title">Vivimos aquí, escribimos allá</span>
+    <span class="lesson-struct">Focal: -IR verbs (complete paradigm)</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">What people eat, drink, read, learn — at the feria and in daily life. "Como tacos. ¿Bebes café o agua? Sofía lee mucho."</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Sofía and Tomás describe where they live and what they write.</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can describe where I live and what I write using -IR verbs.<br>2. I can ask where someone lives.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">vivir</span><span class="tag tag-core">escribir</span><span class="tag tag-core">abrir</span><span class="tag tag-core">subir</span><span class="tag tag-core">compartir</span><span class="tag tag-core">decidir</span><span class="tag tag-core">discutir</span><span class="tag tag-core">recibir</span><span class="tag tag-core">permitir</span><span class="tag tag-core">asistir</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">Yo vivo en ___</span><span class="tag tag-chunk">Escribo mensajes</span><span class="tag tag-chunk">¿Dónde vives?</span></div></div>
     <div class="grid-2">
-      <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can describe daily actions using -ER verbs. <em>(Presentational Speaking)</em><br>
-        2. I can understand a conversation about what people eat, drink, and do. <em>(Interpretive Listening)</em>
-      </div></div>
-      <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        -ER regular verbs: comer, beber, leer, correr, aprender, vender.<br>
-        All basic persons: yo/tú/él/ellos.<br>
-        Includes -AR (L10–11) in active recycling.
-      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">primero, después, luego, y — "Describe your day using -AR, -ER, and -IR verbs. Use connectors."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">Xólotl arrives (llega) at the lake — action + location.</div></div>
     </div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Qué comes? / ¿Dónde comes? / ¿Lees mucho?</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · Tomás</div></div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">-AR yo/tú (L11): comparison in mixed exercises · -AR -an (L10) · Artículos (L03–04) · Adjetivos (L05–06)</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
   </div>
 </div>
-
-<!-- L13 -->
 <div class="lesson" id="L13">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nh">L13</span>
-    <span class="lesson-title">Vivir, escribir, compartir — Verbos -IR regulares</span>
-    <span class="lesson-struct">Focal: -IR verbs (all basic persons)</span>
+    <span class="lesson-num lnum-core">L13</span>
+    <span class="lesson-title">¿Qué hago? ¿Qué haces?</span>
+    <span class="lesson-struct">Focal: Questions with all three verb types (-AR/-ER/-IR)</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Where you live, what you write, what you share — "Vivo en CDMX. Escribo en español todos los días. ¿Dónde vives tú?"</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Elena and Sofía ask each other about their routines. Questions as conversational glue.</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can ask and answer questions about daily activities.<br>2. I can understand questions about actions.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">hacer</span><span class="tag tag-core">qué</span><span class="tag tag-core">quién</span><span class="tag tag-core">dónde</span><span class="tag tag-core">cuándo</span><span class="tag tag-core">cómo · siempre</span><span class="tag tag-core">a veces</span><span class="tag tag-core">nunca</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">¿Qué haces? ¿Dónde vives? ¿Cuándo trabajas?</span></div></div>
     <div class="grid-2">
-      <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can describe where I live and what I do using -IR verbs. <em>(Presentational Speaking)</em><br>
-        2. I can ask someone about their life using -IR verbs. <em>(Interpersonal)</em>
-      </div></div>
-      <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        -IR regular verbs: vivir, escribir, compartir, asistir, abrir, recibir.<br>
-        yo/tú/él/ellos. Includes -ER (L12) and -AR (L10–11) in active recycling.
-      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">entonces — "Answer 3 questions about your routine. Use 'entonces' to connect."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">Xólotl stops (se detiene) and asks himself: ¿Qué hago?</div></div>
     </div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Dónde vives? / ¿Escribes en español? / ¿A qué clases asistes esta semana?</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Tomás · <strong>Secondary:</strong> Sofía</div></div>
-    <div class="cultural-anchor">Cultural anchor: Tomás describes his life as a student from Oaxaca living in CDMX — "Vivo en la Colonia Doctores. Asisto a clases en la Iberoamericana. Escribo a mi mamá en Oaxaca."</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">-ER (L12): mixed -ER/-IR exercises · -AR (L10–11) · Artículos · Posesivos (L07) · Adjetivos</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
   </div>
 </div>
-
-<!-- L14 -->
 <div class="lesson" id="L14">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nh">L14</span>
-    <span class="lesson-title">Primero... después... luego — Conectores de secuencia</span>
-    <span class="lesson-struct">Focal: Sequence connectors</span>
+    <span class="lesson-num lnum-core">L14</span>
+    <span class="lesson-title">Mi rutina semanal</span>
+    <span class="lesson-struct">Focal: Days of the week + frequency expressions (siempre, a veces, nunca)</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Narrating a sequence of daily activities — "Primero desayuno. Después estudio. Luego voy al mercado. Finalmente leo."</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Elena organizing the family's week — work, school, feria, church.</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can describe my weekly routine using days of the week and frequency.<br>2. I can ask when someone does something.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">lunes</span><span class="tag tag-core">martes</span><span class="tag tag-core">miércoles</span><span class="tag tag-core">jueves</span><span class="tag tag-core">viernes</span><span class="tag tag-core">sábado</span><span class="tag tag-core">domingo</span><span class="tag tag-core">siempre</span><span class="tag tag-core">a veces</span><span class="tag tag-core">nunca</span><span class="tag tag-core">los lunes</span><span class="tag tag-core">todos los días · semana</span><span class="tag tag-core">fin de semana</span><span class="tag tag-core">día</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">Los lunes trabajo</span><span class="tag tag-chunk">Siempre desayuno</span><span class="tag tag-chunk">¿Cuándo estudias?</span></div></div>
     <div class="grid-2">
-      <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can narrate a sequence of daily activities in order. <em>(Presentational Speaking)</em><br>
-        2. I can use connectors to link actions coherently. <em>(Presentational Speaking)</em><br>
-        3. I can understand a short narrated routine that uses sequence words. <em>(Interpretive Listening)</em>
-      </div></div>
-      <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        Sequence connectors: primero / después / luego / entonces / finalmente / al final.<br>
-        Time expressions: por la mañana / por la tarde / por la noche.
-      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">primero, después, luego, entonces — "Describe your weekly routine. Write 5 sentences."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">Xólotl transforms repeatedly — ritual as repetition (siempre).</div></div>
     </div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Qué haces primero? / ¿Y después? / ¿Qué haces por la noche?</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · <strong>Secondary:</strong> Elena</div></div>
-    <div class="cultural-anchor">Cultural anchor: Sofía tells her mamá Elena about her perfect day: primero café con don Marcos, luego clase de historia, después el mercado con Tomás, finalmente tiempo para leer en el parque. Elena escucha y sonríe.</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">Verbos -AR/-ER/-IR (L10–13): the actions being connected · Artículos (L03) · SER (L01) in narrative context</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
   </div>
 </div>
 
+<!-- CT3 -->
+<div class="ct-block" id="CT3">
+  <h4><span class="ct-badge">CT3</span> Cuéntame — El Ajolote Curioso (Xólotl) &nbsp;<span class="status status-pending" style="font-size:10px;">⬜ Pending</span></h4>
+  <div class="grid-2">
+    <div class="field"><div class="field-label">Legend</div><div class="field-content">The god Xólotl flees sacrifice and transforms repeatedly: corn, maguey, ajolote. Fear as transformation. <em>Adapted from podcast EP05.</em></div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
+      I can understand a legend about transformation. <em>(Interpretive Listening + Reading)</em><br>
+      I can write a short narrative using verbs and connectors. <em>(Presentational Writing)</em>
+    </div></div>
+  </div>
+  <div class="grid-3">
+    <div class="field"><div class="field-label">Vocabulario Reciclado</div><div class="field-content">-AR/-ER/-IR verbs · sequence connectors (primero, después, luego, entonces)</div></div>
+    <div class="field"><div class="field-label">Estrategia de Lectura</div><div class="field-content">
+      <strong>Paso 1:</strong> "Who is Xólotl? What does he do?"<br>
+      <strong>Paso 2:</strong> Lee y escucha (verbs highlighted)<br>
+      <strong>Paso 3:</strong> "How many times does he transform? What does he become?"
+    </div></div>
+    <div class="field"><div class="field-label">Yo Escribo Task</div><div class="field-content">"Imagine you can transform into three things. Write 4-6 sentences. What do you become? Use verbs (me transformo, soy, vivo) and connectors (primero, después, luego)."</div></div>
+  </div>
+</div>
 </section>
 
 <!-- ═══ UNIT 4 ═══ -->
 <section id="u4">
 <div class="unit-header u4">
   <h2>Unit 4 — Tiempo, números y agenda</h2>
-  <div class="arc">La hora · Tener · Números 0–100 · Horarios + Weather — Organizing life</div>
-  <div class="cando">I can tell time, share numbers, talk about what I have, describe my weekly schedule, and comment on the weather in Spanish.</div>
+  <div class="arc">La hora · Tener · Números 0–100 · Horarios + Weather</div>
+  <div class="legend-tag">📖 Cuéntame: Las Mariposas Monarca (Michoacán, purépecha tradition)</div>
+  <div class="legend-tag">🎨 Cultural Theme: Time as social structure — from Mesoamerican cosmovision to ahorita</div>
+  <div class="cando-list">
+    I can tell time and describe schedules. (Presentational Speaking) ·
+    I can express what I have and need using TENER. (Interpersonal) ·
+    I can count and use numbers 0–100. (Interpretive Reading / Presentational Speaking) ·
+    I can describe weather and time together. (Presentational Speaking)
+  </div>
 </div>
 
-<!-- L15 -->
+
 <div class="lesson" id="L15">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nh">L15</span>
-    <span class="lesson-title">¿Qué hora es? — La hora + el clima</span>
-    <span class="lesson-struct">Focal: Es la / Son las + weather chunks</span>
+    <span class="lesson-num lnum-core">L15</span>
+    <span class="lesson-title">¿Qué hora es?</span>
+    <span class="lesson-struct">Focal: Telling time (la hora)</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Telling time and commenting on the weather — natural social small talk. "Son las tres de la tarde y hace mucho calor." Time + weather = the two most common conversation openers.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Asking and telling time in daily contexts. "¿A qué hora es la clase?" Mexican time flexibility — "a las 3" might mean 3:15.</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can tell time in Spanish.<br>2. I can ask what time it is and when something happens.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">hora</span><span class="tag tag-core">es la una</span><span class="tag tag-core">son las dos</span><span class="tag tag-core">y media</span><span class="tag tag-core">y cuarto</span><span class="tag tag-core">menos cuarto</span><span class="tag tag-core">de la mañana</span><span class="tag tag-core">de la tarde</span><span class="tag tag-core">de la noche</span><span class="tag tag-core">en punto · reloj</span><span class="tag tag-core">temprano</span><span class="tag tag-core">tarde</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">¿Qué hora es? Son las tres</span><span class="tag tag-chunk">¿A qué hora es ___?</span></div></div>
     <div class="grid-2">
-      <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can tell and ask the time using Es la / Son las. <em>(Presentational Speaking)</em><br>
-        2. I can comment on the weather using simple expressions. <em>(Presentational Speaking)</em><br>
-        3. I can understand time and weather expressions in a short conversation. <em>(Interpretive Listening)</em>
-      </div></div>
-      <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        ¿Qué hora es? → Es la una. / Son las ___.<br>
-        y cuarto / y media / en punto. de la mañana/tarde/noche.<br>
-        <strong>Weather chunks (SUPPORT):</strong> hace calor / hace frío / llueve / está nublado / hace sol / hace viento — as formulaic chunks, not conjugated structures.<span class="tag-new">NEW</span>
-      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">entonces, después — "Describe your schedule. What time do you do 3 activities?"</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">Butterflies arrive every October — time as cycle, not line. Special note: Weather chunks (hace calor, llueve, está nublado) appear as SUPPORT vocab.</div></div>
     </div>
-    <div class="field"><div class="field-label">Vocabulary Box</div><div class="field-content">
-      <strong>CORE (8):</strong>
-      <span class="tag tag-core">¿Qué hora es?</span><span class="tag tag-core">Es la una</span><span class="tag tag-core">Son las ___</span>
-      <span class="tag tag-core">y media</span><span class="tag tag-core">y cuarto</span><span class="tag tag-core">en punto</span>
-      <span class="tag tag-core">de la mañana</span><span class="tag tag-core">de la tarde/noche</span><br>
-      <strong>SUPPORT (4):</strong>
-      <span class="tag tag-support">hace calor</span><span class="tag tag-support">hace frío</span><span class="tag tag-support">llueve</span><span class="tag tag-support">hace sol</span><span class="tag-new">NEW — weather</span><br>
-      <strong>CHUNKS (3):</strong>
-      <span class="tag tag-chunk">Son las 3 y hace calor.</span>
-      <span class="tag tag-chunk">¿Qué hora es? — Son las ___.</span>
-      <span class="tag tag-chunk">¿Qué tiempo hace? — Hace ___.</span>
-    </div></div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Qué hora es? / ¿A qué hora es ___? / ¿Qué tiempo hace hoy?</div></div>
-    <div class="field"><div class="field-label">Strategy Focus</div><div class="field-content"><span class="tag tag-strategy">Managing not-knowing</span> — "Listen for what you DO understand." At this midpoint, input complexity increases. The student learns to extract meaning from partial understanding.</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Don Marcos · <strong>Secondary:</strong> Sofía</div></div>
-    <div class="cultural-anchor">Cultural anchor: Don Marcos arrives at the feria early — "Son las 6 de la mañana y ya hace calor." Mexican time culture: the feria starts when it starts, not when the clock says.</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">SER (L01): es/son are forms of SER · Numbers 1–12 implicit · Artículos (L03): "la tarde" · Verbos -AR (L11): routine context</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
   </div>
 </div>
-
-<!-- L16 -->
 <div class="lesson" id="L16">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nh">L16</span>
-    <span class="lesson-title">Tengo, tienes, tiene — TENER (edad, posesión, expresiones)</span>
-    <span class="lesson-struct">Focal: TENER (tengo/tienes/tiene)</span>
+    <span class="lesson-num lnum-core">L16</span>
+    <span class="lesson-title">Tengo clase, tienes tiempo</span>
+    <span class="lesson-struct">Focal: TENER (complete paradigm: tengo/tienes/tiene/tenemos/tienen)</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Talking about what you have, how old you are, and how you feel — "Tengo 20 años. Tengo hambre. ¿Tienes clase hoy?"</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Tomás describes his schedule — "Tengo clase a las 10, tengo tarea, no tengo tiempo." University life as time negotiation.</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can say what I have and don't have using TENER.<br>2. I can ask what someone has.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">tener</span><span class="tag tag-core">tengo</span><span class="tag tag-core">tienes</span><span class="tag tag-core">tiene</span><span class="tag tag-core">tenemos</span><span class="tag tag-core">tienen</span><span class="tag tag-core">clase</span><span class="tag tag-core">tiempo</span><span class="tag tag-core">tarea</span><span class="tag tag-core">examen</span><span class="tag tag-core">hambre</span><span class="tag tag-core">sed · mucho/a</span><span class="tag tag-core">poco/a</span><span class="tag tag-core">no tengo</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">Tengo clase</span><span class="tag tag-chunk">¿Tienes tiempo? No tengo tarea.</span></div></div>
     <div class="grid-2">
-      <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can express age, possession, and physical states using tener. <em>(Presentational Speaking)</em><br>
-        2. I can ask someone about what they have. <em>(Interpersonal)</em>
-      </div></div>
-      <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        TENER: tengo / tienes / tiene — three basic forms.<br>
-        tener + age (tengo ___ años).<br>
-        tener + idiomatic expressions (hambre, sed, sueño, calor, frío).<br>
-        Not periphrastic at this level (tener que comes in CB/SP102).
-      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">pero, y — "Write 3 sentences about what you have and don't have."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">Xochi tiene (has) a memory of her grandmother. TENER as possession of memory.</div></div>
     </div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Cuántos años tienes? / ¿Tienes ___? / ¿Qué tiene don Marcos en su puesto?</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Doña Rosa · <strong>Secondary:</strong> Don Felipe</div></div>
-    <div class="cultural-anchor">Cultural anchor: Doña Rosa organizing the feria — "Tengo 54 años y tengo mucha energía. Don Felipe tiene 71 años. Tiene el mejor pan."</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">La hora (L15): "Tengo clase a las tres." · SER (L01): contraste ser/tener para edad · Artículos (L03): "Tengo el libro."</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
   </div>
 </div>
-
-<!-- L17 -->
 <div class="lesson" id="L17">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nh">L17</span>
-    <span class="lesson-title">Cero a treinta — Números 0–30</span>
-    <span class="lesson-struct">Focal: Numbers 0–30</span>
+    <span class="lesson-num lnum-core">L17</span>
+    <span class="lesson-title">Números 0–31</span>
+    <span class="lesson-struct">Focal: Numbers 0–31</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Numbers in daily life — prices, ages, phone numbers. "El café cuesta 15 pesos. Tengo 22 años."</div></div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Cuántos/cuántas? / ¿Cuánto cuesta? / ¿Cuántos años tiene?</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Don Felipe · <strong>Secondary:</strong> Sofía</div></div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">Tener (L16): "Tengo 22 años." · La hora (L15): "Son las 12." · Artículos (L03): "El número es..."</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Don Marcos counting inventory at the feria. Numbers as daily tool.</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can count from 0 to 31.<br>2. I can say my age and ask someone's age.<br>3. I can understand prices and dates.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">cero</span><span class="tag tag-core">uno</span><span class="tag tag-core">dos</span><span class="tag tag-core">tres</span><span class="tag tag-core">cuatro</span><span class="tag tag-core">cinco</span><span class="tag tag-core">seis</span><span class="tag tag-core">siete</span><span class="tag tag-core">ocho</span><span class="tag tag-core">nueve</span><span class="tag tag-core">diez</span><span class="tag tag-core">once</span><span class="tag tag-core">doce</span><span class="tag tag-core">trece</span><span class="tag tag-core">catorce</span><span class="tag tag-core">quince</span><span class="tag tag-core">veinte</span><span class="tag tag-core">veintiuno</span><span class="tag tag-core">treinta</span><span class="tag tag-core">treinta y uno</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">¿Cuántos años tienes? Tengo ___ años.</span></div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">y — "Write your age, your siblings' ages, and your parents' ages. Use 'y'."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">Xochi counts the years since her grandmother passed. Numbers as memory.</div></div>
+    </div>
   </div>
 </div>
-
-<!-- L18 -->
 <div class="lesson" id="L18">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nh">L18</span>
-    <span class="lesson-title">Treinta y uno a cien — Números 31–100</span>
-    <span class="lesson-struct">Focal: Numbers 31–100 + prices</span>
+    <span class="lesson-num lnum-core">L18</span>
+    <span class="lesson-title">Números 32–100</span>
+    <span class="lesson-struct">Focal: Numbers 32–100</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Prices at the mercado — "Los tamales cuestan 45 pesos. El café cuesta 30." Market math as communication.</div></div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Cuánto cuesta ___? / ¿Cuántos hay?</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Don Felipe · Sofía</div></div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">Números 0–30 (L17): mixed exercises 0–100 · Tener (L16): "Tiene 45 años." · Artículos (L03–04): "Los tacos cuestan..."</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Shopping at the feria — "¿Cuánto cuesta el café?" "Cuesta cincuenta pesos." Bargaining as social exchange.</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can count from 32 to 100.<br>2. I can ask and say prices.<br>3. I can understand quantities.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">cuarenta</span><span class="tag tag-core">cincuenta</span><span class="tag tag-core">sesenta</span><span class="tag tag-core">setenta</span><span class="tag tag-core">ochenta</span><span class="tag tag-core">noventa</span><span class="tag tag-core">cien</span><span class="tag tag-core">pesos</span><span class="tag tag-core">cuesta</span><span class="tag tag-core">¿Cuánto cuesta? · caro/a</span><span class="tag tag-core">barato/a</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">¿Cuánto cuesta? Cuesta ___ pesos</span><span class="tag tag-chunk">Son ___ pesos.</span></div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">pero — "Compare 2 prices at the feria. Use 'pero'."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">Millions of butterflies arrive. Large quantities as natural wonder.</div></div>
+    </div>
   </div>
 </div>
-
-<!-- L19 -->
 <div class="lesson" id="L19">
   <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
-    <span class="lesson-num nh">L19</span>
-    <span class="lesson-title">Mi semana — Horarios, días y frecuencia</span>
-    <span class="lesson-struct">Focal: Days of the week + frequency + ¿A qué hora?</span>
+    <span class="lesson-num lnum-core">L19</span>
+    <span class="lesson-title">Mi horario</span>
+    <span class="lesson-struct">Focal: Time + days + activities (synthesis)</span>
+    <span class="status status-pending">⬜ Pending</span>
     <span class="lesson-toggle">▾</span>
   </div>
   <div class="lesson-body">
-    <div class="field"><div class="field-label">ACTFL Level</div><div class="field-content">Novice High</div></div>
-    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Organizing the week — "Los lunes estudio. Los miércoles trabajo. Siempre desayuno a las 7. A veces voy al mercado los sábados."</div></div>
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Elena organizing the family's full week — synthesis of Unit 4 structures.</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can describe my complete weekly schedule.<br>2. I can ask about someone's schedule.<br>3. I can understand a schedule.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">horario</span><span class="tag tag-core">mañana</span><span class="tag tag-core">tarde</span><span class="tag tag-core">noche</span><span class="tag tag-core">madrugada</span><span class="tag tag-core">mediodía</span><span class="tag tag-core">medianoche</span><span class="tag tag-core">libre · ocupado/a</span><span class="tag tag-core">descanso</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">¿A qué hora ___? Los ___ a las ___.</span></div></div>
     <div class="grid-2">
-      <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
-        1. I can describe my weekly schedule using days, times, and frequency words. <em>(Presentational Speaking)</em><br>
-        2. I can ask about someone's schedule. <em>(Interpersonal)</em>
-      </div></div>
-      <div class="field"><div class="field-label">Focal Structure</div><div class="field-content">
-        Days of the week: lunes, martes... domingo.<br>
-        Frequency: siempre / a veces / nunca / los lunes.<br>
-        ¿A qué hora es ___? Includes la hora (L15) in context.
-      </div></div>
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">primero, después, luego, entonces — "Describe your Monday schedule. 5 sentences."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">The butterflies arrive every October — cyclical time as natural schedule.</div></div>
     </div>
-    <div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Qué haces los lunes? / ¿A qué hora es la clase? / ¿Siempre o a veces?</div></div>
-    <div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · <strong>Secondary:</strong> Tomás</div></div>
-    <div class="cultural-anchor">Cultural anchor: Elena organizing the family's week — work, school, feria, church. "Los domingos la familia come junta. Siempre."</div>
-    <div class="field"><div class="field-label">Recycling</div><div class="field-content">La hora (L15): "La clase es a las 9." · Números (L17–18): "Los lunes a las 10:30." · Verbos -AR (L11): rutina semanal</div></div>
-    <div class="field"><div class="field-label">Build Status</div><div class="field-content">⬜ Pending.</div></div>
   </div>
 </div>
 
+<!-- CT4 -->
+<div class="ct-block" id="CT4">
+  <h4><span class="ct-badge">CT4</span> Cuéntame — Las Mariposas Monarca &nbsp;<span class="status status-pending" style="font-size:10px;">⬜ Pending</span></h4>
+  <div class="grid-2">
+    <div class="field"><div class="field-label">Legend</div><div class="field-content">Xochi's grandmother died a year ago. One October day, millions of monarch butterflies arrive in Michoacán. In purépecha tradition, the butterflies carry the souls of those who have passed. <em>Adapted from podcast EP03.</em></div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
+      I can understand a legend about time and memory. <em>(Interpretive Listening + Reading)</em><br>
+      I can write about a memory using time expressions. <em>(Presentational Writing)</em>
+    </div></div>
+  </div>
+  <div class="grid-3">
+    <div class="field"><div class="field-label">Vocabulario Reciclado</div><div class="field-content">Time expressions (hace un año, en octubre, siempre) · TENER · numbers (millones) · ESTAR emotion (preview — extraña a su abuela)</div></div>
+    <div class="field"><div class="field-label">Estrategia de Lectura</div><div class="field-content">
+      <strong>Paso 1:</strong> "Who is Xochi? What happens in October?"<br>
+      <strong>Paso 2:</strong> Time expressions highlighted<br>
+      <strong>Paso 3:</strong> "When did her grandmother die? How does Xochi feel?"
+    </div></div>
+    <div class="field"><div class="field-label">Yo Escribo Task</div><div class="field-content">"Write about a memory of someone important to you. When did you see them? What did you do together? Use time expressions (hace ___, en ___, siempre) and connectors."</div></div>
+  </div>
+</div>
 </section>
 
 <!-- ═══ UNIT 5 ═══ -->
 <section id="u5">
 <div class="unit-header u5">
   <h2>Unit 5 — Aquí y ahora</h2>
-  <div class="arc">ESTAR loc. · IR+a · Venir · ESTAR emociones · Presente progresivo — Where you are, where you're going</div>
-  <div class="cando">I can describe where things are, express emotions, say where I'm going, and describe what's happening right now.</div>
+  <div class="arc">ESTAR loc. · IR+a · Venir · ESTAR emoc. · Progresivo</div>
+  <div class="legend-tag">📖 Cuéntame: Huehuetéotl — El Anciano del Fuego (Prehispanic mythology)</div>
+  <div class="legend-tag">🎨 Cultural Theme: Presence and absence — being here, being there, going, coming</div>
+  <div class="cando-list">
+    I can describe where things and people are. (Presentational Speaking) ·
+    I can express emotions and temporary states. (Interpersonal) ·
+    I can say where I'm going and where I'm coming from. (Presentational Speaking) ·
+    I can describe what's happening right now. (Presentational Speaking)
+  </div>
 </div>
 
-<!-- L20–L24 abbreviated for space -->
-<div class="lesson" id="L20"><div class="lesson-head" onclick="this.parentElement.classList.toggle('open')"><span class="lesson-num nh">L20</span><span class="lesson-title">¿Dónde está? — ESTAR (ubicación)</span><span class="lesson-struct">Focal: ESTAR location</span><span class="lesson-toggle">▾</span></div><div class="lesson-body"><div class="field"><div class="field-label">Focal Structure</div><div class="field-content">ESTAR: estoy/estás/está/están for location. en, cerca de, lejos de, al lado de. Only location — not emotions yet (L23).</div></div><div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Dónde está ___? / ¿Estás en ___?</div></div><div class="field"><div class="field-label">Strategy Focus</div><div class="field-content"><span class="tag tag-strategy">Global before detail</span> — Listening for the gist first, then details. Critical as input complexity increases.</div></div><div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Tomás · <strong>Secondary:</strong> Sofía</div></div><div class="field"><div class="field-label">Recycling</div><div class="field-content">SER (L01): implicit contrast · Preguntas (U1): ¿dónde? · Artículos (L03)</div></div></div></div>
 
-<div class="lesson" id="L21"><div class="lesson-head" onclick="this.parentElement.classList.toggle('open')"><span class="lesson-num nh">L21</span><span class="lesson-title">Voy a la feria — IR (presente) + IR a + infinitivo</span><span class="lesson-struct">Focal: IR conjugated + ir a + infinitivo</span><span class="lesson-toggle">▾</span></div><div class="lesson-body"><div class="field"><div class="field-label">Focal Structure</div><div class="field-content">IR: voy/vas/va/vamos/van. IR as movement verb (voy al mercado). IR a + infinitivo as immediate future (voy a comer). Both uses in one lesson because they share the form but serve different functions.</div></div><div class="field"><div class="field-label">Preguntas Integradas</div><div class="field-content">¿Adónde vas? / ¿Qué vas a hacer? / ¿Vas a ___?</div></div><div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · <strong>Secondary:</strong> Don Marcos</div></div><div class="field"><div class="field-label">Recycling</div><div class="field-content">ESTAR ubicación (L20) · Verbos -AR/-ER/-IR (L10–13): for ir a + infinitivo · Conectores (L14)</div></div></div></div>
+<div class="lesson" id="L20">
+  <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="lesson-num lnum-core">L20</span>
+    <span class="lesson-title">¿Dónde está?</span>
+    <span class="lesson-struct">Focal: ESTAR location (estoy/estás/está/están)</span>
+    <span class="status status-pending">⬜ Pending</span>
+    <span class="lesson-toggle">▾</span>
+  </div>
+  <div class="lesson-body">
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Tomás describes where things are at the feria. "El puesto de don Marcos está cerca de la entrada. Doña Rosa está al lado."</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can say where things and people are using ESTAR.<br>2. I can ask where something is.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">estar</span><span class="tag tag-core">estoy</span><span class="tag tag-core">estás</span><span class="tag tag-core">está</span><span class="tag tag-core">están</span><span class="tag tag-core">en</span><span class="tag tag-core">cerca de</span><span class="tag tag-core">lejos de</span><span class="tag tag-core">al lado de</span><span class="tag tag-core">aquí</span><span class="tag tag-core">allá · lugar</span><span class="tag tag-core">dónde</span><span class="tag tag-core">ubicación</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">¿Dónde está ___? Está en ___</span><span class="tag tag-chunk">Estoy aquí.</span></div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">y, pero — "Describe where 3 things are in your room."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">Jacinto is lost (está perdido) in the mountains.</div></div>
+    </div>
+  </div>
+</div>
+<div class="lesson" id="L21">
+  <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="lesson-num lnum-core">L21</span>
+    <span class="lesson-title">Voy a la feria</span>
+    <span class="lesson-struct">Focal: IR (voy/vas/va/vamos/van) + IR a + infinitive</span>
+    <span class="status status-pending">⬜ Pending</span>
+    <span class="lesson-toggle">▾</span>
+  </div>
+  <div class="lesson-body">
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Sofía describes her Saturday plans. "Voy a la feria con mi mamá. Vamos a comprar flores y tamales."</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can say where I'm going using IR.<br>2. I can express future plans using IR a + infinitive.<br>3. I can ask where someone is going.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">ir</span><span class="tag tag-core">voy</span><span class="tag tag-core">vas</span><span class="tag tag-core">va</span><span class="tag tag-core">vamos</span><span class="tag tag-core">van</span><span class="tag tag-core">a la feria</span><span class="tag tag-core">al mercado</span><span class="tag tag-core">a casa</span><span class="tag tag-core">a la escuela · ahora</span><span class="tag tag-core">después</span><span class="tag tag-core">mañana</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">Voy a ___</span><span class="tag tag-chunk">¿Adónde vas? Voy a comer.</span></div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">después, luego — "Describe your plans for tomorrow. Use IR a + infinitive and connectors."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">The traveler is going (va) somewhere, but gets lost.</div></div>
+    </div>
+  </div>
+</div>
+<div class="lesson" id="L22">
+  <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="lesson-num lnum-core">L22</span>
+    <span class="lesson-title">Vengo de Veracruz</span>
+    <span class="lesson-struct">Focal: VENIR (vengo/vienes/viene/vienen) — contrast IR/VENIR</span>
+    <span class="status status-pending">⬜ Pending</span>
+    <span class="lesson-toggle">▾</span>
+  </div>
+  <div class="lesson-body">
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Don Marcos introduces himself to a new vendor. "Soy de Veracruz, pero ahora vengo de la CDMX."</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can say where I'm coming from using VENIR.<br>2. I can contrast going vs. coming.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">venir</span><span class="tag tag-core">vengo</span><span class="tag tag-core">vienes</span><span class="tag tag-core">viene</span><span class="tag tag-core">vienen</span><span class="tag tag-core">de Veracruz</span><span class="tag tag-core">de casa</span><span class="tag tag-core">de la escuela · ahora</span><span class="tag tag-core">ya</span><span class="tag tag-core">todavía</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">Vengo de ___</span><span class="tag tag-chunk">¿De dónde vienes? Vienen de Oaxaca.</span></div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">y, pero — "Write 2 sentences: where you're going and where you're coming from. Use IR and VENIR."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">The fire god comes (viene) to guide the traveler.</div></div>
+    </div>
+  </div>
+</div>
+<div class="lesson" id="L23">
+  <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="lesson-num lnum-core">L23</span>
+    <span class="lesson-title">Estoy contento</span>
+    <span class="lesson-struct">Focal: ESTAR + adjectives (emotions/conditions)</span>
+    <span class="status status-pending">⬜ Pending</span>
+    <span class="lesson-toggle">▾</span>
+  </div>
+  <div class="lesson-body">
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Elena and Sofía describe how they feel after a long week. "Estoy cansada pero contenta. Estoy emocionada por el fin de semana."</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can express emotions and temporary states using ESTAR.<br>2. I can ask how someone feels.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">contento/a</span><span class="tag tag-core">triste</span><span class="tag tag-core">cansado/a</span><span class="tag tag-core">nervioso/a</span><span class="tag tag-core">emocionado/a</span><span class="tag tag-core">enfermo/a</span><span class="tag tag-core">ocupado/a</span><span class="tag tag-core">aburrido/a</span><span class="tag tag-core">enojado/a</span><span class="tag tag-core">tranquilo/a</span><span class="tag tag-core">preocupado/a</span><span class="tag tag-core">feliz · muy</span><span class="tag tag-core">un poco</span><span class="tag tag-core">hoy</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">¿Cómo estás? Estoy contento/a</span><span class="tag tag-chunk">Estoy un poco cansado/a.</span></div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">pero, porque — "Describe how you feel today. Use 'pero' and 'porque'."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">The traveler is lost and scared (está perdido y asustado).</div></div>
+    </div>
+  </div>
+</div>
+<div class="lesson" id="L24">
+  <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="lesson-num lnum-core">L24</span>
+    <span class="lesson-title">Estoy estudiando</span>
+    <span class="lesson-struct">Focal: Present progressive (ESTAR + gerund: -ando/-iendo)</span>
+    <span class="status status-pending">⬜ Pending</span>
+    <span class="lesson-toggle">▾</span>
+  </div>
+  <div class="lesson-body">
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Sofía and Tomás at Xochimilco on Sunday. "Ella está tomando fotos. Él está comiendo elotes. Todo está pasando ahora."</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can describe what I'm doing right now using the present progressive.<br>2. I can ask what someone is doing.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">estudiando</span><span class="tag tag-core">comiendo</span><span class="tag tag-core">escribiendo</span><span class="tag tag-core">hablando</span><span class="tag tag-core">trabajando</span><span class="tag tag-core">leyendo</span><span class="tag tag-core">cocinando</span><span class="tag tag-core">caminando</span><span class="tag tag-core">bebiendo</span><span class="tag tag-core">viviendo · ahora</span><span class="tag tag-core">en este momento</span><span class="tag tag-core">¿qué estás haciendo?</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">Estoy estudiando</span><span class="tag tag-chunk">¿Qué estás haciendo? Están comiendo.</span></div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">SKILL 4 — Connectors in Writing</div><div class="field-content">y, ahora, en este momento — "Describe what's happening at the feria right now. 4 sentences."</div></div>
+      <div class="field"><div class="field-label">Legend Connection</div><div class="field-content">The fire is burning (está ardiendo). The traveler is walking (está caminando).</div></div>
+    </div>
+  </div>
+</div>
 
-<div class="lesson" id="L22"><div class="lesson-head" onclick="this.parentElement.classList.toggle('open')"><span class="lesson-num nh">L22</span><span class="lesson-title">Vengo de Veracruz — VENIR (presente)</span><span class="lesson-struct">Focal: VENIR (vengo/vienes/viene)</span><span class="lesson-toggle">▾</span></div><div class="lesson-body"><div class="field"><div class="field-label">Focal Structure</div><div class="field-content">VENIR: vengo/vienes/viene/vienen. Contrast ir/venir in context (going vs. coming). "Vengo de Veracruz. ¿De dónde vienes?"</div></div><div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Don Marcos · Doña Rosa</div></div><div class="field"><div class="field-label">Recycling</div><div class="field-content">IR (L21): contrast ir/venir · ESTAR ubicación (L20) · SER origen (L01): "Soy de Veracruz" vs "Vengo de Veracruz"</div></div></div></div>
+<!-- CT5 -->
+<div class="ct-block" id="CT5">
+  <h4><span class="ct-badge">CT5</span> Cuéntame — Huehuetéotl: El Anciano del Fuego &nbsp;<span class="status status-pending" style="font-size:10px;">⬜ Pending</span></h4>
+  <div class="grid-2">
+    <div class="field"><div class="field-label">Legend</div><div class="field-content">Jacinto is lost in the mountains at night. An old man by a fire guides him home with a burning branch, then vanishes. Huehuetéotl: the fire god, the grandfather of all. <em>Adapted from podcast EP06.</em></div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">
+      I can understand a legend about being lost and found. <em>(Interpretive Listening + Reading)</em><br>
+      I can write a short narrative using ESTAR, IR, and VENIR. <em>(Presentational Writing)</em>
+    </div></div>
+  </div>
+  <div class="grid-3">
+    <div class="field"><div class="field-label">Vocabulario Reciclado</div><div class="field-content">ESTAR loc./emoc. (está perdido, está asustado) · IR/VENIR (va a casa, el anciano lo guía, llega) · progressive (está caminando) · la sombra ya no está</div></div>
+    <div class="field"><div class="field-label">Estrategia de Lectura</div><div class="field-content">
+      <strong>Paso 1:</strong> "Who is Jacinto? What happens to him?"<br>
+      <strong>Paso 2:</strong> ESTAR, IR, VENIR highlighted<br>
+      <strong>Paso 3:</strong> "Who helps him? Where does the old man go?"
+    </div></div>
+    <div class="field"><div class="field-label">Yo Escribo Task</div><div class="field-content">"Write about a time you felt lost or found. Where were you? How did you feel? Who helped you? Use ESTAR (location + emotion), IR, and VENIR."</div></div>
+  </div>
+  <div class="register-note">📌 Register note: Jacinto speaks to the old man using <em>usted</em> — he is a stranger, an elder, a figure of authority. The fire god addresses him with <em>tú</em>. This asymmetry of register (young person → elder = usted / elder → young person = tú) is explicitly noted in the comprehension questions and cultural reflection, recycling the tú/usted distinction introduced in L01 and practiced with family members in L08. Students are asked: "Why does Jacinto use usted? When do you use usted vs. tú in your own language?"</div>
+</div>
+</section>
 
-<div class="lesson" id="L23"><div class="lesson-head" onclick="this.parentElement.classList.toggle('open')"><span class="lesson-num nh">L23</span><span class="lesson-title">Estoy contento — ESTAR (emociones y condiciones)</span><span class="lesson-struct">Focal: ESTAR + emotion/condition adjectives</span><span class="lesson-toggle">▾</span></div><div class="lesson-body"><div class="field"><div class="field-label">Focal Structure</div><div class="field-content">ESTAR + adjective of emotion/condition: cansado, nervioso, contento, enfermo, ocupado, aburrido. Gender concordance with adjectives. Includes ESTAR ubicación (L20) active. Implicit contrast: SER (permanent trait) vs. ESTAR (current state).</div></div><div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Elena · Sofía</div></div><div class="field"><div class="field-label">Recycling</div><div class="field-content">ESTAR ubicación (L20): both uses of estar in mixed exercises · SER+adj personalidad (L06): contrast ser/estar + adjective</div></div></div></div>
+<!-- ═══ ALCANCE COMPLETO ═══ -->
+<section id="uac">
+<div class="unit-header uac">
+  <h2>Alcance Completo — AC1–AC4</h2>
+  <div class="arc">Stem-changers · Irregular yo · SER/ESTAR contrast · Direct Object Pronouns</div>
+  <div class="legend-tag">⚙️ Optional track — prerequisite: L01–L24 + CT1–CT5 complete</div>
+  <div class="cando-list">Full SP101 grammatical coverage for transfer credit and articulation purposes. AC lessons recycle Unit 1–5 cultural contexts — no separate cultural theme.</div>
+</div>
 
-<div class="lesson" id="L24"><div class="lesson-head" onclick="this.parentElement.classList.toggle('open')"><span class="lesson-num nh">L24</span><span class="lesson-title">Estoy estudiando — Presente progresivo</span><span class="lesson-struct">Focal: estar + gerundio (-ando/-iendo)</span><span class="lesson-toggle">▾</span></div><div class="lesson-body"><div class="field"><div class="field-label">Focal Structure</div><div class="field-content">Estar + gerundio (-ando for -AR, -iendo for -ER/-IR). estoy estudiando / están comiendo / ¿Qué estás haciendo?</div></div><div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · Tomás</div></div><div class="cultural-anchor">Cultural anchor: Sofía y Tomás en Xochimilco un domingo. Ella está tomando fotos. Él está comiendo elotes. Las personas están cantando, bailando y riendo. Todo está pasando ahora.</div><div class="field"><div class="field-label">Recycling</div><div class="field-content">ESTAR (L20/L23): estar is the base · Verbos -AR/-ER/-IR (L10–13): to form the gerund · Artículos (L03–04)</div></div></div></div>
+
+<div class="lesson" id="AC1">
+  <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="lesson-num lnum-ac">AC1</span>
+    <span class="lesson-title">Quiero, puedo</span>
+    <span class="lesson-struct">Focal: Stem-changing verbs (e→ie, o→ue)</span>
+    <span class="status status-pending">⬜ Pending</span>
+    <span class="lesson-toggle">▾</span>
+  </div>
+  <div class="lesson-body">
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Sofía, Tomás, and don Marcos at the feria. "Quiero comprar flores, pero no puedo — no tengo dinero."</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can express what I want and can do using stem-changing verbs.<br>2. I can ask about preferences.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">querer (quiero/quieres/quiere)</span><span class="tag tag-core">poder (puedo/puedes/puede)</span><span class="tag tag-core">pensar</span><span class="tag tag-core">preferir</span><span class="tag tag-core">empezar</span><span class="tag tag-core">volver</span><span class="tag tag-core">dormir</span><span class="tag tag-core">encontrar</span><span class="tag tag-core">costar</span><span class="tag tag-core">jugar</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">Quiero ir</span><span class="tag tag-chunk">¿Puedes ayudar? Prefiero café</span><span class="tag tag-chunk">No puedo</span><span class="tag tag-chunk">¿Cuánto cuesta? Juego fútbol.</span></div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">SKILL 4 — Connectors</div><div class="field-content">pero, porque</div></div>
+      <div class="field"><div class="field-label">Recycling</div><div class="field-content">Recycling: Regular verbs (L10–13) ♻️ · IR+a (L21) ♻️ · Números (L17–18) ♻️</div></div>
+    </div>
+  </div>
+</div>
+<div class="lesson" id="AC2">
+  <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="lesson-num lnum-ac">AC2</span>
+    <span class="lesson-title">Yo hago, yo sé</span>
+    <span class="lesson-struct">Focal: Irregular yo forms (hago, voy, tengo, sé, salgo, conozco, digo, vengo)</span>
+    <span class="status status-pending">⬜ Pending</span>
+    <span class="lesson-toggle">▾</span>
+  </div>
+  <div class="lesson-body">
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Don Marcos describes what he does every day. "Yo hago café, yo salgo temprano, yo conozco a todos los vendedores."</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can describe what I do using irregular yo verbs.<br>2. I can distinguish regular vs. irregular yo forms.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">hacer (hago)</span><span class="tag tag-core">ir (voy)</span><span class="tag tag-core">tener (tengo)</span><span class="tag tag-core">saber (sé)</span><span class="tag tag-core">salir (salgo)</span><span class="tag tag-core">conocer (conozco)</span><span class="tag tag-core">decir (digo)</span><span class="tag tag-core">venir (vengo)</span><span class="tag tag-core">traer (traigo)</span><span class="tag tag-core">poner (pongo)</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">Yo hago tarea</span><span class="tag tag-chunk">Yo sé español</span><span class="tag tag-chunk">Yo salgo temprano</span><span class="tag tag-chunk">No conozco a ___.</span></div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">SKILL 4 — Connectors</div><div class="field-content">y, pero</div></div>
+      <div class="field"><div class="field-label">Recycling</div><div class="field-content">Recycling: Regular verbs (L10–13) ♻️ · TENER (L16) ♻️ · IR (L21) ♻️ · VENIR (L22) ♻️</div></div>
+    </div>
+  </div>
+</div>
+<div class="lesson" id="AC3">
+  <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="lesson-num lnum-ac">AC3</span>
+    <span class="lesson-title">¿Es o está?</span>
+    <span class="lesson-struct">Focal: SER vs. ESTAR contrast (formal)</span>
+    <span class="status status-pending">⬜ Pending</span>
+    <span class="lesson-toggle">▾</span>
+  </div>
+  <div class="lesson-body">
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Elena and Sofía describe don Marcos. "Don Marcos es generoso. Siempre está contento."</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can distinguish when to use SER vs. ESTAR.<br>2. I can explain the difference between SER and ESTAR.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">ser (permanent)</span><span class="tag tag-core">estar (temporary)</span><span class="tag tag-core">característica</span><span class="tag tag-core">condición</span><span class="tag tag-core">ubicación</span><span class="tag tag-core">emoción</span><span class="tag tag-core">identidad</span><span class="tag tag-core">estado</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">Es generoso</span><span class="tag tag-chunk">(SER) Está contento</span><span class="tag tag-chunk">(ESTAR) Es de Oaxaca</span><span class="tag tag-chunk">(SER) Está en Oaxaca</span><span class="tag tag-chunk">(ESTAR)</span></div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">SKILL 4 — Connectors</div><div class="field-content">pero</div></div>
+      <div class="field"><div class="field-label">Recycling</div><div class="field-content">Recycling: SER (L01–L09) ♻️ · ESTAR location (L20) ♻️ · ESTAR emotion (L23) ♻️</div></div>
+    </div>
+  </div>
+</div>
+<div class="lesson" id="AC4">
+  <div class="lesson-head" onclick="this.parentElement.classList.toggle('open')">
+    <span class="lesson-num lnum-ac">AC4</span>
+    <span class="lesson-title">Lo tengo, la necesito</span>
+    <span class="lesson-struct">Focal: Direct Object Pronouns (lo/la/los/las)</span>
+    <span class="status status-pending">⬜ Pending</span>
+    <span class="lesson-toggle">▾</span>
+  </div>
+  <div class="lesson-body">
+    <div class="field"><div class="field-label">Communicative Situation</div><div class="field-content">Sofía and Elena shopping at the mercado. "¿El café?" "Lo compro aquí, con don Marcos." "¿Las flores?" "Las necesito para la mesa."</div></div>
+    <div class="field"><div class="field-label">Can-Do Statements</div><div class="field-content">1. I can replace direct objects with pronouns.<br>2. I can understand when someone uses direct object pronouns.</div></div>
+    <div class="field"><div class="field-label">Vocabulary</div><div class="field-content"><span class="tag tag-core">lo</span><span class="tag tag-core">la</span><span class="tag tag-core">los</span><span class="tag tag-core">las</span><span class="tag tag-core">tengo</span><span class="tag tag-core">necesito</span><span class="tag tag-core">compro</span><span class="tag tag-core">veo · café</span><span class="tag tag-core">flores</span><span class="tag tag-core">libros</span><br><strong>Chunks:</strong> <span class="tag tag-chunk">¿El café? Lo compro aquí</span><span class="tag tag-chunk">¿Las flores? Las necesito</span><span class="tag tag-chunk">No lo tengo.</span></div></div>
+    <div class="grid-2">
+      <div class="field"><div class="field-label">SKILL 4 — Connectors</div><div class="field-content">pero</div></div>
+      <div class="field"><div class="field-label">Recycling</div><div class="field-content">Recycling: All verbs (L10–13) ♻️ · Artículos (L03–04) ♻️ · TENER (L16) ♻️</div></div>
+    </div>
+  </div>
+</div>
 
 </section>
 
-<!-- ═══ COVERAGE BOOST ═══ -->
-<section id="cb">
-<div class="unit-header ucb">
-  <h2>Coverage Boost — Más profundo</h2>
-  <div class="arc">Stem-changers · Irregular yo · SER vs. ESTAR contrast · DOP — Full SP101 grammatical coverage</div>
-  <div class="cando">I can use stem-changing verbs, irregular yo forms, contrast ser and estar, and use direct object pronouns — completing the full grammatical scope of elementary Spanish.</div>
-</div>
-
-<div class="lesson" id="L25"><div class="lesson-head" onclick="this.parentElement.classList.toggle('open')"><span class="lesson-num cb">L25 CB</span><span class="lesson-title">Quiero, puedo — Verbos con cambio de raíz</span><span class="lesson-struct">Focal: e→ie, o→ue stem-changers</span><span class="lesson-toggle">▾</span></div><div class="lesson-body"><div class="field"><div class="field-label">Focal Structure</div><div class="field-content">querer (e→ie): quiero/quieres/quiere. poder (o→ue): puedo/puedes/puede. pensar, preferir, volver. Stem-change pattern.</div></div><div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · Tomás · <strong>Secondary:</strong> Don Marcos</div></div><div class="field"><div class="field-label">Recycling</div><div class="field-content">Regular verbs (L10–13): contrast regular vs. stem-change · IR+a (L21): "Quiero ir a..." · Números (L17–18): prices</div></div></div></div>
-
-<div class="lesson" id="L26"><div class="lesson-head" onclick="this.parentElement.classList.toggle('open')"><span class="lesson-num cb">L26 CB</span><span class="lesson-title">Yo hago, yo sé — Formas yo irregulares</span><span class="lesson-struct">Focal: Irregular yo forms</span><span class="lesson-toggle">▾</span></div><div class="lesson-body"><div class="field"><div class="field-label">Focal Structure</div><div class="field-content">Irregular yo: hago, voy, tengo, sé, salgo, conozco, digo, vengo. Only yo form — rest of paradigm regular.</div></div><div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Don Marcos · <strong>Secondary:</strong> Sofía</div></div></div></div>
-
-<div class="lesson" id="L27"><div class="lesson-head" onclick="this.parentElement.classList.toggle('open')"><span class="lesson-num cb">L27 CB</span><span class="lesson-title">¿Es o está? — SER vs. ESTAR contraste</span><span class="lesson-struct">Focal: SER/ESTAR contrast (formal)</span><span class="lesson-toggle">▾</span></div><div class="lesson-body"><div class="field"><div class="field-label">Focal Structure</div><div class="field-content">Formal contrast SER vs. ESTAR: characteristic vs. condition, identity vs. location, permanent trait vs. current state. "Don Marcos es generoso. Siempre está contento."</div></div><div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Elena · Sofía</div></div></div></div>
-
-<div class="lesson" id="L28"><div class="lesson-head" onclick="this.parentElement.classList.toggle('open')"><span class="lesson-num cb">L28 CB</span><span class="lesson-title">Lo tengo, la necesito — Objetos directos</span><span class="lesson-struct">Focal: DOP (lo/la/los/las)</span><span class="lesson-toggle">▾</span></div><div class="lesson-body"><div class="field"><div class="field-label">Focal Structure</div><div class="field-content">Direct object pronouns: lo/la/los/las. Position before conjugated verb. Concordance with replaced noun. "¿El café? Lo compro aquí, con don Marcos."</div></div><div class="field"><div class="field-label">Characters</div><div class="field-content"><strong>Focal:</strong> Sofía · Elena · <strong>Secondary:</strong> Don Marcos</div></div><div class="cultural-anchor">Cultural anchor: Sofía y Elena de compras al mercado un domingo. Cada vez que nombran un objeto, lo reemplazan: "¿El café?" "Lo compro aquí." "¿Las flores?" "Las necesito para la mesa."</div></div></div>
-
-</section>
-
-</div>
+</div><!-- end container -->
 
 <footer class="footer">
-  <strong>Spanish <em>Learning Edge</em></strong> · SP101 Course Outline v3 Reconciled<br>
-  March 2026 · Internal Use — SLE Instructional Design Team<br>
-  Replaces Course Outline v2 and SOP Recycling Map Appendix A.
+  SP101 Course Outline v4 REVISED · Spanish Learning Edge LLC · Marzo 2026 · Reemplaza Course Outline v3 en su totalidad · Uso interno — SLE Instructional Design Team
 </footer>
 
 <script>
-// Close all lessons on load except first
-document.querySelectorAll('.lesson').forEach((l,i)=>{if(i>0)l.classList.remove('open');});
+// All lessons closed by default except L01
+document.querySelectorAll('.lesson').forEach(l => {
+  if(l.id !== 'L01') l.classList.remove('open');
+});
 </script>
+
 </body>
 </html>

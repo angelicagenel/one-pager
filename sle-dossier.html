@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spanish Learning Edge — Institutional Dossier</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Eucalyptus Authority */
+  --bg-ivory: #F8F8F6;
+  --surface-eucalyptus: #F0F3F3;
+  --charcoal: #2F3437;
+  --secondary-text: #474747;
+  --eucalyptus-primary: #557076;
+  --eucalyptus-light: #C3D1D4;
+  --rose-accent: #D5ADAD;
+  --border-light: #DCDCDC;
+  /* Rose Stone */
+  --warm-bg: #F6F2F1;
+  --rose-surface: #EAD6D6;
+  --deep-rose: #B88F8F;
+  --rose-border: #DDBDBD;
+  --platinum: #E5E4E2;
+  --rosa: #F8EBEC;
+  /* Typography */
+  --heading: 'Montserrat', Georgia, serif;
+  --body: 'Poppins', -apple-system, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--body); background: var(--bg-ivory); color: var(--charcoal); font-size: 15px; line-height: 1.65; }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 4px;
+  background: var(--charcoal);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 9999;
+  text-decoration: none;
+  font-family: var(--body);
+}
+.skip-link:focus { left: 4px; }
+
+/* Focus styles */
+:focus-visible { outline: 2px solid var(--eucalyptus-primary); outline-offset: 2px; border-radius: 3px; }
+
+/* ── NAV ─────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--charcoal);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  height: 52px;
+  gap: 4px;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: auto;
+  text-decoration: none;
+}
+.nav-left img { height: 32px; width: auto; border-radius: 4px; display: block; }
+.nav-brand {
+  color: #fff;
+  font-family: var(--heading);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.nav a {
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 11px;
+  border-radius: 4px;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.nav a:hover { color: #fff; background: rgba(255,255,255,.12); }
+.nav a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* ── HERO ────────────────────────────────────── */
+.hero {
+  background: var(--charcoal);
+  color: #fff;
+  padding: 72px 28px 64px;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--eucalyptus-light);
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: var(--heading);
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.hero-tagline {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--rose-accent);
+  margin-bottom: 32px;
+  letter-spacing: .02em;
+}
+.hero-statements {
+  max-width: 660px;
+  margin: 0 auto 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.hero-statement {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  padding: 18px 24px;
+  text-align: left;
+}
+.hero-statement-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--eucalyptus-light);
+  margin-bottom: 6px;
+}
+.hero-statement p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.88);
+}
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 36px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-pills .pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  padding: 5px 13px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.25);
+  color: rgba(255,255,255,.85);
+  background: rgba(255,255,255,.09);
+}
+.hero-cta {
+  display: inline-block;
+  background: var(--eucalyptus-primary);
+  color: #fff;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: 14px 34px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+}
+.hero-cta:hover { background: #46626a; transform: translateY(-1px); }
+.hero-cta:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+/* ── SHARED LAYOUT ───────────────────────────── */
+.container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+section { padding: 64px 0; border-bottom: 1px solid var(--border-light); }
+section:last-of-type { border-bottom: none; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--eucalyptus-primary);
+  margin-bottom: 12px;
+}
+h2 {
+  font-family: var(--heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+h3 {
+  font-family: var(--heading);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.section-intro {
+  font-size: 15px;
+  color: var(--secondary-text);
+  max-width: 680px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* ── 3-COLUMN CARD GRID ──────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+  transition: box-shadow .2s, transform .2s;
+}
+.card:hover { box-shadow: 0 6px 22px rgba(0,0,0,.09); transform: translateY(-2px); }
+.card-top {
+  padding: 26px 24px 20px;
+  flex: 1;
+}
+.card-accent-euca { border-top: 4px solid var(--eucalyptus-primary); }
+.card-accent-rose  { border-top: 4px solid var(--deep-rose); }
+.card-accent-mid   { border-top: 4px solid #7BA1A5; }
+.card-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.badge-euca { background: var(--surface-eucalyptus); color: var(--eucalyptus-primary); }
+.badge-rose { background: var(--rosa); color: var(--deep-rose); }
+.badge-mid  { background: #dde9ea; color: #4a6d75; }
+.badge-avail { background: #d4ece5; color: #2a6b53; }
+.badge-upcoming { background: #f0f0ee; color: #666; }
+.card p { font-size: 14px; color: var(--secondary-text); line-height: 1.65; }
+.card-footer {
+  padding: 14px 24px;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-ivory);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.card-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--eucalyptus-primary);
+  text-decoration: none;
+  transition: color .2s;
+}
+.card-link:hover { color: var(--charcoal); text-decoration: underline; }
+.card-link:focus-visible { outline: 2px solid var(--eucalyptus-primary); }
+
+/* ── TRANSFORMATION SECTION ─────────────────── */
+#transformation { background: var(--surface-eucalyptus); }
+
+/* ── ABOUT / 2-COLUMN ────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
+  align-items: start;
+}
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.skill-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--secondary-text);
+  font-weight: 500;
+}
+.skill-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--eucalyptus-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.map-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--eucalyptus-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+.map-link:hover { color: var(--charcoal); text-decoration: underline; }
+.map-link:focus-visible { outline: 2px solid var(--eucalyptus-primary); }
+
+/* ── COURSE SEQUENCE ─────────────────────────── */
+#courses { background: var(--warm-bg); }
+
+/* ── HOW IT WORKS ────────────────────────────── */
+.steps-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  counter-reset: steps;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--charcoal);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--heading);
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.step h3 { font-size: 15px; margin-bottom: 0; }
+.step p { font-size: 13.5px; color: var(--secondary-text); line-height: 1.65; }
+
+/* ── DELIVERY DETAILS ────────────────────────── */
+#delivery { background: var(--surface-eucalyptus); }
+.delivery-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 40px;
+  list-style: none;
+  max-width: 760px;
+}
+.delivery-list li {
+  font-size: 14px;
+  color: var(--secondary-text);
+  line-height: 1.6;
+  padding-left: 18px;
+  position: relative;
+}
+.delivery-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--eucalyptus-primary);
+  font-weight: 700;
+}
+
+/* ── CONTACT ─────────────────────────────────── */
+#contact { background: var(--rosa); }
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+.contact-info a {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--eucalyptus-primary);
+  text-decoration: none;
+}
+.contact-info a:hover { text-decoration: underline; color: var(--charcoal); }
+.contact-info a:focus-visible { outline: 2px solid var(--eucalyptus-primary); }
+.contact-info .contact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+.contact-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--deep-rose);
+  min-width: 64px;
+}
+
+/* ── FOOTER ──────────────────────────────────── */
+.footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,.55);
+  padding: 36px 28px 28px;
+}
+.footer-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  margin-bottom: 20px;
+}
+.footer-creds { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,.65); }
+.footer-contact { font-size: 13px; text-align: right; line-height: 2; }
+.footer-contact a { color: rgba(255,255,255,.8); text-decoration: none; }
+.footer-contact a:hover { color: #fff; text-decoration: underline; }
+.footer-contact a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 2px; }
+.footer-copy { font-size: 11.5px; text-align: center; color: rgba(255,255,255,.35); max-width: 1160px; margin: 0 auto; }
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 900px) {
+  .card-grid { grid-template-columns: 1fr 1fr; }
+  .steps-row { grid-template-columns: repeat(2, 1fr); }
+  .two-col { grid-template-columns: 1fr; gap: 36px; }
+}
+@media (max-width: 620px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .steps-row { grid-template-columns: 1fr; }
+  .delivery-list { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 30px; }
+  .nav { padding: 0 16px; gap: 2px; }
+  .nav a { font-size: 11px; padding: 5px 7px; }
+  .container { padding: 0 16px; }
+  section { padding: 44px 0; }
+  .footer-inner { flex-direction: column; }
+  .footer-contact { text-align: left; }
+  .hero-pills .pill { font-size: 10px; padding: 4px 10px; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ── NAV ──────────────────────────────────────────── -->
+<nav class="nav" aria-label="Site navigation">
+  <a href="sle-dossier.html" class="nav-left" aria-label="Spanish Learning Edge home">
+    <img src="logo.png" alt="Spanish Learning Edge logo">
+    <span class="nav-brand">Spanish Learning Edge</span>
+  </a>
+  <a href="#overview">Overview</a>
+  <a href="sle-sp101.html">SP101</a>
+  <a href="sle-sp102.html">SP102</a>
+  <a href="sle-sp201.html">SP201</a>
+  <a href="sle-linguistic-competence-map.html">Competence Map</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────── -->
+<header class="hero" id="overview">
+  <div class="hero-eyebrow">Institutional Dossier</div>
+  <h1>Spanish Learning Edge</h1>
+  <p class="hero-tagline">Authentic Input · Instructionally Designed · ACTFL-Aligned</p>
+  <div class="hero-statements">
+    <div class="hero-statement">
+      <div class="hero-statement-label">Our Vision</div>
+      <p>A world where every anglophone student receives high-quality Mexican Spanish instruction — at no cost to them.</p>
+    </div>
+    <div class="hero-statement">
+      <div class="hero-statement-label">Our Mission</div>
+      <p>Delivering Spanish learning with zero student-facing cost, grounded in Mexican culture &amp; built on cutting-edge technology.</p>
+    </div>
+  </div>
+  <div class="hero-pills" aria-label="Program attributes">
+    <span class="pill">ZTC</span>
+    <span class="pill">NoLo</span>
+    <span class="pill">OER-Compatible</span>
+    <span class="pill">ACTFL-Aligned</span>
+    <span class="pill">Novice Mid → Intermediate High</span>
+    <span class="pill">Articulate Rise 360 · SCORM</span>
+    <span class="pill">Canvas-Ready</span>
+    <span class="pill">FERPA-Compliant</span>
+  </div>
+  <a href="#contact" class="hero-cta">Request a Demo</a>
+</header>
+
+<!-- ── MAIN CONTENT ──────────────────────────────────── -->
+<main id="main">
+
+<!-- ── TRANSFORMATION ────────────────────────────────── -->
+<section id="transformation">
+  <div class="container">
+    <div class="section-label">What SLE Makes Possible</div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top card-accent-euca">
+          <h3>For Your Students</h3>
+          <p>They experience Spanish as it's actually spoken — in Mexico, in context, with cultural depth. No textbook required.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top card-accent-rose">
+          <h3>For Your Program</h3>
+          <p>A complete, consistent curriculum that runs across all sections, all instructors, and all modalities — without rebuilding every semester.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top card-accent-mid">
+          <h3>For Your Institution</h3>
+          <p>ACTFL-aligned and Canvas-ready. One institutional license — no per-student fees, no access codes, no external accounts.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT THE SYSTEM ───────────────────────────────── -->
+<section id="system">
+  <div class="container">
+    <div class="section-label">The SLE System</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:15px;color:var(--secondary-text);line-height:1.8;">
+          Spanish Learning Edge uses a flipped, communicative model rooted in acquisition-based pedagogy. Every lesson pairs a pre-class eBook (grammar + input) with in-class communication activities — so contact hours are spent in authentic interaction, not explanation. All content is set in Mexican cultural contexts, featuring recurring characters and real-world scenarios. The curriculum is fully ACTFL-aligned from Novice Mid through Intermediate High, delivered through two Articulate Rise 360 objects per lesson (an eBook and a Compendio), and designed to run consistently across all sections and instructors.
+        </p>
+      </div>
+      <div>
+        <ul class="skill-list" aria-label="Six skill areas">
+          <li><span class="skill-num" aria-hidden="true">1</span> Vocabulary</li>
+          <li><span class="skill-num" aria-hidden="true">2</span> Grammar &amp; Verb Patterns</li>
+          <li><span class="skill-num" aria-hidden="true">3</span> Connectors &amp; Text Organization</li>
+          <li><span class="skill-num" aria-hidden="true">4</span> Pronunciation &amp; Writing</li>
+          <li><span class="skill-num" aria-hidden="true">5</span> Context, Culture &amp; Appropriateness</li>
+          <li><span class="skill-num" aria-hidden="true">6</span> Communication Strategies</li>
+        </ul>
+        <a href="sle-linguistic-competence-map.html" class="map-link">View full Linguistic Competence Map →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COURSE SEQUENCE ────────────────────────────────── -->
+<section id="courses">
+  <div class="container">
+    <div class="section-label">Three-Course Sequence</div>
+    <div class="card-grid">
+
+      <!-- SP101 -->
+      <div class="card">
+        <div class="card-top card-accent-euca">
+          <span class="card-badge badge-euca">Novice Mid/High</span>
+          <h3>SP101 · Elementary Spanish I</h3>
+          <p>Five units, 33 lessons. From first greetings to present progressive — grounded in the Oaxacan feria and recurring characters don Marcos, doña Rosa, Tomás, Sofía, and Elena.</p>
+        </div>
+        <div class="card-footer">
+          <a href="sle-sp101.html" class="card-link">View Course Details →</a>
+          <span class="card-badge badge-avail">Available</span>
+        </div>
+      </div>
+
+      <!-- SP102 -->
+      <div class="card">
+        <div class="card-top card-accent-rose">
+          <span class="card-badge badge-rose">Intermediate Low</span>
+          <h3>SP102 · Elementary Spanish II</h3>
+          <p>Past narration, reflexive verbs, celebrations, health, and the preterite/imperfect contrast — building on SP101's communicative foundation.</p>
+        </div>
+        <div class="card-footer">
+          <a href="sle-sp102.html" class="card-link">View Course Details →</a>
+          <span class="card-badge badge-upcoming">Upcoming</span>
+        </div>
+      </div>
+
+      <!-- SP201 -->
+      <div class="card">
+        <div class="card-top card-accent-mid">
+          <span class="card-badge badge-mid">Intermediate Mid/High</span>
+          <h3>SP201 · Intermediate Spanish I</h3>
+          <p>Commands, subjunctive, future, conditional, and argumentative discourse — moving students into confident, nuanced expression.</p>
+        </div>
+        <div class="card-footer">
+          <a href="sle-sp201.html" class="card-link">View Course Details →</a>
+          <span class="card-badge badge-upcoming">Upcoming</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ───────────────────────────────────── -->
+<section id="implementation">
+  <div class="container">
+    <div class="section-label">Implementation</div>
+    <div class="steps-row" role="list">
+
+      <div class="step" role="listitem">
+        <div class="step-num" aria-hidden="true">1</div>
+        <h3>Contact &amp; License</h3>
+        <p>Request a demo. We confirm your Canvas setup and issue an institutional license — per course, per year, all sections included.</p>
+      </div>
+
+      <div class="step" role="listitem">
+        <div class="step-num" aria-hidden="true">2</div>
+        <h3>Receive Your Package</h3>
+        <p>You receive all Rise 360 SCORM files, HTML tools, discussion prompts, rubrics, and a pacing guide.</p>
+      </div>
+
+      <div class="step" role="listitem">
+        <div class="step-num" aria-hidden="true">3</div>
+        <h3>Import to Canvas</h3>
+        <p>Upload SCORM packages to your Canvas shell. Add HTML tools as external URLs. Configure gradebook and discussions.</p>
+      </div>
+
+      <div class="step" role="listitem">
+        <div class="step-num" aria-hidden="true">4</div>
+        <h3>Launch</h3>
+        <p>Students access everything through Canvas. Nothing to buy. Nothing to download. Nothing to install.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── DELIVERY DETAILS ───────────────────────────────── -->
+<section id="delivery">
+  <div class="container">
+    <div class="section-label">Delivery &amp; Compliance</div>
+    <ul class="delivery-list" aria-label="Delivery and compliance details">
+      <li>Hosted by Spanish Learning Edge · U.S.-based servers</li>
+      <li>Students access via link inside Canvas</li>
+      <li>Canvas-compatible via SCORM · LTI integration in development</li>
+      <li>FERPA-compliant</li>
+      <li>AI voice narration in Mexican Spanish — natural, clear, consistent</li>
+      <li>Recurring character avatars: don Marcos, doña Rosa, Tomás, Sofía, Elena</li>
+      <li>One institutional license · no per-student fees · no access codes</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Get in Touch</div>
+    <h2>Request a Demo or Pilot Package</h2>
+    <p class="section-intro">Institutional licensing is available per course per year — all sections included, no per-student fees. Contact us to request a demo, ask questions, or explore a pilot package.</p>
+    <div class="contact-info">
+      <div class="contact-row">
+        <span class="contact-label">Website</span>
+        <a href="https://www.spanish-learning-edge.com/">spanish-learning-edge.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Email</span>
+        <a href="mailto:success@spanish-learning-edge.com">success@spanish-learning-edge.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-creds">
+      Angélica García Genel, PhD · Spanish Instructor · Instructional Designer<br>
+      Spanish Learning Edge, Founder · 15+ years of experience in higher education
+    </div>
+    <div class="footer-contact">
+      <a href="https://www.spanish-learning-edge.com/">spanish-learning-edge.com</a><br>
+      <a href="mailto:success@spanish-learning-edge.com">success@spanish-learning-edge.com</a>
+    </div>
+  </div>
+  <p class="footer-copy">Spanish Learning Edge LLC · All rights reserved</p>
+</footer>
+
+</body>
+</html>

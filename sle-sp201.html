@@ -71,7 +71,7 @@
     }
     .anchor p {
       font-family:'Playfair Display',serif;
-      font-size:13.5px; color:var(--ink); line-height:1.5;
+      font-size:13.5px; color:var(--ink); font-style:italic; line-height:1.5;
     }
 
     /* ── PREREQ BAND ───────────────────────────── */
@@ -84,7 +84,7 @@
     .prereq-band strong { color:var(--coral); font-weight:500; }
 
     /* ── BODY GRID ─────────────────────────────── */
-    .body { display:grid; grid-template-columns:1fr 1fr; }
+    .body { display:grid; grid-template-columns:1fr 1.4fr; }
     .col-left { padding:32px 28px 32px 48px; border-right:1px solid var(--divider); }
     .col-right { padding:32px 48px 32px 28px; }
 
@@ -158,20 +158,13 @@
       color:var(--amber); font-weight:500; margin-bottom:10px;
     }
     .lessons-hint { font-size:10.5px; color:var(--muted); margin-bottom:12px; font-style:italic; }
-    .lessons-section {
-      padding:28px 48px 32px;
-      border-top:1px solid var(--divider);
-    }
-    .lessons-grid {
-      border:1px solid var(--divider);
-      border-radius:5px;
-      overflow:hidden;
-    }
 
     .lesson {
-      border-bottom:1px solid var(--divider);
+      border:1px solid var(--divider);
+      border-radius:5px; margin-bottom:7px; overflow:hidden;
+      transition:box-shadow 0.2s;
     }
-    .lesson:last-child { border-bottom:none; }
+    .lesson:hover { box-shadow:0 2px 10px rgba(0,0,0,0.07); }
 
     .lesson-trigger {
       width:100%; text-align:left;
@@ -249,8 +242,7 @@
     @media print { body{background:white} .page{max-width:100%} .back-btn{display:none} }
     @media (max-width:640px) {
       .body,.pricing-section { grid-template-columns:1fr; }
-      header,.course-band,.anchor,.prereq-band,.col-left,.col-right,.pricing-section,.lessons-section,footer { padding-left:24px; padding-right:24px; }
-      .lessons-grid { grid-template-columns:1fr; }
+      header,.course-band,.anchor,.prereq-band,.col-left,.col-right,.pricing-section,footer { padding-left:24px; padding-right:24px; }
     }
   </style>
 </head>
@@ -270,8 +262,8 @@
   <!-- COURSE BAND -->
   <div class="course-band">
     <div class="course-name">Intermediate Spanish I</div>
-    <div class="course-meta">SP201 · ~33 lessons · Intermediate High–Advanced Low</div>
-    <div class="course-badge">Upcoming</div>
+    <div class="course-meta">SP201 · 5 Lessons · Intermediate High–Advanced Low</div>
+    <div class="course-badge">Coming 2026–2027</div>
   </div>
 
   <!-- ANCHOR -->
@@ -329,20 +321,13 @@
       <div class="skills-box">
         <div class="skills-label">What Students Can Do at Exit</div>
         <ul>
-          <li>Give instructions, advice, and formal recommendations in context</li>
-          <li>Express feelings, doubts, and reactions using the subjunctive</li>
-          <li>Talk about plans and goals at short and long range</li>
-          <li>Anticipate consequences and express hypothetical conditions</li>
-          <li>Argue a position and express opinions using discourse markers</li>
-          <li>Describe cultural values and practices with nuance</li>
+          <li>Give instructions and formal recommendations</li>
+          <li>Express opinion, emotion, and doubt with subjunctive</li>
+          <li>Plan and project at medium-to-long range</li>
+          <li>Argue a position using discourse markers</li>
+          <li>Reflect on cultural values with nuance</li>
         </ul>
       </div>
-
-
-    </div>
-
-    <!-- RIGHT -->
-    <div class="col-right">
 
       <div class="section">
         <div class="section-label">Every Course Includes</div>
@@ -350,31 +335,20 @@
           <li>No uploads · no IT tickets · no setup required</li>
           <li>Articulate Rise 360 interactive lessons</li>
           <li>Interactive HTML worksheets with auto-feedback</li>
-          <li>AI voice narration in Mexican Spanish — natural, clear, and consistent across all lessons.</li>
+          <li>Authentic Mexican Spanish audio with professional narration</li>
           <li>Digital flashcard sets &amp; grammar references</li>
           <li>Built-in auto-grading — no manual grading required</li>
           <li>Curriculum map with grammar scope &amp; sequence</li>
         </ul>
       </div>
 
-      <div class="section">
-        <div class="section-label">Delivery</div>
-        <ul>
-          <li>Hosted by Spanish Learning Edge</li>
-          <li>Students access via link inside Canvas</li>
-          <li>Canvas-compatible via SCORM · LTI integration in development</li>
-          <li>FERPA-compliant · U.S.-based hosting</li>
-        </ul>
-      </div>
-
     </div>
-  </div><!-- /body -->
 
-  <!-- COURSE SEQUENCE -->
-  <div class="lessons-section">
-    <div class="lessons-header">Course Sequence</div>
-    <p class="lessons-hint">Click any lesson to see vocabulary, grammar, and can-do goals.</p>
-    <div class="lessons-grid">
+    <!-- RIGHT -->
+    <div class="col-right">
+
+      <div class="lessons-header">Course Sequence</div>
+      <p class="lessons-hint">Click any lesson to see vocabulary, grammar, and can-do goals.</p>
 
       <!-- LESSON 11 -->
       <div class="lesson">
@@ -547,7 +521,7 @@
       </div>
 
     </div>
-  </div><!-- /lessons-section -->
+  </div><!-- /body -->
 
   <!-- PRICING -->
   <div class="pricing-section">
@@ -555,7 +529,7 @@
       <div class="price-tier">One Semester</div>
       <div class="price-amount"><sup>$</sup>1,200</div>
       <div class="price-detail">One section · up to 25 students<br>All assets included · 2026–2027</div>
-      <div class="price-includes">~33 lessons · Rise 360 · HTML worksheets · audio · flashcards</div>
+      <div class="price-includes">5 lessons · Rise 360 · HTML worksheets · audio · flashcards</div>
     </div>
     <div class="price-card featured">
       <div class="price-tier">One Year · 2 Semesters</div>

@@ -22,13 +22,13 @@
   --border:#E8E4E0;
   --sp101:#D4726A;
   --sp102:#7DA08E;
-  --sp201:#C4973B;
+  --sp201:#3d6870;
   --heading:'Playfair Display',Georgia,serif;
   --body:'DM Sans',-apple-system,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--body);background:var(--cream);color:var(--text);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+body{font-family:var(--body);background:var(--cream);color:var(--text);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;}
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:100;background:var(--charcoal);padding:0 32px;display:flex;align-items:center;height:48px;gap:8px;box-shadow:0 2px 12px rgba(0,0,0,.12);}
@@ -79,14 +79,14 @@ h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px
 .level-header{padding:24px 28px;border-radius:8px;margin-bottom:24px;color:#fff;}
 .level-header.sp101{background:linear-gradient(135deg,var(--sp101),#B85A54);}
 .level-header.sp102{background:linear-gradient(135deg,var(--sp102),#5B8570);}
-.level-header.sp201{background:linear-gradient(135deg,var(--sp201),#A07D2E);}
+.level-header.sp201{background:linear-gradient(135deg,#3d6870,#2d5058);}
 .level-header h2{color:#fff;font-size:24px;margin-bottom:2px;}
 .level-header .target{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.7);margin-bottom:8px;}
 .level-header .desc{font-size:14px;color:rgba(255,255,255,.9);max-width:680px;}
 
 /* TABLES */
 .table-wrap{overflow-x:auto;margin-bottom:28px;border-radius:8px;box-shadow:0 1px 8px rgba(0,0,0,.06);background:var(--warm-white);}
-.align-table{width:100%;min-width:1080px;border-collapse:collapse;font-size:13.5px;line-height:1.55;}
+.align-table{width:100%;min-width:1080px;border-collapse:collapse;font-size:14px;line-height:1.55;}
 .align-table thead th{background:var(--charcoal);color:#fff;padding:10px 12px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.03em;text-transform:uppercase;position:sticky;top:48px;z-index:10;}
 .align-table thead th:first-child{min-width:130px;border-radius:8px 0 0 0;}
 .align-table thead th:last-child{border-radius:0 8px 0 0;}
@@ -111,14 +111,18 @@ h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px
 .exit-profile{font-style:italic;color:var(--muted);font-size:13px;padding:14px 0;border-top:2px solid var(--border);}
 
 /* PROGRESSION TABLE */
-.prog-table{width:100%;border-collapse:collapse;font-size:13.5px;}
+.prog-table{width:100%;border-collapse:collapse;font-size:14px;}
 .prog-table thead th{background:var(--charcoal);color:#fff;padding:10px 12px;text-align:left;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
 .prog-table tbody td{padding:10px 12px;border:1px solid #EDEBE8;vertical-align:top;}
 .prog-table tbody td:first-child{font-weight:600;width:125px;}
 
 /* FOOTER */
-.footer{background:var(--charcoal);color:rgba(255,255,255,.45);padding:28px;text-align:center;font-size:13px;}
-.footer strong{color:rgba(255,255,255,.7);}
+.footer{background:var(--charcoal);padding:20px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-left{font-size:12px;color:rgba(255,255,255,.55);line-height:1.7;}
+.footer-right{font-size:12px;text-align:right;line-height:1.9;}
+.footer-link{color:#D5ADAD;text-decoration:none;}
+.footer-link:hover{text-decoration:underline;}
+.footer-bottom{font-size:11px;color:rgba(255,255,255,.35);text-align:center;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);width:100%;}
 
 @media(max-width:900px){
   .comp-grid{grid-template-columns:1fr;}
@@ -153,7 +157,7 @@ h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px
 <div style="background:#2F3437;padding:28px 48px 24px;display:flex;align-items:center;gap:22px;">
   <div style="flex:1;">
     <div style="font-family:'Montserrat',Georgia,serif;font-size:21px;font-weight:700;color:#ffffff;line-height:1.2;">Spanish <em style="font-style:normal;color:#D5ADAD;">Learning Edge</em></div>
-    <div style="font-size:10.5px;color:#ffe8e3;letter-spacing:0.09em;text-transform:uppercase;margin-top:5px;font-weight:300;">Authentic Input · Instructionally Designed · ACTFL-Aligned</div>
+    <div style="font-size:10.5px;color:#ffe8e3;letter-spacing:0.09em;text-transform:uppercase;margin-top:5px;font-weight:300;">A Spanish learning system grounded in Mexican culture &amp; built on cutting-edge technology.</div>
   </div>
   <img src="logo.png" alt="Spanish Learning Edge logo" style="width:76px;height:76px;object-fit:contain;flex-shrink:0;">
 </div>
@@ -284,8 +288,6 @@ h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px
     <div class="target">ACTFL Target: Intermediate Low</div>
     <div class="desc">Narration, obligation, and experience. Learners tell stories about the past, explain habits, describe people in detail, and sustain longer conversations — creating with the language for the first time.</div>
   </div>
-
-  <div class="se-note">📌 <strong>The word "se" in Spanish</strong> has four distinct uses, and this course introduces them gradually: reflexive & lexical <em>se</em> (Cluster 2), impersonal & passive <em>se</em> (Cluster 3), and reciprocal <em>se</em> (previewed in Cluster 6, formalized in SP201).</div>
 
   <h3>SP102 — Full Alignment Table</h3>
   <div class="table-wrap">
@@ -503,12 +505,17 @@ h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px
 
 </div>
 
-<div class="footer">
-  <strong>Angélica García Genel, PhD</strong> · Spanish Instructor · Instructional Designer · Spanish Learning Edge, Founder · 15+ years of experience in higher education<br>
-  <a href="https://www.spanish-learning-edge.com/" style="color:rgba(255,255,255,.55);">spanish-learning-edge.com</a> ·
-  <a href="mailto:success@spanish-learning-edge.com" style="color:rgba(255,255,255,.55);">success@spanish-learning-edge.com</a><br>
-  <span style="font-size:11px;margin-top:8px;display:block;">Spanish Learning Edge LLC · All rights reserved</span>
-</div>
+<footer class="footer" role="contentinfo">
+  <div class="footer-left">
+    Angélica García Genel, PhD · Spanish Instructor · Instructional Designer<br>
+    Spanish Learning Edge, Founder · 15+ years of experience in higher education
+  </div>
+  <div class="footer-right">
+    <a href="https://www.spanish-learning-edge.com/" class="footer-link">spanish-learning-edge.com</a><br>
+    <a href="mailto:success@spanish-learning-edge.com" class="footer-link">success@spanish-learning-edge.com</a>
+  </div>
+  <div class="footer-bottom">Spanish Learning Edge LLC · All rights reserved</div>
+</footer>
 
 </body>
 </html>

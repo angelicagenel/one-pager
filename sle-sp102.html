@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Spanish Learning Edge — Elementary Spanish II (SP102)</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #F8F8F6;
@@ -14,370 +14,104 @@
   --eucalyptus: #557076;
   --eucalyptus-light: #C3D1D4;
   --rose-accent: #D5ADAD;
+  --rose-surface: #F6F2F1;
   --border: #DCDCDC;
   --white: #ffffff;
 }
-
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--bg);
-  color: var(--secondary);
-  font-size: 16px;
-  line-height: 1.65;
-}
+body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--secondary); font-size: 16px; line-height: 1.65; }
 
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 4px;
-  background: var(--charcoal);
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: 4px;
-  font-size: 14px;
-  z-index: 9999;
-  text-decoration: none;
-}
+.skip-link { position: absolute; left: -9999px; top: 4px; background: var(--charcoal); color: #fff; padding: 8px 18px; border-radius: 4px; font-size: 14px; z-index: 9999; text-decoration: none; }
 .skip-link:focus { left: 4px; }
-
-:focus-visible {
-  outline: 2px solid var(--eucalyptus);
-  outline-offset: 2px;
-  border-radius: 3px;
-}
+:focus-visible { outline: 2px solid var(--eucalyptus); outline-offset: 2px; border-radius: 3px; }
 
 /* NAV */
-.site-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--charcoal);
-  padding: 0 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-.nav-logo { height: 30px; width: auto; display: block; }
-.nav-brand {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  white-space: nowrap;
-}
-.nav-back {
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  color: rgba(255,255,255,.8);
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,.3);
-  border-radius: 4px;
-  padding: 5px 14px;
-  transition: background 0.15s, color 0.15s;
-  white-space: nowrap;
-}
+.site-nav { position: sticky; top: 0; z-index: 100; background: var(--charcoal); padding: 0 48px; height: 48px; display: flex; align-items: center; gap: 16px; }
+.nav-logo { height: 30px; width: auto; border-radius: 4px; display: block; flex-shrink: 0; }
+.nav-brand { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: #fff; margin-right: auto; white-space: nowrap; }
+.nav-brand .rose { color: var(--rose-accent); }
+.nav-back { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 500; color: rgba(255,255,255,.8); text-decoration: none; border: 1px solid rgba(255,255,255,.3); border-radius: 4px; padding: 5px 14px; white-space: nowrap; transition: background .15s, color .15s; flex-shrink: 0; }
 .nav-back:hover { background: rgba(255,255,255,.1); color: #fff; }
 
 /* COURSE HEADER */
-.course-header { padding: 16px 48px; }
-.course-header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.course-name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-}
-.course-meta {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  color: rgba(255,255,255,.8);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-top: 4px;
-}
-.course-badge {
-  flex-shrink: 0;
-  background: var(--white);
-  font-family: 'Poppins', sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border-radius: 20px;
-  padding: 4px 12px;
-}
-.course-badge.available { color: var(--eucalyptus); }
-.course-badge.upcoming  { color: var(--rose-accent); }
+.course-header { padding: 16px 48px; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.course-title-wrap { flex: 1; min-width: 0; }
+.course-name { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #fff; line-height: 1.2; }
+.course-meta { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 400; color: rgba(255,255,255,.82); text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
+.course-badge { background: var(--white); font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; color: var(--eucalyptus); padding: 4px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: .06em; flex-shrink: 0; white-space: nowrap; }
 
 /* POSITIONING LINE */
-.positioning-line {
-  background: var(--surface);
-  padding: 16px 48px;
-}
-.positioning-line p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--charcoal);
-}
+.positioning-line { background: var(--surface); padding: 16px 48px; }
+.positioning-line p { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 400; color: var(--charcoal); }
+
+/* PREREQ NOTE */
+.prereq-note-band { background: var(--rose-surface); padding: 12px 48px; }
+.prereq-note-band p { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 400; color: var(--secondary); line-height: 1.6; }
+.prereq-note-band a { color: var(--eucalyptus); text-decoration: none; font-weight: 500; }
+.prereq-note-band a:hover { text-decoration: underline; }
 
 /* COURSE DESC */
-.course-desc-band {
-  background: var(--white);
-  padding: 24px 48px;
-}
-.course-desc {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--secondary);
-  max-width: 720px;
-  line-height: 1.65;
-}
-.prereq-note {
-  margin-top: 12px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--eucalyptus);
-  max-width: 720px;
-}
+.course-desc-band { background: var(--white); padding: 28px 48px; }
+.course-desc { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 400; color: var(--secondary); max-width: 760px; line-height: 1.65; }
+
+/* SECTION LABEL */
+.section-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: var(--eucalyptus); margin-bottom: 20px; }
 
 /* CAN-DO */
-.cando-section {
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  padding: 32px 48px;
-}
-.section-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--eucalyptus);
-  margin-bottom: 20px;
-}
-.cando-list {
-  list-style: none;
-  padding: 0;
-  counter-reset: cando;
-}
-.cando-list li {
-  counter-increment: cando;
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--secondary);
-  line-height: 1.55;
-}
+.cando-section { background: var(--white); border-top: 1px solid var(--border); padding: 32px 48px; }
+.cando-list { list-style: none; padding: 0; counter-reset: cando; }
+.cando-list li { counter-increment: cando; display: flex; align-items: baseline; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border); font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 400; color: var(--secondary); line-height: 1.8; }
 .cando-list li:last-child { border-bottom: none; }
-.cando-list li::before {
-  content: counter(cando);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--eucalyptus);
-  min-width: 22px;
-  flex-shrink: 0;
-}
+.cando-list li::before { content: counter(cando); font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: var(--eucalyptus); min-width: 22px; flex-shrink: 0; }
 
 /* SEQUENCE */
-.sequence-section {
-  background: var(--bg);
-  padding: 32px 48px;
-}
-.sequence-hint {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--eucalyptus);
-  margin-bottom: 20px;
-}
+.sequence-section { background: var(--bg); padding: 32px 48px; }
+.sequence-hint { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 400; color: var(--eucalyptus); margin-bottom: 20px; }
 
 /* ACCORDION */
-.accordion { display: flex; flex-direction: column; gap: 8px; }
-.acc-item {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  overflow: hidden;
-}
-.acc-trigger {
-  width: 100%;
-  text-align: left;
-  background: var(--white);
-  border: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: background 0.15s;
-}
-.acc-trigger:hover,
-.acc-trigger[aria-expanded="true"] { background: var(--surface); }
-
-.unit-badge {
-  background: var(--eucalyptus);
-  color: var(--white);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-  flex-shrink: 0;
-  white-space: nowrap;
-  line-height: 1.4;
-}
-.acc-trigger-inner {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px 10px;
-  min-width: 0;
-}
-.unit-name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--charcoal);
-}
+.accordion { display: flex; flex-direction: column; }
+.acc-trigger { width: 100%; text-align: left; background: var(--white); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; padding: 14px 18px; display: flex; align-items: center; gap: 12px; margin-bottom: 8px; transition: background .15s; font-family: 'Poppins', sans-serif; }
+.acc-trigger:hover { background: var(--surface); }
+.acc-trigger[aria-expanded="true"] { background: var(--surface); border-radius: 8px 8px 0 0; border-bottom-color: transparent; margin-bottom: 0; }
+.unit-pill { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; background: var(--eucalyptus); color: var(--white); padding: 3px 10px; border-radius: 4px; flex-shrink: 0; white-space: nowrap; line-height: 1.5; }
+.acc-inner { flex: 1; display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; min-width: 0; }
+.unit-name { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600; color: var(--charcoal); }
 .grammar-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-.grammar-tag {
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
-  background: var(--surface);
-  color: var(--eucalyptus);
-  padding: 2px 8px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-.acc-chevron {
-  color: var(--eucalyptus);
-  font-size: 14px;
-  transition: transform 0.25s;
-  flex-shrink: 0;
-  line-height: 1;
-  margin-left: 4px;
-}
+.grammar-tag { font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 400; background: var(--surface); color: var(--eucalyptus); padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+.acc-chevron { font-size: 14px; color: var(--eucalyptus); transition: transform .25s; flex-shrink: 0; line-height: 1; }
 .acc-trigger[aria-expanded="true"] .acc-chevron { transform: rotate(180deg); }
-
-.acc-panel {
-  display: none;
-  padding: 16px 20px 20px;
-  border-top: 1px solid var(--border);
-  background: var(--white);
-  animation: fadeIn 0.2s ease;
-}
-.acc-panel.open { display: block; }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.panel-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--eucalyptus);
-  margin-bottom: 6px;
-  margin-top: 14px;
-}
-.panel-label:first-child { margin-top: 0; }
-.panel-text {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--secondary);
-  line-height: 1.55;
-}
-.panel-cando-list { list-style: none; padding: 0; }
-.panel-cando-list li {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--secondary);
-  padding: 5px 0 5px 14px;
-  border-left: 2px solid var(--eucalyptus-light);
-  margin-bottom: 6px;
-  line-height: 1.5;
-}
-.panel-cando-list li:last-child { margin-bottom: 0; }
+.acc-panel { display: none; padding: 16px 20px; border: 1px solid var(--border); border-top: none; border-radius: 0 0 8px 8px; background: var(--white); margin-bottom: 8px; }
+.acc-panel.open { display: block; animation: fadeIn .2s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+.panel-situation { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 400; color: var(--secondary); line-height: 1.6; margin-bottom: 12px; }
+.panel-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: var(--eucalyptus); margin-bottom: 8px; }
+.panel-cando { list-style: none; padding: 0; }
+.panel-cando li { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 400; color: var(--secondary); padding: 5px 0 5px 14px; border-left: 2px solid var(--eucalyptus-light); margin-bottom: 6px; line-height: 1.5; }
+.panel-cando li:last-child { margin-bottom: 0; }
+.acc-note { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 400; color: var(--secondary); background: var(--surface); padding: 12px 16px; border-radius: 6px; margin-top: 8px; }
 
 /* CONTACT */
-.contact-band {
-  background: var(--surface);
-  padding: 24px 48px;
-}
-.contact-band p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--secondary);
-  line-height: 1.65;
-}
-.contact-link {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--eucalyptus);
-  text-decoration: none;
-}
+.contact-band { background: var(--surface); padding: 24px 48px; }
+.contact-band p { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 400; color: var(--secondary); line-height: 1.65; }
+.contact-link { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: var(--eucalyptus); text-decoration: none; margin-left: 8px; }
 .contact-link:hover { text-decoration: underline; }
 
 /* FOOTER */
-.site-footer {
-  background: var(--charcoal);
-  padding: 24px 48px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.footer-col {
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  color: rgba(255,255,255,.55);
-  line-height: 1.75;
-}
-.footer-col-right { text-align: right; }
-.footer-link { color: var(--rose-accent); text-decoration: none; }
+.site-footer { background: var(--charcoal); padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.footer-left { font-family: 'Poppins', sans-serif; font-size: 12px; color: rgba(255,255,255,.55); line-height: 1.7; }
+.footer-right { font-family: 'Poppins', sans-serif; font-size: 12px; color: var(--rose-accent); text-align: right; line-height: 1.9; }
+.footer-link { color: var(--rose-accent); text-decoration: none; display: block; }
 .footer-link:hover { text-decoration: underline; }
+.footer-bottom { width: 100%; font-family: 'Poppins', sans-serif; font-size: 11px; color: rgba(255,255,255,.35); text-align: center; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.1); }
 
 /* RESPONSIVE */
 @media (max-width: 640px) {
-  .site-nav, .course-header, .positioning-line,
-  .course-desc-band, .cando-section, .sequence-section,
-  .contact-band, .site-footer { padding-left: 20px; padding-right: 20px; }
-  .site-footer { flex-direction: column; }
-  .footer-col-right { text-align: left; }
-  .course-header-inner { flex-wrap: wrap; }
-  .acc-trigger-inner { flex-direction: column; align-items: flex-start; }
+  .site-nav, .course-header, .positioning-line, .prereq-note-band, .course-desc-band,
+  .cando-section, .sequence-section, .contact-band, .site-footer { padding-left: 20px; padding-right: 20px; }
+  .site-footer { align-items: flex-start; }
+  .footer-right { text-align: left; }
+  .acc-inner { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
@@ -386,21 +120,17 @@ body {
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <nav class="site-nav" aria-label="Site navigation">
-  <a href="sle-dossier.html" class="nav-left" aria-label="Spanish Learning Edge — home">
-    <img src="logo.png" alt="" class="nav-logo">
-    <span class="nav-brand">Spanish Learning Edge</span>
-  </a>
+  <img src="logo.png" alt="Spanish Learning Edge logo" class="nav-logo">
+  <span class="nav-brand">Spanish <span class="rose">Learning Edge</span></span>
   <a href="sle-dossier.html" class="nav-back">← Project Dossier</a>
 </nav>
 
-<header class="course-header" style="background: #557076;">
-  <div class="course-header-inner">
-    <div>
-      <h1 class="course-name">Elementary Spanish II</h1>
-      <p class="course-meta">SP102 · 6 Clusters</p>
-    </div>
-    <span class="course-badge available">Available</span>
+<header class="course-header" style="background:#557076;">
+  <div class="course-title-wrap">
+    <h1 class="course-name">Elementary Spanish II</h1>
+    <p class="course-meta">SP102 · Continues from SP101 · Intermediate Low</p>
   </div>
+  <span class="course-badge">Upcoming</span>
 </header>
 
 <main id="main">
@@ -409,9 +139,12 @@ body {
     <p>A Spanish learning system grounded in Mexican culture &amp; built on cutting-edge technology.</p>
   </div>
 
+  <div class="prereq-note-band">
+    <p>Continues from Elementary Spanish I (<a href="sle-sp101.html">SP101</a>). Builds directly on present tense, basic vocabulary, and communicative foundations.</p>
+  </div>
+
   <div class="course-desc-band">
     <p class="course-desc">Continues from SP101. Students move into past narration, reflexive verbs, celebrations, health, and the preterite/imperfect contrast — building on SP101's communicative foundation with new cultural contexts.</p>
-    <p class="prereq-note">Continues from SP101.</p>
   </div>
 
   <section class="cando-section" aria-labelledby="cando-label">
@@ -428,186 +161,155 @@ body {
 
   <section class="sequence-section" aria-labelledby="sequence-label">
     <h2 class="section-label" id="sequence-label">Course Sequence</h2>
-    <p class="sequence-hint">Click any unit to see grammar focus and communicative goals.</p>
-
+    <p class="sequence-hint">Six thematic clusters — each building on the last.</p>
     <div class="accordion">
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="true" aria-controls="panel-c1" id="trigger-c1">
-          <span class="unit-badge">1</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Shopping &amp; Transactions</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">regular preterite</span>
-              <span class="grammar-tag">indirect object pronouns</span>
-              <span class="grammar-tag">demonstrative adjectives</span>
-            </span>
+      <button class="acc-trigger" aria-expanded="true" aria-controls="panel-c1" id="trigger-c1" role="button" tabindex="0">
+        <span class="unit-pill">1</span>
+        <span class="acc-inner">
+          <span class="unit-name">Shopping &amp; Transactions</span>
+          <span class="grammar-tags">
+            <span class="grammar-tag">Regular preterite</span>
+            <span class="grammar-tag">indirect object pronouns</span>
+            <span class="grammar-tag">demonstratives</span>
           </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel open" id="panel-c1" role="region" aria-labelledby="trigger-c1">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students narrate purchases and transactions in a marketplace context.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">Regular preterite, indirect object pronouns, demonstrative adjectives</p>
-          <p class="panel-label">Can-Do Statements</p>
-          <ul class="panel-cando-list">
-            <li>I can narrate a purchase or transaction.</li>
-            <li>I can explain what I bought and for whom.</li>
-          </ul>
-        </div>
+        </span>
+        <span class="acc-chevron" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-panel open" id="panel-c1" role="region" aria-labelledby="trigger-c1">
+        <p class="panel-situation">Markets, prices, and purchases in Mexican cultural context.</p>
+        <p class="panel-label">Can-Do</p>
+        <ul class="panel-cando">
+          <li>I can narrate a purchase.</li>
+          <li>I can explain what I bought and for whom.</li>
+        </ul>
       </div>
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c2" id="trigger-c2">
-          <span class="unit-badge">2</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Daily Routines &amp; Habits</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">reflexive verbs</span>
-              <span class="grammar-tag">indefinite/negative words</span>
-              <span class="grammar-tag">preterite of SER/IR</span>
-            </span>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c2" id="trigger-c2" role="button" tabindex="0">
+        <span class="unit-pill">2</span>
+        <span class="acc-inner">
+          <span class="unit-name">Daily Routines &amp; Habits</span>
+          <span class="grammar-tags">
+            <span class="grammar-tag">Reflexive verbs</span>
+            <span class="grammar-tag">indefinite/negative words</span>
+            <span class="grammar-tag">preterite of SER/IR</span>
           </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel" id="panel-c2" role="region" aria-labelledby="trigger-c2">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students describe personal routines, reflexive actions, and daily habits.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">Reflexive verbs, indefinite/negative words, preterite of SER/IR</p>
-          <p class="panel-label">Can-Do Statements</p>
-          <ul class="panel-cando-list">
-            <li>I can describe my daily routine in detail.</li>
-            <li>I can talk about habits and personal care.</li>
-          </ul>
-        </div>
+        </span>
+        <span class="acc-chevron" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-panel" id="panel-c2" role="region" aria-labelledby="trigger-c2">
+        <p class="panel-situation">Personal care, habits, and cultural routines.</p>
+        <p class="panel-label">Can-Do</p>
+        <ul class="panel-cando">
+          <li>I can describe my daily routine in detail.</li>
+          <li>I can talk about habits and personal care.</li>
+        </ul>
       </div>
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c3" id="trigger-c3">
-          <span class="unit-badge">3</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Food, Celebrations &amp; Experiences</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">gustar + similar verbs</span>
-              <span class="grammar-tag">impersonal/passive se</span>
-              <span class="grammar-tag">comparatives</span>
-            </span>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c3" id="trigger-c3" role="button" tabindex="0">
+        <span class="unit-pill">3</span>
+        <span class="acc-inner">
+          <span class="unit-name">Food, Celebrations &amp; Experiences</span>
+          <span class="grammar-tags">
+            <span class="grammar-tag">Gustar</span>
+            <span class="grammar-tag">impersonal/passive se</span>
+            <span class="grammar-tag">comparatives</span>
           </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel" id="panel-c3" role="region" aria-labelledby="trigger-c3">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students recount meals and cultural celebrations, expressing preferences and comparisons.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">Gustar + similar verbs, impersonal/passive se, comparatives</p>
-          <p class="panel-label">Can-Do Statements</p>
-          <ul class="panel-cando-list">
-            <li>I can recount a celebration or meal experience.</li>
-            <li>I can express preferences and make comparisons.</li>
-          </ul>
-        </div>
+        </span>
+        <span class="acc-chevron" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-panel" id="panel-c3" role="region" aria-labelledby="trigger-c3">
+        <p class="panel-situation">Food, social meals, and Mexican celebrations.</p>
+        <p class="panel-label">Can-Do</p>
+        <ul class="panel-cando">
+          <li>I can recount a celebration or meal.</li>
+          <li>I can express preferences and make comparisons.</li>
+        </ul>
       </div>
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c4" id="trigger-c4">
-          <span class="unit-badge">4</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Health &amp; Wellbeing</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">preterite of stem-changing verbs</span>
-              <span class="grammar-tag">double object pronouns</span>
-              <span class="grammar-tag">tener que + infinitive</span>
-            </span>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c4" id="trigger-c4" role="button" tabindex="0">
+        <span class="unit-pill">4</span>
+        <span class="acc-inner">
+          <span class="unit-name">Health &amp; Wellbeing</span>
+          <span class="grammar-tags">
+            <span class="grammar-tag">Stem-changing preterites</span>
+            <span class="grammar-tag">double object pronouns</span>
+            <span class="grammar-tag">tener que</span>
           </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel" id="panel-c4" role="region" aria-labelledby="trigger-c4">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students explain health situations, symptoms, and personal obligations.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">Preterite of stem-changing verbs, double object pronouns, tener que + infinitive</p>
-          <p class="panel-label">Can-Do Statements</p>
-          <ul class="panel-cando-list">
-            <li>I can explain symptoms and health situations.</li>
-            <li>I can describe obligations and habits.</li>
-          </ul>
-        </div>
+        </span>
+        <span class="acc-chevron" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-panel" id="panel-c4" role="region" aria-labelledby="trigger-c4">
+        <p class="panel-situation">Health situations and medical contexts in Mexico.</p>
+        <p class="panel-label">Can-Do</p>
+        <ul class="panel-cando">
+          <li>I can explain symptoms and health situations.</li>
+          <li>I can describe obligations and habits.</li>
+        </ul>
       </div>
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c5" id="trigger-c5">
-          <span class="unit-badge">5</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Past Narration</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">irregular preterites</span>
-              <span class="grammar-tag">preterite vs. imperfect</span>
-            </span>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c5" id="trigger-c5" role="button" tabindex="0">
+        <span class="unit-pill">5</span>
+        <span class="acc-inner">
+          <span class="unit-name">Past Narration</span>
+          <span class="grammar-tags">
+            <span class="grammar-tag">Irregular preterites</span>
+            <span class="grammar-tag">preterite vs. imperfect contrast</span>
           </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel" id="panel-c5" role="region" aria-labelledby="trigger-c5">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students narrate past experiences distinguishing main events from background context.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">Irregular preterites, preterite vs. imperfect contrast</p>
-          <p class="panel-label">Can-Do Statements</p>
-          <ul class="panel-cando-list">
-            <li>I can narrate a past experience distinguishing main events from background.</li>
-            <li>I can tell a story with logical sequence.</li>
-          </ul>
-        </div>
+        </span>
+        <span class="acc-chevron" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-panel" id="panel-c5" role="region" aria-labelledby="trigger-c5">
+        <p class="panel-situation">Telling stories and recounting experiences.</p>
+        <p class="panel-label">Can-Do</p>
+        <ul class="panel-cando">
+          <li>I can narrate a past experience with logical sequence.</li>
+          <li>I can distinguish main events from background context.</li>
+        </ul>
       </div>
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c6" id="trigger-c6">
-          <span class="unit-badge">6</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Describing &amp; Comparing</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">comparatives/superlatives</span>
-              <span class="grammar-tag">relative pronouns</span>
-              <span class="grammar-tag">imperfect</span>
-              <span class="grammar-tag">a personal</span>
-            </span>
+      <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c6" id="trigger-c6" role="button" tabindex="0">
+        <span class="unit-pill">6</span>
+        <span class="acc-inner">
+          <span class="unit-name">Describing &amp; Comparing</span>
+          <span class="grammar-tags">
+            <span class="grammar-tag">Comparatives</span>
+            <span class="grammar-tag">relative pronouns</span>
+            <span class="grammar-tag">imperfect</span>
+            <span class="grammar-tag">a personal</span>
           </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel" id="panel-c6" role="region" aria-labelledby="trigger-c6">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students describe and compare people, objects, and experiences using extended sentence structures.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">Comparatives/superlatives, relative pronouns, imperfect, a personal</p>
-          <p class="panel-label">Can-Do Statements</p>
-          <ul class="panel-cando-list">
-            <li>I can describe and compare people, objects, and experiences.</li>
-            <li>I can build longer sentences using relative clauses.</li>
-          </ul>
-        </div>
+        </span>
+        <span class="acc-chevron" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-panel" id="panel-c6" role="region" aria-labelledby="trigger-c6">
+        <p class="panel-situation">Describing people, clothing, and experiences in detail.</p>
+        <p class="panel-label">Can-Do</p>
+        <ul class="panel-cando">
+          <li>I can describe and compare people and experiences.</li>
+          <li>I can build longer sentences using relative clauses.</li>
+        </ul>
       </div>
 
     </div>
+    <p class="acc-note">Full course outline in development.</p>
   </section>
 
 </main>
 
 <div class="contact-band">
-  <p>Institutional licensing is available per course per year.<br>
-  Contact us for pricing and to request a demo or pilot package.</p>
-  <p style="margin-top: 10px;"><a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
+  <p>Institutional licensing is available per course per year. Contact us for pricing and to request a demo or pilot package.<a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
 </div>
 
 <footer class="site-footer">
-  <div class="footer-col">
+  <div class="footer-left">
     Angélica García Genel, PhD · Spanish Instructor · Instructional Designer<br>
     Spanish Learning Edge, Founder · 15+ years of experience in higher education
   </div>
-  <div class="footer-col footer-col-right">
-    <a href="https://spanish-learning-edge.com" class="footer-link">spanish-learning-edge.com</a><br>
+  <div class="footer-right">
+    <a href="https://www.spanish-learning-edge.com/" class="footer-link">spanish-learning-edge.com</a>
     <a href="mailto:success@spanish-learning-edge.com" class="footer-link">success@spanish-learning-edge.com</a>
   </div>
+  <div class="footer-bottom">Spanish Learning Edge LLC · All rights reserved</div>
 </footer>
 
 <script>

@@ -28,13 +28,13 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--body);background:var(--cream);color:var(--text);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+body{font-family:var(--body);background:var(--cream);color:var(--text);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:100;background:var(--charcoal);padding:0 32px;display:flex;align-items:center;height:48px;gap:8px;box-shadow:0 2px 12px rgba(0,0,0,.12);}
 .nav-logo{width:32px;height:32px;border-radius:6px;background:linear-gradient(135deg,var(--coral),#B85A54);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--heading);font-weight:700;font-size:16px;margin-right:12px;flex-shrink:0;}
 .nav-brand{color:#fff;font-family:var(--heading);font-size:14px;font-weight:600;margin-right:auto;white-space:nowrap;}
-.nav-brand em{font-style:italic;color:var(--coral-light);}
+.nav-brand em{font-style:normal;color:#D5ADAD;}
 .nav-links{display:flex;gap:4px;}
 .nav-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:12px;font-weight:500;padding:6px 14px;border-radius:4px;transition:all .2s;letter-spacing:.02em;}
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
@@ -86,8 +86,8 @@ h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px
 
 /* TABLES */
 .table-wrap{overflow-x:auto;margin-bottom:28px;border-radius:8px;box-shadow:0 1px 8px rgba(0,0,0,.06);background:var(--warm-white);}
-.align-table{width:100%;min-width:1080px;border-collapse:collapse;font-size:12.5px;line-height:1.55;}
-.align-table thead th{background:var(--charcoal);color:#fff;padding:10px 12px;text-align:left;font-weight:600;font-size:11px;letter-spacing:.03em;text-transform:uppercase;position:sticky;top:48px;z-index:10;}
+.align-table{width:100%;min-width:1080px;border-collapse:collapse;font-size:13.5px;line-height:1.55;}
+.align-table thead th{background:var(--charcoal);color:#fff;padding:10px 12px;text-align:left;font-weight:600;font-size:12px;letter-spacing:.03em;text-transform:uppercase;position:sticky;top:48px;z-index:10;}
 .align-table thead th:first-child{min-width:130px;border-radius:8px 0 0 0;}
 .align-table thead th:last-child{border-radius:0 8px 0 0;}
 .align-table tbody td{padding:10px 12px;border:1px solid #EDEBE8;vertical-align:top;}
@@ -98,12 +98,12 @@ h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px
 .align-table tbody td:nth-child(5){background:#F8F3FC;}
 .align-table tbody td:nth-child(6){background:var(--sage-light);}
 .align-table tbody td:nth-child(7){background:#FEF5F5;}
-.cultural{font-style:italic;color:#6B5D50;margin-top:6px;display:block;font-size:12px;}
-.se-note{background:#FFF8EE;border:1px solid #E8C97A;border-radius:6px;padding:10px 16px;font-size:12px;font-weight:500;color:#7A6320;margin-bottom:16px;}
+.cultural{font-style:italic;color:#6B5D50;margin-top:6px;display:block;font-size:13px;}
+.se-note{background:#FFF8EE;border:1px solid #E8C97A;border-radius:6px;padding:10px 16px;font-size:13px;font-weight:500;color:#7A6320;margin-bottom:16px;}
 
 /* CAN-DO TABLE */
-.cando-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px;}
-.cando-table thead th{background:var(--charcoal);color:#fff;padding:8px 12px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
+.cando-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:20px;}
+.cando-table thead th{background:var(--charcoal);color:#fff;padding:8px 12px;text-align:left;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
 .cando-table tbody td{padding:9px 12px;border-bottom:1px solid var(--border);}
 .cando-table tbody tr:nth-child(even) td{background:#FAFAF8;}
 .cando-table tbody td:first-child{width:36px;text-align:center;font-weight:600;color:var(--muted);}
@@ -111,13 +111,13 @@ h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px
 .exit-profile{font-style:italic;color:var(--muted);font-size:13px;padding:14px 0;border-top:2px solid var(--border);}
 
 /* PROGRESSION TABLE */
-.prog-table{width:100%;border-collapse:collapse;font-size:12.5px;}
-.prog-table thead th{background:var(--charcoal);color:#fff;padding:10px 12px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
+.prog-table{width:100%;border-collapse:collapse;font-size:13.5px;}
+.prog-table thead th{background:var(--charcoal);color:#fff;padding:10px 12px;text-align:left;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
 .prog-table tbody td{padding:10px 12px;border:1px solid #EDEBE8;vertical-align:top;}
 .prog-table tbody td:first-child{font-weight:600;width:125px;}
 
 /* FOOTER */
-.footer{background:var(--charcoal);color:rgba(255,255,255,.45);padding:28px;text-align:center;font-size:12px;}
+.footer{background:var(--charcoal);color:rgba(255,255,255,.45);padding:28px;text-align:center;font-size:13px;}
 .footer strong{color:rgba(255,255,255,.7);}
 
 @media(max-width:900px){
@@ -137,9 +137,10 @@ h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px
 <body>
 
 <nav class="nav">
-  <div class="nav-logo">S</div>
+  <img src="logo.png" alt="Spanish Learning Edge logo" style="height:32px;width:auto;border-radius:4px;margin-right:12px;display:block;flex-shrink:0;">
   <div class="nav-brand">Spanish <em>Learning Edge</em></div>
   <div class="nav-links">
+    <a href="sle-dossier.html" style="border:1px solid rgba(255,255,255,.25);border-radius:4px;padding:5px 12px;">← Project Dossier</a>
     <a href="#framework">Framework</a>
     <a href="#sp101">SP101</a>
     <a href="#sp102">SP102</a>
@@ -149,17 +150,19 @@ h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px
   </div>
 </nav>
 
-<header class="hero">
-  <div class="hero-logo">S</div>
-  <h1>Spanish <em>Learning Edge</em></h1>
-  <div class="tagline">Authentic Input · Instructionally Designed · ACTFL-Aligned</div>
-  <div class="subtitle">A complete linguistic competence map for three courses, six skill areas, and a clear path from first greetings to confident self-expression — all built on authentic Mexican cultural context with zero textbook cost.</div>
-  <div class="courses">
-    <span class="course-pill pill-101">SP101 · Novice Mid/High</span>
-    <span class="course-pill pill-102">SP102 · Intermediate Low</span>
-    <span class="course-pill pill-201">SP201 · Intermediate High</span>
+<div style="background:#2F3437;padding:28px 48px 24px;display:flex;align-items:center;gap:22px;">
+  <div style="flex:1;">
+    <div style="font-family:'Montserrat',Georgia,serif;font-size:21px;font-weight:700;color:#ffffff;line-height:1.2;">Spanish <em style="font-style:normal;color:#D5ADAD;">Learning Edge</em></div>
+    <div style="font-size:10.5px;color:#ffe8e3;letter-spacing:0.09em;text-transform:uppercase;margin-top:5px;font-weight:300;">Authentic Input · Instructionally Designed · ACTFL-Aligned</div>
   </div>
-</header>
+  <img src="logo.png" alt="Spanish Learning Edge logo" style="width:76px;height:76px;object-fit:contain;flex-shrink:0;">
+</div>
+
+<div style="background:#557076;padding:14px 48px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;">
+  <div style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#ffffff;">Linguistic Competence Map</div>
+  <div style="font-size:11px;color:rgba(255,255,255,0.82);letter-spacing:0.07em;text-transform:uppercase;">SP101 · SP102 · SP201 · Six Skill Areas</div>
+  <a href="sle-dossier.html" style="margin-left:auto;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);color:#ffffff;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;font-weight:500;text-decoration:none;">← Project Dossier</a>
+</div>
 
 <div class="container">
 
@@ -500,11 +503,12 @@ h3{font-family:var(--heading);font-size:19px;color:var(--dark);margin-bottom:6px
 
 </div>
 
-<footer class="footer">
-  <strong>Spanish <em>Learning Edge</em></strong> · Authentic Input · Instructionally Designed · ACTFL-Aligned<br>
-  SP101 & SP102 — Summer 2026 · SP201 — Coming 2026–2027<br>
-  All courses replace or supplement commercial textbooks — zero textbook cost to students. Canvas-ready. FERPA-compliant.
-</footer>
+<div class="footer">
+  <strong>Angélica García Genel, PhD</strong> · Spanish Instructor · Instructional Designer · Spanish Learning Edge, Founder · 15+ years of experience in higher education<br>
+  <a href="https://www.spanish-learning-edge.com/" style="color:rgba(255,255,255,.55);">spanish-learning-edge.com</a> ·
+  <a href="mailto:success@spanish-learning-edge.com" style="color:rgba(255,255,255,.55);">success@spanish-learning-edge.com</a><br>
+  <span style="font-size:11px;margin-top:8px;display:block;">Spanish Learning Edge LLC · All rights reserved</span>
+</div>
 
 </body>
 </html>

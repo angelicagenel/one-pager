@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Spanish Learning Edge — Elementary Spanish I (SP101)</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #F8F8F6;
@@ -14,6 +14,7 @@
   --eucalyptus: #557076;
   --eucalyptus-light: #C3D1D4;
   --rose-accent: #D5ADAD;
+  --rose-surface: #F6F2F1;
   --border: #DCDCDC;
   --white: #ffffff;
 }
@@ -58,31 +59,31 @@ body {
   height: 48px;
   display: flex;
   align-items: center;
+  gap: 16px;
   justify-content: space-between;
 }
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 12px;
-  text-decoration: none;
+  gap: 10px;
 }
-.nav-logo { height: 30px; width: auto; display: block; }
 .nav-brand {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: #fff;
   white-space: nowrap;
 }
+.nav-brand .brand-accent { color: var(--rose-accent); }
 .nav-back {
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
+  font-weight: 500;
   color: rgba(255,255,255,.8);
   text-decoration: none;
   border: 1px solid rgba(255,255,255,.3);
   border-radius: 4px;
   padding: 5px 14px;
-  transition: background 0.15s, color 0.15s;
   white-space: nowrap;
 }
 .nav-back:hover { background: rgba(255,255,255,.1); color: #fff; }
@@ -93,7 +94,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 .course-name {
   font-family: 'Montserrat', sans-serif;
@@ -106,24 +108,23 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 400;
-  color: rgba(255,255,255,.8);
+  color: rgba(255,255,255,.82);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: .07em;
   margin-top: 4px;
 }
 .course-badge {
   flex-shrink: 0;
   background: var(--white);
-  font-family: 'Poppins', sans-serif;
+  color: var(--eucalyptus);
+  font-family: 'Montserrat', sans-serif;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: .06em;
   border-radius: 20px;
-  padding: 4px 12px;
+  padding: 4px 14px;
 }
-.course-badge.available { color: var(--eucalyptus); }
-.course-badge.upcoming  { color: var(--rose-accent); }
 
 /* POSITIONING LINE */
 .positioning-line {
@@ -140,23 +141,15 @@ body {
 /* COURSE DESC */
 .course-desc-band {
   background: var(--white);
-  padding: 24px 48px;
+  padding: 28px 48px;
 }
 .course-desc {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: var(--secondary);
-  max-width: 720px;
+  max-width: 760px;
   line-height: 1.65;
-}
-.prereq-note {
-  margin-top: 12px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--eucalyptus);
-  max-width: 720px;
 }
 
 /* CAN-DO */
@@ -167,10 +160,10 @@ body {
 }
 .section-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: .12em;
   color: var(--eucalyptus);
   margin-bottom: 20px;
 }
@@ -190,7 +183,7 @@ body {
   font-size: 15px;
   font-weight: 400;
   color: var(--secondary);
-  line-height: 1.55;
+  line-height: 1.8;
 }
 .cando-list li:last-child { border-bottom: none; }
 .cando-list li::before {
@@ -211,17 +204,17 @@ body {
 .sequence-hint {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  font-weight: 400;
   color: var(--eucalyptus);
   margin-bottom: 20px;
 }
 
 /* ACCORDION */
-.accordion { display: flex; flex-direction: column; gap: 8px; }
+.accordion { display: flex; flex-direction: column; }
 .acc-item {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
+  margin-bottom: 8px;
   overflow: hidden;
 }
 .acc-trigger {
@@ -230,7 +223,7 @@ body {
   background: var(--white);
   border: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -243,13 +236,13 @@ body {
   background: var(--eucalyptus);
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
+  text-transform: uppercase;
   padding: 3px 10px;
-  border-radius: 20px;
+  border-radius: 4px;
   flex-shrink: 0;
   white-space: nowrap;
-  line-height: 1.4;
 }
 .acc-trigger-inner {
   flex: 1;
@@ -261,7 +254,7 @@ body {
 }
 .unit-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--charcoal);
 }
@@ -272,14 +265,7 @@ body {
   background: var(--surface);
   color: var(--eucalyptus);
   padding: 2px 8px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-.optional-note {
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
-  color: var(--secondary);
-  opacity: 0.65;
+  border-radius: 4px;
   white-space: nowrap;
 }
 .acc-chevron {
@@ -296,37 +282,21 @@ body {
   display: none;
   padding: 16px 20px 20px;
   border-top: 1px solid var(--border);
+  border-radius: 0 0 8px 8px;
   background: var(--white);
-  animation: fadeIn 0.2s ease;
 }
 .acc-panel.open { display: block; }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.panel-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--eucalyptus);
-  margin-bottom: 6px;
-  margin-top: 14px;
-}
-.panel-label:first-child { margin-top: 0; }
 .panel-text {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  font-weight: 400;
   color: var(--secondary);
-  line-height: 1.55;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 .panel-cando-list { list-style: none; padding: 0; }
 .panel-cando-list li {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  font-weight: 400;
   color: var(--secondary);
   padding: 5px 0 5px 14px;
   border-left: 2px solid var(--eucalyptus-light);
@@ -343,7 +313,6 @@ body {
 .contact-band p {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  font-weight: 400;
   color: var(--secondary);
   line-height: 1.65;
 }
@@ -353,36 +322,51 @@ body {
   font-weight: 500;
   color: var(--eucalyptus);
   text-decoration: none;
+  margin-left: 8px;
 }
 .contact-link:hover { text-decoration: underline; }
 
 /* FOOTER */
 .site-footer {
   background: var(--charcoal);
-  padding: 24px 48px;
+  padding: 20px 48px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 10px;
 }
-.footer-col {
+.footer-left {
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   color: rgba(255,255,255,.55);
-  line-height: 1.75;
+  line-height: 1.7;
 }
-.footer-col-right { text-align: right; }
+.footer-right {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  text-align: right;
+  line-height: 1.9;
+}
 .footer-link { color: var(--rose-accent); text-decoration: none; }
 .footer-link:hover { text-decoration: underline; }
+.footer-bottom {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,.35);
+  text-align: center;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  width: 100%;
+}
 
 /* RESPONSIVE */
 @media (max-width: 640px) {
   .site-nav, .course-header, .positioning-line,
   .course-desc-band, .cando-section, .sequence-section,
   .contact-band, .site-footer { padding-left: 20px; padding-right: 20px; }
-  .site-footer { flex-direction: column; }
-  .footer-col-right { text-align: left; }
+  .site-footer { flex-direction: column; align-items: flex-start; }
+  .footer-right { text-align: left; }
   .course-header-inner { flex-wrap: wrap; }
   .acc-trigger-inner { flex-direction: column; align-items: flex-start; }
 }
@@ -393,10 +377,10 @@ body {
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <nav class="site-nav" aria-label="Site navigation">
-  <a href="sle-dossier.html" class="nav-left" aria-label="Spanish Learning Edge — home">
-    <img src="logo.png" alt="" class="nav-logo">
-    <span class="nav-brand">Spanish Learning Edge</span>
-  </a>
+  <div class="nav-left">
+    <img src="logo.png" alt="Spanish Learning Edge logo" style="height:30px;width:auto;border-radius:4px;flex-shrink:0;">
+    <span class="nav-brand">Spanish <span class="brand-accent">Learning Edge</span></span>
+  </div>
   <a href="sle-dossier.html" class="nav-back">← Project Dossier</a>
 </nav>
 
@@ -404,9 +388,9 @@ body {
   <div class="course-header-inner">
     <div>
       <h1 class="course-name">Elementary Spanish I</h1>
-      <p class="course-meta">SP101 · 5 Units</p>
+      <p class="course-meta">SP101 · 5 Units · Novice Mid/High</p>
     </div>
-    <span class="course-badge available">Available</span>
+    <span class="course-badge">AVAILABLE</span>
   </div>
 </header>
 
@@ -440,7 +424,7 @@ body {
 
       <div class="acc-item">
         <button class="acc-trigger" aria-expanded="true" aria-controls="panel-u1" id="trigger-u1">
-          <span class="unit-badge">1</span>
+          <span class="unit-badge">Unit 1</span>
           <span class="acc-trigger-inner">
             <span class="unit-name">Hola, soy yo</span>
             <span class="grammar-tags">
@@ -448,17 +432,12 @@ body {
               <span class="grammar-tag">tú/usted</span>
               <span class="grammar-tag">hay</span>
               <span class="grammar-tag">articles</span>
-              <span class="grammar-tag">nouns</span>
             </span>
           </span>
           <span class="acc-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="acc-panel open" id="panel-u1" role="region" aria-labelledby="trigger-u1">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students introduce themselves and ask about others in a new Mexican cultural environment.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">SER, tú/usted, hay, articles, nouns</p>
-          <p class="panel-label">Can-Do Statements</p>
+          <p class="panel-text">Identity and first contact at the Oaxacan feria.</p>
           <ul class="panel-cando-list">
             <li>I can introduce myself and ask about others.</li>
             <li>I can describe what exists in a space.</li>
@@ -468,26 +447,21 @@ body {
 
       <div class="acc-item">
         <button class="acc-trigger" aria-expanded="false" aria-controls="panel-u2" id="trigger-u2">
-          <span class="unit-badge">2</span>
+          <span class="unit-badge">Unit 2</span>
           <span class="acc-trigger-inner">
             <span class="unit-name">El mundo que te rodea</span>
             <span class="grammar-tags">
-              <span class="grammar-tag">adjectives</span>
+              <span class="grammar-tag">Adjectives</span>
               <span class="grammar-tag">SER + adjective</span>
               <span class="grammar-tag">possessives</span>
-              <span class="grammar-tag">family vocabulary</span>
             </span>
           </span>
           <span class="acc-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="acc-panel" id="panel-u2" role="region" aria-labelledby="trigger-u2">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students describe the people, places, and things around them using adjectives and possessives.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">Adjectives, SER + adjective, possessives, family vocabulary</p>
-          <p class="panel-label">Can-Do Statements</p>
+          <p class="panel-text">Describing people, places, and things.</p>
           <ul class="panel-cando-list">
-            <li>I can describe people and things using adjectives.</li>
+            <li>I can describe people and objects using adjectives.</li>
             <li>I can talk about what belongs to me and others.</li>
           </ul>
         </div>
@@ -495,49 +469,40 @@ body {
 
       <div class="acc-item">
         <button class="acc-trigger" aria-expanded="false" aria-controls="panel-u3" id="trigger-u3">
-          <span class="unit-badge">3</span>
+          <span class="unit-badge">Unit 3</span>
           <span class="acc-trigger-inner">
             <span class="unit-name">La vida en movimiento</span>
             <span class="grammar-tags">
               <span class="grammar-tag">-AR/-ER/-IR verbs</span>
-              <span class="grammar-tag">sequence connectors</span>
+              <span class="grammar-tag">connectors</span>
             </span>
           </span>
           <span class="acc-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="acc-panel" id="panel-u3" role="region" aria-labelledby="trigger-u3">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students narrate daily life and sequence activities using regular verbs and connectors.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">Regular -AR/-ER/-IR verbs, sequence connectors</p>
-          <p class="panel-label">Can-Do Statements</p>
+          <p class="panel-text">Daily routines and actions in context.</p>
           <ul class="panel-cando-list">
             <li>I can describe my daily routine.</li>
-            <li>I can organize a sequence of events using connectors.</li>
+            <li>I can organize a sequence of events.</li>
           </ul>
         </div>
       </div>
 
       <div class="acc-item">
         <button class="acc-trigger" aria-expanded="false" aria-controls="panel-u4" id="trigger-u4">
-          <span class="unit-badge">4</span>
+          <span class="unit-badge">Unit 4</span>
           <span class="acc-trigger-inner">
             <span class="unit-name">Tiempo, números y agenda</span>
             <span class="grammar-tags">
-              <span class="grammar-tag">la hora</span>
+              <span class="grammar-tag">La hora</span>
               <span class="grammar-tag">TENER</span>
               <span class="grammar-tag">numbers 0–100</span>
-              <span class="grammar-tag">schedules</span>
             </span>
           </span>
           <span class="acc-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="acc-panel" id="panel-u4" role="region" aria-labelledby="trigger-u4">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students discuss schedules, tell time, and express what they own and need.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">La hora, TENER, numbers 0–100, schedules</p>
-          <p class="panel-label">Can-Do Statements</p>
+          <p class="panel-text">Time, schedules, and numbers in daily life.</p>
           <ul class="panel-cando-list">
             <li>I can tell time and describe my schedule.</li>
             <li>I can express what I have and need.</li>
@@ -547,27 +512,23 @@ body {
 
       <div class="acc-item">
         <button class="acc-trigger" aria-expanded="false" aria-controls="panel-u5" id="trigger-u5">
-          <span class="unit-badge">5</span>
+          <span class="unit-badge">Unit 5</span>
           <span class="acc-trigger-inner">
             <span class="unit-name">Aquí y ahora</span>
             <span class="grammar-tags">
-              <span class="grammar-tag">ESTAR location + emotion</span>
-              <span class="grammar-tag">IR + a + inf.</span>
+              <span class="grammar-tag">ESTAR</span>
+              <span class="grammar-tag">IR + a</span>
               <span class="grammar-tag">VENIR</span>
-              <span class="grammar-tag">present progressive</span>
+              <span class="grammar-tag">progressive</span>
             </span>
           </span>
           <span class="acc-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="acc-panel" id="panel-u5" role="region" aria-labelledby="trigger-u5">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students describe ongoing actions, locations, emotions, and immediate future plans.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">ESTAR location + emotion, IR + a + infinitive, VENIR, present progressive</p>
-          <p class="panel-label">Can-Do Statements</p>
+          <p class="panel-text">Location, movement, emotions, and present actions.</p>
           <ul class="panel-cando-list">
             <li>I can describe where things are and how I feel.</li>
-            <li>I can say where I'm going and what I'm doing right now.</li>
+            <li>I can say where I'm going and what's happening right now.</li>
           </ul>
         </div>
       </div>
@@ -577,24 +538,19 @@ body {
           <span class="unit-badge">AC</span>
           <span class="acc-trigger-inner">
             <span class="unit-name">Alcance Completo — Extended Grammar Track</span>
-            <span class="optional-note">Optional</span>
             <span class="grammar-tags">
-              <span class="grammar-tag">stem-changing verbs</span>
-              <span class="grammar-tag">irregular yo forms</span>
-              <span class="grammar-tag">SER/ESTAR contrast</span>
-              <span class="grammar-tag">direct object pronouns</span>
+              <span class="grammar-tag">Stem-changers</span>
+              <span class="grammar-tag">irregular yo</span>
+              <span class="grammar-tag">SER/ESTAR</span>
+              <span class="grammar-tag">DOP</span>
             </span>
           </span>
           <span class="acc-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="acc-panel" id="panel-ac" role="region" aria-labelledby="trigger-ac">
-          <p class="panel-label">Communicative Situation</p>
-          <p class="panel-text">Students extend their grammatical range with more complex verb forms and pronoun structures.</p>
-          <p class="panel-label">Grammar Focal Structures</p>
-          <p class="panel-text">Stem-changing verbs, irregular yo forms, SER/ESTAR contrast, direct object pronouns</p>
-          <p class="panel-label">Can-Do Statements</p>
+          <p class="panel-text">Optional extended track for full SP101 grammatical coverage.</p>
           <ul class="panel-cando-list">
-            <li>I can use a wider range of verb forms and structures.</li>
+            <li>I can use a wider range of verb forms.</li>
             <li>I can express more complex ideas with precision.</li>
           </ul>
         </div>
@@ -606,20 +562,19 @@ body {
 </main>
 
 <div class="contact-band">
-  <p>Institutional licensing is available per course per year.<br>
-  Contact us for pricing and to request a demo or pilot package.</p>
-  <p style="margin-top: 10px;"><a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
+  <p>Institutional licensing is available per course per year. Contact us for pricing and to request a demo or pilot package.<a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
 </div>
 
-<footer class="site-footer">
-  <div class="footer-col">
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-left">
     Angélica García Genel, PhD · Spanish Instructor · Instructional Designer<br>
     Spanish Learning Edge, Founder · 15+ years of experience in higher education
   </div>
-  <div class="footer-col footer-col-right">
-    <a href="https://spanish-learning-edge.com" class="footer-link">spanish-learning-edge.com</a><br>
+  <div class="footer-right">
+    <a href="https://www.spanish-learning-edge.com/" class="footer-link">spanish-learning-edge.com</a><br>
     <a href="mailto:success@spanish-learning-edge.com" class="footer-link">success@spanish-learning-edge.com</a>
   </div>
+  <div class="footer-bottom">Spanish Learning Edge LLC · All rights reserved</div>
 </footer>
 
 <script>

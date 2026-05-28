@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spanish Learning Edge — Institutional Dossier</title>
+<title>Spanish Learning Edge: Institutional Dossier</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -11,7 +11,7 @@
   --bg-ivory: #F8F8F6;
   --surface-eucalyptus: #F0F3F3;
   --charcoal: #2F3437;
-  --secondary-text: #474747;
+  --secondary-text: #2F3437;
   --eucalyptus-primary: #557076;
   --eucalyptus-light: #C3D1D4;
   --rose-accent: #D5ADAD;
@@ -115,7 +115,6 @@ body { font-family: var(--body); background: var(--bg-ivory); color: var(--charc
   margin-bottom: 14px;
 }
 .hero-tagline {
-  font-style: italic;
   font-size: 16px;
   color: var(--rose-accent);
   margin-bottom: 32px;
@@ -186,6 +185,34 @@ body { font-family: var(--body); background: var(--bg-ivory); color: var(--charc
 }
 .hero-cta:hover { background: #46626a; transform: translateY(-1px); }
 .hero-cta:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+/* ── VISION / MISSION BAND ───────────────────── */
+.vm-band {
+  background: #F0F3F3;
+  padding: 32px 48px;
+}
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.vm-label {
+  font-family: var(--heading);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #557076;
+  margin-bottom: 8px;
+}
+.vm-text {
+  font-family: var(--body);
+  font-size: 16px;
+  color: #2F3437;
+  line-height: 1.65;
+}
 
 /* ── SHARED LAYOUT ───────────────────────────── */
 .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
@@ -260,7 +287,7 @@ h3 {
 .badge-euca { background: var(--surface-eucalyptus); color: var(--eucalyptus-primary); }
 .badge-rose { background: var(--rosa); color: var(--deep-rose); }
 .badge-mid  { background: #dde9ea; color: #4a6d75; }
-.badge-avail { background: #d4ece5; color: #2a6b53; }
+.badge-avail { background: #557076; color: #fff; font-weight: 700; padding: 5px 16px; }
 .badge-upcoming { background: #f0f0ee; color: #666; }
 .card p { font-size: 14px; color: var(--secondary-text); line-height: 1.65; }
 .card-footer {
@@ -451,6 +478,7 @@ h3 {
   .card-grid { grid-template-columns: 1fr 1fr; }
   .steps-row { grid-template-columns: repeat(2, 1fr); }
   .two-col { grid-template-columns: 1fr; gap: 36px; }
+  .vm-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 620px) {
   .card-grid { grid-template-columns: 1fr; }
@@ -464,6 +492,7 @@ h3 {
   .footer-inner { flex-direction: column; }
   .footer-contact { text-align: left; }
   .hero-pills .pill { font-size: 10px; padding: 4px 10px; }
+  .vm-band { padding: 24px 16px; }
 }
 </style>
 </head>
@@ -486,31 +515,33 @@ h3 {
 
 <!-- ── HERO ─────────────────────────────────────────── -->
 <header class="hero" id="overview">
-  <div class="hero-eyebrow">Institutional Dossier</div>
+  <div class="hero-eyebrow">INSTITUTIONAL DOSSIER</div>
   <h1>Spanish Learning Edge</h1>
-  <p class="hero-tagline">Spanish through Mexico's stories &amp; culture — within every learner's reach.</p>
-  <div class="hero-statements">
-    <div class="hero-statement">
-      <div class="hero-statement-label">Our Vision</div>
-      <p>A world where every anglophone student receives high-quality Mexican Spanish instruction — at no cost to them.</p>
-    </div>
-    <div class="hero-statement">
-      <div class="hero-statement-label">Our Mission</div>
-      <p>Delivering Spanish learning with zero student-facing cost, grounded in Mexican culture &amp; built on cutting-edge technology.</p>
-    </div>
-  </div>
+  <p class="hero-tagline">Spanish through Mexico's stories &amp; culture, within every learner's reach.</p>
   <div class="hero-pills" aria-label="Program attributes">
     <span class="pill">ZTC</span>
     <span class="pill">NoLo</span>
     <span class="pill">OER-Compatible</span>
     <span class="pill">ACTFL-Aligned</span>
-    <span class="pill">Novice Mid → Intermediate High</span>
-    <span class="pill">Articulate Rise 360 · SCORM</span>
     <span class="pill">Canvas-Ready</span>
     <span class="pill">FERPA-Compliant</span>
   </div>
   <a href="#contact" class="hero-cta">Request a Demo</a>
 </header>
+
+<!-- ── VISION / MISSION BAND ─────────────────────────── -->
+<div class="vm-band">
+  <div class="vm-grid">
+    <div>
+      <div class="vm-label">OUR VISION</div>
+      <p class="vm-text">A world where every anglophone student receives high-quality Mexican Spanish instruction at no cost to them.</p>
+    </div>
+    <div>
+      <div class="vm-label">OUR MISSION</div>
+      <p class="vm-text">Delivering Spanish learning with zero student-facing cost, grounded in Mexican culture and built on cutting-edge technology.</p>
+    </div>
+  </div>
+</div>
 
 <!-- ── MAIN CONTENT ──────────────────────────────────── -->
 <main id="main">
@@ -524,21 +555,21 @@ h3 {
       <div class="card">
         <div class="card-top card-accent-euca">
           <h3>For Your Students</h3>
-          <p>They experience Spanish as it's actually spoken — in Mexico, in context, with cultural depth. No textbook required.</p>
+          <p>Students step into a living world: the Oaxacan feria, its vendors, its legends, its language. Each lesson is a scene that builds real communicative skill.</p>
         </div>
       </div>
 
       <div class="card">
         <div class="card-top card-accent-rose">
           <h3>For Your Program</h3>
-          <p>A complete, consistent curriculum that runs across all sections, all instructors, and all modalities — without rebuilding every semester.</p>
+          <p>Built on ACTFL proficiency guidelines and second language acquisition research. Six skill areas. A complete scope and sequence. Designed to take students from first greetings to confident expression across three courses.</p>
         </div>
       </div>
 
       <div class="card">
         <div class="card-top card-accent-mid">
           <h3>For Your Institution</h3>
-          <p>ACTFL-aligned and Canvas-ready. One institutional license — no per-student fees, no access codes, no external accounts.</p>
+          <p>One institutional package, ready to deploy each term. Students access a complete digital learning system at no additional cost. No codes. No subscriptions. No out-of-pocket fees.</p>
         </div>
       </div>
 
@@ -553,7 +584,7 @@ h3 {
     <div class="two-col">
       <div>
         <p style="font-size:15px;color:var(--secondary-text);line-height:1.8;">
-          Every SLE lesson is a complete communicative experience — grounded in Mexican culture, designed for flipped instruction, and built to run consistently across all sections and instructors.
+          Every SLE lesson covers a complete communicative skill, grounded in Mexican cultural context and designed for flipped instruction. Grammar is prepared before class. Class time is for people, conversation, and connection.
         </p>
       </div>
       <div>
@@ -565,6 +596,7 @@ h3 {
           <li><span class="skill-num" aria-hidden="true">5</span> Context, Culture &amp; Appropriateness</li>
           <li><span class="skill-num" aria-hidden="true">6</span> Communication Strategies</li>
         </ul>
+        <p style="font-family:var(--body);font-size:14px;color:#557076;margin-bottom:12px;">Integrated AI speech practice: FACT (Functional Acoustic-Communicative Tracking) gives students real-time feedback on clarity and communication directly inside each lesson.</p>
         <a href="sle-linguistic-competence-map.html" class="map-link">View full Linguistic Competence Map →</a>
       </div>
     </div>
@@ -582,11 +614,11 @@ h3 {
         <div class="card-top card-accent-euca">
           <span class="card-badge badge-euca">Novice Mid/High</span>
           <h3>SP101 · Elementary Spanish I</h3>
-          <p>Five units built around the Oaxacan feria and recurring characters don Marcos, doña Rosa, Tomás, Sofía, and Elena — from first greetings to present progressive.</p>
+          <p>Five units built around the Oaxacan feria and recurring characters don Marcos, doña Rosa, Tomás, Sofía, and Elena, from first greetings to present progressive.</p>
         </div>
         <div class="card-footer">
           <a href="sle-sp101.html" class="card-link">View Course Details →</a>
-          <span class="card-badge badge-avail">Available</span>
+          <span class="card-badge badge-avail">AVAILABLE</span>
         </div>
       </div>
 
@@ -595,7 +627,7 @@ h3 {
         <div class="card-top card-accent-rose">
           <span class="card-badge badge-rose">Intermediate Low</span>
           <h3>SP102 · Elementary Spanish II</h3>
-          <p>Past narration, reflexive verbs, celebrations, health, and the preterite/imperfect contrast — building on SP101's communicative foundation.</p>
+          <p>Past narration, reflexive verbs, celebrations, health, and the preterite/imperfect contrast, building on SP101's communicative foundation.</p>
         </div>
         <div class="card-footer">
           <a href="sle-sp102.html" class="card-link">View Course Details →</a>
@@ -608,7 +640,7 @@ h3 {
         <div class="card-top card-accent-mid">
           <span class="card-badge badge-mid">Intermediate Mid/High</span>
           <h3>SP201 · Intermediate Spanish I</h3>
-          <p>Commands, subjunctive, future, conditional, and argumentative discourse — moving students into confident, nuanced expression.</p>
+          <p>Commands, subjunctive, future, conditional, and argumentative discourse, moving students into confident, nuanced expression.</p>
         </div>
         <div class="card-footer">
           <a href="sle-sp201.html" class="card-link">View Course Details →</a>
@@ -628,14 +660,14 @@ h3 {
 
       <div class="step" role="listitem">
         <div class="step-num" aria-hidden="true">1</div>
-        <h3>Contact &amp; License</h3>
-        <p>Request a demo. We confirm fit and issue an institutional license.</p>
+        <h3>Contact and License</h3>
+        <p>Request a demo. If it's a fit, you receive a complete course package ready to deploy in Canvas.</p>
       </div>
 
       <div class="step" role="listitem">
         <div class="step-num" aria-hidden="true">2</div>
         <h3>Receive Your Package</h3>
-        <p>You receive a complete, ready-to-use package: communicative eBook lessons, grammar compendia, digital workbooks, rubrics, cultural projects, assessments, and an implementation guide.</p>
+        <p>You receive communicative eBook lessons, grammar quick-reference guides, a digital exercise workbook with auto-feedback, rubrics, cultural projects, assessments, and an implementation guide.</p>
       </div>
 
       <div class="step" role="listitem">
@@ -657,7 +689,7 @@ h3 {
       <li>Students access via link inside Canvas</li>
       <li>Canvas-compatible via SCORM · LTI integration in development</li>
       <li>FERPA-compliant</li>
-      <li>AI voice narration in Mexican Spanish — natural, clear, consistent</li>
+      <li>AI voice narration in Mexican Spanish: natural, clear, consistent</li>
       <li>Recurring character avatars: don Marcos, doña Rosa, Tomás, Sofía, Elena</li>
       <li>One institutional license · no per-student fees · no access codes</li>
     </ul>

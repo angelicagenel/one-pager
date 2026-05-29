@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spanish Learning Edge — Intermediate Spanish I (SP201)</title>
+<title>Spanish Learning Edge: Intermediate Spanish I (SP201)</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #F8F8F6;
   --surface: #F0F3F3;
   --charcoal: #2F3437;
-  --secondary: #474747;
+  --secondary: #2F3437;
   --eucalyptus: #557076;
   --eucalyptus-light: #C3D1D4;
   --rose-accent: #D5ADAD;
@@ -361,7 +361,7 @@ body {
 .footer-left {
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,.8);
   line-height: 1.7;
 }
 .footer-right {
@@ -375,7 +375,7 @@ body {
 .footer-bottom {
   font-family: 'Poppins', sans-serif;
   font-size: 11px;
-  color: rgba(255,255,255,.35);
+  color: rgba(255,255,255,.55);
   text-align: center;
   padding-top: 12px;
   border-top: 1px solid rgba(255,255,255,.1);
@@ -391,6 +391,15 @@ body {
   .footer-right { text-align: left; }
   .course-header-inner { flex-wrap: wrap; }
   .acc-trigger-inner { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
 }
 </style>
 </head>
@@ -427,7 +436,7 @@ body {
   </div>
 
   <div class="course-desc-band">
-    <p class="course-desc">Students move beyond description and narration — into persuasion, hypothesis, and cultural argument. Commands, subjunctive, future, conditional, and argumentative discourse build confident, nuanced expression.</p>
+    <p class="course-desc">Students move beyond description and narration: into persuasion, hypothesis, and cultural argument. Commands, subjunctive, future, conditional, and argumentative discourse build confident, nuanced expression.</p>
   </div>
 
   <section class="cando-section" aria-labelledby="cando-label">
@@ -566,7 +575,7 @@ body {
 </main>
 
 <div class="contact-band">
-  <p>Institutional licensing is available per course per year. Contact us for pricing and to request a demo or pilot package.<a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
+  <p>Institutional licensing is available per course per term. Contact us to request a demo or pilot package.<a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
 </div>
 
 <footer class="site-footer" role="contentinfo">

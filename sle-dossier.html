@@ -188,7 +188,7 @@ body { font-family: var(--body); background: var(--bg-ivory); color: var(--charc
 
 /* ── VISION / MISSION BAND ───────────────────── */
 .vm-band {
-  background: #F0F3F3;
+  background: #F6F2F1;
   padding: 32px 48px;
 }
 .vm-grid {
@@ -444,7 +444,7 @@ h3 {
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--deep-rose);
+  color: var(--eucalyptus-primary);
   min-width: 64px;
 }
 
@@ -524,6 +524,48 @@ h3 {
   opacity: .92;
 }
 
+/* ── FACT FEATURE BAND ───────────────────────── */
+.fact-band {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+}
+.fact-band-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.fact-band-overlay {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to right, rgba(47,52,55,.9) 0%, rgba(47,52,55,.7) 55%, rgba(47,52,55,.35) 100%);
+  padding: 52px 28px;
+  width: 100%;
+}
+.fact-band-inner {
+  max-width: 600px;
+}
+.fact-band-heading {
+  font-family: var(--heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 8px;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.fact-band-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,.82);
+  line-height: 1.7;
+  max-width: 500px;
+}
+
 /* ── FOOTER ──────────────────────────────────── */
 .footer {
   background: var(--charcoal);
@@ -542,12 +584,12 @@ h3 {
   border-bottom: 1px solid rgba(255,255,255,.1);
   margin-bottom: 20px;
 }
-.footer-creds { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,.65); }
+.footer-creds { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,.85); }
 .footer-contact { font-size: 13px; text-align: right; line-height: 2; }
 .footer-contact a { color: rgba(255,255,255,.8); text-decoration: none; }
 .footer-contact a:hover { color: #fff; text-decoration: underline; }
 .footer-contact a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 2px; }
-.footer-copy { font-size: 11.5px; text-align: center; color: rgba(255,255,255,.35); max-width: 1160px; margin: 0 auto; }
+.footer-copy { font-size: 11.5px; text-align: center; color: rgba(255,255,255,.6); max-width: 1160px; margin: 0 auto; }
 
 /* ── RESPONSIVE ──────────────────────────────── */
 @media (max-width: 900px) {
@@ -557,6 +599,12 @@ h3 {
   .vm-grid { grid-template-columns: 1fr; }
   .preview-grid { grid-template-columns: 1fr; }
 }
+.nav a[aria-current="page"] {
+  color: #fff;
+  background: rgba(255,255,255,.15);
+  border-radius: 4px;
+}
+
 @media (max-width: 620px) {
   .card-grid { grid-template-columns: 1fr; }
   .steps-row { grid-template-columns: 1fr; }
@@ -570,6 +618,15 @@ h3 {
   .footer-contact { text-align: left; }
   .hero-pills .pill { font-size: 10px; padding: 4px 10px; }
   .vm-band { padding: 24px 16px; }
+  .fact-band-overlay { padding: 40px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
@@ -582,7 +639,7 @@ h3 {
     <img src="logo.png" alt="Spanish Learning Edge logo">
     <span class="nav-brand">Spanish Learning Edge</span>
   </a>
-  <a href="#overview">Overview</a>
+  <a href="#overview" aria-current="page">Overview</a>
   <a href="sle-sp101.html">SP101</a>
   <a href="sle-sp102.html">SP102</a>
   <a href="sle-sp201.html">SP201</a>
@@ -646,7 +703,7 @@ h3 {
 <!-- ── TRANSFORMATION ────────────────────────────────── -->
 <section id="transformation">
   <div class="container">
-    <div class="section-label">What SLE Makes Possible</div>
+    <h2 class="section-label">What SLE Makes Possible</h2>
     <div class="card-grid">
 
       <div class="card">
@@ -677,7 +734,7 @@ h3 {
 <!-- ── ABOUT THE SYSTEM ───────────────────────────────── -->
 <section id="system">
   <div class="container">
-    <div class="section-label">The SLE System</div>
+    <h2 class="section-label">The SLE System</h2>
     <div class="two-col">
       <div>
         <p style="font-size:15px;color:var(--secondary-text);line-height:1.8;">
@@ -702,10 +759,22 @@ h3 {
   </div>
 </section>
 
+<!-- ── FACT FEATURE BAND ──────────────────────────────── -->
+<div class="fact-band" role="region" aria-label="FACT AI speech practice feature">
+  <img src="Header%20app.png" alt="A student using FACT, SLE's AI-powered Spanish speech performance check integrated into every lesson" class="fact-band-bg" loading="lazy">
+  <div class="fact-band-overlay">
+    <div class="fact-band-inner">
+      <div class="section-label" style="color:var(--eucalyptus-light);margin-bottom:6px;">Integrated AI Practice</div>
+      <h2 class="fact-band-heading">FACT Spanish Speech Check</h2>
+      <p class="fact-band-desc">Built into every lesson, not a separate app. FACT (Functional Acoustic-Communicative Tracking) gives students real-time feedback on pronunciation and communication in authentic Mexican Spanish contexts.</p>
+    </div>
+  </div>
+</div>
+
 <!-- ── COURSE SEQUENCE ────────────────────────────────── -->
 <section id="courses">
   <div class="container">
-    <div class="section-label">Three-Course Sequence</div>
+    <h2 class="section-label">Three-Course Sequence</h2>
     <div class="card-grid">
 
       <!-- SP101 -->
@@ -716,7 +785,7 @@ h3 {
           <p>Five units built around the Oaxacan feria and recurring characters don Marcos, doña Rosa, Tomás, Sofía, and Elena, from first greetings to present progressive.</p>
         </div>
         <div class="card-footer">
-          <a href="sle-sp101.html" class="card-link">View Course Details →</a>
+          <a href="sle-sp101.html" class="card-link" aria-label="View SP101 Elementary Spanish I details">View SP101 Details →</a>
           <span class="card-badge badge-avail">AVAILABLE</span>
         </div>
       </div>
@@ -729,7 +798,7 @@ h3 {
           <p>Past narration, reflexive verbs, celebrations, health, and the preterite/imperfect contrast, building on SP101's communicative foundation.</p>
         </div>
         <div class="card-footer">
-          <a href="sle-sp102.html" class="card-link">View Course Details →</a>
+          <a href="sle-sp102.html" class="card-link" aria-label="View SP102 Elementary Spanish II details">View SP102 Details →</a>
           <span class="card-badge badge-upcoming">Upcoming</span>
         </div>
       </div>
@@ -742,7 +811,7 @@ h3 {
           <p>Commands, subjunctive, future, conditional, and argumentative discourse, moving students into confident, nuanced expression.</p>
         </div>
         <div class="card-footer">
-          <a href="sle-sp201.html" class="card-link">View Course Details →</a>
+          <a href="sle-sp201.html" class="card-link" aria-label="View SP201 Intermediate Spanish I details">View SP201 Details →</a>
           <span class="card-badge badge-upcoming">Upcoming</span>
         </div>
       </div>
@@ -754,7 +823,7 @@ h3 {
 <!-- ── HOW IT WORKS ───────────────────────────────────── -->
 <section id="implementation">
   <div class="container">
-    <div class="section-label">Implementation</div>
+    <h2 class="section-label">Implementation</h2>
     <div class="steps-row" role="list">
 
       <div class="step" role="listitem">
@@ -782,7 +851,7 @@ h3 {
 <!-- ── DELIVERY DETAILS ───────────────────────────────── -->
 <section id="delivery">
   <div class="container">
-    <div class="section-label">Delivery &amp; Compliance</div>
+    <h2 class="section-label">Delivery &amp; Compliance</h2>
     <ul class="delivery-list" aria-label="Delivery and compliance details">
       <li>Hosted by Spanish Learning Edge · U.S.-based servers</li>
       <li>Students access via link inside Canvas</li>
@@ -798,7 +867,7 @@ h3 {
 <!-- ── CONTACT ────────────────────────────────────────── -->
 <section id="contact">
   <div class="container">
-    <div class="section-label">Get in Touch</div>
+    <h2 class="section-label">Get in Touch</h2>
     <h2>Request a Demo or Pilot Package</h2>
     <p class="section-intro">Institutional licensing is available per course per term. Contact us to request a demo or explore a pilot package.</p>
     <div class="contact-info">

@@ -229,30 +229,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* ACCORDION */
-.accordion { display: flex; flex-direction: column; }
-.acc-item {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  margin-bottom: 8px;
-  overflow: hidden;
-}
-.acc-trigger {
-  width: 100%;
-  text-align: left;
-  background: var(--white);
-  border: none;
-  cursor: pointer;
-  padding: 14px 18px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: background 0.15s;
-}
-.acc-trigger:hover,
-.acc-trigger[aria-expanded="true"] { background: var(--surface); }
-
+/* UNIT BADGE + TAGS (shared) */
 .unit-badge {
   background: var(--eucalyptus);
   color: var(--white);
@@ -265,21 +242,7 @@ body {
   flex-shrink: 0;
   white-space: nowrap;
 }
-.acc-trigger-inner {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px 10px;
-  min-width: 0;
-}
-.unit-name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--charcoal);
-}
-.grammar-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.grammar-tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 10px; }
 .grammar-tag {
   font-family: 'Poppins', sans-serif;
   font-size: 11px;
@@ -289,52 +252,82 @@ body {
   border-radius: 4px;
   white-space: nowrap;
 }
-.acc-chevron {
-  color: var(--eucalyptus);
-  font-size: 14px;
-  transition: transform 0.25s;
-  flex-shrink: 0;
-  line-height: 1;
-  margin-left: 4px;
-}
-.acc-trigger[aria-expanded="true"] .acc-chevron { transform: rotate(180deg); }
 
-.acc-panel {
-  display: none;
-  padding: 16px 20px 20px;
-  border-top: 1px solid var(--border);
-  border-radius: 0 0 8px 8px;
-  background: var(--white);
+/* UNIT GRID */
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
-.acc-panel.open { display: block; }
-.panel-text {
+.unit-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 15px 14px;
+  display: flex;
+  flex-direction: column;
+}
+.unit-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+.unit-card-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.3;
+}
+.unit-card-context {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--secondary);
-  line-height: 1.6;
+  opacity: 0.65;
+  line-height: 1.5;
   margin-bottom: 10px;
 }
-.panel-cando-list { list-style: none; padding: 0; }
-.panel-cando-list li {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: var(--secondary);
-  padding: 5px 0 5px 14px;
-  border-left: 2px solid var(--eucalyptus-light);
-  margin-bottom: 6px;
-  line-height: 1.5;
+.unit-card-cando {
+  list-style: none;
+  padding: 0;
+  margin-top: auto;
 }
-.panel-cando-list li:last-child { margin-bottom: 0; }
-
-/* ACCORDION NOTE */
-.accordion-note {
+.unit-card-cando li {
   font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--secondary);
-  background: var(--surface);
-  padding: 12px 16px;
+  padding: 4px 0 4px 10px;
+  border-left: 2px solid var(--eucalyptus-light);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+/* EBOOK GALLERY */
+.ebook-gallery-band {
+  background: var(--white);
+  padding: 24px 48px;
+  border-top: 1px solid var(--border);
+}
+.ebook-gallery-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--eucalyptus);
+  margin-bottom: 14px;
+}
+.ebook-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.ebook-item img {
+  width: 100%;
   border-radius: 6px;
-  margin-top: 8px;
+  border: 1px solid var(--border);
+  display: block;
 }
 
 /* CONTACT */
@@ -393,15 +386,21 @@ body {
 }
 
 /* RESPONSIVE */
+@media (max-width: 900px) {
+  .unit-grid { grid-template-columns: repeat(2, 1fr); }
+  .ebook-gallery { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 640px) {
   .site-nav, .course-header, .positioning-line, .prereq-band,
   .course-desc-band, .cando-section, .sequence-section,
+  .ebook-gallery-band,
   .contact-band, .site-footer { padding-left: 20px; padding-right: 20px; }
   .site-footer { flex-direction: column; align-items: flex-start; }
   .footer-right { text-align: left; }
   .nav-course-links { display: none; }
   .course-header-inner { flex-wrap: wrap; }
-  .acc-trigger-inner { flex-direction: column; align-items: flex-start; }
+  .unit-grid { grid-template-columns: 1fr; }
+  .ebook-gallery { grid-template-columns: repeat(2, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -470,146 +469,124 @@ body {
     <h2 class="section-label" id="sequence-label">Course Sequence</h2>
     <p class="sequence-hint">Six thematic clusters, each building on the last.</p>
 
-    <div class="accordion">
+    <div class="unit-grid">
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="true" aria-controls="panel-c1" id="trigger-c1">
+      <div class="unit-card">
+        <div class="unit-card-top">
           <span class="unit-badge">Cluster 1</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Shopping &amp; Transactions</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">Regular preterite</span>
-              <span class="grammar-tag">indirect object pronouns</span>
-              <span class="grammar-tag">demonstratives</span>
-            </span>
-          </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel open" id="panel-c1" role="region" aria-labelledby="trigger-c1">
-          <p class="panel-text">Markets, prices, and purchases in Mexican cultural context.</p>
-          <ul class="panel-cando-list">
-            <li>I can narrate a purchase.</li>
-            <li>I can explain what I bought and for whom.</li>
-          </ul>
+          <span class="unit-card-name">Shopping &amp; Transactions</span>
         </div>
+        <div class="grammar-tags">
+          <span class="grammar-tag">Regular preterite</span>
+          <span class="grammar-tag">indirect object pronouns</span>
+          <span class="grammar-tag">demonstratives</span>
+        </div>
+        <p class="unit-card-context">Markets, prices, and purchases in Mexican cultural context.</p>
+        <ul class="unit-card-cando">
+          <li>I can narrate a purchase.</li>
+          <li>I can explain what I bought and for whom.</li>
+        </ul>
       </div>
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c2" id="trigger-c2">
+      <div class="unit-card">
+        <div class="unit-card-top">
           <span class="unit-badge">Cluster 2</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Daily Routines &amp; Habits</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">Reflexive verbs</span>
-              <span class="grammar-tag">indefinite/negative words</span>
-              <span class="grammar-tag">preterite of SER/IR</span>
-            </span>
-          </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel" id="panel-c2" role="region" aria-labelledby="trigger-c2">
-          <p class="panel-text">Personal care, habits, and cultural routines.</p>
-          <ul class="panel-cando-list">
-            <li>I can describe my daily routine in detail.</li>
-            <li>I can talk about habits and personal care.</li>
-          </ul>
+          <span class="unit-card-name">Daily Routines &amp; Habits</span>
         </div>
+        <div class="grammar-tags">
+          <span class="grammar-tag">Reflexive verbs</span>
+          <span class="grammar-tag">indefinite/negative words</span>
+          <span class="grammar-tag">preterite of SER/IR</span>
+        </div>
+        <p class="unit-card-context">Personal care, habits, and cultural routines.</p>
+        <ul class="unit-card-cando">
+          <li>I can describe my daily routine in detail.</li>
+          <li>I can talk about habits and personal care.</li>
+        </ul>
       </div>
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c3" id="trigger-c3">
+      <div class="unit-card">
+        <div class="unit-card-top">
           <span class="unit-badge">Cluster 3</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Food, Celebrations &amp; Experiences</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">Gustar</span>
-              <span class="grammar-tag">impersonal/passive se</span>
-              <span class="grammar-tag">comparatives</span>
-            </span>
-          </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel" id="panel-c3" role="region" aria-labelledby="trigger-c3">
-          <p class="panel-text">Food, social meals, and Mexican celebrations.</p>
-          <ul class="panel-cando-list">
-            <li>I can recount a celebration or meal.</li>
-            <li>I can express preferences and make comparisons.</li>
-          </ul>
+          <span class="unit-card-name">Food, Celebrations &amp; Experiences</span>
         </div>
+        <div class="grammar-tags">
+          <span class="grammar-tag">Gustar</span>
+          <span class="grammar-tag">impersonal/passive se</span>
+          <span class="grammar-tag">comparatives</span>
+        </div>
+        <p class="unit-card-context">Food, social meals, and Mexican celebrations.</p>
+        <ul class="unit-card-cando">
+          <li>I can recount a celebration or meal.</li>
+          <li>I can express preferences and make comparisons.</li>
+        </ul>
       </div>
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c4" id="trigger-c4">
+      <div class="unit-card">
+        <div class="unit-card-top">
           <span class="unit-badge">Cluster 4</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Health &amp; Wellbeing</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">Stem-changing preterites</span>
-              <span class="grammar-tag">double object pronouns</span>
-              <span class="grammar-tag">tener que</span>
-            </span>
-          </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel" id="panel-c4" role="region" aria-labelledby="trigger-c4">
-          <p class="panel-text">Health situations and medical contexts in Mexico.</p>
-          <ul class="panel-cando-list">
-            <li>I can explain symptoms and health situations.</li>
-            <li>I can describe obligations and habits.</li>
-          </ul>
+          <span class="unit-card-name">Health &amp; Wellbeing</span>
         </div>
+        <div class="grammar-tags">
+          <span class="grammar-tag">Stem-changing preterites</span>
+          <span class="grammar-tag">double object pronouns</span>
+          <span class="grammar-tag">tener que</span>
+        </div>
+        <p class="unit-card-context">Health situations and medical contexts in Mexico.</p>
+        <ul class="unit-card-cando">
+          <li>I can explain symptoms and health situations.</li>
+          <li>I can describe obligations and habits.</li>
+        </ul>
       </div>
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c5" id="trigger-c5">
+      <div class="unit-card">
+        <div class="unit-card-top">
           <span class="unit-badge">Cluster 5</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Past Narration</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">Irregular preterites</span>
-              <span class="grammar-tag">preterite vs. imperfect contrast</span>
-            </span>
-          </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel" id="panel-c5" role="region" aria-labelledby="trigger-c5">
-          <p class="panel-text">Telling stories and recounting experiences.</p>
-          <ul class="panel-cando-list">
-            <li>I can narrate a past experience with logical sequence.</li>
-            <li>I can distinguish main events from background context.</li>
-          </ul>
+          <span class="unit-card-name">Past Narration</span>
         </div>
+        <div class="grammar-tags">
+          <span class="grammar-tag">Irregular preterites</span>
+          <span class="grammar-tag">preterite vs. imperfect contrast</span>
+        </div>
+        <p class="unit-card-context">Telling stories and recounting experiences.</p>
+        <ul class="unit-card-cando">
+          <li>I can narrate a past experience with logical sequence.</li>
+          <li>I can distinguish main events from background context.</li>
+        </ul>
       </div>
 
-      <div class="acc-item">
-        <button class="acc-trigger" aria-expanded="false" aria-controls="panel-c6" id="trigger-c6">
+      <div class="unit-card">
+        <div class="unit-card-top">
           <span class="unit-badge">Cluster 6</span>
-          <span class="acc-trigger-inner">
-            <span class="unit-name">Describing &amp; Comparing</span>
-            <span class="grammar-tags">
-              <span class="grammar-tag">Comparatives</span>
-              <span class="grammar-tag">relative pronouns</span>
-              <span class="grammar-tag">imperfect</span>
-              <span class="grammar-tag">a personal</span>
-            </span>
-          </span>
-          <span class="acc-chevron" aria-hidden="true">▾</span>
-        </button>
-        <div class="acc-panel" id="panel-c6" role="region" aria-labelledby="trigger-c6">
-          <p class="panel-text">Describing people, clothing, and experiences in detail.</p>
-          <ul class="panel-cando-list">
-            <li>I can describe and compare people and experiences.</li>
-            <li>I can build longer sentences using relative clauses.</li>
-          </ul>
+          <span class="unit-card-name">Describing &amp; Comparing</span>
         </div>
+        <div class="grammar-tags">
+          <span class="grammar-tag">Comparatives</span>
+          <span class="grammar-tag">relative pronouns</span>
+          <span class="grammar-tag">imperfect</span>
+          <span class="grammar-tag">a personal</span>
+        </div>
+        <p class="unit-card-context">Describing people, clothing, and experiences in detail.</p>
+        <ul class="unit-card-cando">
+          <li>I can describe and compare people and experiences.</li>
+          <li>I can build longer sentences using relative clauses.</li>
+        </ul>
       </div>
 
     </div>
-
-    <p class="accordion-note">Full course outline in development.</p>
   </section>
 
 </main>
+
+<div class="ebook-gallery-band">
+  <p class="ebook-gallery-label">Lesson Previews — SP102</p>
+  <div class="ebook-gallery">
+    <div class="ebook-item"><img src="L02.png" alt="SP102 Lesson 2 — eBook screenshot" loading="lazy"></div>
+    <div class="ebook-item"><img src="L02%202.png" alt="SP102 Lesson 2 — eBook screenshot, page 2" loading="lazy"></div>
+    <div class="ebook-item"><img src="L01%20eBook%205.png" alt="SP102 lesson preview — eBook screenshot" loading="lazy"></div>
+    <div class="ebook-item"><img src="L01%20eBook%206.png" alt="SP102 lesson preview — eBook screenshot" loading="lazy"></div>
+  </div>
+</div>
 
 <div class="contact-band">
   <p>Institutional licensing is available per course per term. Contact us to request a demo or pilot package.<a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
@@ -627,15 +604,5 @@ body {
   <div class="footer-bottom">Spanish Learning Edge LLC · All rights reserved</div>
 </footer>
 
-<script>
-document.querySelectorAll('.acc-trigger').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var expanded = this.getAttribute('aria-expanded') === 'true';
-    this.setAttribute('aria-expanded', String(!expanded));
-    var panel = document.getElementById(this.getAttribute('aria-controls'));
-    if (panel) panel.classList.toggle('open', !expanded);
-  });
-});
-</script>
 </body>
 </html>

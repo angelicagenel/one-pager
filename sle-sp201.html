@@ -22,393 +22,136 @@
   --rose-surface: #F6F2F1;
   --border: #DCDCDC;
   --white: #ffffff;
+  --course-color: #4A6B6E;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--bg);
-  color: var(--secondary);
-  font-size: 16px;
-  line-height: 1.65;
-}
+body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--secondary); font-size: 16px; line-height: 1.65; }
 
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 4px;
-  background: var(--charcoal);
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: 4px;
-  font-size: 14px;
-  z-index: 9999;
-  text-decoration: none;
-}
+.skip-link { position: absolute; left: -9999px; top: 4px; background: var(--charcoal); color: #fff; padding: 8px 18px; border-radius: 4px; font-size: 14px; z-index: 9999; text-decoration: none; }
 .skip-link:focus { left: 4px; }
-
-:focus-visible {
-  outline: 2px solid var(--eucalyptus);
-  outline-offset: 2px;
-  border-radius: 3px;
-}
+:focus-visible { outline: 2px solid var(--eucalyptus); outline-offset: 2px; border-radius: 3px; }
 
 /* NAV */
-.site-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--charcoal);
-  padding: 0 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  justify-content: space-between;
-}
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.nav-brand {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: #fff;
-  white-space: nowrap;
-}
+.site-nav { position: sticky; top: 0; z-index: 100; background: var(--charcoal); padding: 0 48px; height: 48px; display: flex; align-items: center; gap: 16px; justify-content: space-between; }
+.nav-left { display: flex; align-items: center; gap: 10px; }
+.nav-brand { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: #fff; white-space: nowrap; }
 .nav-brand .brand-accent { color: var(--rose-accent); }
-.nav-back {
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255,255,255,.8);
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,.3);
-  border-radius: 4px;
-  padding: 5px 14px;
-  white-space: nowrap;
-}
+.nav-back { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 500; color: rgba(255,255,255,.8); text-decoration: none; border: 1px solid rgba(255,255,255,.3); border-radius: 4px; padding: 5px 14px; white-space: nowrap; }
 .nav-back:hover { background: rgba(255,255,255,.1); color: #fff; }
 .nav-course-links { display: flex; gap: 4px; }
 .nav-course-links a { color: rgba(255,255,255,.65); text-decoration: none; font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 500; padding: 5px 10px; border-radius: 4px; transition: all .2s; }
 .nav-course-links a:hover { color: #fff; background: rgba(255,255,255,.1); }
-.nav-course-links a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .nav-course-links a[aria-current="page"] { color: #fff; background: rgba(255,255,255,.15); font-weight: 600; }
 
 /* COURSE HEADER */
 .course-header { padding: 16px 48px; }
-.course-header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.course-name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-}
-.course-meta {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  color: rgba(255,255,255,.82);
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  margin-top: 4px;
-}
-.course-badge {
-  flex-shrink: 0;
-  background: var(--white);
-  color: var(--eucalyptus);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  border-radius: 20px;
-  padding: 4px 14px;
-}
+.course-header-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.course-name { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; color: #fff; line-height: 1.2; }
+.course-meta { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 400; color: rgba(255,255,255,.82); text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
+.course-badge { flex-shrink: 0; background: var(--white); color: var(--course-color); font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; border-radius: 20px; padding: 4px 14px; }
 
 /* POSITIONING LINE */
-.positioning-line {
-  background: var(--surface);
-  padding: 16px 48px;
-}
-.positioning-line p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--charcoal);
-}
+.positioning-line { background: var(--surface); padding: 14px 48px; border-bottom: 1px solid var(--border); }
+.positioning-line p { font-family: 'Poppins', sans-serif; font-size: 15px; color: var(--charcoal); }
 
-/* PREREQ NOTE */
-.prereq-band {
-  background: var(--rose-surface);
-  padding: 12px 48px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  color: var(--secondary);
-}
-.prereq-band a { color: var(--eucalyptus); text-decoration: none; }
-.prereq-band a:hover { text-decoration: underline; }
+/* QUOTE BAND */
+.quote-band { background: var(--white); padding: 18px 48px; border-bottom: 1px solid var(--border); }
+.course-quote { font-family: 'Poppins', sans-serif; font-size: 14px; font-style: italic; color: var(--secondary); max-width: 720px; line-height: 1.7; }
 
-/* COURSE DESC */
-.course-desc-band {
-  background: var(--white);
-  padding: 28px 48px;
-}
-.course-desc {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--secondary);
-  max-width: 760px;
-  line-height: 1.65;
-}
+/* PREREQ BAND */
+.prereq-band { background: var(--rose-surface); padding: 12px 48px; border-bottom: 1px solid #DDBDBD; }
+.prereq-band p { font-family: 'Poppins', sans-serif; font-size: 13px; color: var(--secondary); }
 
-/* CAN-DO */
-.cando-section {
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  padding: 32px 48px;
-}
-.section-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  color: var(--eucalyptus);
-  margin-bottom: 20px;
-}
-.cando-list {
-  list-style: none;
-  padding: 0;
-  counter-reset: cando;
-}
-.cando-list li {
-  counter-increment: cando;
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--secondary);
-  line-height: 1.8;
-}
-.cando-list li:last-child { border-bottom: none; }
-.cando-list li::before {
-  content: counter(cando);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--eucalyptus);
-  min-width: 22px;
-  flex-shrink: 0;
-}
+/* ZTC ROW */
+.ztc-row { background: var(--surface); padding: 12px 48px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; border-bottom: 1px solid var(--border); }
+.ztc-pill { background: var(--eucalyptus); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 3px 10px; border-radius: 4px; }
+.ztc-note { font-family: 'Poppins', sans-serif; font-size: 12.5px; color: var(--secondary); opacity: 0.8; }
 
-/* SEQUENCE */
-.sequence-section {
-  background: var(--bg);
-  padding: 32px 48px;
-}
-.sequence-hint {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: var(--eucalyptus);
-  margin-bottom: 20px;
-}
+/* CONTENT GRID */
+.content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 24px 48px; background: var(--bg); }
+.content-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 22px 20px; }
+.card-section-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--eucalyptus); margin-bottom: 14px; display: block; }
 
-/* UNIT BADGE + TAGS (shared) */
-.unit-badge {
-  background: var(--eucalyptus);
-  color: var(--white);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 4px;
-  flex-shrink: 0;
-  white-space: nowrap;
-}
+/* CAN-DO CARD LIST */
+.cando-card-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.cando-card-list li { font-family: 'Poppins', sans-serif; font-size: 13px; color: var(--secondary); line-height: 1.5; padding: 9px 10px 9px 13px; background: var(--surface); border-radius: 6px; border-left: 3px solid var(--eucalyptus); }
+
+/* INCLUDES LIST */
+.includes-list { list-style: none; padding: 0; }
+.includes-list li { font-family: 'Poppins', sans-serif; font-size: 13px; color: var(--secondary); line-height: 1.5; padding: 9px 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 8px; }
+.includes-list li:last-child { border-bottom: none; }
+.includes-list li::before { content: '✓'; color: var(--eucalyptus); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+/* DELIVERY SECTION */
+.delivery-band { background: var(--surface); padding: 20px 48px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.delivery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 12px; }
+.delivery-item { font-family: 'Poppins', sans-serif; font-size: 13px; color: var(--secondary); line-height: 1.6; padding-left: 16px; position: relative; }
+.delivery-item::before { content: '✓'; color: var(--eucalyptus); font-weight: 700; position: absolute; left: 0; }
+
+/* SEQUENCE SECTION */
+.sequence-section { background: var(--bg); padding: 28px 48px; }
+.section-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: var(--eucalyptus); margin-bottom: 16px; display: block; }
+.sequence-hint { font-family: 'Poppins', sans-serif; font-size: 14px; color: var(--eucalyptus); margin-bottom: 18px; }
+
+/* UNIT BADGE + TAGS */
+.unit-badge { background: var(--eucalyptus); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; flex-shrink: 0; white-space: nowrap; }
 .grammar-tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 10px; }
-.grammar-tag {
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
-  background: var(--surface);
-  color: var(--eucalyptus);
-  padding: 2px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-}
+.grammar-tag { font-family: 'Poppins', sans-serif; font-size: 11px; background: var(--surface); color: var(--eucalyptus); padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
 
 /* UNIT GRID */
-.unit-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-.unit-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 15px 14px;
-  display: flex;
-  flex-direction: column;
-}
-.unit-card-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 2px;
-}
-.unit-card-name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--charcoal);
-  line-height: 1.3;
-}
-.unit-card-context {
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  color: var(--secondary);
-  opacity: 0.65;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-.unit-card-cando {
-  list-style: none;
-  padding: 0;
-  margin-top: auto;
-}
-.unit-card-cando li {
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  color: var(--secondary);
-  padding: 4px 0 4px 10px;
-  border-left: 2px solid var(--eucalyptus-light);
-  margin-bottom: 4px;
-  line-height: 1.4;
-}
+.unit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.unit-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px 15px 14px; display: flex; flex-direction: column; }
+.unit-card-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 2px; }
+.unit-card-name { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600; color: var(--charcoal); line-height: 1.3; }
+.unit-card-context { font-family: 'Poppins', sans-serif; font-size: 12px; color: var(--secondary); opacity: 0.6; line-height: 1.5; margin-bottom: 10px; }
+.unit-card-cando { list-style: none; padding: 0; margin-top: auto; }
+.unit-card-cando li { font-family: 'Poppins', sans-serif; font-size: 12px; color: var(--secondary); padding: 4px 0 4px 10px; border-left: 2px solid var(--eucalyptus-light); margin-bottom: 4px; line-height: 1.4; }
 
 /* EBOOK GALLERY */
-.ebook-gallery-band {
-  background: var(--white);
-  padding: 24px 48px;
-  border-top: 1px solid var(--border);
-}
-.ebook-gallery-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  color: var(--eucalyptus);
-  margin-bottom: 14px;
-}
-.ebook-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-.ebook-item img {
-  width: 100%;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  display: block;
-}
+.ebook-gallery-band { background: var(--white); padding: 24px 48px; border-top: 1px solid var(--border); }
+.ebook-gallery-label { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--eucalyptus); margin-bottom: 14px; display: block; }
+.ebook-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.ebook-item img { width: 100%; border-radius: 6px; border: 1px solid var(--border); display: block; }
 
 /* CONTACT */
-.contact-band {
-  background: var(--surface);
-  padding: 24px 48px;
-}
-.contact-band p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: var(--secondary);
-  line-height: 1.65;
-}
-.contact-link {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--eucalyptus);
-  text-decoration: none;
-  margin-left: 8px;
-}
+.contact-band { background: var(--surface); padding: 24px 48px; border-top: 1px solid var(--border); }
+.contact-band p { font-family: 'Poppins', sans-serif; font-size: 14px; color: var(--secondary); line-height: 1.65; }
+.contact-link { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: var(--eucalyptus); text-decoration: none; margin-left: 8px; }
 .contact-link:hover { text-decoration: underline; }
 
 /* FOOTER */
-.site-footer {
-  background: var(--charcoal);
-  padding: 20px 48px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.footer-left {
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  color: rgba(255,255,255,.8);
-  line-height: 1.7;
-}
-.footer-right {
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  text-align: right;
-  line-height: 1.9;
-}
+.site-footer { background: var(--charcoal); padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.footer-left { font-family: 'Poppins', sans-serif; font-size: 12px; color: rgba(255,255,255,.8); line-height: 1.7; }
+.footer-right { font-family: 'Poppins', sans-serif; font-size: 12px; text-align: right; line-height: 1.9; }
 .footer-link { color: var(--rose-accent); text-decoration: none; }
 .footer-link:hover { text-decoration: underline; }
-.footer-bottom {
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
-  color: rgba(255,255,255,.55);
-  text-align: center;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255,255,255,.1);
-  width: 100%;
-}
+.footer-bottom { font-family: 'Poppins', sans-serif; font-size: 11px; color: rgba(255,255,255,.55); text-align: center; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.1); width: 100%; }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+  .content-grid { grid-template-columns: 1fr; }
   .unit-grid { grid-template-columns: repeat(2, 1fr); }
+  .delivery-grid { grid-template-columns: repeat(2, 1fr); }
   .ebook-gallery { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .nav-course-links { display: none; }
-  .site-nav, .course-header, .positioning-line, .prereq-band,
-  .course-desc-band, .cando-section, .sequence-section,
-  .ebook-gallery-band,
+  .site-nav, .course-header, .positioning-line, .quote-band, .prereq-band,
+  .ztc-row, .content-grid, .delivery-band,
+  .sequence-section, .ebook-gallery-band,
   .contact-band, .site-footer { padding-left: 20px; padding-right: 20px; }
   .site-footer { flex-direction: column; align-items: flex-start; }
   .footer-right { text-align: left; }
   .course-header-inner { flex-wrap: wrap; }
   .unit-grid { grid-template-columns: 1fr; }
+  .delivery-grid { grid-template-columns: 1fr; }
   .ebook-gallery { grid-template-columns: repeat(2, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
-  }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 </style>
 </head>
@@ -429,44 +172,77 @@ body {
   <a href="sle-dossier.html" class="nav-back">← Dossier</a>
 </nav>
 
-<header class="course-header" style="background: #3d6870;">
+<header class="course-header" style="background: var(--course-color);">
   <div class="course-header-inner">
     <div>
       <h1 class="course-name">Intermediate Spanish I</h1>
-      <p class="course-meta">SP201 · Continues from SP102 · Intermediate Mid/High</p>
+      <p class="course-meta">SP201 · 5 Clusters · Intermediate Mid/High</p>
     </div>
     <span class="course-badge">UPCOMING</span>
   </div>
 </header>
 
+<div class="positioning-line">
+  <p>A Spanish learning system grounded in Mexican culture &amp; built on cutting-edge technology.</p>
+</div>
+
+<div class="quote-band">
+  <p class="course-quote">"Students move beyond description and narration, into persuasion, hypothesis, and cultural argument."</p>
+</div>
+
+<div class="prereq-band">
+  <p>Continues from Elementary Spanish II (SP102). Students should be comfortable with preterite, imperfect, and basic communicative interaction before beginning this course.</p>
+</div>
+
+<div class="ztc-row">
+  <span class="ztc-pill">ZTC</span>
+  <span class="ztc-pill">NoLo</span>
+  <span class="ztc-pill">OER-Compatible</span>
+  <span class="ztc-note">One institutional license. Zero student-facing costs — no access codes, no subscriptions, no external accounts.</span>
+</div>
+
 <main id="main">
 
-  <div class="positioning-line">
-    <p>A Spanish learning system grounded in Mexican culture &amp; built on cutting-edge technology.</p>
+  <div class="content-grid">
+
+    <section class="content-card" aria-labelledby="cando-label">
+      <span class="card-section-label" id="cando-label">What Students Can Do at Exit</span>
+      <ul class="cando-card-list">
+        <li>Give instructions, advice, and formal recommendations in context</li>
+        <li>Express feelings, doubts, and reactions using the subjunctive</li>
+        <li>Talk about plans and goals at short and long range</li>
+        <li>Anticipate consequences and express hypothetical conditions</li>
+        <li>Argue a position and express opinions using discourse markers</li>
+        <li>Describe cultural values and practices with nuance</li>
+      </ul>
+    </section>
+
+    <section class="content-card" aria-labelledby="includes-label">
+      <span class="card-section-label" id="includes-label">Every Course Includes</span>
+      <ul class="includes-list">
+        <li>Articulate Rise 360 interactive lessons</li>
+        <li>Interactive HTML exercises with built-in feedback</li>
+        <li>AI voice narration in Mexican Spanish, natural, clear, and consistent</li>
+        <li>Digital flashcard sets and grammar quick-reference guides</li>
+        <li>Curriculum map with grammar scope and sequence</li>
+        <li>FACT, integrated AI speech practice</li>
+      </ul>
+    </section>
+
   </div>
 
-  <div class="prereq-band">
-    Continues from Elementary Spanish II (<a href="sle-sp102.html">SP102</a>). Students should be comfortable with preterite, imperfect, and basic communicative interaction before beginning this course.
+  <div class="delivery-band">
+    <span class="card-section-label">Delivery</span>
+    <div class="delivery-grid">
+      <div class="delivery-item">Hosted by Spanish Learning Edge</div>
+      <div class="delivery-item">Students access via link inside Canvas</div>
+      <div class="delivery-item">Canvas-compatible via SCORM · LTI integration in development</div>
+      <div class="delivery-item">FERPA-compliant · U.S.-based hosting</div>
+    </div>
   </div>
-
-  <div class="course-desc-band">
-    <p class="course-desc">Students move beyond description and narration: into persuasion, hypothesis, and cultural argument. Commands, subjunctive, future, conditional, and argumentative discourse build confident, nuanced expression.</p>
-  </div>
-
-  <section class="cando-section" aria-labelledby="cando-label">
-    <h2 class="section-label" id="cando-label">What Students Can Do at Exit</h2>
-    <ol class="cando-list">
-      <li>Give instructions and recommendations using formal and informal commands</li>
-      <li>Express emotions, doubts, and opinions using the subjunctive</li>
-      <li>Talk about future plans and hypothetical situations</li>
-      <li>Reflect on past experiences using the present perfect</li>
-      <li>Argue a position using advanced discourse markers</li>
-      <li>Describe and compare cultural values across communities</li>
-    </ol>
-  </section>
 
   <section class="sequence-section" aria-labelledby="sequence-label">
-    <h2 class="section-label" id="sequence-label">Course Sequence</h2>
+    <span class="section-label" id="sequence-label">Course Sequence</span>
     <p class="sequence-hint">Five thematic clusters building toward argumentative expression.</p>
 
     <div class="unit-grid">
@@ -477,7 +253,8 @@ body {
           <span class="unit-card-name">Instructions &amp; Regulation</span>
         </div>
         <div class="grammar-tags">
-          <span class="grammar-tag">Commands</span>
+          <span class="grammar-tag">Affirmative/negative commands</span>
+          <span class="grammar-tag">formal commands</span>
           <span class="grammar-tag">por vs. para</span>
           <span class="grammar-tag">reciprocal se</span>
         </div>
@@ -518,8 +295,8 @@ body {
         </div>
         <p class="unit-card-context">Projecting plans, possibilities, and hypothetical situations.</p>
         <ul class="unit-card-cando">
-          <li>I can talk about future plans.</li>
-          <li>I can express possibility and give recommendations.</li>
+          <li>I can talk about future plans and hypothetical situations.</li>
+          <li>I can express possibility and give evidence-based recommendations.</li>
         </ul>
       </div>
 
@@ -531,11 +308,11 @@ body {
         <div class="grammar-tags">
           <span class="grammar-tag">Present perfect</span>
           <span class="grammar-tag">nosotros commands</span>
-          <span class="grammar-tag">discourse markers</span>
+          <span class="grammar-tag">advanced discourse markers</span>
         </div>
         <p class="unit-card-context">Reflecting on accumulated experience and arguing a position.</p>
         <ul class="unit-card-cando">
-          <li>I can reflect on past experiences.</li>
+          <li>I can reflect on accumulated experiences.</li>
           <li>I can argue a position using organized discourse.</li>
         </ul>
       </div>
@@ -551,7 +328,7 @@ body {
         </div>
         <p class="unit-card-context">Taking a stance on social and cultural topics.</p>
         <ul class="unit-card-cando">
-          <li>I can express well-supported opinions.</li>
+          <li>I can express well-supported opinions on social and cultural topics.</li>
           <li>I can write and speak argumentatively.</li>
         </ul>
       </div>
@@ -562,7 +339,7 @@ body {
 </main>
 
 <div class="ebook-gallery-band">
-  <p class="ebook-gallery-label">Lesson Previews — SP201</p>
+  <span class="ebook-gallery-label">Lesson Previews — SP201</span>
   <div class="ebook-gallery">
     <div class="ebook-item"><img src="L03.png" alt="SP201 Lesson 3 — eBook screenshot" loading="lazy"></div>
     <div class="ebook-item"><img src="L02.png" alt="SP201 lesson preview — eBook screenshot" loading="lazy"></div>
@@ -572,7 +349,7 @@ body {
 </div>
 
 <div class="contact-band">
-  <p>Institutional licensing is available per course per term. Contact us to request a demo or pilot package.<a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
+  <p>Institutional licensing is available per course per term. Contact us to request a demo or explore a pilot package.<a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
 </div>
 
 <footer class="site-footer" role="contentinfo">

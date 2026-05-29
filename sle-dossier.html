@@ -324,33 +324,33 @@ h3 {
   gap: 52px;
   align-items: start;
 }
-.skill-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 24px;
+.system-logo {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  display: block;
+  margin-bottom: 22px;
+  border-radius: 8px;
 }
-.skill-list li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: var(--secondary-text);
-  font-weight: 500;
+.who-its-for-card {
+  background: var(--warm-bg);
+  border-radius: 12px;
+  padding: 26px 22px;
+  border: 1px solid var(--rose-border);
 }
-.skill-num {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--eucalyptus-primary);
-  color: #fff;
+.who-its-for-label {
+  font-family: var(--heading);
   font-size: 11px;
   font-weight: 700;
-  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--eucalyptus-primary);
+  margin-bottom: 12px;
+}
+.who-its-for-text {
+  font-size: 14px;
+  color: var(--secondary-text);
+  line-height: 1.8;
 }
 .map-link {
   font-size: 14px;
@@ -360,10 +360,20 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  margin-top: 4px;
+  margin-top: 20px;
 }
 .map-link:hover { color: var(--charcoal); text-decoration: underline; }
 .map-link:focus-visible { outline: 2px solid var(--eucalyptus-primary); }
+.card-avatar-solo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid #fff;
+  display: block;
+  margin-bottom: 12px;
+}
 
 /* ── COURSE SEQUENCE ─────────────────────────── */
 #courses { background: var(--warm-bg); }
@@ -611,7 +621,7 @@ h3 {
   overflow: hidden;
   min-height: 280px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 .fact-band-bg {
   position: absolute;
@@ -624,11 +634,11 @@ h3 {
 .fact-band-overlay {
   position: relative;
   z-index: 1;
-  background: linear-gradient(to top, rgba(47,52,55,.75) 0%, rgba(47,52,55,.3) 60%, transparent 100%);
-  padding: 36px 48px;
+  background: linear-gradient(to right, rgba(47,52,55,.88) 0%, rgba(47,52,55,.5) 55%, rgba(47,52,55,.05) 100%);
+  padding: 40px 48px;
   width: 100%;
 }
-.fact-band-inner { max-width: 480px; }
+.fact-band-inner { max-width: 380px; }
 .fact-band-cta {
   display: inline-block;
   background: var(--eucalyptus-primary);
@@ -774,20 +784,6 @@ h3 {
     </video>
     <p class="preview-caption">SP101 · Lesson 1 · Scene 1: Sofía — AI voice narration, character avatars, authentic Mexican Spanish</p>
   </div>
-  <div class="preview-grid">
-    <div class="preview-item">
-      <img src="L01%20eBook%201.png" alt="Don Marcos in Lesson 1 with bilingual vocabulary sidebar and interactive lesson content" class="preview-img" loading="lazy">
-      <p class="preview-caption">Don Marcos — Lesson 1, Unit 1</p>
-    </div>
-    <div class="preview-item">
-      <img src="L01%20eBook%204.png" alt="La feria de Oaxaca reading with inline vocabulary glosses and matching exercise" class="preview-img" loading="lazy">
-      <p class="preview-caption">Reading comprehension with interactive glosses</p>
-    </div>
-    <div class="preview-item">
-      <img src="L01%20eBook%206.png" alt="Doña Rosa recurring character in lesson video with bilingual vocabulary table" class="preview-img" loading="lazy">
-      <p class="preview-caption">Doña Rosa — recurring character, Unit 1</p>
-    </div>
-  </div>
 </div>
 
 <!-- ── MAIN CONTENT ──────────────────────────────────── -->
@@ -830,25 +826,15 @@ h3 {
     <h2 class="section-label">The SLE System</h2>
     <div class="two-col">
       <div>
-        <p style="font-size:15px;color:var(--secondary-text);line-height:1.8;">
-          Every SLE lesson covers a complete communicative skill, grounded in Mexican cultural context and designed for flipped instruction. Grammar is prepared before class. Class time is for people, conversation, and connection.
+        <img src="logo.png" alt="Spanish Learning Edge" class="system-logo" loading="lazy">
+        <p style="font-size:15px;color:var(--secondary-text);line-height:1.85;">
+          The SLE System invites adult learners into the language through the stories, voices, and everyday experiences of Mexico. As learners explore culture, traditions, and contemporary life, they gradually build the skills and confidence to understand and communicate in Spanish. The result is language learning rooted in a deeper connection to the people, places, and perspectives that make Spanish meaningful, memorable, and relevant beyond the classroom.
         </p>
-        <img src="L01%20eBook%205.png" alt="Lesson showing Ambientes strategy box with don Marcos and doña Rosa scene and audio player" class="system-img" loading="lazy">
-      </div>
-      <div>
-        <ul class="skill-list" aria-label="Six skill areas">
-          <li><span class="skill-num" aria-hidden="true">1</span> Vocabulary</li>
-          <li><span class="skill-num" aria-hidden="true">2</span> Grammar &amp; Verb Patterns</li>
-          <li><span class="skill-num" aria-hidden="true">3</span> Connectors &amp; Text Organization</li>
-          <li><span class="skill-num" aria-hidden="true">4</span> Pronunciation &amp; Writing</li>
-          <li><span class="skill-num" aria-hidden="true">5</span> Context, Culture &amp; Appropriateness</li>
-          <li><span class="skill-num" aria-hidden="true">6</span> Communication Strategies</li>
-        </ul>
-        <p style="font-family:var(--body);font-size:14px;color:#557076;margin-bottom:12px;">Integrated AI speech practice: FACT (Functional Acoustic-Communicative Tracking) gives students real-time feedback on clarity and communication directly inside each lesson.</p>
-        <a href="https://staging.d2v9q4epzcx9a8.amplifyapp.com/#/lessons/AGN9ulvCy49Tms6ayd9N5xdnlpBYuFyy" class="fact-screenshot-link" target="_blank" rel="noopener" aria-label="Try the FACT lesson live — opens in new tab">
-          <img src="Link%20a%20app.png" alt="In-lesson FACT practice callout: Practice tu presentación with FACT Spanish Speech Performance Check" class="fact-screenshot" loading="lazy">
-        </a>
         <a href="sle-linguistic-competence-map.html" class="map-link">View full Linguistic Competence Map →</a>
+      </div>
+      <div class="who-its-for-card">
+        <p class="who-its-for-label">Who It's For</p>
+        <p class="who-its-for-text">SLE is designed for community colleges and universities seeking a complete, Canvas-ready Spanish curriculum for online and hybrid learning. The system supports programs that value cultural authenticity, academic rigor, and affordability. Built for World Languages departments with limited resources, SLE combines culturally rich content, AI-enhanced learning experiences, and streamlined course delivery to reduce faculty workload while helping students build meaningful language proficiency.</p>
       </div>
     </div>
   </div>
@@ -861,7 +847,7 @@ h3 {
     <div class="fact-band-inner">
       <h2 class="sr-only">FACT Spanish Speech Check — Integrated AI Practice</h2>
       <a href="https://staging.d2v9q4epzcx9a8.amplifyapp.com/#/lessons/AGN9ulvCy49Tms6ayd9N5xdnlpBYuFyy" class="fact-band-cta" target="_blank" rel="noopener">
-        ▶ Try a Lesson Free
+        ▶ Try FACT
       </a>
     </div>
   </div>
@@ -876,11 +862,7 @@ h3 {
       <!-- SP101 -->
       <div class="card">
         <div class="card-top card-accent-euca">
-          <div class="card-characters" aria-hidden="true">
-            <img src="Avatar%20SLE%20(1).png" alt="" class="card-avatar" loading="lazy">
-            <img src="Avatar%20SLE%20(2).png" alt="" class="card-avatar" loading="lazy">
-            <img src="Avatar%20SLE%20(3).png" alt="" class="card-avatar" loading="lazy">
-          </div>
+          <img src="Avatar%20SLE%20(1).png" alt="" class="card-avatar-solo" loading="lazy" aria-hidden="true">
           <span class="card-badge badge-euca">Novice Mid/High</span>
           <h3>SP101 · Elementary Spanish I</h3>
           <p>Five units built around the Oaxacan feria and recurring characters don Marcos, doña Rosa, Tomás, Sofía, and Elena, from first greetings to present progressive.</p>
@@ -894,6 +876,7 @@ h3 {
       <!-- SP102 -->
       <div class="card">
         <div class="card-top card-accent-rose">
+          <img src="Avatar%20SLE%20(2).png" alt="" class="card-avatar-solo" loading="lazy" aria-hidden="true">
           <span class="card-badge badge-rose">Intermediate Low</span>
           <h3>SP102 · Elementary Spanish II</h3>
           <p>Past narration, reflexive verbs, celebrations, health, and the preterite/imperfect contrast, building on SP101's communicative foundation.</p>
@@ -907,6 +890,7 @@ h3 {
       <!-- SP201 -->
       <div class="card">
         <div class="card-top card-accent-mid">
+          <img src="Avatar%20SLE%20(3).png" alt="" class="card-avatar-solo" loading="lazy" aria-hidden="true">
           <span class="card-badge badge-mid">Intermediate Mid/High</span>
           <h3>SP201 · Intermediate Spanish I</h3>
           <p>Commands, subjunctive, future, conditional, and argumentative discourse, moving students into confident, nuanced expression.</p>

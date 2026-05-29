@@ -316,13 +316,34 @@ h3 {
   gap: 48px;
   align-items: start;
 }
+.system-logo-row {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
 .system-logo {
-  width: 100%;
-  max-width: 180px;
+  width: 130px;
   height: auto;
   display: block;
-  margin-bottom: 22px;
   border-radius: 8px;
+  flex-shrink: 0;
+}
+.who-its-for-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.who-its-for-list li {
+  font-size: 14px;
+  color: var(--secondary-text);
+  line-height: 1.7;
+  padding: 8px 12px 8px 13px;
+  background: #fff;
+  border-radius: 6px;
+  border-left: 3px solid var(--eucalyptus-primary);
 }
 .who-its-for-card {
   background: var(--warm-bg);
@@ -786,15 +807,21 @@ h3 {
     <h2 class="section-label">The SLE System</h2>
     <div class="two-col">
       <div>
-        <img src="logo.png" alt="Spanish Learning Edge" class="system-logo" loading="lazy">
-        <p style="font-size:15px;color:var(--secondary-text);line-height:1.85;">
-          The SLE System invites adult learners into the language through the stories, voices, and everyday experiences of Mexico. As learners explore culture, traditions, and contemporary life, they gradually build the skills and confidence to understand and communicate in Spanish. The result is language learning rooted in a deeper connection to the people, places, and perspectives that make Spanish meaningful, memorable, and relevant beyond the classroom.
-        </p>
+        <div class="system-logo-row">
+          <img src="logo.png" alt="Spanish Learning Edge" class="system-logo" loading="lazy">
+          <p style="font-size:15px;color:var(--secondary-text);line-height:1.85;">
+            The SLE System invites adult learners into the language through the stories, voices, and everyday experiences of Mexico. As learners explore culture, traditions, and contemporary life, they gradually build the skills and confidence to understand and communicate in Spanish. The result is language learning rooted in a deeper connection to the people, places, and perspectives that make Spanish meaningful, memorable, and relevant beyond the classroom.
+          </p>
+        </div>
         <a href="sle-linguistic-competence-map.html" class="map-link">View full Linguistic Competence Map →</a>
       </div>
       <div class="who-its-for-card">
         <p class="who-its-for-label">Who It's For</p>
-        <p class="who-its-for-text">SLE is designed for community colleges and universities seeking a complete, Canvas-ready Spanish curriculum for online and hybrid learning. The system supports programs that value cultural authenticity, academic rigor, and affordability. Built for World Languages departments with limited resources, SLE combines culturally rich content, AI-enhanced learning experiences, and streamlined course delivery to reduce faculty workload while helping students build meaningful language proficiency.</p>
+        <ul class="who-its-for-list">
+          <li>Community colleges and universities seeking a complete, Canvas-ready Spanish curriculum for online and hybrid delivery.</li>
+          <li>Programs that value cultural authenticity, academic rigor, and zero student-facing cost.</li>
+          <li>World Languages departments looking to reduce faculty workload while giving students an AI-enhanced, culturally grounded learning experience.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -908,8 +935,7 @@ h3 {
       <div class="delivery-card">Students access via link inside Canvas</div>
       <div class="delivery-card">Canvas-compatible via SCORM · LTI integration in development</div>
       <div class="delivery-card">FERPA-compliant</div>
-      <div class="delivery-card">AI voice narration in Mexican Spanish: natural, clear, consistent</div>
-      <div class="delivery-card">Recurring character avatars: don Marcos, doña Rosa, Tomás, Sofía, Elena</div>
+      <div class="delivery-card">AI voice narration and recurring character avatars in Mexican Spanish</div>
       <div class="delivery-card">One institutional license · no per-student fees · no access codes</div>
     </div>
   </div>

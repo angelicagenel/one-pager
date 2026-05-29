@@ -454,6 +454,61 @@ h3 {
   min-width: 64px;
 }
 
+/* ── HERO CTA ROW ────────────────────────────── */
+.hero-cta-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero-cta-watch {
+  display: inline-block;
+  color: rgba(255,255,255,.85);
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .03em;
+  padding: 14px 26px;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all .2s;
+}
+.hero-cta-watch:hover { color: #fff; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.55); }
+.hero-cta-watch:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+/* ── PREVIEW VIDEO ───────────────────────────── */
+.preview-video-wrap {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.preview-video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.55);
+  display: block;
+  background: #000;
+}
+
+/* ── CHARACTER AVATARS ───────────────────────── */
+.card-characters { display: flex; margin-bottom: 14px; }
+.card-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 6px rgba(0,0,0,.15);
+  margin-left: -10px;
+  flex-shrink: 0;
+}
+.card-avatar:first-child { margin-left: 0; }
+
 /* ── PRODUCT PREVIEW BAND ───────────────────── */
 .preview-band {
   background: var(--charcoal);
@@ -666,7 +721,10 @@ h3 {
     <span class="pill">Canvas-Ready</span>
     <span class="pill">FERPA-Compliant</span>
   </div>
-  <a href="#contact" class="hero-cta">Request a Demo</a>
+  <div class="hero-cta-row">
+    <a href="#contact" class="hero-cta">Request a Demo</a>
+    <a href="#preview" class="hero-cta-watch">▶ Watch a Scene</a>
+  </div>
 </header>
 
 <!-- ── VISION / MISSION BAND ─────────────────────────── -->
@@ -684,9 +742,20 @@ h3 {
 </div>
 
 <!-- ── PRODUCT PREVIEW ───────────────────────────────── -->
-<div class="preview-band">
+<div class="preview-band" id="preview">
   <div class="section-label">THE PLATFORM IN ACTION</div>
   <p class="preview-band-sub">Every lesson is a communicative scene, grounded in Mexican culture and built for the flipped classroom.</p>
+  <div class="preview-video-wrap">
+    <video class="preview-video" controls poster="Scene%201%20Photo.png" preload="none"
+      aria-label="SP101 Lesson 1, Scene 1: Sofía introduces herself at the Oaxacan feria — AI voice narration in natural Mexican Spanish">
+      <source src="Scena%201%20Sofia.mp4" type="video/mp4">
+      <p style="color:rgba(255,255,255,.7);text-align:center;padding:24px;">
+        Your browser doesn't support HTML5 video.
+        <a href="Scena%201%20Sofia.mp4" style="color:#C3D1D4;">Download this clip</a>.
+      </p>
+    </video>
+    <p class="preview-caption">SP101 · Lesson 1 · Scene 1: Sofía — AI voice narration, character avatars, authentic Mexican Spanish</p>
+  </div>
   <div class="preview-grid">
     <div class="preview-item">
       <img src="L01%20eBook%201.png" alt="Don Marcos in Lesson 1 with bilingual vocabulary sidebar and interactive lesson content" class="preview-img" loading="lazy">
@@ -786,6 +855,11 @@ h3 {
       <!-- SP101 -->
       <div class="card">
         <div class="card-top card-accent-euca">
+          <div class="card-characters" aria-hidden="true">
+            <img src="Avatar%20SLE%20(1).png" alt="" class="card-avatar" loading="lazy">
+            <img src="Avatar%20SLE%20(2).png" alt="" class="card-avatar" loading="lazy">
+            <img src="Avatar%20SLE%20(3).png" alt="" class="card-avatar" loading="lazy">
+          </div>
           <span class="card-badge badge-euca">Novice Mid/High</span>
           <h3>SP101 · Elementary Spanish I</h3>
           <p>Five units built around the Oaxacan feria and recurring characters don Marcos, doña Rosa, Tomás, Sofía, and Elena, from first greetings to present progressive.</p>

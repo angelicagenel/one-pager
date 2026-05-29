@@ -3,14 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spanish Learning Edge — Intermediate Spanish I (SP201)</title>
+<title>Spanish Learning Edge: Intermediate Spanish I (SP201)</title>
+<meta name="description" content="SP201 Intermediate Spanish I — Commands, subjunctive, future, and argumentative discourse. Intermediate Mid/High. Zero-textbook-cost. Upcoming.">
+<meta property="og:title" content="SP201: Intermediate Spanish I — Spanish Learning Edge">
+<meta property="og:description" content="Commands, subjunctive, future, conditional, and argumentative discourse. Builds toward confident, nuanced expression. Zero-textbook-cost.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #F8F8F6;
   --surface: #F0F3F3;
   --charcoal: #2F3437;
-  --secondary: #474747;
+  --secondary: #2F3437;
   --eucalyptus: #557076;
   --eucalyptus-light: #C3D1D4;
   --rose-accent: #D5ADAD;
@@ -87,6 +92,11 @@ body {
   white-space: nowrap;
 }
 .nav-back:hover { background: rgba(255,255,255,.1); color: #fff; }
+.nav-course-links { display: flex; gap: 4px; }
+.nav-course-links a { color: rgba(255,255,255,.65); text-decoration: none; font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 500; padding: 5px 10px; border-radius: 4px; transition: all .2s; }
+.nav-course-links a:hover { color: #fff; background: rgba(255,255,255,.1); }
+.nav-course-links a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.nav-course-links a[aria-current="page"] { color: #fff; background: rgba(255,255,255,.15); font-weight: 600; }
 
 /* COURSE HEADER */
 .course-header { padding: 16px 48px; }
@@ -361,7 +371,7 @@ body {
 .footer-left {
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,.8);
   line-height: 1.7;
 }
 .footer-right {
@@ -375,7 +385,7 @@ body {
 .footer-bottom {
   font-family: 'Poppins', sans-serif;
   font-size: 11px;
-  color: rgba(255,255,255,.35);
+  color: rgba(255,255,255,.55);
   text-align: center;
   padding-top: 12px;
   border-top: 1px solid rgba(255,255,255,.1);
@@ -384,6 +394,7 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 640px) {
+  .nav-course-links { display: none; }
   .site-nav, .course-header, .positioning-line, .prereq-band,
   .course-desc-band, .cando-section, .sequence-section,
   .contact-band, .site-footer { padding-left: 20px; padding-right: 20px; }
@@ -391,6 +402,15 @@ body {
   .footer-right { text-align: left; }
   .course-header-inner { flex-wrap: wrap; }
   .acc-trigger-inner { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
 }
 </style>
 </head>
@@ -403,7 +423,12 @@ body {
     <img src="logo.png" alt="Spanish Learning Edge logo" style="height:30px;width:auto;border-radius:4px;flex-shrink:0;">
     <span class="nav-brand">Spanish <span class="brand-accent">Learning Edge</span></span>
   </div>
-  <a href="sle-dossier.html" class="nav-back">← Project Dossier</a>
+  <div class="nav-course-links">
+    <a href="sle-sp101.html">SP101</a>
+    <a href="sle-sp102.html">SP102</a>
+    <a href="sle-sp201.html" aria-current="page">SP201</a>
+  </div>
+  <a href="sle-dossier.html" class="nav-back">← Dossier</a>
 </nav>
 
 <header class="course-header" style="background: #3d6870;">
@@ -427,7 +452,7 @@ body {
   </div>
 
   <div class="course-desc-band">
-    <p class="course-desc">Students move beyond description and narration — into persuasion, hypothesis, and cultural argument. Commands, subjunctive, future, conditional, and argumentative discourse build confident, nuanced expression.</p>
+    <p class="course-desc">Students move beyond description and narration: into persuasion, hypothesis, and cultural argument. Commands, subjunctive, future, conditional, and argumentative discourse build confident, nuanced expression.</p>
   </div>
 
   <section class="cando-section" aria-labelledby="cando-label">
@@ -566,7 +591,7 @@ body {
 </main>
 
 <div class="contact-band">
-  <p>Institutional licensing is available per course per year. Contact us for pricing and to request a demo or pilot package.<a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
+  <p>Institutional licensing is available per course per term. Contact us to request a demo or pilot package.<a href="sle-dossier.html#contact" class="contact-link">Contact us →</a></p>
 </div>
 
 <footer class="site-footer" role="contentinfo">

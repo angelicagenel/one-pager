@@ -247,14 +247,6 @@ h3 {
   color: var(--charcoal);
   margin-bottom: 6px;
 }
-.section-intro {
-  font-size: 15px;
-  color: var(--secondary-text);
-  max-width: 680px;
-  line-height: 1.7;
-  margin-bottom: 40px;
-}
-
 /* ── 3-COLUMN CARD GRID ──────────────────────── */
 .card-grid {
   display: grid;
@@ -546,21 +538,6 @@ h3 {
   background: #000;
 }
 
-/* ── CHARACTER AVATARS ───────────────────────── */
-.card-characters { display: flex; margin-bottom: 14px; }
-.card-avatar {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top center;
-  border: 2px solid #fff;
-  box-shadow: 0 1px 6px rgba(0,0,0,.15);
-  margin-left: -10px;
-  flex-shrink: 0;
-}
-.card-avatar:first-child { margin-left: 0; }
-
 /* ── PRODUCT PREVIEW BAND ───────────────────── */
 .preview-band {
   background: var(--charcoal);
@@ -572,14 +549,6 @@ h3 {
   color: var(--eucalyptus-light);
   margin-bottom: 8px;
 }
-.preview-band-heading {
-  font-family: var(--heading);
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 6px;
-}
 .preview-band-sub {
   font-size: 14px;
   color: rgba(255,255,255,.6);
@@ -589,25 +558,6 @@ h3 {
   margin-left: auto;
   margin-right: auto;
 }
-.preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1160px;
-  margin: 0 auto;
-  align-items: start;
-}
-.preview-item {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.preview-img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.32);
-  display: block;
-}
 .preview-caption {
   font-size: 12px;
   color: rgba(255,255,255,.55);
@@ -615,43 +565,6 @@ h3 {
   font-weight: 500;
   letter-spacing: .02em;
   line-height: 1.5;
-}
-
-/* ── SYSTEM SECTION IMAGE ────────────────────── */
-.system-img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 3px 18px rgba(0,0,0,.09);
-  display: block;
-  margin-top: 24px;
-}
-
-/* ── FACT SCREENSHOT ─────────────────────────── */
-.fact-screenshot-link {
-  display: block;
-  text-decoration: none;
-  position: relative;
-  margin-top: 6px;
-  margin-bottom: 14px;
-}
-.fact-screenshot-link::after {
-  content: 'Try it live →';
-  display: block;
-  text-align: center;
-  font-family: var(--body);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--eucalyptus-primary);
-  margin-top: 7px;
-}
-.fact-screenshot-link:hover .fact-screenshot { opacity: 1; box-shadow: 0 0 0 2px var(--eucalyptus-primary); border-color: var(--eucalyptus-primary); }
-.fact-screenshot {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid var(--border-light);
-  display: block;
-  opacity: .92;
-  transition: box-shadow .15s, border-color .15s, opacity .15s;
 }
 
 /* ── SCREEN READER ONLY ──────────────────────── */
@@ -728,7 +641,6 @@ h3 {
   .steps-row { grid-template-columns: repeat(2, 1fr); }
   .two-col { grid-template-columns: 1fr; gap: 36px; }
   .vm-grid { grid-template-columns: 1fr; }
-  .preview-grid { grid-template-columns: 1fr; }
   .delivery-cards { grid-template-columns: 1fr 1fr; }
   .contact-detail-row { grid-template-columns: 1fr; }
 }

@@ -448,6 +448,82 @@ h3 {
   min-width: 64px;
 }
 
+/* ── PRODUCT PREVIEW BAND ───────────────────── */
+.preview-band {
+  background: var(--charcoal);
+  padding: 52px 28px 56px;
+  border-bottom: none;
+}
+.preview-band .section-label {
+  text-align: center;
+  color: var(--eucalyptus-light);
+  margin-bottom: 8px;
+}
+.preview-band-heading {
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 6px;
+}
+.preview-band-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.6);
+  text-align: center;
+  margin-bottom: 36px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1160px;
+  margin: 0 auto;
+  align-items: start;
+}
+.preview-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.preview-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.32);
+  display: block;
+}
+.preview-caption {
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: .02em;
+  line-height: 1.5;
+}
+
+/* ── SYSTEM SECTION IMAGE ────────────────────── */
+.system-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 3px 18px rgba(0,0,0,.09);
+  display: block;
+  margin-top: 24px;
+}
+
+/* ── FACT SCREENSHOT ─────────────────────────── */
+.fact-screenshot {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  display: block;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  opacity: .92;
+}
+
 /* ── FOOTER ──────────────────────────────────── */
 .footer {
   background: var(--charcoal);
@@ -479,6 +555,7 @@ h3 {
   .steps-row { grid-template-columns: repeat(2, 1fr); }
   .two-col { grid-template-columns: 1fr; gap: 36px; }
   .vm-grid { grid-template-columns: 1fr; }
+  .preview-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 620px) {
   .card-grid { grid-template-columns: 1fr; }
@@ -543,6 +620,26 @@ h3 {
   </div>
 </div>
 
+<!-- ── PRODUCT PREVIEW ───────────────────────────────── -->
+<div class="preview-band">
+  <div class="section-label">THE PLATFORM IN ACTION</div>
+  <p class="preview-band-sub">Every lesson is a communicative scene, grounded in Mexican culture and built for the flipped classroom.</p>
+  <div class="preview-grid">
+    <div class="preview-item">
+      <img src="L01%20eBook%201.png" alt="Don Marcos in Lesson 1 with bilingual vocabulary sidebar and interactive lesson content" class="preview-img" loading="lazy">
+      <p class="preview-caption">Don Marcos — Lesson 1, Unit 1</p>
+    </div>
+    <div class="preview-item">
+      <img src="L01%20eBook%204.png" alt="La feria de Oaxaca reading with inline vocabulary glosses and matching exercise" class="preview-img" loading="lazy">
+      <p class="preview-caption">Reading comprehension with interactive glosses</p>
+    </div>
+    <div class="preview-item">
+      <img src="L01%20eBook%206.png" alt="Doña Rosa recurring character in lesson video with bilingual vocabulary table" class="preview-img" loading="lazy">
+      <p class="preview-caption">Doña Rosa — recurring character, Unit 1</p>
+    </div>
+  </div>
+</div>
+
 <!-- ── MAIN CONTENT ──────────────────────────────────── -->
 <main id="main">
 
@@ -586,6 +683,7 @@ h3 {
         <p style="font-size:15px;color:var(--secondary-text);line-height:1.8;">
           Every SLE lesson covers a complete communicative skill, grounded in Mexican cultural context and designed for flipped instruction. Grammar is prepared before class. Class time is for people, conversation, and connection.
         </p>
+        <img src="L01%20eBook%205.png" alt="Lesson showing Ambientes strategy box with don Marcos and doña Rosa scene and audio player" class="system-img" loading="lazy">
       </div>
       <div>
         <ul class="skill-list" aria-label="Six skill areas">
@@ -597,6 +695,7 @@ h3 {
           <li><span class="skill-num" aria-hidden="true">6</span> Communication Strategies</li>
         </ul>
         <p style="font-family:var(--body);font-size:14px;color:#557076;margin-bottom:12px;">Integrated AI speech practice: FACT (Functional Acoustic-Communicative Tracking) gives students real-time feedback on clarity and communication directly inside each lesson.</p>
+        <img src="Link%20a%20app.png" alt="In-lesson FACT practice callout: Practice tu presentación with FACT Spanish Speech Performance Check" class="fact-screenshot" loading="lazy">
         <a href="sle-linguistic-competence-map.html" class="map-link">View full Linguistic Competence Map →</a>
       </div>
     </div>

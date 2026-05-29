@@ -247,14 +247,6 @@ h3 {
   color: var(--charcoal);
   margin-bottom: 6px;
 }
-.section-intro {
-  font-size: 15px;
-  color: var(--secondary-text);
-  max-width: 680px;
-  line-height: 1.7;
-  margin-bottom: 40px;
-}
-
 /* ── 3-COLUMN CARD GRID ──────────────────────── */
 .card-grid {
   display: grid;
@@ -324,13 +316,34 @@ h3 {
   gap: 48px;
   align-items: start;
 }
+.system-logo-row {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
 .system-logo {
-  width: 100%;
-  max-width: 180px;
+  width: 130px;
   height: auto;
   display: block;
-  margin-bottom: 22px;
   border-radius: 8px;
+  flex-shrink: 0;
+}
+.who-its-for-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.who-its-for-list li {
+  font-size: 14px;
+  color: var(--secondary-text);
+  line-height: 1.7;
+  padding: 8px 12px 8px 13px;
+  background: #fff;
+  border-radius: 6px;
+  border-left: 3px solid var(--eucalyptus-primary);
 }
 .who-its-for-card {
   background: var(--warm-bg);
@@ -546,21 +559,6 @@ h3 {
   background: #000;
 }
 
-/* ── CHARACTER AVATARS ───────────────────────── */
-.card-characters { display: flex; margin-bottom: 14px; }
-.card-avatar {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top center;
-  border: 2px solid #fff;
-  box-shadow: 0 1px 6px rgba(0,0,0,.15);
-  margin-left: -10px;
-  flex-shrink: 0;
-}
-.card-avatar:first-child { margin-left: 0; }
-
 /* ── PRODUCT PREVIEW BAND ───────────────────── */
 .preview-band {
   background: var(--charcoal);
@@ -572,14 +570,6 @@ h3 {
   color: var(--eucalyptus-light);
   margin-bottom: 8px;
 }
-.preview-band-heading {
-  font-family: var(--heading);
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 6px;
-}
 .preview-band-sub {
   font-size: 14px;
   color: rgba(255,255,255,.6);
@@ -589,25 +579,6 @@ h3 {
   margin-left: auto;
   margin-right: auto;
 }
-.preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1160px;
-  margin: 0 auto;
-  align-items: start;
-}
-.preview-item {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.preview-img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.32);
-  display: block;
-}
 .preview-caption {
   font-size: 12px;
   color: rgba(255,255,255,.55);
@@ -615,43 +586,6 @@ h3 {
   font-weight: 500;
   letter-spacing: .02em;
   line-height: 1.5;
-}
-
-/* ── SYSTEM SECTION IMAGE ────────────────────── */
-.system-img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 3px 18px rgba(0,0,0,.09);
-  display: block;
-  margin-top: 24px;
-}
-
-/* ── FACT SCREENSHOT ─────────────────────────── */
-.fact-screenshot-link {
-  display: block;
-  text-decoration: none;
-  position: relative;
-  margin-top: 6px;
-  margin-bottom: 14px;
-}
-.fact-screenshot-link::after {
-  content: 'Try it live →';
-  display: block;
-  text-align: center;
-  font-family: var(--body);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--eucalyptus-primary);
-  margin-top: 7px;
-}
-.fact-screenshot-link:hover .fact-screenshot { opacity: 1; box-shadow: 0 0 0 2px var(--eucalyptus-primary); border-color: var(--eucalyptus-primary); }
-.fact-screenshot {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid var(--border-light);
-  display: block;
-  opacity: .92;
-  transition: box-shadow .15s, border-color .15s, opacity .15s;
 }
 
 /* ── SCREEN READER ONLY ──────────────────────── */
@@ -728,7 +662,6 @@ h3 {
   .steps-row { grid-template-columns: repeat(2, 1fr); }
   .two-col { grid-template-columns: 1fr; gap: 36px; }
   .vm-grid { grid-template-columns: 1fr; }
-  .preview-grid { grid-template-columns: 1fr; }
   .delivery-cards { grid-template-columns: 1fr 1fr; }
   .contact-detail-row { grid-template-columns: 1fr; }
 }
@@ -874,15 +807,21 @@ h3 {
     <h2 class="section-label">The SLE System</h2>
     <div class="two-col">
       <div>
-        <img src="logo.png" alt="Spanish Learning Edge" class="system-logo" loading="lazy">
-        <p style="font-size:15px;color:var(--secondary-text);line-height:1.85;">
-          The SLE System invites adult learners into the language through the stories, voices, and everyday experiences of Mexico. As learners explore culture, traditions, and contemporary life, they gradually build the skills and confidence to understand and communicate in Spanish. The result is language learning rooted in a deeper connection to the people, places, and perspectives that make Spanish meaningful, memorable, and relevant beyond the classroom.
-        </p>
+        <div class="system-logo-row">
+          <img src="logo.png" alt="Spanish Learning Edge" class="system-logo" loading="lazy">
+          <p style="font-size:15px;color:var(--secondary-text);line-height:1.85;">
+            The SLE System invites adult learners into the language through the stories, voices, and everyday experiences of Mexico. As learners explore culture, traditions, and contemporary life, they gradually build the skills and confidence to understand and communicate in Spanish. The result is language learning rooted in a deeper connection to the people, places, and perspectives that make Spanish meaningful, memorable, and relevant beyond the classroom.
+          </p>
+        </div>
         <a href="sle-linguistic-competence-map.html" class="map-link">View full Linguistic Competence Map →</a>
       </div>
       <div class="who-its-for-card">
         <p class="who-its-for-label">Who It's For</p>
-        <p class="who-its-for-text">SLE is designed for community colleges and universities seeking a complete, Canvas-ready Spanish curriculum for online and hybrid learning. The system supports programs that value cultural authenticity, academic rigor, and affordability. Built for World Languages departments with limited resources, SLE combines culturally rich content, AI-enhanced learning experiences, and streamlined course delivery to reduce faculty workload while helping students build meaningful language proficiency.</p>
+        <ul class="who-its-for-list">
+          <li>Community colleges and universities seeking a complete, Canvas-ready Spanish curriculum for online and hybrid delivery.</li>
+          <li>Programs that value cultural authenticity, academic rigor, and zero student-facing cost.</li>
+          <li>World Languages departments looking to reduce faculty workload while giving students an AI-enhanced, culturally grounded learning experience.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -996,8 +935,7 @@ h3 {
       <div class="delivery-card">Students access via link inside Canvas</div>
       <div class="delivery-card">Canvas-compatible via SCORM · LTI integration in development</div>
       <div class="delivery-card">FERPA-compliant</div>
-      <div class="delivery-card">AI voice narration in Mexican Spanish: natural, clear, consistent</div>
-      <div class="delivery-card">Recurring character avatars: don Marcos, doña Rosa, Tomás, Sofía, Elena</div>
+      <div class="delivery-card">AI voice narration and recurring character avatars in Mexican Spanish</div>
       <div class="delivery-card">One institutional license · no per-student fees · no access codes</div>
     </div>
   </div>

@@ -320,8 +320,8 @@ h3 {
 /* ── ABOUT / 2-COLUMN ────────────────────────── */
 .two-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 52px;
+  grid-template-columns: 3fr 2fr;
+  gap: 48px;
   align-items: start;
 }
 .system-logo {
@@ -388,8 +388,9 @@ h3 {
 .step {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
+.step-header { display: flex; align-items: center; gap: 14px; }
 .step-num {
   width: 40px;
   height: 40px;
@@ -409,60 +410,88 @@ h3 {
 
 /* ── DELIVERY DETAILS ────────────────────────── */
 #delivery { background: var(--surface-eucalyptus); }
-.delivery-list {
+.delivery-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px 40px;
-  list-style: none;
-  max-width: 760px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 8px;
 }
-.delivery-list li {
-  font-size: 14px;
+.delivery-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-size: 13.5px;
+  font-family: var(--body);
   color: var(--secondary-text);
-  line-height: 1.6;
-  padding-left: 18px;
-  position: relative;
+  line-height: 1.55;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
 }
-.delivery-list li::before {
+.delivery-card::before {
   content: '✓';
-  position: absolute;
-  left: 0;
   color: var(--eucalyptus-primary);
   font-weight: 700;
-  font-size: 12px;
+  flex-shrink: 0;
+  font-size: 13px;
+  margin-top: 1px;
 }
 
 /* ── CONTACT ─────────────────────────────────── */
 #contact { background: var(--rosa); }
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 24px;
+.contact-main-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 36px 40px;
+  max-width: 640px;
 }
-.contact-info a {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--eucalyptus-primary);
-  text-decoration: none;
+.contact-main-card-title {
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 8px;
 }
-.contact-info a:hover { text-decoration: underline; color: var(--charcoal); }
-.contact-info a:focus-visible { outline: 2px solid var(--eucalyptus-primary); }
-.contact-info .contact-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.contact-main-card-sub {
   font-size: 14px;
   color: var(--secondary-text);
+  line-height: 1.65;
+  margin-bottom: 28px;
+  opacity: 0.75;
+}
+.contact-detail-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.contact-detail-card {
+  background: var(--warm-bg);
+  border: 1px solid var(--rose-border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 .contact-label {
+  font-family: var(--heading);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--eucalyptus-primary);
-  min-width: 64px;
 }
+.contact-link-val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--eucalyptus-primary);
+  text-decoration: none;
+  word-break: break-all;
+}
+.contact-link-val:hover { text-decoration: underline; color: var(--charcoal); }
+.contact-link-val:focus-visible { outline: 2px solid var(--eucalyptus-primary); }
 
 /* ── HERO CTA ROW ────────────────────────────── */
 .hero-cta-row {
@@ -489,6 +518,19 @@ h3 {
 .hero-cta-watch:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
 /* ── PREVIEW VIDEO ───────────────────────────── */
+.scene-banner {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.scene-banner-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
 .preview-video-wrap {
   max-width: 760px;
   margin: 0 auto 40px;
@@ -687,6 +729,8 @@ h3 {
   .two-col { grid-template-columns: 1fr; gap: 36px; }
   .vm-grid { grid-template-columns: 1fr; }
   .preview-grid { grid-template-columns: 1fr; }
+  .delivery-cards { grid-template-columns: 1fr 1fr; }
+  .contact-detail-row { grid-template-columns: 1fr; }
 }
 .nav a[aria-current="page"] {
   color: #fff;
@@ -697,7 +741,8 @@ h3 {
 @media (max-width: 620px) {
   .card-grid { grid-template-columns: 1fr; }
   .steps-row { grid-template-columns: 1fr; }
-  .delivery-list { grid-template-columns: 1fr; }
+  .delivery-cards { grid-template-columns: 1fr; }
+  .contact-main-card { padding: 24px 20px; }
   .hero h1 { font-size: 30px; }
   .nav { padding: 0 16px; gap: 2px; }
   .nav a { font-size: 11px; padding: 5px 7px; }
@@ -771,10 +816,13 @@ h3 {
 
 <!-- ── PRODUCT PREVIEW ───────────────────────────────── -->
 <div class="preview-band" id="preview">
-  <div class="section-label">THE PLATFORM IN ACTION</div>
-  <p class="preview-band-sub">Every lesson is a communicative scene, grounded in Mexican culture and built for the flipped classroom.</p>
+  <div class="scene-banner">
+    <img src="Scene%201%20Photo.png" alt="Scene 1 from SP101 — Sofía and don Marcos at the Oaxacan feria" class="scene-banner-img" loading="lazy">
+  </div>
+  <div class="section-label">Scene Preview</div>
+  <p class="preview-band-sub">Explore a sample scene from the SLE learning experience.</p>
   <div class="preview-video-wrap">
-    <video class="preview-video" controls poster="Scene%201%20Photo.png" preload="none"
+    <video class="preview-video" controls preload="none"
       aria-label="SP101 Lesson 1, Scene 1: Sofía introduces herself at the Oaxacan feria — AI voice narration in natural Mexican Spanish">
       <source src="Scena%201%20Sofia.mp4" type="video/mp4">
       <p style="color:rgba(255,255,255,.7);text-align:center;padding:24px;">
@@ -912,20 +960,26 @@ h3 {
     <div class="steps-row" role="list">
 
       <div class="step" role="listitem">
-        <div class="step-num" aria-hidden="true">1</div>
-        <h3>Contact and License</h3>
+        <div class="step-header">
+          <div class="step-num" aria-hidden="true">1</div>
+          <h3>Contact and License</h3>
+        </div>
         <p>Request a demo. If it's a fit, you receive a complete course package ready to deploy in Canvas.</p>
       </div>
 
       <div class="step" role="listitem">
-        <div class="step-num" aria-hidden="true">2</div>
-        <h3>Receive Your Package</h3>
+        <div class="step-header">
+          <div class="step-num" aria-hidden="true">2</div>
+          <h3>Receive Your Package</h3>
+        </div>
         <p>You receive communicative eBook lessons, grammar quick-reference guides, a digital exercise workbook with auto-feedback, rubrics, cultural projects, assessments, and an implementation guide.</p>
       </div>
 
       <div class="step" role="listitem">
-        <div class="step-num" aria-hidden="true">3</div>
-        <h3>Launch</h3>
+        <div class="step-header">
+          <div class="step-num" aria-hidden="true">3</div>
+          <h3>Launch</h3>
+        </div>
         <p>Students access everything through Canvas. Nothing to buy. Nothing to install.</p>
       </div>
 
@@ -937,15 +991,15 @@ h3 {
 <section id="delivery">
   <div class="container">
     <h2 class="section-label">Delivery &amp; Compliance</h2>
-    <ul class="delivery-list" aria-label="Delivery and compliance details">
-      <li>Hosted by Spanish Learning Edge · U.S.-based servers</li>
-      <li>Students access via link inside Canvas</li>
-      <li>Canvas-compatible via SCORM · LTI integration in development</li>
-      <li>FERPA-compliant</li>
-      <li>AI voice narration in Mexican Spanish: natural, clear, consistent</li>
-      <li>Recurring character avatars: don Marcos, doña Rosa, Tomás, Sofía, Elena</li>
-      <li>One institutional license · no per-student fees · no access codes</li>
-    </ul>
+    <div class="delivery-cards" aria-label="Delivery and compliance details">
+      <div class="delivery-card">Hosted by Spanish Learning Edge · U.S.-based servers</div>
+      <div class="delivery-card">Students access via link inside Canvas</div>
+      <div class="delivery-card">Canvas-compatible via SCORM · LTI integration in development</div>
+      <div class="delivery-card">FERPA-compliant</div>
+      <div class="delivery-card">AI voice narration in Mexican Spanish: natural, clear, consistent</div>
+      <div class="delivery-card">Recurring character avatars: don Marcos, doña Rosa, Tomás, Sofía, Elena</div>
+      <div class="delivery-card">One institutional license · no per-student fees · no access codes</div>
+    </div>
   </div>
 </section>
 
@@ -953,16 +1007,18 @@ h3 {
 <section id="contact">
   <div class="container">
     <h2 class="section-label">Get in Touch</h2>
-    <h2>Request a Demo or Pilot Package</h2>
-    <p class="section-intro">Institutional licensing is available per course per term. Contact us to request a demo or explore a pilot package.</p>
-    <div class="contact-info">
-      <div class="contact-row">
-        <span class="contact-label">Website</span>
-        <a href="https://www.spanish-learning-edge.com/">spanish-learning-edge.com</a>
-      </div>
-      <div class="contact-row">
-        <span class="contact-label">Email</span>
-        <a href="mailto:success@spanish-learning-edge.com">success@spanish-learning-edge.com</a>
+    <div class="contact-main-card">
+      <p class="contact-main-card-title">Request a Demo or Pilot Package</p>
+      <p class="contact-main-card-sub">Institutional licensing is available per course per term. Contact us to request a demo or explore a pilot package.</p>
+      <div class="contact-detail-row">
+        <div class="contact-detail-card">
+          <span class="contact-label">Website</span>
+          <a href="https://www.spanish-learning-edge.com/" class="contact-link-val">spanish-learning-edge.com</a>
+        </div>
+        <div class="contact-detail-card">
+          <span class="contact-label">Email</span>
+          <a href="mailto:success@spanish-learning-edge.com" class="contact-link-val">success@spanish-learning-edge.com</a>
+        </div>
       </div>
     </div>
   </div>

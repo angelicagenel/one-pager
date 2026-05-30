@@ -607,6 +607,7 @@ h3 {
 }
 .reading-preview-card {
   max-width: 920px;
+  min-height: 420px;
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0,0,0,.10);
   border: 1px solid var(--border-light);
@@ -617,10 +618,12 @@ h3 {
 }
 .reading-preview-img-wrap {
   flex: 0 0 380px;
-  min-height: 420px;
+  position: relative;
   overflow: hidden;
 }
 .reading-preview-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;

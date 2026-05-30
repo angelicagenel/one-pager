@@ -605,81 +605,21 @@ h3 {
   line-height: 1.6;
   opacity: 0.8;
 }
-.reading-preview-card {
+.reading-frame-wrap {
   max-width: 920px;
+  height: 500px;
+  overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0,0,0,.10);
   border: 1px solid var(--border-light);
   background: #fff;
-  overflow: hidden;
-  display: flex;
-  align-items: stretch;
 }
-.reading-preview-img-wrap {
-  flex: 0 0 340px;
-  position: relative;
-  overflow: hidden;
-}
-.reading-preview-img {
+.reading-frame {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
+  height: 600px;
+  border: none;
   display: block;
-}
-.reading-preview-body {
-  padding: 32px 36px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 16px;
-}
-.reading-preview-title {
-  font-family: var(--heading);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--charcoal);
-}
-.reading-preview-desc {
-  font-size: 14px;
-  color: var(--secondary-text);
-  line-height: 1.7;
-}
-.reading-preview-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.reading-preview-tag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .05em;
-  padding: 4px 12px;
-  border-radius: 20px;
-  background: var(--surface-eucalyptus);
-  color: var(--eucalyptus-primary);
-  border: 1px solid var(--eucalyptus-light);
-}
-.reading-preview-cta {
-  display: inline-block;
-  background: var(--eucalyptus-primary);
-  color: #fff;
-  font-family: var(--body);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .04em;
-  padding: 13px 28px;
-  border-radius: 6px;
-  text-decoration: none;
-  width: fit-content;
-  transition: background .2s, transform .15s;
-}
-.reading-preview-cta:hover { background: #46626a; transform: translateY(-1px); }
-.reading-preview-cta:focus-visible { outline: 2px solid var(--eucalyptus-primary); outline-offset: 3px; }
-@media (max-width: 700px) {
-  .reading-preview-card { flex-direction: column; }
-  .reading-preview-img-wrap { flex: 0 0 200px; }
-  .reading-preview-body { padding: 24px 20px; }
+  margin-top: -78px;
 }
 
 /* ── FACT FEATURE BAND ───────────────────────── */
@@ -976,26 +916,14 @@ h3 {
 <div class="reading-band">
   <div class="section-label">Reading Sample</div>
   <p class="reading-band-sub">La feria de Oaxaca — annotated vocabulary, audio narration, and comprehension support, from SP101 Lesson 1.</p>
-  <div class="reading-preview-card">
-    <div class="reading-preview-img-wrap">
-      <img src="images/Scene%201%20Photo.png" alt="La feria de Oaxaca — SP101 Lesson 1 scene" class="reading-preview-img" loading="lazy">
-    </div>
-    <div class="reading-preview-body">
-      <p class="reading-preview-title">La feria de Oaxaca</p>
-      <p class="reading-preview-desc">Follow along as Sofía and don Marcos navigate the Oaxacan feria. Annotated vocabulary, audio narration at adjustable speed, transcript, and comprehension support — all in one interactive reading.</p>
-      <div class="reading-preview-tags">
-        <span class="reading-preview-tag">SP101 · Lesson 1</span>
-        <span class="reading-preview-tag">Audio narration</span>
-        <span class="reading-preview-tag">Annotated vocabulary</span>
-        <span class="reading-preview-tag">Transcript</span>
-      </div>
-      <a href="https://staging.dfantlup6eo0.amplifyapp.com/reading-sample/scormcontent/index.html#/lessons/1HLSe2kN06vCsPwwDq5LvLSf9cejeeSX"
-         class="reading-preview-cta"
-         target="_blank"
-         rel="noopener">
-        ▶ Open Reading Sample
-      </a>
-    </div>
+  <div class="reading-frame-wrap">
+    <iframe
+      src="https://staging.dfantlup6eo0.amplifyapp.com/reading-sample/scormcontent/index.html#/lessons/1HLSe2kN06vCsPwwDq5LvLSf9cejeeSX"
+      class="reading-frame"
+      title="Reading sample: La feria de Oaxaca — SP101 Lesson 1"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
   </div>
 </div>
 

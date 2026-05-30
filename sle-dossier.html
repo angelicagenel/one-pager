@@ -591,13 +591,44 @@ h3 {
 /* ── SCREEN READER ONLY ──────────────────────── */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
+/* ── READING SAMPLE ──────────────────────────── */
+.reading-band {
+  background: var(--surface-eucalyptus);
+  padding: 40px 48px;
+  border-bottom: 1px solid var(--border-light);
+}
+.reading-band-sub {
+  font-size: 14px;
+  color: var(--secondary-text);
+  margin-bottom: 22px;
+  max-width: 640px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+.reading-frame-wrap {
+  max-width: 920px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.10);
+  border: 1px solid var(--border-light);
+  background: #fff;
+}
+.reading-frame {
+  width: 100%;
+  height: 600px;
+  border: none;
+  display: block;
+  margin-top: -78px;
+}
+
 /* ── FACT FEATURE BAND ───────────────────────── */
 .fact-band {
   position: relative;
   overflow: hidden;
-  min-height: 280px;
+  min-height: 420px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
 }
 .fact-band-bg {
   position: absolute;
@@ -610,19 +641,47 @@ h3 {
 .fact-band-overlay {
   position: relative;
   z-index: 1;
-  background: linear-gradient(to right, rgba(47,52,55,.88) 0%, rgba(47,52,55,.5) 55%, rgba(47,52,55,.05) 100%);
-  padding: 40px 48px;
+  background: linear-gradient(to right, rgba(47,52,55,.92) 0%, rgba(47,52,55,.72) 48%, rgba(47,52,55,.08) 100%);
+  padding: 52px 48px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
-.fact-band-inner { max-width: 380px; }
+.fact-band-inner { flex: 1; max-width: 420px; }
+.fact-band-eyebrow {
+  font-family: var(--heading);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: var(--eucalyptus-light);
+  margin-bottom: 10px;
+}
+.fact-band-tagline {
+  font-family: var(--heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.35;
+  margin-bottom: 28px;
+}
+.fact-cta-wrap {
+  display: inline-block;
+  background: rgba(246,242,241,.10);
+  border: 1px solid rgba(246,242,241,.18);
+  border-radius: 10px;
+  padding: 18px 22px;
+}
 .fact-band-cta {
   display: inline-block;
   background: var(--eucalyptus-primary);
   color: #fff;
   font-family: var(--heading);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
-  padding: 13px 28px;
+  padding: 14px 32px;
   border-radius: 6px;
   text-decoration: none;
   letter-spacing: .02em;
@@ -630,6 +689,29 @@ h3 {
 }
 .fact-band-cta:hover { background: #3f5558; color: #fff; }
 .fact-band-cta:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.fact-app-preview {
+  flex-shrink: 0;
+  width: 260px;
+  display: block;
+  text-decoration: none;
+}
+.fact-app-preview img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.5);
+  display: block;
+  border: 1px solid rgba(255,255,255,.12);
+  transition: transform .2s, box-shadow .2s;
+}
+.fact-app-preview:hover img { transform: translateY(-3px); box-shadow: 0 14px 44px rgba(0,0,0,.6); }
+.fact-app-label {
+  font-size: 11px;
+  color: rgba(255,255,255,.5);
+  text-align: center;
+  margin-top: 8px;
+  font-family: var(--body);
+  letter-spacing: .04em;
+}
 
 /* ── FOOTER ──────────────────────────────────── */
 .footer {
@@ -685,7 +767,10 @@ h3 {
   .footer-contact { text-align: left; }
   .hero-pills .pill { font-size: 10px; padding: 4px 10px; }
   .vm-band { padding: 24px 16px; }
-  .fact-band-overlay { padding: 28px 16px; }
+  .fact-band-overlay { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+  .fact-app-preview { width: 100%; max-width: 260px; }
+  .reading-band { padding: 28px 20px; }
+  .reading-frame-wrap { height: 420px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -738,7 +823,7 @@ h3 {
   <div class="vm-grid">
     <div>
       <div class="vm-label">OUR VISION</div>
-      <p class="vm-text">A world where every anglophone student receives high-quality Mexican Spanish instruction at no cost to them.</p>
+      <p class="vm-text">A world where every college student receives high-quality Mexican Spanish instruction at no cost to them.</p>
     </div>
     <div>
       <div class="vm-label">OUR MISSION</div>
@@ -827,16 +912,39 @@ h3 {
   </div>
 </section>
 
+<!-- ── READING SAMPLE ─────────────────────────────────── -->
+<div class="reading-band">
+  <div class="section-label">Reading Sample</div>
+  <p class="reading-band-sub">La feria de Oaxaca — annotated vocabulary, audio narration, and comprehension support, from SP101 Lesson 1.</p>
+  <div class="reading-frame-wrap">
+    <iframe
+      src="https://staging.d2egssyg3fkdsj.amplifyapp.com/#/lessons/1HLSe2kN06vCsPwwDq5LvLSf9cejeeSX"
+      class="reading-frame"
+      title="Reading sample: La feria de Oaxaca — SP101 Lesson 1"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
 <!-- ── FACT FEATURE BAND ──────────────────────────────── -->
 <div class="fact-band" role="region" aria-label="FACT AI speech practice feature">
-  <img src="Header%20app.png" alt="A student using FACT, SLE's AI-powered Spanish speech performance check integrated into every lesson" class="fact-band-bg" loading="lazy">
+  <img src="Header%20app.png" alt="A student using FACT, SLE's AI-powered Spanish speech performance check" class="fact-band-bg" loading="lazy">
   <div class="fact-band-overlay">
     <div class="fact-band-inner">
-      <h2 class="sr-only">FACT Spanish Speech Check — Integrated AI Practice</h2>
-      <a href="https://staging.d2v9q4epzcx9a8.amplifyapp.com/#/lessons/AGN9ulvCy49Tms6ayd9N5xdnlpBYuFyy" class="fact-band-cta" target="_blank" rel="noopener">
-        ▶ Try FACT
-      </a>
+      <h2 class="sr-only">FACT — AI-Powered Spanish Speech Practice</h2>
+      <p class="fact-band-eyebrow">FACT · AI Speech Practice</p>
+      <p class="fact-band-tagline">AI-powered Spanish speech performance check, built into every lesson.</p>
+      <div class="fact-cta-wrap">
+        <a href="https://staging.d2v9q4epzcx9a8.amplifyapp.com/#/lessons/AGN9ulvCy49Tms6ayd9N5xdnlpBYuFyy" class="fact-band-cta" target="_blank" rel="noopener">
+          ▶ Try FACT
+        </a>
+      </div>
     </div>
+    <a href="https://staging.d2v9q4epzcx9a8.amplifyapp.com/#/lessons/AGN9ulvCy49Tms6ayd9N5xdnlpBYuFyy" class="fact-app-preview" target="_blank" rel="noopener" aria-label="Open FACT app">
+      <img src="FACT%20app.png" alt="FACT app — AI speech practice interface" loading="lazy">
+      <p class="fact-app-label">Open FACT →</p>
+    </a>
   </div>
 </div>
 

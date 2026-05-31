@@ -12,7 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  /* Eucalyptus Authority */
   --bg-ivory: #F8F8F6;
   --surface-eucalyptus: #F0F3F3;
   --charcoal: #2F3437;
@@ -21,14 +20,12 @@
   --eucalyptus-light: #C3D1D4;
   --rose-accent: #D5ADAD;
   --border-light: #DCDCDC;
-  /* Rose Stone */
   --warm-bg: #F6F2F1;
   --rose-surface: #EAD6D6;
   --deep-rose: #B88F8F;
   --rose-border: #DDBDBD;
   --platinum: #E5E4E2;
   --rosa: #F8EBEC;
-  /* Typography */
   --heading: 'Montserrat', Georgia, serif;
   --body: 'Poppins', -apple-system, sans-serif;
 }
@@ -37,764 +34,143 @@
 html { scroll-behavior: smooth; }
 body { font-family: var(--body); background: var(--bg-ivory); color: var(--charcoal); font-size: 15px; line-height: 1.65; }
 
-/* Skip link */
 .skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 4px;
-  background: var(--charcoal);
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: 4px;
-  font-size: 14px;
-  z-index: 9999;
-  text-decoration: none;
-  font-family: var(--body);
+  position: absolute; left: -9999px; top: 4px;
+  background: var(--charcoal); color: #fff;
+  padding: 8px 18px; border-radius: 4px; font-size: 14px;
+  z-index: 9999; text-decoration: none; font-family: var(--body);
 }
 .skip-link:focus { left: 4px; }
-
-/* Focus styles */
 :focus-visible { outline: 2px solid var(--eucalyptus-primary); outline-offset: 2px; border-radius: 3px; }
 
-/* ── NAV ─────────────────────────────────────── */
+/* ── NAV ── */
 .nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--charcoal);
-  padding: 0 28px;
-  display: flex;
-  align-items: center;
-  height: 52px;
-  gap: 4px;
+  position: sticky; top: 0; z-index: 100;
+  background: var(--charcoal); padding: 0 28px;
+  display: flex; align-items: center; height: 52px; gap: 4px;
 }
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-right: auto;
-  text-decoration: none;
-}
+.nav-left { display: flex; align-items: center; gap: 12px; margin-right: auto; text-decoration: none; }
 .nav-left img { height: 32px; width: auto; border-radius: 4px; display: block; }
-.nav-brand {
-  color: #fff;
-  font-family: var(--heading);
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.nav a {
-  color: rgba(255,255,255,.75);
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 6px 11px;
-  border-radius: 4px;
-  transition: all .2s;
-  white-space: nowrap;
-}
+.nav-brand { color: #fff; font-family: var(--heading); font-size: 13px; font-weight: 600; white-space: nowrap; }
+.nav a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 12px; font-weight: 500; padding: 6px 11px; border-radius: 4px; transition: all .2s; white-space: nowrap; }
 .nav a:hover { color: #fff; background: rgba(255,255,255,.12); }
 .nav a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.nav a[aria-current="page"] { color: #fff; background: rgba(255,255,255,.15); border-radius: 4px; }
 
-/* ── HERO ────────────────────────────────────── */
-.hero {
-  background: var(--charcoal);
-  color: #fff;
-  padding: 72px 28px 64px;
-  text-align: center;
-}
-.hero-eyebrow {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--eucalyptus-light);
-  margin-bottom: 16px;
-}
-.hero h1 {
-  font-family: var(--heading);
-  font-size: 42px;
-  font-weight: 700;
-  letter-spacing: -.01em;
-  line-height: 1.15;
-  margin-bottom: 14px;
-}
-.hero-tagline {
-  font-size: 16px;
-  color: var(--rose-accent);
-  margin-bottom: 32px;
-  letter-spacing: .02em;
-}
-.hero-statements {
-  max-width: 660px;
-  margin: 0 auto 36px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-.hero-statement {
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 10px;
-  padding: 18px 24px;
-  text-align: left;
-}
-.hero-statement-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--eucalyptus-light);
-  margin-bottom: 6px;
-}
-.hero-statement p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255,255,255,.88);
-}
-.hero-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 36px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.hero-pills .pill {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .06em;
-  padding: 5px 13px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,.25);
-  color: rgba(255,255,255,.85);
-  background: rgba(255,255,255,.09);
-}
-.hero-cta {
-  display: inline-block;
-  background: var(--eucalyptus-primary);
-  color: #fff;
-  font-family: var(--body);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .04em;
-  padding: 14px 34px;
-  border-radius: 6px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background .2s, transform .15s;
-}
+/* ── HERO ── */
+.hero { background: var(--charcoal); color: #fff; padding: 72px 28px 64px; text-align: center; }
+.hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--eucalyptus-light); margin-bottom: 16px; }
+.hero h1 { font-family: var(--heading); font-size: 42px; font-weight: 700; letter-spacing: -.01em; line-height: 1.15; margin-bottom: 14px; }
+.hero-tagline { font-size: 16px; color: var(--rose-accent); margin-bottom: 32px; letter-spacing: .02em; }
+.hero-pills { max-width: 660px; margin: 0 auto 36px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.hero-pills .pill { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .06em; padding: 5px 13px; border-radius: 20px; border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.85); background: rgba(255,255,255,.09); }
+.hero-cta-row { display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.hero-cta { display: inline-block; background: var(--eucalyptus-primary); color: #fff; font-family: var(--body); font-size: 14px; font-weight: 600; letter-spacing: .04em; padding: 14px 34px; border-radius: 6px; text-decoration: none; transition: background .2s, transform .15s; }
 .hero-cta:hover { background: #46626a; transform: translateY(-1px); }
 .hero-cta:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.hero-cta-watch { display: inline-block; color: rgba(255,255,255,.85); font-family: var(--body); font-size: 14px; font-weight: 500; letter-spacing: .03em; padding: 14px 26px; border: 1px solid rgba(255,255,255,.3); border-radius: 6px; text-decoration: none; transition: all .2s; }
+.hero-cta-watch:hover { color: #fff; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.55); }
+.hero-cta-watch:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
-/* ── VISION / MISSION BAND ───────────────────── */
-.vm-band {
-  background: #F6F2F1;
-  padding: 32px 48px;
-}
-.vm-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  max-width: 1160px;
-  margin: 0 auto;
-}
-.vm-label {
-  font-family: var(--heading);
-  font-size: 10px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .12em;
-  color: #557076;
-  margin-bottom: 8px;
-}
-.vm-text {
-  font-family: var(--body);
-  font-size: 16px;
-  color: #2F3437;
-  line-height: 1.65;
-}
+/* ── VISION / MISSION ── */
+.vm-band { background: #F6F2F1; padding: 32px 48px; }
+.vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1160px; margin: 0 auto; }
+.vm-label { font-family: var(--heading); font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: #557076; margin-bottom: 8px; }
+.vm-text { font-family: var(--body); font-size: 16px; color: #2F3437; line-height: 1.65; }
 
-/* ── SHARED LAYOUT ───────────────────────────── */
+/* ── SHARED LAYOUT ── */
 .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
 section { padding: 64px 0; border-bottom: 1px solid var(--border-light); }
 section:last-of-type { border-bottom: none; }
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--eucalyptus-primary); margin-bottom: 12px; }
+h2 { font-family: var(--heading); font-size: 28px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; line-height: 1.25; }
+h3 { font-family: var(--heading); font-size: 17px; font-weight: 700; color: var(--charcoal); margin-bottom: 6px; }
 
-.section-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--eucalyptus-primary);
-  margin-bottom: 12px;
-}
-h2 {
-  font-family: var(--heading);
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--charcoal);
-  margin-bottom: 8px;
-  line-height: 1.25;
-}
-h3 {
-  font-family: var(--heading);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--charcoal);
-  margin-bottom: 6px;
-}
-/* ── 3-COLUMN CARD GRID ──────────────────────── */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-.card {
-  background: #fff;
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 1px 4px rgba(0,0,0,.05);
-  transition: box-shadow .2s, transform .2s;
-}
+/* ── 3-COLUMN CARD GRID ── */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.card { background: #fff; border: 1px solid var(--border-light); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 1px 4px rgba(0,0,0,.05); transition: box-shadow .2s, transform .2s; }
 .card:hover { box-shadow: 0 6px 22px rgba(0,0,0,.09); transform: translateY(-2px); }
-.card-top {
-  padding: 26px 24px 20px;
-  flex: 1;
-}
+.card-top { padding: 26px 24px 20px; flex: 1; }
 .card-accent-euca { border-top: 4px solid var(--eucalyptus-primary); }
 .card-accent-rose  { border-top: 4px solid var(--deep-rose); }
 .card-accent-mid   { border-top: 4px solid #7BA1A5; }
-.card-badge {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: 12px;
-}
+.card-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
 .badge-euca { background: var(--surface-eucalyptus); color: var(--eucalyptus-primary); }
 .badge-rose { background: var(--rosa); color: var(--deep-rose); }
 .badge-mid  { background: #dde9ea; color: #4a6d75; }
 .badge-avail { background: #557076; color: #fff; font-weight: 700; padding: 5px 16px; }
 .badge-upcoming { background: #f0f0ee; color: #666; }
 .card p { font-size: 14px; color: var(--secondary-text); line-height: 1.65; }
-.card-footer {
-  padding: 14px 24px;
-  border-top: 1px solid var(--border-light);
-  background: var(--bg-ivory);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-.card-link {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--eucalyptus-primary);
-  text-decoration: none;
-  transition: color .2s;
-}
+.card-footer { padding: 14px 24px; border-top: 1px solid var(--border-light); background: var(--bg-ivory); display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.card-link { font-size: 13px; font-weight: 600; color: var(--eucalyptus-primary); text-decoration: none; transition: color .2s; }
 .card-link:hover { color: var(--charcoal); text-decoration: underline; }
 .card-link:focus-visible { outline: 2px solid var(--eucalyptus-primary); }
+.card-avatar-solo { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; object-position: top center; border: 2px solid #fff; display: block; margin-bottom: 12px; }
 
-/* ── TRANSFORMATION SECTION ─────────────────── */
+/* ── TRANSFORMATION ── */
 #transformation { background: var(--surface-eucalyptus); }
 
-/* ── ABOUT / 2-COLUMN ────────────────────────── */
-.two-col {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  gap: 48px;
-  align-items: start;
-}
-.system-logo-row {
-  display: flex;
-  gap: 22px;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-.system-logo {
-  width: 130px;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-.who-its-for-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-.who-its-for-list li {
-  font-size: 14px;
-  color: var(--secondary-text);
-  line-height: 1.7;
-  padding: 8px 12px 8px 13px;
-  background: #fff;
-  border-radius: 6px;
-  border-left: 3px solid var(--eucalyptus-primary);
-}
-.who-its-for-card {
-  background: var(--warm-bg);
-  border-radius: 12px;
-  padding: 26px 22px;
-  border: 1px solid var(--rose-border);
-}
-.who-its-for-label {
-  font-family: var(--heading);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: var(--eucalyptus-primary);
-  margin-bottom: 12px;
-}
-.who-its-for-text {
-  font-size: 14px;
-  color: var(--secondary-text);
-  line-height: 1.8;
-}
-.map-link {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--eucalyptus-primary);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 20px;
-}
-.map-link:hover { color: var(--charcoal); text-decoration: underline; }
-.map-link:focus-visible { outline: 2px solid var(--eucalyptus-primary); }
-.card-avatar-solo {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top center;
-  border: 2px solid #fff;
-  display: block;
-  margin-bottom: 12px;
-}
-
-/* ── COURSE SEQUENCE ─────────────────────────── */
+/* ── COURSES ── */
 #courses { background: var(--warm-bg); }
 
-/* ── HOW IT WORKS ────────────────────────────── */
-.steps-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  counter-reset: steps;
-}
-.step {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+/* ── SAMPLES SECTION ── */
+#samples { background: var(--charcoal); }
+#samples .section-label { color: var(--eucalyptus-light); text-align: center; }
+.samples-subtitle { font-size: 14px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.sample-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.sample-card { background: #fff; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 20px rgba(0,0,0,.25); transition: transform .2s, box-shadow .2s; }
+.sample-card:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,0,0,.35); }
+.sample-card-img-wrap { height: 220px; overflow: hidden; }
+.sample-card-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.sample-card-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.sample-card-label { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--eucalyptus-primary); }
+.sample-card-title { font-family: var(--heading); font-size: 17px; font-weight: 700; color: var(--charcoal); }
+.sample-card-desc { font-size: 13.5px; color: var(--secondary-text); line-height: 1.65; flex: 1; }
+.sample-card-cta { display: inline-block; background: var(--eucalyptus-primary); color: #fff; font-family: var(--body); font-size: 13px; font-weight: 600; letter-spacing: .04em; padding: 11px 22px; border-radius: 6px; text-decoration: none; width: fit-content; margin-top: 4px; transition: background .2s, transform .15s; }
+.sample-card-cta:hover { background: #46626a; transform: translateY(-1px); }
+.sample-card-cta:focus-visible { outline: 2px solid var(--eucalyptus-primary); outline-offset: 3px; }
+
+/* ── ABOUT / 2-COLUMN ── */
+.two-col { display: grid; grid-template-columns: 3fr 2fr; gap: 48px; align-items: start; }
+.system-logo-row { display: flex; gap: 22px; align-items: flex-start; margin-bottom: 20px; }
+.system-logo { width: 130px; height: auto; display: block; border-radius: 8px; flex-shrink: 0; }
+.who-its-for-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.who-its-for-list li { font-size: 14px; color: var(--secondary-text); line-height: 1.7; padding: 8px 12px 8px 13px; background: #fff; border-radius: 6px; border-left: 3px solid var(--eucalyptus-primary); }
+.who-its-for-card { background: var(--warm-bg); border-radius: 12px; padding: 26px 22px; border: 1px solid var(--rose-border); }
+.who-its-for-label { font-family: var(--heading); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--eucalyptus-primary); margin-bottom: 12px; }
+.map-link { font-size: 14px; font-weight: 600; color: var(--eucalyptus-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 20px; }
+.map-link:hover { color: var(--charcoal); text-decoration: underline; }
+.map-link:focus-visible { outline: 2px solid var(--eucalyptus-primary); }
+
+/* ── HOW IT WORKS ── */
+.steps-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.step { display: flex; flex-direction: column; gap: 10px; }
 .step-header { display: flex; align-items: center; gap: 14px; }
-.step-num {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--charcoal);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--heading);
-  font-size: 16px;
-  font-weight: 700;
-  flex-shrink: 0;
-}
+.step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--charcoal); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--heading); font-size: 16px; font-weight: 700; flex-shrink: 0; }
 .step h3 { font-size: 15px; margin-bottom: 0; }
 .step p { font-size: 13.5px; color: var(--secondary-text); line-height: 1.65; }
 
-/* ── DELIVERY DETAILS ────────────────────────── */
+/* ── DELIVERY ── */
 #delivery { background: var(--surface-eucalyptus); }
-.delivery-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 8px;
-}
-.delivery-card {
-  background: #fff;
-  border: 1px solid var(--border-light);
-  border-radius: 10px;
-  padding: 16px 18px;
-  font-size: 13.5px;
-  font-family: var(--body);
-  color: var(--secondary-text);
-  line-height: 1.55;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-.delivery-card::before {
-  content: '✓';
-  color: var(--eucalyptus-primary);
-  font-weight: 700;
-  flex-shrink: 0;
-  font-size: 13px;
-  margin-top: 1px;
-}
+.delivery-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; }
+.delivery-card { background: #fff; border: 1px solid var(--border-light); border-radius: 10px; padding: 16px 18px; font-size: 13.5px; font-family: var(--body); color: var(--secondary-text); line-height: 1.55; display: flex; align-items: flex-start; gap: 10px; }
+.delivery-card::before { content: '✓'; color: var(--eucalyptus-primary); font-weight: 700; flex-shrink: 0; font-size: 13px; margin-top: 1px; }
 
-/* ── CONTACT ─────────────────────────────────── */
+/* ── CONTACT ── */
 #contact { background: var(--rosa); }
-.contact-main-card {
-  background: #fff;
-  border: 1px solid var(--border-light);
-  border-radius: 14px;
-  padding: 36px 40px;
-  max-width: 560px;
-}
-.contact-main-card-title {
-  font-family: var(--heading);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--charcoal);
-  margin-bottom: 8px;
-}
-.contact-main-card-sub {
-  font-size: 14px;
-  color: var(--secondary-text);
-  line-height: 1.65;
-  margin-bottom: 28px;
-  opacity: 0.75;
-}
-.contact-detail-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
-.contact-detail-card {
-  background: var(--warm-bg);
-  border: 1px solid var(--rose-border);
-  border-radius: 10px;
-  padding: 16px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.contact-label {
-  font-family: var(--heading);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--eucalyptus-primary);
-}
-.contact-link-val {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--eucalyptus-primary);
-  text-decoration: none;
-  word-break: break-all;
-}
+.contact-main-card { background: #fff; border: 1px solid var(--border-light); border-radius: 14px; padding: 36px 40px; max-width: 560px; }
+.contact-main-card-title { font-family: var(--heading); font-size: 22px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
+.contact-main-card-sub { font-size: 14px; color: var(--secondary-text); line-height: 1.65; margin-bottom: 28px; opacity: 0.75; }
+.contact-detail-row { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.contact-detail-card { background: var(--warm-bg); border: 1px solid var(--rose-border); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 5px; }
+.contact-label { font-family: var(--heading); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--eucalyptus-primary); }
+.contact-link-val { font-size: 14px; font-weight: 600; color: var(--eucalyptus-primary); text-decoration: none; word-break: break-all; }
 .contact-link-val:hover { text-decoration: underline; color: var(--charcoal); }
 .contact-link-val:focus-visible { outline: 2px solid var(--eucalyptus-primary); }
 
-/* ── HERO CTA ROW ────────────────────────────── */
-.hero-cta-row {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.hero-cta-watch {
-  display: inline-block;
-  color: rgba(255,255,255,.85);
-  font-family: var(--body);
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: .03em;
-  padding: 14px 26px;
-  border: 1px solid rgba(255,255,255,.3);
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all .2s;
-}
-.hero-cta-watch:hover { color: #fff; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.55); }
-.hero-cta-watch:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
-
-/* ── PREVIEW VIDEO ───────────────────────────── */
-.scene-banner {
-  max-width: 760px;
-  margin: 0 auto 28px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.scene-banner-img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  object-position: center 35%;
-  display: block;
-}
-.preview-video-wrap {
-  max-width: 760px;
-  margin: 0 auto 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.preview-video {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 40px rgba(0,0,0,.55);
-  display: block;
-  background: #000;
-}
-
-/* ── PRODUCT PREVIEW BAND ───────────────────── */
-.preview-band {
-  background: var(--charcoal);
-  padding: 52px 28px 56px;
-  border-bottom: none;
-}
-.preview-band .section-label {
-  text-align: center;
-  color: var(--eucalyptus-light);
-  margin-bottom: 8px;
-}
-.preview-band-sub {
-  font-size: 14px;
-  color: rgba(255,255,255,.6);
-  text-align: center;
-  margin-bottom: 36px;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.preview-caption {
-  font-size: 12px;
-  color: rgba(255,255,255,.55);
-  text-align: center;
-  font-weight: 500;
-  letter-spacing: .02em;
-  line-height: 1.5;
-}
-
-/* ── SCREEN READER ONLY ──────────────────────── */
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-
-/* ── READING SAMPLE ──────────────────────────── */
-.reading-band {
-  background: var(--surface-eucalyptus);
-  padding: 40px 48px;
-  border-bottom: 1px solid var(--border-light);
-}
-.reading-band-sub {
-  font-size: 14px;
-  color: var(--secondary-text);
-  margin-bottom: 22px;
-  max-width: 640px;
-  line-height: 1.6;
-  opacity: 0.8;
-}
-.reading-preview-card {
-  max-width: 920px;
-  min-height: 420px;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0,0,0,.10);
-  border: 1px solid var(--border-light);
-  background: #fff;
-  overflow: hidden;
-  display: flex;
-  align-items: stretch;
-}
-.reading-preview-img-wrap {
-  flex: 0 0 480px;
-  position: relative;
-  overflow: hidden;
-}
-.reading-preview-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center center;
-  background: #f6f2f1;
-  display: block;
-}
-.reading-preview-body {
-  padding: 32px 36px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 16px;
-}
-.reading-preview-title {
-  font-family: var(--heading);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--charcoal);
-}
-.reading-preview-desc {
-  font-size: 14px;
-  color: var(--secondary-text);
-  line-height: 1.7;
-}
-.reading-preview-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.reading-preview-tag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .05em;
-  padding: 4px 12px;
-  border-radius: 20px;
-  background: var(--surface-eucalyptus);
-  color: var(--eucalyptus-primary);
-  border: 1px solid var(--eucalyptus-light);
-}
-.reading-preview-cta {
-  display: inline-block;
-  background: var(--eucalyptus-primary);
-  color: #fff;
-  font-family: var(--body);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .04em;
-  padding: 13px 28px;
-  border-radius: 6px;
-  text-decoration: none;
-  width: fit-content;
-  transition: background .2s, transform .15s;
-}
-.reading-preview-cta:hover { background: #46626a; transform: translateY(-1px); }
-.reading-preview-cta:focus-visible { outline: 2px solid var(--eucalyptus-primary); outline-offset: 3px; }
-@media (max-width: 700px) {
-  .reading-preview-card { flex-direction: column; }
-  .reading-preview-img-wrap { flex: 0 0 200px; }
-  .reading-preview-body { padding: 24px 20px; }
-}
-
-/* ── FACT FEATURE BAND ───────────────────────── */
-.fact-band {
-  position: relative;
-  overflow: hidden;
-  min-height: 420px;
-  display: flex;
-  align-items: stretch;
-}
-.fact-band-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-}
-.fact-band-overlay {
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(to right, rgba(47,52,55,.95) 0%, rgba(47,52,55,.88) 55%, rgba(47,52,55,.60) 80%, rgba(47,52,55,.20) 100%);
-  padding: 52px 48px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-.fact-band-inner { flex: 1; max-width: 460px; }
-.fact-band-eyebrow {
-  font-family: var(--heading);
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .15em;
-  color: var(--eucalyptus-light);
-  margin-bottom: 10px;
-}
-.fact-band-tagline {
-  font-family: var(--heading);
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.35;
-  margin-bottom: 28px;
-}
-.fact-cta-wrap {
-  display: inline-block;
-  background: rgba(246,242,241,.10);
-  border: 1px solid rgba(246,242,241,.18);
-  border-radius: 10px;
-  padding: 18px 22px;
-}
-.fact-band-cta {
-  display: inline-block;
-  background: var(--eucalyptus-primary);
-  color: #fff;
-  font-family: var(--heading);
-  font-size: 16px;
-  font-weight: 700;
-  padding: 14px 32px;
-  border-radius: 6px;
-  text-decoration: none;
-  letter-spacing: .02em;
-  transition: background .2s;
-}
-.fact-band-cta:hover { background: #3f5558; color: #fff; }
-.fact-band-cta:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
-.fact-app-preview {
-  flex-shrink: 0;
-  width: 260px;
-  display: block;
-  text-decoration: none;
-}
-.fact-app-preview img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.5);
-  display: block;
-  border: 1px solid rgba(255,255,255,.12);
-  transition: transform .2s, box-shadow .2s;
-}
-.fact-app-preview:hover img { transform: translateY(-3px); box-shadow: 0 14px 44px rgba(0,0,0,.6); }
-.fact-app-label {
-  font-size: 11px;
-  color: rgba(255,255,255,.5);
-  text-align: center;
-  margin-top: 8px;
-  font-family: var(--body);
-  letter-spacing: .04em;
-}
-
-/* ── FOOTER ──────────────────────────────────── */
-.footer {
-  background: var(--charcoal);
-  color: rgba(255,255,255,.55);
-  padding: 36px 28px 28px;
-}
-.footer-inner {
-  max-width: 1160px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
-  flex-wrap: wrap;
-  padding-bottom: 22px;
-  border-bottom: 1px solid rgba(255,255,255,.1);
-  margin-bottom: 20px;
-}
+/* ── FOOTER ── */
+.footer { background: var(--charcoal); color: rgba(255,255,255,.55); padding: 36px 28px 28px; }
+.footer-inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; flex-wrap: wrap; padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,.1); margin-bottom: 20px; }
 .footer-creds { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,.85); }
 .footer-contact { font-size: 13px; text-align: right; line-height: 2; }
 .footer-contact a { color: rgba(255,255,255,.8); text-decoration: none; }
@@ -802,23 +178,22 @@ h3 {
 .footer-contact a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 2px; }
 .footer-copy { font-size: 11.5px; text-align: center; color: rgba(255,255,255,.6); max-width: 1160px; margin: 0 auto; }
 
-/* ── RESPONSIVE ──────────────────────────────── */
+/* ── SCREEN READER ONLY ── */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .card-grid { grid-template-columns: 1fr 1fr; }
+  .sample-cards-grid { grid-template-columns: 1fr 1fr; }
   .steps-row { grid-template-columns: repeat(2, 1fr); }
   .two-col { grid-template-columns: 1fr; gap: 36px; }
   .vm-grid { grid-template-columns: 1fr; }
   .delivery-cards { grid-template-columns: 1fr 1fr; }
   .contact-detail-row { grid-template-columns: 1fr; }
 }
-.nav a[aria-current="page"] {
-  color: #fff;
-  background: rgba(255,255,255,.15);
-  border-radius: 4px;
-}
-
 @media (max-width: 620px) {
   .card-grid { grid-template-columns: 1fr; }
+  .sample-cards-grid { grid-template-columns: 1fr; }
   .steps-row { grid-template-columns: 1fr; }
   .delivery-cards { grid-template-columns: 1fr; }
   .contact-main-card { padding: 24px 20px; }
@@ -831,25 +206,17 @@ h3 {
   .footer-contact { text-align: left; }
   .hero-pills .pill { font-size: 10px; padding: 4px 10px; }
   .vm-band { padding: 24px 16px; }
-  .fact-band-overlay { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
-  .fact-app-preview { width: 100%; max-width: 260px; }
-  .reading-band { padding: 28px 20px; }
-  .reading-frame-wrap { height: 420px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
-  }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 </style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
 
-<!-- ── NAV ──────────────────────────────────────────── -->
+<!-- ── NAV ── -->
 <nav class="nav" aria-label="Site navigation">
   <a href="sle-dossier.html" class="nav-left" aria-label="Spanish Learning Edge home">
     <img src="images/logo.png" alt="Spanish Learning Edge logo">
@@ -863,7 +230,7 @@ h3 {
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- ── HERO ─────────────────────────────────────────── -->
+<!-- ── HERO ── -->
 <header class="hero" id="overview">
   <div class="hero-eyebrow">INSTITUTIONAL DOSSIER</div>
   <h1>Spanish Learning Edge</h1>
@@ -878,11 +245,11 @@ h3 {
   </div>
   <div class="hero-cta-row">
     <a href="#contact" class="hero-cta">Request a Demo</a>
-    <a href="#preview" class="hero-cta-watch">▶ Watch a Scene</a>
+    <a href="#samples" class="hero-cta-watch">▶ See Samples</a>
   </div>
 </header>
 
-<!-- ── VISION / MISSION BAND ─────────────────────────── -->
+<!-- ── VISION / MISSION ── -->
 <div class="vm-band">
   <div class="vm-grid">
     <div>
@@ -896,53 +263,127 @@ h3 {
   </div>
 </div>
 
-<!-- ── PRODUCT PREVIEW ───────────────────────────────── -->
-<div class="preview-band" id="preview">
-  <div class="scene-banner">
-    <img src="images/Scene%201%20Photo.png" alt="Scene 1 from SP101 — Sofía and don Marcos at the Oaxacan feria" class="scene-banner-img" loading="lazy">
-  </div>
-  <div class="section-label">Scene Preview</div>
-  <p class="preview-band-sub">Explore a sample scene from the SLE learning experience.</p>
-  <div class="preview-video-wrap">
-    <video class="preview-video" controls preload="none"
-      aria-label="SP101 Lesson 1, Scene 1: Sofía introduces herself at the Oaxacan feria — AI voice narration in natural Mexican Spanish">
-      <source src="Scena%201%20Sofia.mp4" type="video/mp4">
-      <p style="color:rgba(255,255,255,.7);text-align:center;padding:24px;">
-        Your browser doesn't support HTML5 video.
-        <a href="Scena%201%20Sofia.mp4" style="color:#C3D1D4;">Download this clip</a>.
-      </p>
-    </video>
-    <p class="preview-caption">SP101 · Lesson 1 · Scene 1: Sofía — AI voice narration, character avatars, authentic Mexican Spanish</p>
-  </div>
-</div>
-
-<!-- ── MAIN CONTENT ──────────────────────────────────── -->
+<!-- ── MAIN CONTENT ── -->
 <main id="main">
 
-<!-- ── TRANSFORMATION ────────────────────────────────── -->
+<!-- ── WHAT SLE MAKES POSSIBLE ── -->
 <section id="transformation">
   <div class="container">
     <h2 class="section-label">What SLE Makes Possible</h2>
     <div class="card-grid">
-
       <div class="card">
         <div class="card-top card-accent-euca">
           <h3>For Your Students</h3>
           <p>Students step into a living world: the Oaxacan feria, its vendors, its legends, its language. Each lesson is a scene that builds real communicative skill.</p>
         </div>
       </div>
-
       <div class="card">
         <div class="card-top card-accent-rose">
           <h3>For Your Program</h3>
           <p>Built on ACTFL proficiency guidelines and second language acquisition research. Six skill areas. A complete scope and sequence. Designed to take students from first greetings to confident expression across three courses.</p>
         </div>
       </div>
-
       <div class="card">
         <div class="card-top card-accent-mid">
           <h3>For Your Institution</h3>
           <p>One institutional package, ready to deploy each term. Students access a complete digital learning system at no additional cost. No codes. No subscriptions. No out-of-pocket fees.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THREE-COURSE SEQUENCE ── -->
+<section id="courses">
+  <div class="container">
+    <h2 class="section-label">Three-Course Sequence</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-top card-accent-euca">
+          <img src="images/Avatar%20SLE%20(1).png" alt="" class="card-avatar-solo" loading="lazy" aria-hidden="true">
+          <span class="card-badge badge-euca">Novice Mid/High</span>
+          <h3>SP101 · Elementary Spanish I</h3>
+          <p>Five units built around the Oaxacan feria and recurring characters don Marcos, doña Rosa, Tomás, Sofía, and Elena, from first greetings to present progressive.</p>
+        </div>
+        <div class="card-footer">
+          <a href="sle-sp101.html" class="card-link" aria-label="View SP101 Elementary Spanish I details">View SP101 Details →</a>
+          <span class="card-badge badge-avail">AVAILABLE</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top card-accent-rose">
+          <img src="images/Avatar%20SLE%20(2).png" alt="" class="card-avatar-solo" loading="lazy" aria-hidden="true">
+          <span class="card-badge badge-rose">Intermediate Low</span>
+          <h3>SP102 · Elementary Spanish II</h3>
+          <p>Past narration, reflexive verbs, celebrations, health, and the preterite/imperfect contrast, building on SP101's communicative foundation.</p>
+        </div>
+        <div class="card-footer">
+          <a href="sle-sp102.html" class="card-link" aria-label="View SP102 Elementary Spanish II details">View SP102 Details →</a>
+          <span class="card-badge badge-upcoming">Upcoming</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top card-accent-mid">
+          <img src="images/Avatar%20SLE%20(3).png" alt="" class="card-avatar-solo" loading="lazy" aria-hidden="true">
+          <span class="card-badge badge-mid">Intermediate Mid/High</span>
+          <h3>SP201 · Intermediate Spanish I</h3>
+          <p>Commands, subjunctive, future, conditional, and argumentative discourse, moving students into confident, nuanced expression.</p>
+        </div>
+        <div class="card-footer">
+          <a href="sle-sp201.html" class="card-link" aria-label="View SP201 Intermediate Spanish I details">View SP201 Details →</a>
+          <span class="card-badge badge-upcoming">Upcoming</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SAMPLES ── -->
+<section id="samples">
+  <div class="container">
+    <div class="section-label">Experience SLE</div>
+    <p class="samples-subtitle">Try a sample from each component of the SLE learning experience.</p>
+    <div class="sample-cards-grid">
+
+      <!-- FACT -->
+      <div class="sample-card">
+        <div class="sample-card-img-wrap">
+          <img src="images/FACT%20app.png" alt="FACT Spanish Speech Performance Check app" class="sample-card-img" loading="lazy">
+        </div>
+        <div class="sample-card-body">
+          <p class="sample-card-label">AI Speech Practice</p>
+          <p class="sample-card-title">FACT</p>
+          <p class="sample-card-desc">AI-powered Spanish speech performance check, built into every lesson. Record a short sample, get instant feedback on clarity and communication.</p>
+          <a href="https://staging.d2v9q4epzcx9a8.amplifyapp.com/#/lessons/AGN9ulvCy49Tms6ayd9N5xdnlpBYuFyy"
+             class="sample-card-cta" target="_blank" rel="noopener">▶ Try FACT</a>
+        </div>
+      </div>
+
+      <!-- VIDEO SCENE SAMPLE -->
+      <div class="sample-card">
+        <div class="sample-card-img-wrap">
+          <img src="images/video-scene-sample.png" alt="Video Scene Sample — SP101 Lesson 1" class="sample-card-img" loading="lazy">
+        </div>
+        <div class="sample-card-body">
+          <p class="sample-card-label">SP101 · Lesson 1 · Scene</p>
+          <p class="sample-card-title">Video Scene Sample</p>
+          <p class="sample-card-desc">Watch a scene from SP101 Lesson 1. AI voice narration, character avatars, closed captions, adjustable speed, and transcript in authentic Mexican Spanish.</p>
+          <a href="https://staging.dfantlup6eo0.amplifyapp.com/video-scene-sample/scormcontent/index.html#/lessons/HOiWl5lo8s2DJbRTASX7MgDbSh0FVMlh"
+             class="sample-card-cta" target="_blank" rel="noopener">▶ Watch Scene</a>
+        </div>
+      </div>
+
+      <!-- READING SAMPLE -->
+      <div class="sample-card">
+        <div class="sample-card-img-wrap">
+          <img src="images/Reading-Dossier.png" alt="Reading Sample — La feria de Oaxaca" class="sample-card-img" loading="lazy">
+        </div>
+        <div class="sample-card-body">
+          <p class="sample-card-label">SP101 · Lesson 1 · Reading</p>
+          <p class="sample-card-title">La feria de Oaxaca</p>
+          <p class="sample-card-desc">Annotated vocabulary, audio narration at adjustable speed, transcript, and comprehension support — all in one interactive reading.</p>
+          <a href="https://staging.dfantlup6eo0.amplifyapp.com/reading-sample/scormcontent/index.html#/lessons/1HLSe2kN06vCsPwwDq5LvLSf9cejeeSX"
+             class="sample-card-cta" target="_blank" rel="noopener">▶ Open Reading</a>
         </div>
       </div>
 
@@ -950,7 +391,7 @@ h3 {
   </div>
 </section>
 
-<!-- ── ABOUT THE SYSTEM ───────────────────────────────── -->
+<!-- ── THE SLE SYSTEM ── -->
 <section id="system">
   <div class="container">
     <h2 class="section-label">The SLE System</h2>
@@ -976,108 +417,11 @@ h3 {
   </div>
 </section>
 
-<!-- ── READING SAMPLE ─────────────────────────────────── -->
-<div class="reading-band">
-  <div class="section-label">Reading Sample</div>
-  <p class="reading-band-sub">La feria de Oaxaca — annotated vocabulary, audio narration, and comprehension support, from SP101 Lesson 1.</p>
-  <div class="reading-preview-card">
-    <div class="reading-preview-img-wrap">
-      <img src="images/Reading-Dossier.png" alt="La feria de Oaxaca — SP101 Lesson 1 scene" class="reading-preview-img" loading="lazy">
-    </div>
-    <div class="reading-preview-body">
-      <p class="reading-preview-title">La feria de Oaxaca</p>
-      <p class="reading-preview-desc">Follow along as Sofía and don Marcos navigate the Oaxacan feria. Annotated vocabulary, audio narration at adjustable speed, transcript, and comprehension support — all in one interactive reading.</p>
-      <div class="reading-preview-tags">
-        <span class="reading-preview-tag">SP101 · Lesson 1</span>
-        <span class="reading-preview-tag">Audio narration</span>
-        <span class="reading-preview-tag">Annotated vocabulary</span>
-        <span class="reading-preview-tag">Transcript</span>
-      </div>
-      <a href="https://staging.dfantlup6eo0.amplifyapp.com/reading-sample/scormcontent/index.html#/lessons/1HLSe2kN06vCsPwwDq5LvLSf9cejeeSX"
-         class="reading-preview-cta"
-         target="_blank"
-         rel="noopener">
-        ▶ Open Reading Sample
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ── FACT FEATURE BAND ──────────────────────────────── -->
-<div class="fact-band" role="region" aria-label="FACT AI speech practice feature">
-  <img src="images/Header%20app.png" alt="A student using FACT, SLE's AI-powered Spanish speech performance check" class="fact-band-bg" loading="lazy">
-  <div class="fact-band-overlay">
-    <div class="fact-band-inner">
-      <h2 class="sr-only">FACT — AI-Powered Spanish Speech Practice</h2>
-      <p class="fact-band-eyebrow">FACT · AI Speech Practice</p>
-      <p class="fact-band-tagline">AI-powered Spanish speech performance check, built into every lesson.</p>
-      <div class="fact-cta-wrap">
-        <a href="https://staging.d2v9q4epzcx9a8.amplifyapp.com/#/lessons/AGN9ulvCy49Tms6ayd9N5xdnlpBYuFyy" class="fact-band-cta" target="_blank" rel="noopener">
-          ▶ Try FACT
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── COURSE SEQUENCE ────────────────────────────────── -->
-<section id="courses">
-  <div class="container">
-    <h2 class="section-label">Three-Course Sequence</h2>
-    <div class="card-grid">
-
-      <!-- SP101 -->
-      <div class="card">
-        <div class="card-top card-accent-euca">
-          <img src="images/Avatar%20SLE%20(1).png" alt="" class="card-avatar-solo" loading="lazy" aria-hidden="true">
-          <span class="card-badge badge-euca">Novice Mid/High</span>
-          <h3>SP101 · Elementary Spanish I</h3>
-          <p>Five units built around the Oaxacan feria and recurring characters don Marcos, doña Rosa, Tomás, Sofía, and Elena, from first greetings to present progressive.</p>
-        </div>
-        <div class="card-footer">
-          <a href="sle-sp101.html" class="card-link" aria-label="View SP101 Elementary Spanish I details">View SP101 Details →</a>
-          <span class="card-badge badge-avail">AVAILABLE</span>
-        </div>
-      </div>
-
-      <!-- SP102 -->
-      <div class="card">
-        <div class="card-top card-accent-rose">
-          <img src="images/Avatar%20SLE%20(2).png" alt="" class="card-avatar-solo" loading="lazy" aria-hidden="true">
-          <span class="card-badge badge-rose">Intermediate Low</span>
-          <h3>SP102 · Elementary Spanish II</h3>
-          <p>Past narration, reflexive verbs, celebrations, health, and the preterite/imperfect contrast, building on SP101's communicative foundation.</p>
-        </div>
-        <div class="card-footer">
-          <a href="sle-sp102.html" class="card-link" aria-label="View SP102 Elementary Spanish II details">View SP102 Details →</a>
-          <span class="card-badge badge-upcoming">Upcoming</span>
-        </div>
-      </div>
-
-      <!-- SP201 -->
-      <div class="card">
-        <div class="card-top card-accent-mid">
-          <img src="images/Avatar%20SLE%20(3).png" alt="" class="card-avatar-solo" loading="lazy" aria-hidden="true">
-          <span class="card-badge badge-mid">Intermediate Mid/High</span>
-          <h3>SP201 · Intermediate Spanish I</h3>
-          <p>Commands, subjunctive, future, conditional, and argumentative discourse, moving students into confident, nuanced expression.</p>
-        </div>
-        <div class="card-footer">
-          <a href="sle-sp201.html" class="card-link" aria-label="View SP201 Intermediate Spanish I details">View SP201 Details →</a>
-          <span class="card-badge badge-upcoming">Upcoming</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── HOW IT WORKS ───────────────────────────────────── -->
+<!-- ── IMPLEMENTATION ── -->
 <section id="implementation">
   <div class="container">
     <h2 class="section-label">Implementation</h2>
     <div class="steps-row" role="list">
-
       <div class="step" role="listitem">
         <div class="step-header">
           <div class="step-num" aria-hidden="true">1</div>
@@ -1085,7 +429,6 @@ h3 {
         </div>
         <p>Request a demo. If it's a fit, you receive a complete course package ready to deploy in Canvas.</p>
       </div>
-
       <div class="step" role="listitem">
         <div class="step-header">
           <div class="step-num" aria-hidden="true">2</div>
@@ -1093,7 +436,6 @@ h3 {
         </div>
         <p>You receive communicative eBook lessons, grammar quick-reference guides, a digital exercise workbook with auto-feedback, rubrics, cultural projects, assessments, and an implementation guide.</p>
       </div>
-
       <div class="step" role="listitem">
         <div class="step-header">
           <div class="step-num" aria-hidden="true">3</div>
@@ -1101,12 +443,11 @@ h3 {
         </div>
         <p>Students access everything through Canvas. Nothing to buy. Nothing to install.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ── DELIVERY DETAILS ───────────────────────────────── -->
+<!-- ── DELIVERY & COMPLIANCE ── -->
 <section id="delivery">
   <div class="container">
     <h2 class="section-label">Delivery &amp; Compliance</h2>
@@ -1121,7 +462,7 @@ h3 {
   </div>
 </section>
 
-<!-- ── CONTACT ────────────────────────────────────────── -->
+<!-- ── CONTACT ── -->
 <section id="contact">
   <div class="container">
     <h2 class="section-label">Get in Touch</h2>
@@ -1144,7 +485,7 @@ h3 {
 
 </main>
 
-<!-- ── FOOTER ─────────────────────────────────────────── -->
+<!-- ── FOOTER ── -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-creds">

@@ -73,7 +73,7 @@ body { font-family: var(--body); background: var(--bg-ivory); color: var(--charc
 .hero-cta-watch:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
 /* ── VISION / MISSION ── */
-.vm-band { background: #F6F2F1; padding: 32px 48px; }
+.vm-band { background: var(--rose-surface); padding: 32px 48px; }
 .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1160px; margin: 0 auto; }
 .vm-label { font-family: var(--heading); font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: #557076; margin-bottom: 8px; }
 .vm-text { font-family: var(--body); font-size: 16px; color: #2F3437; line-height: 1.65; }
@@ -108,10 +108,10 @@ h3 { font-family: var(--heading); font-size: 17px; font-weight: 700; color: var(
 .card-avatar-solo { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; object-position: top center; border: 2px solid #fff; display: block; margin-bottom: 12px; }
 
 /* ── TRANSFORMATION ── */
-#transformation { background: var(--surface-eucalyptus); }
+#transformation { background: var(--bg-ivory); }
 
 /* ── COURSES ── */
-#courses { background: var(--warm-bg); }
+#courses { background: var(--surface-eucalyptus); }
 
 /* ── SAMPLES SECTION ── */
 #samples { background: var(--charcoal); }
@@ -151,14 +151,17 @@ h3 { font-family: var(--heading); font-size: 17px; font-weight: 700; color: var(
 .step p { font-size: 13.5px; color: var(--secondary-text); line-height: 1.65; }
 
 /* ── DELIVERY ── */
-#delivery { background: var(--surface-eucalyptus); }
+#delivery { background: var(--rose-surface); }
 .delivery-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; }
 .delivery-card { background: #fff; border: 1px solid var(--border-light); border-radius: 10px; padding: 16px 18px; font-size: 13.5px; font-family: var(--body); color: var(--secondary-text); line-height: 1.55; display: flex; align-items: flex-start; gap: 10px; }
 .delivery-card::before { content: '✓'; color: var(--eucalyptus-primary); font-weight: 700; flex-shrink: 0; font-size: 13px; margin-top: 1px; }
 
 /* ── CONTACT ── */
 #contact { background: var(--rosa); }
-.contact-main-card { background: #fff; border: 1px solid var(--border-light); border-radius: 14px; padding: 36px 40px; max-width: 560px; }
+.contact-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.contact-photo-wrap { border-radius: 14px; overflow: hidden; max-height: 420px; }
+.contact-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; max-height: 420px; }
+.contact-main-card { background: #fff; border: 1px solid var(--border-light); border-radius: 14px; padding: 36px 40px; }
 .contact-main-card-title { font-family: var(--heading); font-size: 22px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
 .contact-main-card-sub { font-size: 14px; color: var(--secondary-text); line-height: 1.65; margin-bottom: 28px; opacity: 0.75; }
 .contact-detail-row { display: grid; grid-template-columns: 1fr; gap: 10px; }
@@ -190,6 +193,10 @@ h3 { font-family: var(--heading); font-size: 17px; font-weight: 700; color: var(
   .vm-grid { grid-template-columns: 1fr; }
   .delivery-cards { grid-template-columns: 1fr 1fr; }
   .contact-detail-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .contact-split { grid-template-columns: 1fr; }
+  .contact-photo-wrap { max-height: 280px; }
 }
 @media (max-width: 620px) {
   .card-grid { grid-template-columns: 1fr; }
@@ -466,17 +473,22 @@ h3 { font-family: var(--heading); font-size: 17px; font-weight: 700; color: var(
 <section id="contact">
   <div class="container">
     <h2 class="section-label">Get in Touch</h2>
-    <div class="contact-main-card">
-      <p class="contact-main-card-title">Request a Demo or Pilot Package</p>
-      <p class="contact-main-card-sub">Institutional licensing is available per course per term. Contact us to request a demo or explore a pilot package.</p>
-      <div class="contact-detail-row">
-        <div class="contact-detail-card">
-          <span class="contact-label">Website</span>
-          <a href="https://www.spanish-learning-edge.com/" class="contact-link-val">spanish-learning-edge.com</a>
-        </div>
-        <div class="contact-detail-card">
-          <span class="contact-label">Email</span>
-          <a href="mailto:success@spanish-learning-edge.com" class="contact-link-val">success@spanish-learning-edge.com</a>
+    <div class="contact-split">
+      <div class="contact-photo-wrap">
+        <img src="images/contact.png" alt="Professional study environment — Spanish Learning Edge" class="contact-photo" loading="lazy">
+      </div>
+      <div class="contact-main-card">
+        <p class="contact-main-card-title">Request a Demo or Pilot Package</p>
+        <p class="contact-main-card-sub">Institutional licensing is available per course per term. Contact us to request a demo or explore a pilot package.</p>
+        <div class="contact-detail-row">
+          <div class="contact-detail-card">
+            <span class="contact-label">Website</span>
+            <a href="https://www.spanish-learning-edge.com/" class="contact-link-val">spanish-learning-edge.com</a>
+          </div>
+          <div class="contact-detail-card">
+            <span class="contact-label">Email</span>
+            <a href="mailto:success@spanish-learning-edge.com" class="contact-link-val">success@spanish-learning-edge.com</a>
+          </div>
         </div>
       </div>
     </div>
@@ -489,6 +501,7 @@ h3 { font-family: var(--heading); font-size: 17px; font-weight: 700; color: var(
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-creds">
+      <img src="images/Logo%20con%20teclado.png" alt="Spanish Learning Edge" style="height:52px;width:auto;display:block;margin-bottom:10px;border-radius:6px;opacity:.9;">
       Angélica García Genel, PhD · Spanish Instructor · Instructional Designer<br>
       Spanish Learning Edge, Founder · 15+ years of experience in higher education
     </div>

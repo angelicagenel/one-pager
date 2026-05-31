@@ -73,10 +73,10 @@ body { font-family: var(--body); background: var(--bg-ivory); color: var(--charc
 .hero-cta-watch:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
 /* ── VISION / MISSION ── */
-.vm-band { background: var(--rose-surface); padding: 32px 48px; }
+.vm-band { background: var(--rose-surface); padding: 36px 48px; border-top: 3px solid var(--rose-border); border-bottom: 3px solid var(--rose-border); }
 .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1160px; margin: 0 auto; }
-.vm-label { font-family: var(--heading); font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: #557076; margin-bottom: 8px; }
-.vm-text { font-family: var(--body); font-size: 16px; color: #2F3437; line-height: 1.65; }
+.vm-label { font-family: var(--heading); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .16em; color: var(--deep-rose); margin-bottom: 10px; }
+.vm-text { font-family: var(--body); font-size: 16px; color: #2F3437; line-height: 1.65; font-weight: 500; }
 
 /* ── SHARED LAYOUT ── */
 .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
@@ -172,9 +172,11 @@ h3 { font-family: var(--heading); font-size: 17px; font-weight: 700; color: var(
 .contact-link-val:focus-visible { outline: 2px solid var(--eucalyptus-primary); }
 
 /* ── FOOTER ── */
-.footer { background: var(--charcoal); color: rgba(255,255,255,.55); padding: 36px 28px 28px; }
-.footer-inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; flex-wrap: wrap; padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,.1); margin-bottom: 20px; }
+.footer { background: var(--charcoal); color: rgba(255,255,255,.55); padding: 40px 28px 28px; }
+.footer-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,.1); margin-bottom: 20px; }
 .footer-creds { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,.85); }
+.footer-logo-center { display: flex; justify-content: center; }
+.footer-logo-center img { height: 64px; width: auto; display: block; border-radius: 8px; opacity: .9; }
 .footer-contact { font-size: 13px; text-align: right; line-height: 2; }
 .footer-contact a { color: rgba(255,255,255,.8); text-decoration: none; }
 .footer-contact a:hover { color: #fff; text-decoration: underline; }
@@ -475,7 +477,7 @@ h3 { font-family: var(--heading); font-size: 17px; font-weight: 700; color: var(
     <h2 class="section-label">Get in Touch</h2>
     <div class="contact-split">
       <div class="contact-photo-wrap">
-        <img src="images/contact.png" alt="Professional study environment — Spanish Learning Edge" class="contact-photo" loading="lazy">
+        <img src="images/contact%20.png" alt="Professional study environment — Spanish Learning Edge" class="contact-photo" loading="lazy">
       </div>
       <div class="contact-main-card">
         <p class="contact-main-card-title">Request a Demo or Pilot Package</p>
@@ -501,9 +503,11 @@ h3 { font-family: var(--heading); font-size: 17px; font-weight: 700; color: var(
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-creds">
-      <img src="images/Logo%20con%20teclado.png" alt="Spanish Learning Edge" style="height:52px;width:auto;display:block;margin-bottom:10px;border-radius:6px;opacity:.9;">
       Angélica García Genel, PhD · Spanish Instructor · Instructional Designer<br>
       Spanish Learning Edge, Founder · 15+ years of experience in higher education
+    </div>
+    <div class="footer-logo-center">
+      <img src="images/Logo%20con%20teclado.png" alt="Spanish Learning Edge">
     </div>
     <div class="footer-contact">
       <a href="https://www.spanish-learning-edge.com/">spanish-learning-edge.com</a><br>
